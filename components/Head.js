@@ -78,7 +78,7 @@ const Meta = props => {
         <>
           <meta
             property="og:image"
-            content="https://deepfuture.institute/assets/img/og/og_main.png"
+            content="https://deepfuture.institute/assets/img/og/og_main.jpg"
           />
           <meta property="og:image:alt" content="DFI logo" />
         </>
