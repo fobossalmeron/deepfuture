@@ -976,8 +976,8 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
     }), __jsx("link", {
       rel: "icon",
       type: "image/png",
-      sizes: "16x16",
-      href: "/assets/favicon/favicon-16x16.png",
+      sizes: "194x194",
+      href: "/assets/favicon/favicon-194x194.png",
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -985,8 +985,10 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
         columnNumber: 11
       }
     }), __jsx("link", {
-      rel: "manifest",
-      href: "/manifest.json",
+      rel: "icon",
+      type: "image/png",
+      sizes: "192x192",
+      href: "/assets/favicon/android-chrome-192x192.png",
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -994,13 +996,24 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
         columnNumber: 11
       }
     }), __jsx("link", {
-      rel: "mask-icon",
-      href: "/assets/favicon/safari-pinned-tab.svg",
-      color: "#1740bf",
+      rel: "icon",
+      type: "image/png",
+      sizes: "16x16",
+      href: "/assets/favicon/favicon-16x16.png",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 38,
+        lineNumber: 43,
+        columnNumber: 11
+      }
+    }), __jsx("link", {
+      rel: "mask-icon",
+      href: "/assets/favicon/safari-pinned-tab.svg",
+      color: "#1d1d1b",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 49,
         columnNumber: 11
       }
     }), __jsx("link", {
@@ -1009,16 +1022,16 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 43,
+        lineNumber: 54,
         columnNumber: 11
       }
     }), __jsx("meta", {
       name: "msapplication-TileColor",
-      content: "#1740bf",
+      content: "#1d1d1b",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 44,
+        lineNumber: 55,
         columnNumber: 11
       }
     }), __jsx("meta", {
@@ -1027,7 +1040,25 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 45,
+        lineNumber: 56,
+        columnNumber: 11
+      }
+    }), __jsx("meta", {
+      name: "theme-color",
+      content: "#1d1d1b",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 60,
+        columnNumber: 11
+      }
+    }), __jsx("link", {
+      rel: "manifest",
+      href: "/manifest.json",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 61,
         columnNumber: 11
       }
     }), __jsx("meta", {
@@ -1036,16 +1067,7 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 49,
-        columnNumber: 11
-      }
-    }), __jsx("meta", {
-      name: "theme-color",
-      content: "#F4F4F4",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 50,
+        lineNumber: 62,
         columnNumber: 11
       }
     }), __jsx("meta", {
@@ -1054,16 +1076,16 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 51,
+        lineNumber: 63,
         columnNumber: 11
       }
     }), __jsx("meta", {
       name: "geo.placename",
-      content: "Acueducto",
+      content: "Deep Future Institute",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 52,
+        lineNumber: 64,
         columnNumber: 11
       }
     }), __jsx("meta", {
@@ -1072,21 +1094,21 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53,
+        lineNumber: 65,
         columnNumber: 11
       }
     }), __jsx(_styles_global__WEBPACK_IMPORTED_MODULE_3__["default"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 57,
+        lineNumber: 69,
         columnNumber: 11
       }
     }), this.props.styleTags), __jsx("body", {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 60,
+        lineNumber: 72,
         columnNumber: 9
       }
     }, __jsx("div", {
@@ -1094,7 +1116,7 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 61,
+        lineNumber: 73,
         columnNumber: 11
       }
     }, __jsx("div", {
@@ -1102,29 +1124,43 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 62,
+        lineNumber: 74,
         columnNumber: 13
       }
-    }), __jsx("h1", {
+    }), __jsx("svg", {
       id: "logo",
+      xmlns: "http://www.w3.org/2000/svg",
+      fill: "none",
+      viewBox: "0 0 98 63",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 63,
+        lineNumber: 75,
         columnNumber: 13
       }
-    }, "dfi")), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], {
+    }, __jsx("path", {
+      fill: "#F4F4F4",
+      "fill-rule": "evenodd",
+      d: "M49 62c38 0 48-32 48-32S87 1 49 1 1 30 1 30s10 32 48 32zm0-16a16 16 0 100-32 16 16 0 000 32z",
+      "clip-rule": "evenodd",
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 65,
+        lineNumber: 81,
+        columnNumber: 15
+      }
+    }))), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["Main"], {
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 89,
         columnNumber: 11
       }
     }), __jsx(next_document__WEBPACK_IMPORTED_MODULE_1__["NextScript"], {
       __self: this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 66,
+        lineNumber: 90,
         columnNumber: 11
       }
     })));
@@ -1162,7 +1198,7 @@ const styles = `
     bottom: 0;
     top: 0;
     padding: 19px;
-    background-color: #060809;
+    background-color: #1D1D1B;
     transition: opacity 0.8s ease;
     will-change: opacity;
   }
@@ -1177,7 +1213,6 @@ const styles = `
     top: 20px;
     right: 20px;
     bottom: 20px;
-    border: 17px solid white;
     border-width: 17px;
     transform: scale(0.12);
     transition: transform 0.4s ease-out, border-width 0.3s ease-out;
@@ -1186,11 +1221,11 @@ const styles = `
   }
   #bordered::before {
     content: " ";
-    background-color: #1740bf;
+    background-color: #4F478B;
     width: 300%;
-    height: 100%;
+    height: 50%;
     position: absolute;
-    transform: translateX(-100%);
+    transform: translateX(-50%);
     animation: shine 2s infinite ease-in-out;
     transition: opacity 0.1s ease;
   }
@@ -1278,7 +1313,7 @@ const styles = `
     height: 100vh;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    font-weight: 100;
+    font-weight: 400;
     font-style: normal;
   }
 
@@ -1297,9 +1332,7 @@ const styles = `
     font-family: inherit;
     font-weight: inherit;
     min-height: 100vh;
-    height: 100%;
     width: 100%;
-    overflow: hidden;
     letter-spacing: 0.02px;
   }
   @media (max-width: 600px), (max-height: 450px) {
@@ -1325,6 +1358,7 @@ const styles = `
     margin: 0;
     font-weight: inherit;
     font-size: 5.8rem;
+    font-weight: 400;    
   }
   h3 {
     font-size: 5.8rem;
@@ -1363,7 +1397,7 @@ function renderStyles() {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 209,
+    lineNumber: 207,
     columnNumber: 22
   }
 }));
@@ -1381,18 +1415,20 @@ function renderStyles() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   colors: {
-    background: "#060809",
+    background: "#1D1D1B",
     foreground: "#F4F4F4",
     foreground_low: "#D6D6D6",
     foreground_lowest: "#4F4F4F",
-    accent: "#1A4CE0",
-    accent_smalltext: "#4871EA",
-    white: "#F4F4F4",
+    cta: "#F7C951",
+    accent: "#4F478B",
     error: "#CC2E44",
-    success: "#27AE60"
-  },
-  stroke: "2px"
-}); // accent: "#1740BF",
+    success: "#27AE60",
+    darklight: "rgba(90,78,238, 0.13)",
+    darkshadow: "rgba(0,0,0,0.13)" // lightlight:
+    // lightshadow:
+
+  }
+});
 
 /***/ }),
 

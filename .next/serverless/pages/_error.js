@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "BHnG");
+/******/ 	return __webpack_require__(__webpack_require__.s = "BcfB");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -918,9 +918,39 @@ var dist_default = /*#__PURE__*/__webpack_require__.n(dist);
 var next_link = __webpack_require__("YFqc");
 var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
 
+// CONCATENATED MODULE: ./public/assets/img/layout/logos/dfilogo.svg
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+var _ref = /*#__PURE__*/react["createElement"]("path", {
+  fill: "#F4F4F4",
+  fillRule: "evenodd",
+  d: "M49 86c38.4 0 48-32.1 48-32.1S87.4 25 49 25 1 53.9 1 53.9 10.6 86 49 86zm0-16a16 16 0 100-32 16 16 0 000 32z",
+  clipRule: "evenodd"
+});
+
+var _ref2 = /*#__PURE__*/react["createElement"]("path", {
+  fill: "#F4F4F4",
+  d: "M110 55.3c0-9 2-16.3 6-21.7 4-5.4 9.4-8 16.3-8 5.5 0 10.1 2 13.7 6.3V2h15.3V85h-13.8l-.7-6.2a17.7 17.7 0 01-14.6 7.3c-6.7 0-12-2.7-16.2-8-4-5.5-6-13-6-22.7zm15.2 1.2c0 5.4 1 9.6 2.8 12.5a9 9 0 008 4.4c4.8 0 8-2 10-6.1v-23a10 10 0 00-9.8-6.1c-7.3 0-11 6-11 18.3zM176.7 85V38h-8.4V26.6h8.4v-2.7c.1-7.3 2.3-13 6.6-17S193.8 1 201.7 1c4.7 0 10.4 1 17.2 3.2L216.7 17c-3.4-1-6.1-1.7-8-2-1.9-.4-4-.5-6.1-.5-7 0-10.6 3.2-10.6 9.6v2.4h11.2V38H192v47h-15.3zm49.3 0h-15.2V26.5H226v58.3z"
+});
+
+function SvgDfilogo(props) {
+  return /*#__PURE__*/react["createElement"]("svg", _extends({
+    fill: "none",
+    viewBox: "0 0 227 87"
+  }, props), _ref, _ref2);
+}
+
+/* harmony default export */ var dfilogo = (SvgDfilogo);
+// EXTERNAL MODULE: ./components/EmailCollector.js
+var EmailCollector = __webpack_require__("HC/b");
+
 // CONCATENATED MODULE: ./components/header.js
 
 var __jsx = react_default.a.createElement;
+
+
 
 
 
@@ -934,104 +964,46 @@ function Header({
 }) {
   const backUp = e => {
     closeNav();
-    (route === "/" || route === "/en") && (e.preventDefault(), document.getElementById("land").scrollIntoView({
+    route === "/" && (e.preventDefault(), document.getElementById("land").scrollIntoView({
       behavior: "smooth"
     }));
   };
 
   return __jsx(TopHeader, {
     reveal: hasLoaded
-  }, __jsx(link_default.a, {
+  }, __jsx(HeaderContainer, null, __jsx(link_default.a, {
     href: "/",
     passHref: true
   }, __jsx(LogoLink, {
     onClick: backUp
-  }, __jsx("h1", null, "DFI"))), __jsx(HeaderTitle, {
-    hide: isOpen
-  }, headerTitle));
+  }, __jsx("h1", null, "DFI"), __jsx(dfilogo, null))), __jsx(Form, null, __jsx(EmailCollector["a" /* default */], {
+    short: true
+  }))));
 }
 
 /* harmony default export */ var header = (react_default.a.memo(Header));
-const HeaderTitle = styled_components_cjs_default.a.div`
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  text-transform: uppercase;
-  font-size: 1.4rem;
-  letter-spacing: 4px;
-  z-index: 2;
-  top: 61px;
-  mix-blend-mode: exclusion;
-  opacity: ${props => props.hide ? 0 : 1};
-  transition: opacity 0.2s ease;
-  @media (max-height: 450px) and (min-width: 800px) {
-    top: 40px;
-  }
-`;
-const TopHeader = styled_components_cjs_default.a.header`
-  display: flex;
-  justify-content: space-between;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  right: 0;
-  padding: 60px 80px 60px 50px;
-  z-index: 12;
-  margin: 0px auto;
-  max-width: 1500px;
-  pointer-events: none;
-  mix-blend-mode: exclusion;
-  opacity: ${props => props.reveal ? 1 : 0};
-  transition: opacity 0.3s ease 0.3s;
-  @media (max-width: 800px) {
-    flex-direction: column;
-    ${HeaderTitle} {
-      transform: none;
-      left: 0;
-      position: relative;
-      top: 0;
-    }
-  }
-  @media (max-width: 600px) {
-    padding-left: calc(20px + 5%);
-    ${HeaderTitle} {
-      font-size: 1.2rem;
-    }
-  }
-  @media (max-width: 450px) {
-    padding-top: 35px;
-  }
-  @media (max-height: 450px) {
-    padding-top: 35px;
-  }
-`;
-const LogoLink = styled_components_cjs_default.a.a`
-  display: flex;
-  grid-column: 1 / span 2;
-  max-width: 130px;
-  margin: 0;
-  cursor: pointer;
-  color: inherit;
-  text-decoration: none;
-  pointer-events: auto;
-  h1 {
-    font-size: 0;
-  }
-  svg {
-    max-width: 130px;
-    width: 100%;
-    path {
-      fill: ${props => props.theme.colors.white};
-    }
-  }
-`;
+const HeaderContainer = styled_components_cjs_default.a.div.withConfig({
+  displayName: "header__HeaderContainer",
+  componentId: "sc-12e98ec-0"
+})(["margin:0px auto;max-width:1500px;width:100%;display:flex;justify-content:space-between;"]);
+const TopHeader = styled_components_cjs_default.a.header.withConfig({
+  displayName: "header__TopHeader",
+  componentId: "sc-12e98ec-1"
+})(["background-color:", ";position:fixed;width:100%;top:0;left:0;right:0;padding:16px 80px 16px 50px;z-index:12;opacity:", ";transition:opacity 0.3s ease 0.3s;box-shadow:", ";"], props => props.theme.colors.background, props => props.reveal ? 1 : 0, props => `12px 12px 25px ${props.theme.colors.darkshadow}, -12px -12px 25px ${props.theme.colors.darklight}`);
+const LogoLink = styled_components_cjs_default.a.a.withConfig({
+  displayName: "header__LogoLink",
+  componentId: "sc-12e98ec-2"
+})(["display:flex;grid-column:1 / span 2;max-width:130px;margin:0;cursor:pointer;color:inherit;text-decoration:none;pointer-events:auto;h1{font-size:0;}svg{max-width:75px;width:100%;path{fill:", ";}}"], props => props.theme.colors.white);
+const Form = styled_components_cjs_default.a.form.withConfig({
+  displayName: "header__Form",
+  componentId: "sc-12e98ec-3"
+})(["width:100%;max-width:500px;align-self:flex-end;display:flex;"]);
 // CONCATENATED MODULE: ./public/assets/img/layout/cross.svg
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function cross_extends() { cross_extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return cross_extends.apply(this, arguments); }
 
 
 
-var _ref = /*#__PURE__*/react["createElement"]("path", {
+var cross_ref = /*#__PURE__*/react["createElement"]("path", {
   d: "M1 1l16.505 15M17.505 1L1 16",
   stroke: "#F4F4F4",
   strokeWidth: 2,
@@ -1039,10 +1011,10 @@ var _ref = /*#__PURE__*/react["createElement"]("path", {
 });
 
 function SvgCross(props) {
-  return /*#__PURE__*/react["createElement"]("svg", _extends({
+  return /*#__PURE__*/react["createElement"]("svg", cross_extends({
     viewBox: "0 0 19 17",
     fill: "none"
-  }, props), _ref);
+  }, props), cross_ref);
 }
 
 /* harmony default export */ var cross = (SvgCross);
@@ -1067,76 +1039,26 @@ const CookieMessage = props => {
 };
 
 /* harmony default export */ var components_CookieMessage = (CookieMessage);
-const Border = styled_components_cjs_default.a.div`
-  border: ${props => props.theme.stroke} solid
-    ${props => props.theme.colors.foreground};
-  background-color: ${props => props.theme.colors.background};
-`;
-const Button = styled_components_cjs_default.a.button`
-  padding: 14px 0%;
-  text-align: center;
-  width: calc(100% - 45px);
-  background-color: ${props => props.theme.colors.accent};
-  color: ${props => props.theme.colors.foreground};
-  border: 0;
-  font-weight: 100;
-  font-size: 1.8rem;
-  border-right: ${props => props.theme.stroke} solid
-    ${props => props.theme.colors.foreground};
-  cursor: pointer;
-  transition: 0.3s ease all;
-  @media (hover: hover) and (pointer: fine) {
-    &:hover {
-      background-color: ${props => props.theme.colors.success};
-      color: ${props => props.theme.colors.background};
-      span {
-        background-size: 0 0;
-      }
-    }
-  }
-`;
-const Divider = styled_components_cjs_default.a.div`
-  border-bottom: ${props => props.theme.stroke} solid
-    ${props => props.theme.colors.foreground};
-  display: flex;
-`;
-const CrossContainer = styled_components_cjs_default.a.div`
-  width: 45px;
-  height: 45px;
-  padding: 12px;
-  svg {
-    width: 100%;
-    max-width: 30px;
-    cursor: pointer;
-  }
-`;
-const Wrapper = styled_components_cjs_default.a.div`
-  pointer-events: ${props => props.clickable ? "auto" : "none"};
-  opacity: ${props => props.clickable ? "1" : "0"};
-  max-width: 590px;
-  width: 80%;
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%)
-    ${props => props.clickable ? "translateY(0%)" : "translateY(5%)"};
-  font-weight: 100;
-  position: fixed;
-  transition: opacity 0.4s ease, transform 0.5s ease;
-  z-index: 12;
-  p {
-    font-size: 1.2rem;
-    padding: 2.5% 4% 3% 4%;
-  }
-  @media (max-width: 600px) {
-    left: 0;
-    transform: none;
-    width: calc(100% - 36px);
-    margin-left: 18px;
-    margin-right: 18px;
-    bottom: 18px;
-    z-index: 100;
-  }
-`;
+const Border = styled_components_cjs_default.a.div.withConfig({
+  displayName: "CookieMessage__Border",
+  componentId: "krtr03-0"
+})(["border:", " solid ", ";background-color:", ";"], props => props.theme.stroke, props => props.theme.colors.foreground, props => props.theme.colors.background);
+const Button = styled_components_cjs_default.a.button.withConfig({
+  displayName: "CookieMessage__Button",
+  componentId: "krtr03-1"
+})(["padding:14px 0%;text-align:center;width:calc(100% - 45px);background-color:", ";color:", ";border:0;font-weight:100;font-size:1.8rem;border-right:", " solid ", ";cursor:pointer;transition:0.3s ease all;@media (hover:hover) and (pointer:fine){&:hover{background-color:", ";color:", ";span{background-size:0 0;}}}"], props => props.theme.colors.accent, props => props.theme.colors.foreground, props => props.theme.stroke, props => props.theme.colors.foreground, props => props.theme.colors.success, props => props.theme.colors.background);
+const Divider = styled_components_cjs_default.a.div.withConfig({
+  displayName: "CookieMessage__Divider",
+  componentId: "krtr03-2"
+})(["border-bottom:", " solid ", ";display:flex;"], props => props.theme.stroke, props => props.theme.colors.foreground);
+const CrossContainer = styled_components_cjs_default.a.div.withConfig({
+  displayName: "CookieMessage__CrossContainer",
+  componentId: "krtr03-3"
+})(["width:45px;height:45px;padding:12px;svg{width:100%;max-width:30px;cursor:pointer;}"]);
+const Wrapper = styled_components_cjs_default.a.div.withConfig({
+  displayName: "CookieMessage__Wrapper",
+  componentId: "krtr03-4"
+})(["pointer-events:", ";opacity:", ";max-width:590px;width:80%;bottom:5%;left:50%;transform:translateX(-50%) ", ";font-weight:100;position:fixed;transition:opacity 0.4s ease,transform 0.5s ease;z-index:12;p{font-size:1.2rem;padding:2.5% 4% 3% 4%;}@media (max-width:600px){left:0;transform:none;width:calc(100% - 36px);margin-left:18px;margin-right:18px;bottom:18px;z-index:100;}"], props => props.clickable ? "auto" : "none", props => props.clickable ? "1" : "0", props => props.clickable ? "translateY(0%)" : "translateY(5%)");
 // EXTERNAL MODULE: ./node_modules/react-ga/dist/react-ga.js
 var react_ga = __webpack_require__("vVMA");
 var react_ga_default = /*#__PURE__*/__webpack_require__.n(react_ga);
@@ -1318,134 +1240,30 @@ const NewsletterPopup = () => {
 };
 
 /* harmony default export */ var components_NewsletterPopup = (NewsletterPopup);
-const Background = styled_components_cjs_default.a.div`
-  background-color: ${props => props.theme.colors.background};
-  opacity: ${props => props.visible ? 0.6 : 0};
-  position: fixed;
-  pointer-events: ${props => props.visible ? "auto" : "none"};
-  left: 0;
-  bottom: 0;
-  right: 0;
-  top: 0;
-  z-index: 13;
-  transition: opacity 0.4s ease;
-`;
-const Message = styled_components_cjs_default.a.div`
-  color: ${props => props.error ? props.theme.colors.error : props.success ? props.theme.colors.success : props.theme.colors.accent};
-  font-size: ${props => props.success ? "1.8rem" : "1.5rem"};
-  padding-bottom: 5px;
-  @media (max-width: 600px), (max-height: 450px) {
-    font-size: 1.5rem;
-  }
-`;
-const NewsletterPopup_Border = styled_components_cjs_default.a.div`
-  border: ${props => props.theme.stroke} solid
-    ${props => props.theme.colors.foreground};
-  background-color: ${props => props.theme.colors.background};
-  padding: 10% 15% 14% 15%;
-  @media (max-width: 380px) {
-    padding: 10% 10% 14% 10%;
-  }
-`;
-const NewsletterPopup_Button = styled_components_cjs_default.a.button`
-  padding: 14px 0%;
-  margin-top: 5px;
-  text-align: center;
-  width: 100%;
-  background-color: ${props => props.theme.colors.accent};
-  color: ${props => props.theme.colors.foreground};
-  border: 0;
-  font-weight: 100;
-  font-size: 1.8rem;
-  cursor: pointer;
-  transition: 0.3s ease all;
-  @media (hover: hover) and (pointer: fine) {
-    &:hover {
-      background-color: #27ae60;
-      color: ${props => props.theme.colors.background};
-      span {
-        background-size: 0 0;
-      }
-    }
-  }
-`;
-const NewsletterPopup_CrossContainer = styled_components_cjs_default.a.div`
-  width: 50px;
-  height: 50px;
-  padding: 12px;
-  position: absolute;
-  top: 3%;
-  right: 3%;
-  svg {
-    width: 100%;
-    cursor: pointer;
-  }
-`;
-const NewsletterPopup_Wrapper = styled_components_cjs_default.a.div`
-  pointer-events: ${props => props.clickable ? "auto" : "none"};
-  opacity: ${props => props.clickable ? "1" : "0"};
-  max-width: 440px;
-  width: 80%;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%)
-    ${props => props.clickable ? "translateY(0%)" : "translateY(5%)"};
-  font-weight: 100;
-  position: fixed;
-  transition: opacity 0.4s ease, transform 0.5s ease;
-  z-index: 14;
-  p {
-    color: ${props => props.theme.colors.foreground_low};
-    padding-bottom: 20px;
-  }
-  h4 {
-    color: ${props => props.theme.colors.accent};
-    font-size: 3rem;
-    font-weight: 300;
-    line-height: 110%;
-    margin-bottom: 5%;
-  }
-  label{
-    font-size:0;
-    height:0;
-    width:0;
-    position:absolute;
-  }
-  input {
-    font-weight: 100;
-    border-radius: 0;
-    width: 100%;
-    padding: 10px 18px 13px 18px;
-    line-height: 100%;
-    background-color: transparent;
-    border: ${props => props.theme.stroke} solid
-      ${props => props.theme.colors.foreground_lowest};
-    margin: 4px 0;
-    color: ${props => props.theme.colors.foreground};
-    -webkit-appearance: textfield;
-    appearance: textfield;
-    ::placeholder {
-      padding-top: 4px;
-    }
-  }
-  @media (max-width: 600px) {
-    max-width: calc(100% - 36px);
-    width: 100%;
-    margin-left: 18px;
-    margin-right: 18px;
-    z-index: 100;
-    left: 0;
-    transform: translateX(0px) translateY(-50%);
-    h4 {
-      font-size: 2.5rem;
-    }
-  }
-  @media (max-width: 380px) {
-    /* input {
-      padding-top: 14px;
-    } */
-  }
-`;
+const Background = styled_components_cjs_default.a.div.withConfig({
+  displayName: "NewsletterPopup__Background",
+  componentId: "ad5xhy-0"
+})(["background-color:", ";opacity:", ";position:fixed;pointer-events:", ";left:0;bottom:0;right:0;top:0;z-index:13;transition:opacity 0.4s ease;"], props => props.theme.colors.background, props => props.visible ? 0.6 : 0, props => props.visible ? "auto" : "none");
+const Message = styled_components_cjs_default.a.div.withConfig({
+  displayName: "NewsletterPopup__Message",
+  componentId: "ad5xhy-1"
+})(["color:", ";font-size:", ";padding-bottom:5px;@media (max-width:600px),(max-height:450px){font-size:1.5rem;}"], props => props.error ? props.theme.colors.error : props.success ? props.theme.colors.success : props.theme.colors.accent, props => props.success ? "1.8rem" : "1.5rem");
+const NewsletterPopup_Border = styled_components_cjs_default.a.div.withConfig({
+  displayName: "NewsletterPopup__Border",
+  componentId: "ad5xhy-2"
+})(["border:", " solid ", ";background-color:", ";padding:10% 15% 14% 15%;@media (max-width:380px){padding:10% 10% 14% 10%;}"], props => props.theme.stroke, props => props.theme.colors.foreground, props => props.theme.colors.background);
+const NewsletterPopup_Button = styled_components_cjs_default.a.button.withConfig({
+  displayName: "NewsletterPopup__Button",
+  componentId: "ad5xhy-3"
+})(["padding:14px 0%;margin-top:5px;text-align:center;width:100%;background-color:", ";color:", ";border:0;font-weight:100;font-size:1.8rem;cursor:pointer;transition:0.3s ease all;@media (hover:hover) and (pointer:fine){&:hover{background-color:#27ae60;color:", ";span{background-size:0 0;}}}"], props => props.theme.colors.accent, props => props.theme.colors.foreground, props => props.theme.colors.background);
+const NewsletterPopup_CrossContainer = styled_components_cjs_default.a.div.withConfig({
+  displayName: "NewsletterPopup__CrossContainer",
+  componentId: "ad5xhy-4"
+})(["width:50px;height:50px;padding:12px;position:absolute;top:3%;right:3%;svg{width:100%;cursor:pointer;}"]);
+const NewsletterPopup_Wrapper = styled_components_cjs_default.a.div.withConfig({
+  displayName: "NewsletterPopup__Wrapper",
+  componentId: "ad5xhy-5"
+})(["pointer-events:", ";opacity:", ";max-width:440px;width:80%;top:50%;left:50%;transform:translateX(-50%) translateY(-50%) ", ";font-weight:100;position:fixed;transition:opacity 0.4s ease,transform 0.5s ease;z-index:14;p{color:", ";padding-bottom:20px;}h4{color:", ";font-size:3rem;font-weight:300;line-height:110%;margin-bottom:5%;}label{font-size:0;height:0;width:0;position:absolute;}input{font-weight:100;border-radius:0;width:100%;padding:10px 18px 13px 18px;line-height:100%;background-color:transparent;border:", " solid ", ";margin:4px 0;color:", ";-webkit-appearance:textfield;appearance:textfield;::placeholder{padding-top:4px;}}@media (max-width:600px){max-width:calc(100% - 36px);width:100%;margin-left:18px;margin-right:18px;z-index:100;left:0;transform:translateX(0px) translateY(-50%);h4{font-size:2.5rem;}}@media (max-width:380px){}"], props => props.clickable ? "auto" : "none", props => props.clickable ? "1" : "0", props => props.clickable ? "translateY(0%)" : "translateY(5%)", props => props.theme.colors.foreground_low, props => props.theme.colors.accent, props => props.theme.stroke, props => props.theme.colors.foreground_lowest, props => props.theme.colors.foreground);
 // CONCATENATED MODULE: ./components/layout.js
 
 var layout_jsx = react_default.a.createElement;
@@ -1638,49 +1456,18 @@ const BodyOverflow = styled_components_cjs["createGlobalStyle"]`
     }  
   }
 `;
-const BackgroundOpacity = styled_components_cjs_default.a.div`
-  background-color: ${props => props.theme.colors.background};
-  opacity: ${props => props.visible ? 0.6 : 0};
-  position: fixed;
-  pointer-events: ${props => props.visible ? "auto" : "none"};
-  left: 0;
-  bottom: 0;
-  right: 0;
-  top: 0;
-  z-index: 13;
-  transition: opacity 0.4s ease;
-`;
-const PageWrapper = styled_components_cjs_default.a.div`
-  top: -3px;
-  position: relative;
-  width: 100%;
-  flex-direction: column;
-  display: flex;
-  justify-content: flex-start;
-  color: ${props => props.theme.colors.foreground};
-  background-color: ${props => props.theme.colors.background};
-`;
-const layout_Border = styled_components_cjs_default.a.div`
-  opacity: 1;
-  pointer-events: none;
-  z-index: 99;
-  width: calc(100% - 36px);
-  height: calc(100% - 36px);
-  background-color: none;
-  position: fixed;
-  left: 18px;
-  top: 18px;
-  right: 18px;
-  bottom: 18px;
-  margin: 0 auto;
-  max-width: 1504px;
-  mix-blend-mode: exclusion;
-  transition: opacity 0.3s ease-in, border 0.3s ease-in;
-  border: ${props => `${props.theme.stroke} solid ${props.theme.colors.foreground}`};
-  @media (max-width: 600px), (max-height: 450px) {
-    mix-blend-mode: normal;
-  }
-`;
+const BackgroundOpacity = styled_components_cjs_default.a.div.withConfig({
+  displayName: "layout__BackgroundOpacity",
+  componentId: "sc-18mrapy-0"
+})(["background-color:", ";opacity:", ";position:fixed;pointer-events:", ";left:0;bottom:0;right:0;top:0;z-index:13;transition:opacity 0.4s ease;"], props => props.theme.colors.background, props => props.visible ? 0.6 : 0, props => props.visible ? "auto" : "none");
+const PageWrapper = styled_components_cjs_default.a.div.withConfig({
+  displayName: "layout__PageWrapper",
+  componentId: "sc-18mrapy-1"
+})(["top:-3px;position:relative;width:100%;flex-direction:column;display:flex;justify-content:flex-start;color:", ";background-color:", ";"], props => props.theme.colors.foreground, props => props.theme.colors.background);
+const layout_Border = styled_components_cjs_default.a.div.withConfig({
+  displayName: "layout__Border",
+  componentId: "sc-18mrapy-2"
+})(["opacity:1;pointer-events:none;z-index:99;width:calc(100% - 36px);height:calc(100% - 36px);background-color:none;position:fixed;left:18px;top:18px;right:18px;bottom:18px;margin:0 auto;max-width:1504px;mix-blend-mode:exclusion;transition:opacity 0.3s ease-in,border 0.3s ease-in;border:", ";@media (max-width:600px),(max-height:450px){mix-blend-mode:normal;}"], props => `${props.theme.stroke} solid ${props.theme.colors.foreground}`);
 // EXTERNAL MODULE: ./styles/theme.js
 var theme = __webpack_require__("NVT0");
 
@@ -1784,7 +1571,8 @@ class _app_MyApp extends app_default.a {
       // locale: props.router.route.includes("/en") ? en : es,
       locale: common,
       hasToConsent: false,
-      hasLoaded: false,
+      //return hasLoaded to false
+      hasLoaded: true,
       readyToScroll: false
     };
   }
@@ -1796,7 +1584,7 @@ class _app_MyApp extends app_default.a {
   componentDidMount() {
     // Disable scroll
     // Esto es importante para el loading icon
-    const targetElement = document.querySelector("#bordered"); //dummy
+    const targetElement = document.querySelector("#logo"); //dummy
 
     Object(bodyScrollLock_min["disableBodyScroll"])(targetElement); // Load Animation
 
@@ -1806,7 +1594,6 @@ class _app_MyApp extends app_default.a {
       const revealer = document.getElementById("revealer");
 
       if (bordered) {
-        console.log("bordered");
         setTimeout(() => {
           // transition out
           bordered.classList.add("hidden");
@@ -2057,7 +1844,7 @@ const Meta = props => {
     content: props.lang === "es" ? "Alt de imagen" : ""
   })) : __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("meta", {
     property: "og:image",
-    content: "https://deepfuture.institute/assets/img/og/og_main.jpg"
+    content: "https://deepfuture.institute/assets/img/og/og_main.png"
   }), __jsx("meta", {
     property: "og:image:alt",
     content: "DFI logo"
@@ -2570,7 +2357,7 @@ const styles = `
     bottom: 0;
     top: 0;
     padding: 19px;
-    background-color: #060809;
+    background-color: #1D1D1B;
     transition: opacity 0.8s ease;
     will-change: opacity;
   }
@@ -2585,7 +2372,6 @@ const styles = `
     top: 20px;
     right: 20px;
     bottom: 20px;
-    border: 17px solid white;
     border-width: 17px;
     transform: scale(0.12);
     transition: transform 0.4s ease-out, border-width 0.3s ease-out;
@@ -2594,11 +2380,11 @@ const styles = `
   }
   #bordered::before {
     content: " ";
-    background-color: #1740bf;
+    background-color: #4F478B;
     width: 300%;
-    height: 100%;
+    height: 50%;
     position: absolute;
-    transform: translateX(-100%);
+    transform: translateX(-50%);
     animation: shine 2s infinite ease-in-out;
     transition: opacity 0.1s ease;
   }
@@ -2686,7 +2472,7 @@ const styles = `
     height: 100vh;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    font-weight: 100;
+    font-weight: 400;
     font-style: normal;
   }
 
@@ -2705,9 +2491,7 @@ const styles = `
     font-family: inherit;
     font-weight: inherit;
     min-height: 100vh;
-    height: 100%;
     width: 100%;
-    overflow: hidden;
     letter-spacing: 0.02px;
   }
   @media (max-width: 600px), (max-height: 450px) {
@@ -2733,6 +2517,7 @@ const styles = `
     margin: 0;
     font-weight: inherit;
     font-size: 5.8rem;
+    font-weight: 400;    
   }
   h3 {
     font-size: 5.8rem;
@@ -2815,36 +2600,46 @@ class _document_MyDocument extends document_default.a {
     }), _document_jsx("link", {
       rel: "icon",
       type: "image/png",
+      sizes: "194x194",
+      href: "/assets/favicon/favicon-194x194.png"
+    }), _document_jsx("link", {
+      rel: "icon",
+      type: "image/png",
+      sizes: "192x192",
+      href: "/assets/favicon/android-chrome-192x192.png"
+    }), _document_jsx("link", {
+      rel: "icon",
+      type: "image/png",
       sizes: "16x16",
       href: "/assets/favicon/favicon-16x16.png"
     }), _document_jsx("link", {
-      rel: "manifest",
-      href: "/manifest.json"
-    }), _document_jsx("link", {
       rel: "mask-icon",
       href: "/assets/favicon/safari-pinned-tab.svg",
-      color: "#1740bf"
+      color: "#1d1d1b"
     }), _document_jsx("link", {
       rel: "shortcut icon",
       href: "/assets/favicon/favicon.ico"
     }), _document_jsx("meta", {
       name: "msapplication-TileColor",
-      content: "#1740bf"
+      content: "#1d1d1b"
     }), _document_jsx("meta", {
       name: "msapplication-config",
       content: "/assets/favicon/browserconfig.xml"
     }), _document_jsx("meta", {
+      name: "theme-color",
+      content: "#1d1d1b"
+    }), _document_jsx("link", {
+      rel: "manifest",
+      href: "/manifest.json"
+    }), _document_jsx("meta", {
       name: "apple-mobile-web-app-capable",
       content: "yes"
-    }), _document_jsx("meta", {
-      name: "theme-color",
-      content: "#F4F4F4"
     }), _document_jsx("meta", {
       name: "geo.region",
       content: "CDMX"
     }), _document_jsx("meta", {
       name: "geo.placename",
-      content: "Acueducto"
+      content: "Deep Future Institute"
     }), _document_jsx("meta", {
       name: "keywords",
       content: "design, studio, acueducto, cdmx, innovation, strategic design, experience design, product design, brand design, social impact, design strategy, technology"
@@ -2852,9 +2647,17 @@ class _document_MyDocument extends document_default.a {
       id: "revealer"
     }, _document_jsx("div", {
       id: "bordered"
-    }), _document_jsx("h1", {
-      id: "logo"
-    }, "dfi")), _document_jsx(next_document["Main"], null), _document_jsx(next_document["NextScript"], null)));
+    }), _document_jsx("svg", {
+      id: "logo",
+      xmlns: "http://www.w3.org/2000/svg",
+      fill: "none",
+      viewBox: "0 0 98 63"
+    }, _document_jsx("path", {
+      fill: "#F4F4F4",
+      "fill-rule": "evenodd",
+      d: "M49 62c38 0 48-32 48-32S87 1 49 1 1 30 1 30s10 32 48 32zm0-16a16 16 0 100-32 16 16 0 000 32z",
+      "clip-rule": "evenodd"
+    }))), _document_jsx(next_document["Main"], null), _document_jsx(next_document["NextScript"], null)));
   }
 
 }
@@ -3475,7 +3278,7 @@ function createUrl(router) {
 
 /***/ }),
 
-/***/ "BHnG":
+/***/ "BcfB":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3575,10 +3378,10 @@ __webpack_require__.r(__webpack_exports__);
         getStaticPaths,
         reactLoadableManifest,
         canonicalBase: "",
-        buildId: "nFCfMW_2Wq22d8Szqsu9M",
+        buildId: "AfIjtTu2ji-1QJpjSYfbx",
         assetPrefix: "",
         runtimeConfig: runtimeConfig.publicRuntimeConfig || {},
-        previewProps: {previewModeId:"4714c326e79e008680ee9bd11d8c9eb3",previewModeSigningKey:"88893094bc5681988e3ca2f1f3beee3ce9863fdc1f8953e00accb22328e97091",previewModeEncryptionKey:"cbc9fd4660eaaf6fa50c2193484bd916cf42af023014867037554ede03bb7b4c"},
+        previewProps: {previewModeId:"f23ca25bf0b0d4ab7e7c0f977037dad9",previewModeSigningKey:"1922e701a4fa4e73428cbe7baeed844a50f65444fbe73cf101c204b50d690064",previewModeEncryptionKey:"efbec8838e321d03378b713f7a60282f44857b6423cdd9530044ec99f3045e36"},
         env: process.env,
         basePath: "",
         ..._renderOpts
@@ -3592,7 +3395,7 @@ __webpack_require__.r(__webpack_exports__);
         if (parsedUrl.pathname.match(/_next\/data/)) {
           _nextData = true
           parsedUrl.pathname = parsedUrl.pathname
-            .replace(new RegExp('/_next/data/nFCfMW_2Wq22d8Szqsu9M/'), '/')
+            .replace(new RegExp('/_next/data/AfIjtTu2ji\-1QJpjSYfbx/'), '/')
             .replace(/\.json$/, '')
         }
 
@@ -4653,6 +4456,200 @@ module.exports = function shallowEqual(objA, objB, compare, compareContext) {
 
 /***/ }),
 
+/***/ "HC/b":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("q1tI");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("VJA7");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_mailchimp_subscribe__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("CPgt");
+/* harmony import */ var react_mailchimp_subscribe__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_mailchimp_subscribe__WEBPACK_IMPORTED_MODULE_2__);
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+const url = "https://studio.us19.list-manage.com/subscribe/post?u=c9d7bbb792de4cdbe363fad75&amp;id=434dbf9f3b";
+const isEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+const CustomForm = ({
+  status,
+  message,
+  onValidated,
+  enterprise,
+  complete,
+  short
+}) => {
+  const {
+    0: displayMessage,
+    1: setMessage
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const {
+    0: showMessage,
+    1: setShowMessage
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  let email, name, industry, company, employees;
+
+  const submitEnterprise = () => {
+    if (!name.value) {
+      setShowMessage(true), setMessage("Ingresa tu nombre");
+    } else if (!lastname.value) {
+      setShowMessage(true), setMessage("Ingresa tu apellido");
+    } else if (!email.value) {
+      setShowMessage(true), setMessage("Ingresa tu email");
+    } else if (!isEmail.test(email.value)) {
+      setShowMessage(true), setMessage("Email en formato incorrecto");
+    } else {
+      setShowMessage(false), onValidated({
+        NAME: name.value,
+        EMAIL: email.value,
+        COMPANY: company.value,
+        EMPLOYEES: employees.value
+      });
+    }
+  };
+
+  const submitComplete = () => {
+    if (!name.value) {
+      setShowMessage(true), setMessage("Ingresa tu nombre");
+    } else if (!email.value) {
+      setShowMessage(true), setMessage("Ingresa tu email");
+    } else if (!isEmail.test(email.value)) {
+      setShowMessage(true), setMessage("Email en formato incorrecto");
+    } else {
+      setShowMessage(false), onValidated({
+        NAME: name.value,
+        EMAIL: email.value,
+        INDUSTRY: industry.value
+      });
+    }
+  };
+
+  const submitShort = () => {
+    if (!email.value) {
+      setShowMessage(true), setMessage("Ingresa tu email");
+    } else if (!isEmail.test(email.value)) {
+      setShowMessage(true), setMessage("Email en formato incorrecto");
+    } else {
+      setShowMessage(false), onValidated({
+        EMAIL: email.value
+      });
+    }
+  };
+
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, status === "sending" && __jsx(Message, null, "Enviando..."), showMessage ? __jsx(Message, {
+    error: true,
+    dangerouslySetInnerHTML: {
+      __html: displayMessage
+    }
+  }) : null, status === "error" && __jsx(Message, {
+    error: true,
+    dangerouslySetInnerHTML: {
+      __html: message
+    }
+  }), status === "success" && __jsx(Message, {
+    success: true,
+    dangerouslySetInnerHTML: {
+      __html: message
+    }
+  }), status !== "success" && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Input, {
+    ref: node => email = node,
+    type: "email",
+    placeholder: short ? "Tu correo" : "Email",
+    id: "email",
+    short: short
+  }), __jsx(Label, {
+    htmlFor: "email"
+  }, "email"), !short && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Input, {
+    ref: node => name = node,
+    type: "text",
+    placeholder: "Nombre",
+    id: "name"
+  }), __jsx(Label, {
+    htmlFor: "name"
+  }, "nombre")), complete && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Input, {
+    ref: node => industry = node,
+    type: "text",
+    placeholder: "Industria",
+    id: "industria"
+  }), __jsx(Label, {
+    htmlFor: "industria"
+  }, "industria")), enterprise && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Input, {
+    ref: node => company = node,
+    type: "text",
+    placeholder: "compa\xF1\xEDa",
+    id: "compa\xF1\xEDa"
+  }), __jsx(Label, {
+    htmlFor: "compa\xF1\xEDa"
+  }, "compa\xF1\xEDa"), __jsx(Input, {
+    ref: node => employees = node,
+    type: "text",
+    placeholder: "empleados",
+    id: "empleados"
+  }), __jsx(Label, {
+    htmlFor: "empleados"
+  }, "empleados")), __jsx(Button, {
+    short: short,
+    onClick: short ? submitShort : complete ? submitComplete : submitEnterprise
+  }, short ? "Descargar PDF gratuito" : "Descargar gratis")));
+};
+
+const EmailCollector = ({
+  enterprise,
+  complete,
+  short
+}) => {
+  return __jsx(react_mailchimp_subscribe__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    url: url,
+    render: ({
+      subscribe,
+      status,
+      message
+    }) => __jsx(CustomForm, {
+      enterprise: enterprise,
+      complete: complete,
+      short: short,
+      status: status,
+      message: message,
+      onValidated: formData => subscribe(formData)
+    })
+  });
+};
+
+/* harmony default export */ __webpack_exports__["a"] = (EmailCollector);
+const Background = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "EmailCollector__Background",
+  componentId: "jldx4s-0"
+})(["background-color:", ";opacity:", ";position:fixed;pointer-events:", ";left:0;bottom:0;right:0;top:0;z-index:13;transition:opacity 0.4s ease;"], props => props.theme.colors.background, props => props.visible ? 0.6 : 0, props => props.visible ? "auto" : "none");
+const Message = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "EmailCollector__Message",
+  componentId: "jldx4s-1"
+})(["color:", ";font-size:", ";padding-bottom:5px;@media (max-width:600px),(max-height:450px){font-size:1.5rem;}"], props => props.error ? props.theme.colors.error : props.success ? props.theme.colors.success : props.theme.colors.accent, props => props.success ? "1.8rem" : "1.5rem");
+const Label = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.label.withConfig({
+  displayName: "EmailCollector__Label",
+  componentId: "jldx4s-2"
+})(["font-size:0;height:0;width:0;position:absolute;"]);
+const Input = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.input.withConfig({
+  displayName: "EmailCollector__Input",
+  componentId: "jldx4s-3"
+})(["width:", ";padding:13px 18px 13px 26px;line-height:100%;background-color:", ";border-radius:", ";border:none;font-size:1.7rem;margin:4px 0;color:", ";-webkit-appearance:textfield;appearance:textfield;::placeholder{padding-top:4px;color:#31302e;opacity:0.5;}"], props => props.short ? "50%" : "100%", props => props.theme.colors.foreground, props => props.short ? "4px 0px 0px 4px" : "4px", props => props.theme.colors.foreground_lowest);
+const Button = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
+  displayName: "EmailCollector__Button",
+  componentId: "jldx4s-4"
+})(["padding:14px 0%;margin:4px 0;text-align:center;width:", ";background-color:", ";color:", ";border:0;font-size:1.8rem;border-radius:", ";cursor:pointer;transition:0.3s ease all;@media (hover:hover) and (pointer:fine){&:hover{background-color:#27ae60;color:", ";span{background-size:0 0;}}}"], props => props.short ? "50%" : "100%", props => props.theme.colors.cta, props => props.theme.colors.background, props => props.short ? "0px 4px 4px 0px" : "4px", props => props.theme.colors.background);
+const CrossContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "EmailCollector__CrossContainer",
+  componentId: "jldx4s-5"
+})(["width:50px;height:50px;padding:12px;position:absolute;top:3%;right:3%;svg{width:100%;cursor:pointer;}"]);
+const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "EmailCollector__Wrapper",
+  componentId: "jldx4s-6"
+})(["pointer-events:", ";opacity:", ";max-width:440px;width:80%;top:50%;left:50%;transform:translateX(-50%) translateY(-50%) ", ";font-weight:100;position:fixed;transition:opacity 0.4s ease,transform 0.5s ease;z-index:14;@media (max-width:600px){max-width:calc(100% - 36px);width:100%;margin-left:18px;margin-right:18px;z-index:100;left:0;transform:translateX(0px) translateY(-50%);h4{font-size:2.5rem;}}"], props => props.clickable ? "auto" : "none", props => props.clickable ? "1" : "0", props => props.clickable ? "translateY(0%)" : "translateY(5%)");
+
+/***/ }),
+
 /***/ "IuXR":
 /***/ (function(module, exports) {
 
@@ -4762,7 +4759,7 @@ exports.default = index;
 /***/ "LZ9C":
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"devFiles\":[],\"lowPriorityFiles\":[\"static/nFCfMW_2Wq22d8Szqsu9M/_buildManifest.js\",\"static/nFCfMW_2Wq22d8Szqsu9M/_ssgManifest.js\"],\"pages\":{\"/\":[\"static/runtime/webpack-c212667a5f965e81e004.js\",\"static/chunks/framework.4dd1003cc9c949c7fcd3.js\",\"static/chunks/4a45b64b19bcfc40305c8e022d6f567a8a76447d.ddcfc08a823b6f1026f9.js\",\"static/chunks/52cbbe6d9860228707f3a0222865242ecb35bac0.ec0e4e4aaa5f63433af7.js\",\"static/runtime/main-a157ac74a8c4c4d67046.js\"],\"/_app\":[\"static/runtime/webpack-c212667a5f965e81e004.js\",\"static/chunks/framework.4dd1003cc9c949c7fcd3.js\",\"static/chunks/4a45b64b19bcfc40305c8e022d6f567a8a76447d.ddcfc08a823b6f1026f9.js\",\"static/chunks/a36acb9e770508c1c75ea4e48b742b3041769bc0.21a3843b59611e08b292.js\",\"static/runtime/main-a157ac74a8c4c4d67046.js\"],\"/_error\":[\"static/runtime/webpack-c212667a5f965e81e004.js\",\"static/chunks/framework.4dd1003cc9c949c7fcd3.js\",\"static/runtime/main-a157ac74a8c4c4d67046.js\"],\"/_polyfills\":[\"static/runtime/polyfills-fc5b3021cf451f17e2e5.js\"],\"/beta\":[\"static/runtime/webpack-c212667a5f965e81e004.js\",\"static/chunks/framework.4dd1003cc9c949c7fcd3.js\",\"static/chunks/4a45b64b19bcfc40305c8e022d6f567a8a76447d.ddcfc08a823b6f1026f9.js\",\"static/chunks/52cbbe6d9860228707f3a0222865242ecb35bac0.ec0e4e4aaa5f63433af7.js\",\"static/runtime/main-a157ac74a8c4c4d67046.js\"],\"/index\":[\"static/runtime/webpack-c212667a5f965e81e004.js\",\"static/chunks/framework.4dd1003cc9c949c7fcd3.js\",\"static/chunks/4a45b64b19bcfc40305c8e022d6f567a8a76447d.ddcfc08a823b6f1026f9.js\",\"static/chunks/52cbbe6d9860228707f3a0222865242ecb35bac0.ec0e4e4aaa5f63433af7.js\",\"static/runtime/main-a157ac74a8c4c4d67046.js\"]}}");
+module.exports = JSON.parse("{\"devFiles\":[],\"lowPriorityFiles\":[\"static/AfIjtTu2ji-1QJpjSYfbx/_buildManifest.js\",\"static/AfIjtTu2ji-1QJpjSYfbx/_ssgManifest.js\"],\"pages\":{\"/\":[\"static/runtime/webpack-c212667a5f965e81e004.js\",\"static/chunks/framework.4dd1003cc9c949c7fcd3.js\",\"static/chunks/a97a101829965dbaa511c701097e574a0edaf5d7.2a5ad1e5aa59f198bab4.js\",\"static/chunks/efbbc783ff9cc1a23989603bdd9abba935b2d329.beb4635237b8460c1b1f.js\",\"static/runtime/main-9e99cc123c6d176e0add.js\"],\"/_app\":[\"static/runtime/webpack-c212667a5f965e81e004.js\",\"static/chunks/framework.4dd1003cc9c949c7fcd3.js\",\"static/chunks/a97a101829965dbaa511c701097e574a0edaf5d7.2a5ad1e5aa59f198bab4.js\",\"static/chunks/3d917bd531950e031e51bd5b1b23487685413991.37302fba0344cd0ccc6b.js\",\"static/chunks/b00ae8e0051b54565058bd622bf8c3d20e1c8aeb.30f4af9b153a57ceba52.js\",\"static/runtime/main-9e99cc123c6d176e0add.js\"],\"/_error\":[\"static/runtime/webpack-c212667a5f965e81e004.js\",\"static/chunks/framework.4dd1003cc9c949c7fcd3.js\",\"static/runtime/main-9e99cc123c6d176e0add.js\"],\"/_polyfills\":[\"static/runtime/polyfills-42651cc75ef14fa3642d.js\"],\"/beta\":[\"static/runtime/webpack-c212667a5f965e81e004.js\",\"static/chunks/framework.4dd1003cc9c949c7fcd3.js\",\"static/chunks/a97a101829965dbaa511c701097e574a0edaf5d7.2a5ad1e5aa59f198bab4.js\",\"static/chunks/efbbc783ff9cc1a23989603bdd9abba935b2d329.beb4635237b8460c1b1f.js\",\"static/chunks/b00ae8e0051b54565058bd622bf8c3d20e1c8aeb.30f4af9b153a57ceba52.js\",\"static/runtime/main-9e99cc123c6d176e0add.js\"],\"/index\":[\"static/runtime/webpack-c212667a5f965e81e004.js\",\"static/chunks/framework.4dd1003cc9c949c7fcd3.js\",\"static/chunks/a97a101829965dbaa511c701097e574a0edaf5d7.2a5ad1e5aa59f198bab4.js\",\"static/chunks/efbbc783ff9cc1a23989603bdd9abba935b2d329.beb4635237b8460c1b1f.js\",\"static/runtime/main-9e99cc123c6d176e0add.js\"]}}");
 
 /***/ }),
 
@@ -5100,18 +5097,20 @@ function localstorage() {
 "use strict";
 /* harmony default export */ __webpack_exports__["a"] = ({
   colors: {
-    background: "#060809",
+    background: "#1D1D1B",
     foreground: "#F4F4F4",
     foreground_low: "#D6D6D6",
     foreground_lowest: "#4F4F4F",
-    accent: "#1A4CE0",
-    accent_smalltext: "#4871EA",
-    white: "#F4F4F4",
+    cta: "#F7C951",
+    accent: "#4F478B",
     error: "#CC2E44",
-    success: "#27AE60"
-  },
-  stroke: "2px"
-}); // accent: "#1740BF",
+    success: "#27AE60",
+    darklight: "rgba(90,78,238, 0.13)",
+    darkshadow: "rgba(0,0,0,0.13)" // lightlight:
+    // lightshadow:
+
+  }
+});
 
 /***/ }),
 

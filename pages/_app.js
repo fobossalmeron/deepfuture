@@ -19,7 +19,8 @@ class MyApp extends App {
       // locale: props.router.route.includes("/en") ? en : es,
       locale: es,
       hasToConsent: false,
-      hasLoaded: false,
+      //return hasLoaded to false
+      hasLoaded: true,
       readyToScroll: false
     };
   }
@@ -60,7 +61,7 @@ class MyApp extends App {
   componentDidMount() {
     // Disable scroll
     // Esto es importante para el loading icon
-    const targetElement = document.querySelector("#bordered"); //dummy
+    const targetElement = document.querySelector("#logo"); //dummy
     disableBodyScroll(targetElement);
 
     // Load Animation
@@ -69,7 +70,6 @@ class MyApp extends App {
       const logo = document.getElementById("logo");
       const revealer = document.getElementById("revealer");
       if (bordered) {
-        console.log("bordered")
         setTimeout(() => {
           // transition out
           bordered.classList.add("hidden");
