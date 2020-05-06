@@ -44,15 +44,18 @@ const Form = styled.div`
   padding: 5% 6.5%;
   display: flex;
   justify-content: space-between;
-  max-width: 885px;
   width: 100%;
   transition: all 0.3s ease-in;
+  pointer-events:auto;
 `;
 
 const Column = styled.div`
   max-width: 330px;
   width: 100%;
   color: ${(props) => props.theme.colors.foreground};
+  :nth-of-type(1){
+    padding-right: 5%;
+  }
   h4 {
     font-weight: 300;
     font-size: 3rem;

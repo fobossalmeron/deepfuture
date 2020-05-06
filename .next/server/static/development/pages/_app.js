@@ -371,65 +371,80 @@ const CustomForm = ({
       lineNumber: 81,
       columnNumber: 9
     }
-  }), status !== "success" && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Input, {
-    ref: node => email = node,
-    type: "email",
-    placeholder: short ? "Tu correo" : "Email",
-    id: "email",
-    short: short,
+  }), status !== "success" && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Label, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 85,
       columnNumber: 11
     }
-  }), __jsx(Label, {
-    htmlFor: "email",
+  }, __jsx("span", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92,
-      columnNumber: 11
+      lineNumber: 86,
+      columnNumber: 13
     }
-  }, "email"), !short && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Input, {
-    ref: node => name = node,
-    type: "text",
-    placeholder: "Nombre",
-    id: "name",
+  }, "email"), __jsx(Input, {
+    ref: node => email = node,
+    type: "email",
+    placeholder: short ? "Tu correo" : "Email",
+    short: short,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 87,
+      columnNumber: 13
+    }
+  })), !short && __jsx(Label, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 95,
-      columnNumber: 15
+      columnNumber: 13
     }
-  }), __jsx(Label, {
-    htmlFor: "name",
+  }, __jsx("span", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101,
+      lineNumber: 96,
       columnNumber: 15
     }
-  }, "nombre")), complete && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Input, {
-    ref: node => industry = node,
+  }, "nombre"), __jsx(Input, {
+    ref: node => name = node,
     type: "text",
-    placeholder: "Industria",
-    id: "industria",
+    placeholder: "Nombre",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 97,
+      columnNumber: 15
+    }
+  })), complete && __jsx(Label, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 105,
+      columnNumber: 13
+    }
+  }, __jsx("span", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 106,
       columnNumber: 15
     }
-  }), __jsx(Label, {
-    htmlFor: "industria",
+  }, "industria"), __jsx(Input, {
+    ref: node => industry = node,
+    type: "text",
+    placeholder: "Industria",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112,
+      lineNumber: 107,
       columnNumber: 15
     }
-  }, "industria")), enterprise && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Input, {
+  })), enterprise && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Input, {
     ref: node => company = node,
     type: "text",
     placeholder: "compa\xF1\xEDa",
@@ -437,7 +452,7 @@ const CustomForm = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117,
+      lineNumber: 116,
       columnNumber: 15
     }
   }), __jsx(Label, {
@@ -445,7 +460,7 @@ const CustomForm = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 123,
+      lineNumber: 122,
       columnNumber: 15
     }
   }, "compa\xF1\xEDa"), __jsx(Input, {
@@ -456,7 +471,7 @@ const CustomForm = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124,
+      lineNumber: 123,
       columnNumber: 15
     }
   }), __jsx(Label, {
@@ -464,7 +479,7 @@ const CustomForm = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130,
+      lineNumber: 129,
       columnNumber: 15
     }
   }, "empleados")), __jsx(Button, {
@@ -473,7 +488,7 @@ const CustomForm = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133,
+      lineNumber: 132,
       columnNumber: 11
     }
   }, short ? "Descargar PDF gratuito" : "Descargar gratis")));
@@ -500,14 +515,14 @@ const EmailCollector = ({
       __self: undefined,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 152,
+        lineNumber: 151,
         columnNumber: 9
       }
     }),
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 149,
+      lineNumber: 148,
       columnNumber: 5
     }
   });
@@ -525,11 +540,11 @@ const Message = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.wit
 const Label = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.label.withConfig({
   displayName: "EmailCollector__Label",
   componentId: "jldx4s-2"
-})(["font-size:0;height:0;width:0;position:absolute;"]);
+})(["margin:0;span{font-size:0;height:0;width:0;position:absolute;}"]);
 const Input = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.input.withConfig({
   displayName: "EmailCollector__Input",
   componentId: "jldx4s-3"
-})(["width:", ";padding:13px 18px 13px 26px;line-height:100%;background-color:", ";border-radius:", ";border:none;font-size:1.7rem;margin:4px 0;color:", ";-webkit-appearance:textfield;appearance:textfield;::placeholder{padding-top:4px;color:#31302e;opacity:0.5;}"], props => props.short ? "50%" : "100%", props => props.theme.colors.foreground, props => props.short ? "4px 0px 0px 4px" : "4px", props => props.theme.colors.foreground_lowest);
+})(["width:100%;padding:13px 18px 13px 26px;line-height:100%;background-color:", ";border-radius:", ";border:none;font-size:1.7rem;margin:4px 0;height:48px;color:", ";-webkit-appearance:textfield;appearance:textfield;::placeholder{padding-top:4px;color:#31302e;opacity:0.5;}"], props => props.theme.colors.foreground, props => props.short ? "4px 0px 0px 4px" : "4px", props => props.theme.colors.foreground_lowest);
 const Button = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
   displayName: "EmailCollector__Button",
   componentId: "jldx4s-4"
@@ -970,7 +985,7 @@ const HeaderContainer = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a
 const TopHeader = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.header.withConfig({
   displayName: "header__TopHeader",
   componentId: "sc-12e98ec-1"
-})(["background-color:", ";position:fixed;width:100%;top:0;left:0;right:0;padding:16px 80px 16px 50px;z-index:12;opacity:", ";transition:opacity 0.3s ease 0.3s;box-shadow:", ";"], props => props.theme.colors.background, props => props.reveal ? 1 : 0, props => `12px 12px 25px ${props.theme.colors.darkshadow}, -12px -12px 25px ${props.theme.colors.darklight}`);
+})(["background-color:", ";position:fixed;width:100%;top:0;left:0;right:0;padding:16px 80px 16px 50px;z-index:12;opacity:", ";transition:opacity 0.3s ease 0.3s;box-shadow:", ";"], props => props.theme.colors.background, props => props.reveal ? 1 : 0, props => `9px 9px 25px ${props.theme.colors.darkshadow}`);
 const LogoLink = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.a.withConfig({
   displayName: "header__LogoLink",
   componentId: "sc-12e98ec-2"
@@ -1005,9 +1020,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var body_scroll_lock__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! body-scroll-lock */ "body-scroll-lock");
 /* harmony import */ var body_scroll_lock__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(body_scroll_lock__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var _NewsletterPopup__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./NewsletterPopup */ "./components/NewsletterPopup.js");
+/* harmony import */ var public_assets_img_layout_logos_dfiimago_svg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! public/assets/img/layout/logos/dfiimago.svg */ "./public/assets/img/layout/logos/dfiimago.svg");
 var _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/components/layout.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -1147,7 +1164,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 129,
+      lineNumber: 130,
       columnNumber: 7
     }
   }, __jsx(_header__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -1160,7 +1177,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 134,
+      lineNumber: 135,
       columnNumber: 9
     }
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.cloneElement(children, {
@@ -1174,7 +1191,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147,
+      lineNumber: 148,
       columnNumber: 9
     }
   }), __jsx(BodyOverflow, {
@@ -1183,17 +1200,31 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 152,
+      lineNumber: 153,
       columnNumber: 9
     }
   }), showPopup && __jsx(_NewsletterPopup__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 153,
+      lineNumber: 154,
       columnNumber: 23
     }
-  })));
+  }), __jsx(Footer, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 155,
+      columnNumber: 9
+    }
+  }, "\xA9 Deep Future Institute, 2020", __jsx(public_assets_img_layout_logos_dfiimago_svg__WEBPACK_IMPORTED_MODULE_9__["default"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 157,
+      columnNumber: 9
+    }
+  }))));
 });
 const BodyOverflow = styled_components__WEBPACK_IMPORTED_MODULE_1__["createGlobalStyle"]`
   .TopBar{
@@ -1228,17 +1259,21 @@ const BodyOverflow = styled_components__WEBPACK_IMPORTED_MODULE_1__["createGloba
     }  
   }
 `;
+const Footer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.footer.withConfig({
+  displayName: "layout__Footer",
+  componentId: "sc-18mrapy-0"
+})(["display:flex;width:100%;max-width:1500px;margin:0 auto;justify-content:space-between;color:", ";font-size:1.5rem;padding-bottom:3%;align-items:center;svg{width:35px;}"], props => props.theme.colors.foreground_low);
 const BackgroundOpacity = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "layout__BackgroundOpacity",
-  componentId: "sc-18mrapy-0"
+  componentId: "sc-18mrapy-1"
 })(["background-color:", ";opacity:", ";position:fixed;pointer-events:", ";left:0;bottom:0;right:0;top:0;z-index:13;transition:opacity 0.4s ease;"], props => props.theme.colors.background, props => props.visible ? 0.6 : 0, props => props.visible ? "auto" : "none");
 const PageWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "layout__PageWrapper",
-  componentId: "sc-18mrapy-1"
+  componentId: "sc-18mrapy-2"
 })(["top:-3px;position:relative;width:100%;flex-direction:column;display:flex;justify-content:flex-start;color:", ";background-color:", ";"], props => props.theme.colors.foreground, props => props.theme.colors.background);
 const Border = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "layout__Border",
-  componentId: "sc-18mrapy-2"
+  componentId: "sc-18mrapy-3"
 })(["opacity:1;pointer-events:none;z-index:99;width:calc(100% - 36px);height:calc(100% - 36px);background-color:none;position:fixed;left:18px;top:18px;right:18px;bottom:18px;margin:0 auto;max-width:1504px;mix-blend-mode:exclusion;transition:opacity 0.3s ease-in,border 0.3s ease-in;border:", ";@media (max-width:600px),(max-height:450px){mix-blend-mode:normal;}"], props => `${props.theme.stroke} solid ${props.theme.colors.foreground}`);
 
 /***/ }),
@@ -3602,6 +3637,39 @@ function SvgCross(props) {
 
 /***/ }),
 
+/***/ "./public/assets/img/layout/logos/dfiimago.svg":
+/*!*****************************************************!*\
+  !*** ./public/assets/img/layout/logos/dfiimago.svg ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+var _ref = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
+  fill: "#F4F4F4",
+  fillRule: "evenodd",
+  d: "M49 62c38 0 48-32 48-32S87 1 49 1 1 30 1 30s10 32 48 32zm0-16a16 16 0 100-32 16 16 0 000 32z",
+  clipRule: "evenodd"
+});
+
+function SvgDfiimago(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("svg", _extends({
+    fill: "none",
+    viewBox: "0 0 98 63"
+  }, props), _ref);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (SvgDfiimago);
+
+/***/ }),
+
 /***/ "./public/assets/img/layout/logos/dfilogo.svg":
 /*!****************************************************!*\
   !*** ./public/assets/img/layout/logos/dfilogo.svg ***!
@@ -3664,16 +3732,17 @@ __webpack_require__.r(__webpack_exports__);
   colors: {
     background: "#1D1D1B",
     foreground: "#F4F4F4",
-    foreground_low: "#D6D6D6",
+    foreground_low: "#C8C8C8",
+    foreground_lower: "#D6D6D6",
     foreground_lowest: "#4F4F4F",
     cta: "#F7C951",
     accent: "#4F478B",
     error: "#CC2E44",
     success: "#27AE60",
     darklight: "rgba(90,78,238, 0.13)",
-    darkshadow: "rgba(0,0,0,0.13)" // lightlight:
-    // lightshadow:
-
+    darkshadow: "rgba(0,0,0,0.19)",
+    lightlight: "rgba(255, 255, 255, 0.9)",
+    lightshadow: "rgba(77, 76, 90, 0.19)"
   }
 });
 

@@ -7,7 +7,7 @@ const MainGrid = styled.section`
   margin: 0 auto;
   max-width: 1500px;
   display: grid;
-  padding: 5% 0%;
+  padding: ${props=> props.notoppadding? "0% 0% 5% 0%" : "5% 0%"};
   position: relative;
   h1 {
     font-size: 4.65rem;
@@ -17,9 +17,6 @@ const MainGrid = styled.section`
   p {
     grid-column: 7 / span 5;
     position: relative;
-    b {
-      color: ${(props) => props.theme.colors.foreground};
-    }
   }
 `;
 

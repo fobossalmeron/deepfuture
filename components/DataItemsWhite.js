@@ -28,7 +28,7 @@ function DataItemsWhite() {
   return (
     <DataSection>
       {items.map((item, i) => (
-        <DataItem key={"dataItemWhite" + i} item={item} columns={3} />
+        <DataItem light key={"dataItemWhite" + i} item={item} columns={3} />
       ))}
     </DataSection>
   );
@@ -39,4 +39,8 @@ export default DataItemsWhite;
 const DataSection = styled(MainGrid)`
   background-color: ${(props) => props.theme.colors.foreground};
   color: ${(props) => props.theme.colors.background};
+  p{
+    color: ${(props) => props.theme.colors.foreground_lowest};
+
+  }
 `;

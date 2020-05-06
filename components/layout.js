@@ -7,6 +7,7 @@ import { initGA, logPageView } from "utils/analytics";
 import ReactPixel from "react-facebook-pixel";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import NewsletterPopup from "./NewsletterPopup";
+import Imago from "public/assets/img/layout/logos/dfiimago.svg";
 
 export default ({
   children,
@@ -151,6 +152,10 @@ export default ({
         />
         <BodyOverflow isOpen={isOpen} hasLoaded={hasLoaded} />
         {showPopup && <NewsletterPopup />}
+        <Footer>
+        © Deep Future Institute, 2020
+        <Imago/>
+        </Footer>
       </PageWrapper>
     </>
   );
@@ -188,6 +193,21 @@ const BodyOverflow = createGlobalStyle`
       }
     }  
   }
+`;
+
+const Footer = styled.footer`
+display:flex;
+width:100%;
+max-width:1500px;
+margin:0 auto;
+justify-content:space-between;
+color: ${props => props.theme.colors.foreground_low};
+font-size:1.5rem;
+padding-bottom:3%;
+align-items:center;
+svg{
+  width:35px;
+}
 `;
 
 const BackgroundOpacity = styled.div`

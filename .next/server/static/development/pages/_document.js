@@ -1140,9 +1140,9 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
       }
     }, __jsx("path", {
       fill: "#F4F4F4",
-      "fill-rule": "evenodd",
+      fillRule: "evenodd",
       d: "M49 62c38 0 48-32 48-32S87 1 49 1 1 30 1 30s10 32 48 32zm0-16a16 16 0 100-32 16 16 0 000 32z",
-      "clip-rule": "evenodd",
+      clipRule: "evenodd",
       __self: this,
       __source: {
         fileName: _jsxFileName,
@@ -1357,11 +1357,11 @@ const styles = `
   h2 {
     margin: 0;
     font-weight: inherit;
-    font-size: 5.8rem;
+    font-size: 4.65rem;
     font-weight: 400;    
   }
   h3 {
-    font-size: 5.8rem;
+    font-size: 4.65rem;
     margin: 0px;
     font-weight: inherit;
   }
@@ -1417,16 +1417,17 @@ __webpack_require__.r(__webpack_exports__);
   colors: {
     background: "#1D1D1B",
     foreground: "#F4F4F4",
-    foreground_low: "#D6D6D6",
+    foreground_low: "#C8C8C8",
+    foreground_lower: "#D6D6D6",
     foreground_lowest: "#4F4F4F",
     cta: "#F7C951",
     accent: "#4F478B",
     error: "#CC2E44",
     success: "#27AE60",
     darklight: "rgba(90,78,238, 0.13)",
-    darkshadow: "rgba(0,0,0,0.13)" // lightlight:
-    // lightshadow:
-
+    darkshadow: "rgba(0,0,0,0.19)",
+    lightlight: "rgba(255, 255, 255, 0.9)",
+    lightshadow: "rgba(77, 76, 90, 0.19)"
   }
 });
 

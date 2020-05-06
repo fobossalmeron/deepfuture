@@ -285,71 +285,86 @@ var CustomForm = function CustomForm(_ref) {
       lineNumber: 81,
       columnNumber: 9
     }
-  }), status !== "success" && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Input, {
-    ref: function ref(node) {
-      return email = node;
-    },
-    type: "email",
-    placeholder: _short ? "Tu correo" : "Email",
-    id: "email",
-    "short": _short,
+  }), status !== "success" && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Label, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 85,
       columnNumber: 11
     }
-  }), __jsx(Label, {
-    htmlFor: "email",
+  }, __jsx("span", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92,
-      columnNumber: 11
+      lineNumber: 86,
+      columnNumber: 13
     }
-  }, "email"), !_short && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Input, {
+  }, "email"), __jsx(Input, {
+    ref: function ref(node) {
+      return email = node;
+    },
+    type: "email",
+    placeholder: _short ? "Tu correo" : "Email",
+    "short": _short,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 87,
+      columnNumber: 13
+    }
+  })), !_short && __jsx(Label, {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 95,
+      columnNumber: 13
+    }
+  }, __jsx("span", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 96,
+      columnNumber: 15
+    }
+  }, "nombre"), __jsx(Input, {
     ref: function ref(node) {
       return name = node;
     },
     type: "text",
     placeholder: "Nombre",
-    id: "name",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95,
+      lineNumber: 97,
       columnNumber: 15
     }
-  }), __jsx(Label, {
-    htmlFor: "name",
+  })), complete && __jsx(Label, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101,
-      columnNumber: 15
+      lineNumber: 105,
+      columnNumber: 13
     }
-  }, "nombre")), complete && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Input, {
-    ref: function ref(node) {
-      return industry = node;
-    },
-    type: "text",
-    placeholder: "Industria",
-    id: "industria",
+  }, __jsx("span", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 106,
       columnNumber: 15
     }
-  }), __jsx(Label, {
-    htmlFor: "industria",
+  }, "industria"), __jsx(Input, {
+    ref: function ref(node) {
+      return industry = node;
+    },
+    type: "text",
+    placeholder: "Industria",
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112,
+      lineNumber: 107,
       columnNumber: 15
     }
-  }, "industria")), enterprise && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Input, {
+  })), enterprise && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Input, {
     ref: function ref(node) {
       return company = node;
     },
@@ -359,7 +374,7 @@ var CustomForm = function CustomForm(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117,
+      lineNumber: 116,
       columnNumber: 15
     }
   }), __jsx(Label, {
@@ -367,7 +382,7 @@ var CustomForm = function CustomForm(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 123,
+      lineNumber: 122,
       columnNumber: 15
     }
   }, "compa\xF1\xEDa"), __jsx(Input, {
@@ -380,7 +395,7 @@ var CustomForm = function CustomForm(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124,
+      lineNumber: 123,
       columnNumber: 15
     }
   }), __jsx(Label, {
@@ -388,7 +403,7 @@ var CustomForm = function CustomForm(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130,
+      lineNumber: 129,
       columnNumber: 15
     }
   }, "empleados")), __jsx(Button, {
@@ -397,7 +412,7 @@ var CustomForm = function CustomForm(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133,
+      lineNumber: 132,
       columnNumber: 11
     }
   }, _short ? "Descargar PDF gratuito" : "Descargar gratis")));
@@ -425,7 +440,7 @@ var EmailCollector = function EmailCollector(_ref2) {
         __self: _this,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 152,
+          lineNumber: 151,
           columnNumber: 9
         }
       });
@@ -433,7 +448,7 @@ var EmailCollector = function EmailCollector(_ref2) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 149,
+      lineNumber: 148,
       columnNumber: 5
     }
   });
@@ -461,13 +476,11 @@ var Message = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.with
 var Label = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].label.withConfig({
   displayName: "EmailCollector__Label",
   componentId: "jldx4s-2"
-})(["font-size:0;height:0;width:0;position:absolute;"]);
+})(["margin:0;span{font-size:0;height:0;width:0;position:absolute;}"]);
 var Input = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].input.withConfig({
   displayName: "EmailCollector__Input",
   componentId: "jldx4s-3"
-})(["width:", ";padding:13px 18px 13px 26px;line-height:100%;background-color:", ";border-radius:", ";border:none;font-size:1.7rem;margin:4px 0;color:", ";-webkit-appearance:textfield;appearance:textfield;::placeholder{padding-top:4px;color:#31302e;opacity:0.5;}"], function (props) {
-  return props["short"] ? "50%" : "100%";
-}, function (props) {
+})(["width:100%;padding:13px 18px 13px 26px;line-height:100%;background-color:", ";border-radius:", ";border:none;font-size:1.7rem;margin:4px 0;height:48px;color:", ";-webkit-appearance:textfield;appearance:textfield;::placeholder{padding-top:4px;color:#31302e;opacity:0.5;}"], function (props) {
   return props.theme.colors.foreground;
 }, function (props) {
   return props["short"] ? "4px 0px 0px 4px" : "4px";
@@ -982,7 +995,7 @@ var TopHeader = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].header
 }, function (props) {
   return props.reveal ? 1 : 0;
 }, function (props) {
-  return "12px 12px 25px ".concat(props.theme.colors.darkshadow, ", -12px -12px 25px ").concat(props.theme.colors.darklight);
+  return "9px 9px 25px ".concat(props.theme.colors.darkshadow);
 });
 var LogoLink = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].a.withConfig({
   displayName: "header__LogoLink",
@@ -1019,6 +1032,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_facebook_pixel__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_facebook_pixel__WEBPACK_IMPORTED_MODULE_7__);
 /* harmony import */ var body_scroll_lock__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! body-scroll-lock */ "./node_modules/body-scroll-lock/lib/bodyScrollLock.mjs");
 /* harmony import */ var _NewsletterPopup__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./NewsletterPopup */ "./components/NewsletterPopup.js");
+/* harmony import */ var public_assets_img_layout_logos_dfiimago_svg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! public/assets/img/layout/logos/dfiimago.svg */ "./public/assets/img/layout/logos/dfiimago.svg");
 
 
 var _this = undefined,
@@ -1036,6 +1050,7 @@ function _templateObject() {
 
   return data;
 }
+
 
 
 
@@ -1177,7 +1192,7 @@ function _templateObject() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 129,
+      lineNumber: 130,
       columnNumber: 7
     }
   }, __jsx(_header__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -1190,7 +1205,7 @@ function _templateObject() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 134,
+      lineNumber: 135,
       columnNumber: 9
     }
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.cloneElement(children, {
@@ -1204,7 +1219,7 @@ function _templateObject() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147,
+      lineNumber: 148,
       columnNumber: 9
     }
   }), __jsx(BodyOverflow, {
@@ -1213,17 +1228,31 @@ function _templateObject() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 152,
+      lineNumber: 153,
       columnNumber: 9
     }
   }), showPopup && __jsx(_NewsletterPopup__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 153,
+      lineNumber: 154,
       columnNumber: 23
     }
-  })));
+  }), __jsx(Footer, {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 155,
+      columnNumber: 9
+    }
+  }, "\xA9 Deep Future Institute, 2020", __jsx(public_assets_img_layout_logos_dfiimago_svg__WEBPACK_IMPORTED_MODULE_10__["default"], {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 157,
+      columnNumber: 9
+    }
+  }))));
 });
 var BodyOverflow = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["createGlobalStyle"])(_templateObject(), function (props) {
   return props.theme.colors.accent;
@@ -1236,9 +1265,15 @@ var BodyOverflow = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["create
 }, function (props) {
   return props.theme.colors.background;
 });
+var Footer = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].footer.withConfig({
+  displayName: "layout__Footer",
+  componentId: "sc-18mrapy-0"
+})(["display:flex;width:100%;max-width:1500px;margin:0 auto;justify-content:space-between;color:", ";font-size:1.5rem;padding-bottom:3%;align-items:center;svg{width:35px;}"], function (props) {
+  return props.theme.colors.foreground_low;
+});
 var BackgroundOpacity = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "layout__BackgroundOpacity",
-  componentId: "sc-18mrapy-0"
+  componentId: "sc-18mrapy-1"
 })(["background-color:", ";opacity:", ";position:fixed;pointer-events:", ";left:0;bottom:0;right:0;top:0;z-index:13;transition:opacity 0.4s ease;"], function (props) {
   return props.theme.colors.background;
 }, function (props) {
@@ -1248,7 +1283,7 @@ var BackgroundOpacity = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"
 });
 var PageWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "layout__PageWrapper",
-  componentId: "sc-18mrapy-1"
+  componentId: "sc-18mrapy-2"
 })(["top:-3px;position:relative;width:100%;flex-direction:column;display:flex;justify-content:flex-start;color:", ";background-color:", ";"], function (props) {
   return props.theme.colors.foreground;
 }, function (props) {
@@ -1256,7 +1291,7 @@ var PageWrapper = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.
 });
 var Border = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "layout__Border",
-  componentId: "sc-18mrapy-2"
+  componentId: "sc-18mrapy-3"
 })(["opacity:1;pointer-events:none;z-index:99;width:calc(100% - 36px);height:calc(100% - 36px);background-color:none;position:fixed;left:18px;top:18px;right:18px;bottom:18px;margin:0 auto;max-width:1504px;mix-blend-mode:exclusion;transition:opacity 0.3s ease-in,border 0.3s ease-in;border:", ";@media (max-width:600px),(max-height:450px){mix-blend-mode:normal;}"], function (props) {
   return "".concat(props.theme.stroke, " solid ").concat(props.theme.colors.foreground);
 });
@@ -12225,6 +12260,39 @@ function SvgCross(props) {
 
 /***/ }),
 
+/***/ "./public/assets/img/layout/logos/dfiimago.svg":
+/*!*****************************************************!*\
+  !*** ./public/assets/img/layout/logos/dfiimago.svg ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+var _ref = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
+  fill: "#F4F4F4",
+  fillRule: "evenodd",
+  d: "M49 62c38 0 48-32 48-32S87 1 49 1 1 30 1 30s10 32 48 32zm0-16a16 16 0 100-32 16 16 0 000 32z",
+  clipRule: "evenodd"
+});
+
+function SvgDfiimago(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("svg", _extends({
+    fill: "none",
+    viewBox: "0 0 98 63"
+  }, props), _ref);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (SvgDfiimago);
+
+/***/ }),
+
 /***/ "./public/assets/img/layout/logos/dfilogo.svg":
 /*!****************************************************!*\
   !*** ./public/assets/img/layout/logos/dfilogo.svg ***!
@@ -12287,16 +12355,17 @@ __webpack_require__.r(__webpack_exports__);
   colors: {
     background: "#1D1D1B",
     foreground: "#F4F4F4",
-    foreground_low: "#D6D6D6",
+    foreground_low: "#C8C8C8",
+    foreground_lower: "#D6D6D6",
     foreground_lowest: "#4F4F4F",
     cta: "#F7C951",
     accent: "#4F478B",
     error: "#CC2E44",
     success: "#27AE60",
     darklight: "rgba(90,78,238, 0.13)",
-    darkshadow: "rgba(0,0,0,0.13)" // lightlight:
-    // lightshadow:
-
+    darkshadow: "rgba(0,0,0,0.19)",
+    lightlight: "rgba(255, 255, 255, 0.9)",
+    lightshadow: "rgba(77, 76, 90, 0.19)"
   }
 });
 

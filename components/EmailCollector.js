@@ -82,35 +82,34 @@ const CustomForm = ({
       )}
       {status !== "success" && (
         <>
-          <Input
-            ref={(node) => (email = node)}
-            type="email"
-            placeholder={short ? "Tu correo" : "Email"}
-            id="email"
-            short={short}
-          />
-          <Label htmlFor="email">email</Label>
+          <Label>
+            <span>email</span>
+            <Input
+              ref={(node) => (email = node)}
+              type="email"
+              placeholder={short ? "Tu correo" : "Email"}
+              short={short}
+            />
+          </Label>
           {!short && (
-            <>
+            <Label>
+              <span>nombre</span>
               <Input
                 ref={(node) => (name = node)}
                 type="text"
                 placeholder="Nombre"
-                id="name"
               />
-              <Label htmlFor="name">nombre</Label>
-            </>
+            </Label>
           )}
           {complete && (
-            <>
+            <Label>
+              <span>industria</span>
               <Input
                 ref={(node) => (industry = node)}
                 type="text"
                 placeholder="Industria"
-                id="industria"
               />
-              <Label htmlFor="industria">industria</Label>
-            </>
+            </Label>
           )}
           {enterprise && (
             <>
@@ -192,14 +191,17 @@ const Message = styled.div`
 `;
 
 const Label = styled.label`
-  font-size: 0;
-  height: 0;
-  width: 0;
-  position: absolute;
+ margin:0;
+  span {
+    font-size: 0;
+    height: 0;
+    width: 0;
+    position: absolute;
+  }
 `;
 
 const Input = styled.input`
-  width: ${(props) => (props.short ? "50%" : "100%")};
+  width: 100%;
   padding: 13px 18px 13px 26px;
   line-height: 100%;
   background-color: ${(props) => props.theme.colors.foreground};
@@ -207,6 +209,7 @@ const Input = styled.input`
   border: none;
   font-size: 1.7rem;
   margin: 4px 0;
+  height:48px;
   color: ${(props) => props.theme.colors.foreground_lowest};
   -webkit-appearance: textfield;
   appearance: textfield;

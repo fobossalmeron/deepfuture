@@ -5,6 +5,11 @@ import Head from "components/Head";
 import FormComplete from "components/FormComplete";
 import MainGrid from "components/shared/MainGrid";
 import DataItemsWhite from "components/DataItemsWhite";
+import DataItemsDark from "components/DataItemsDark";
+import Title from "components/shared/Title";
+import LandBg from "components/LandBg";
+
+import Tiers from "components/Tiers";
 
 function Index(props) {
   return (
@@ -14,6 +19,7 @@ function Index(props) {
         canonical={"https://deepfuture.institute"}
         lang={props.lang}
       />
+      <LandBg/>
       <Land id="land">
         <div id="landtext">
           <h1>
@@ -41,15 +47,34 @@ function Index(props) {
           </div>
         </div>
       </Intro>
+      <Tiers />
       <SecondForm>
         <SecondFormGrid>
-        <div>
-          <h5>Prueba un poco de lo que <b>ofrecemos</b></h5>
-          <p>Analizar los escenarios que podrían ocurrir a corto y largo plazo te ayudará a organizar la información que necesitas para enfrentar nuevas problemáticas y reducir riesgos.</p>
-        </div>
-        <FormComplete/>
+          <div>
+            <h5>
+              Prueba un poco de lo que <b>ofrecemos</b>
+            </h5>
+            <p>
+              Analizar los escenarios que podrían ocurrir a corto y largo plazo
+              te ayudará a organizar la información que necesitas para enfrentar
+              nuevas problemáticas y reducir riesgos.
+            </p>
+          </div>
+          <FormComplete />
         </SecondFormGrid>
       </SecondForm>
+      <DataItemsDark />
+      <Title>
+        <p>
+          La estrategia de hoy es <b>sobrevivir</b>
+        </p>
+        <h3>
+          Encuentra <b>certidumbre</b> con Deep Future Institute
+        </h3>
+      </Title>
+      <MainGrid notoppadding>
+        <FormComplete centered />
+      </MainGrid>
     </>
   );
 }
@@ -59,7 +84,8 @@ export default React.memo(Index);
 const Land = styled(MainGrid)`
   min-height: 100vh;
   align-items: center;
-  padding-top: 20%;
+  padding-top: 13%;
+  pointer-events:none;
   #landtext {
     color: ${(props) => props.theme.colors.foreground};
     grid-column: 2 / span 10;
@@ -84,8 +110,8 @@ const Intro = styled.section`
   background-color: ${(props) => props.theme.colors.foreground};
   width: 100%;
 
-  #quote{
-    text-align:center;
+  #quote {
+    text-align: center;
   }
 `;
 
@@ -94,8 +120,8 @@ const SecondForm = styled.section`
   background-color: ${(props) => props.theme.colors.foreground};
   width: 100%;
 
-  #quote{
-    text-align:center;
+  #quote {
+    text-align: center;
   }
 `;
 
@@ -103,9 +129,9 @@ const SecondFormGrid = styled(MainGrid)`
   div:nth-of-type(1) {
     grid-column: 2 / span 3;
     h5 {
-      font-size:3.6rem;
-      font-weight:400;
-      margin:0px 0px 20px 0px;
+      font-size: 3.6rem;
+      font-weight: 400;
+      margin: 0px 0px 20px 0px;
       b {
         font-weight: 500;
       }

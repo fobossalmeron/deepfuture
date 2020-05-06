@@ -80,9 +80,9 @@ export default class MyDocument extends Document {
             >
               <path
                 fill="#F4F4F4"
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M49 62c38 0 48-32 48-32S87 1 49 1 1 30 1 30s10 32 48 32zm0-16a16 16 0 100-32 16 16 0 000 32z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
             </svg>
           </div>

@@ -169,11 +169,11 @@ const styles = `
   h2 {
     margin: 0;
     font-weight: inherit;
-    font-size: 5.8rem;
+    font-size: 4.65rem;
     font-weight: 400;    
   }
   h3 {
-    font-size: 5.8rem;
+    font-size: 4.65rem;
     margin: 0px;
     font-weight: inherit;
   }

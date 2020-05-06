@@ -49,7 +49,7 @@ const TopHeader = styled.header`
   opacity: ${(props) => (props.reveal ? 1 : 0)};
   transition: opacity 0.3s ease 0.3s;
   box-shadow: ${(props) =>
-    `12px 12px 25px ${props.theme.colors.darkshadow}, -12px -12px 25px ${props.theme.colors.darklight}`};
+    `9px 9px 25px ${props.theme.colors.darkshadow}`};
 `;
 
 const LogoLink = styled.a`
