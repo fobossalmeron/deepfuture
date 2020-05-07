@@ -8,6 +8,7 @@ import DataItemsWhite from "components/DataItemsWhite";
 import DataItemsDark from "components/DataItemsDark";
 import Title from "components/shared/Title";
 import LandBg from "components/LandBg";
+import Quote from "components/Quote";
 
 import Tiers from "components/Tiers";
 
@@ -19,7 +20,7 @@ function Index(props) {
         canonical={"https://deepfuture.institute"}
         lang={props.lang}
       />
-      <LandBg/>
+      <LandBg />
       <Land id="land">
         <div id="landtext">
           <h1>
@@ -36,16 +37,7 @@ function Index(props) {
       </Land>
       <Intro>
         <DataItemsWhite />
-        <div id="quote">
-          <p>
-            Aquí va a una quote de alguien que ya tomó el taller y que dijo que
-            está bárbaro y que le cambió la vida
-          </p>
-          <div>
-            <h6>Juan José de Régules</h6>
-            <label>CEO Sherpa-X</label>
-          </div>
-        </div>
+        <Quote />
       </Intro>
       <Tiers />
       <SecondForm>
@@ -85,7 +77,7 @@ const Land = styled(MainGrid)`
   min-height: 100vh;
   align-items: center;
   padding-top: 13%;
-  pointer-events:none;
+  pointer-events: none;
   #landtext {
     color: ${(props) => props.theme.colors.foreground};
     grid-column: 2 / span 10;
@@ -109,10 +101,6 @@ const Intro = styled.section`
   color: ${(props) => props.theme.colors.background};
   background-color: ${(props) => props.theme.colors.foreground};
   width: 100%;
-
-  #quote {
-    text-align: center;
-  }
 `;
 
 const SecondForm = styled.section`

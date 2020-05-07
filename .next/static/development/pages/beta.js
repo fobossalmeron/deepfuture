@@ -1200,6 +1200,108 @@ var Bg = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfi
 
 /***/ }),
 
+/***/ "./components/Quote.js":
+/*!*****************************!*\
+  !*** ./components/Quote.js ***!
+  \*****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var public_assets_img_layout_icons_time_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! public/assets/img/layout/icons/time.svg */ "./public/assets/img/layout/icons/time.svg");
+/* harmony import */ var public_assets_img_layout_quotes_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! public/assets/img/layout/quotes.svg */ "./public/assets/img/layout/quotes.svg");
+var _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/components/Quote.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+function Quote() {
+  return __jsx(QuoteContainer, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 7,
+      columnNumber: 5
+    }
+  }, __jsx("span", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8,
+      columnNumber: 7
+    }
+  }, __jsx(public_assets_img_layout_quotes_svg__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9,
+      columnNumber: 9
+    }
+  })), __jsx("p", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11,
+      columnNumber: 7
+    }
+  }, "Aqu\xED va a una quote de alguien que ya tom\xF3 el taller y que dijo que est\xE1 b\xE1rbaro y que le cambi\xF3 la vida"), __jsx("div", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15,
+      columnNumber: 7
+    }
+  }, __jsx("h6", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 16,
+      columnNumber: 9
+    }
+  }, "Juan Jos\xE9 de R\xE9gules"), __jsx("label", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 9
+    }
+  }, "CEO Sherpa-X")), __jsx("span", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19,
+      columnNumber: 7
+    }
+  }, __jsx(public_assets_img_layout_quotes_svg__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20,
+      columnNumber: 9
+    }
+  })));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Quote);
+var QuoteContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+  displayName: "Quote__QuoteContainer",
+  componentId: "sc-146iyan-0"
+})(["display:flex;align-items:center;flex-direction:column;svg{width:100px;height:100px;path{fill:", ";box-shadow:", ";}}p{color:", ";font-size:2.5rem;font-weight:300;max-width:660px;text-align:center;}div{font-size:2rem;}"], function (props) {
+  return props.theme.colors.accent;
+}, function (props) {
+  return "-2px -4px 11px ".concat(props.theme.colors.lightlight, ",\n        2px 2px 4px ").concat(props.theme.colors.lightshadow);
+}, function (props) {
+  return props.theme.colors.accent;
+});
+
+/***/ }),
+
 /***/ "./components/Tiers.js":
 /*!*****************************!*\
   !*** ./components/Tiers.js ***!
@@ -9700,10 +9802,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var components_DataItemsDark__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! components/DataItemsDark */ "./components/DataItemsDark.js");
 /* harmony import */ var components_shared_Title__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! components/shared/Title */ "./components/shared/Title.js");
 /* harmony import */ var components_LandBg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! components/LandBg */ "./components/LandBg.js");
-/* harmony import */ var components_Tiers__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! components/Tiers */ "./components/Tiers.js");
+/* harmony import */ var components_Quote__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! components/Quote */ "./components/Quote.js");
+/* harmony import */ var components_Tiers__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! components/Tiers */ "./components/Tiers.js");
 var _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/pages/beta.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -9724,14 +9828,14 @@ function Index(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 17,
+      lineNumber: 18,
       columnNumber: 7
     }
   }), __jsx(components_LandBg__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22,
+      lineNumber: 23,
       columnNumber: 7
     }
   }), __jsx(Land, {
@@ -9739,7 +9843,7 @@ function Index(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 24,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -9747,49 +9851,49 @@ function Index(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 25,
       columnNumber: 9
     }
   }, __jsx("h1", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 26,
       columnNumber: 11
     }
   }, "Genera ", __jsx("b", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 27,
       columnNumber: 20
     }
   }, "certidumbre"), " en la crisis econ\xF3mica del COVID-19 y la 4T en M\xE9xico"), __jsx("h2", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29,
+      lineNumber: 30,
       columnNumber: 11
     }
   }, "Facilita la toma de ", __jsx("b", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 31,
       columnNumber: 33
     }
   }, "decisiones"), " y minimiza el ", __jsx("b", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 31,
       columnNumber: 65
     }
   }, "riesgo"), " de tu negocio u organizaci\xF3n en el ", __jsx("b", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 32,
       columnNumber: 45
     }
   }, "futuro"), " con este taller autogestivo o guiado por expertos")), __jsx(components_FormComplete__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -9797,155 +9901,126 @@ function Index(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 35,
+      lineNumber: 36,
       columnNumber: 9
     }
   })), __jsx(Intro, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 37,
+      lineNumber: 38,
       columnNumber: 7
     }
   }, __jsx(components_DataItemsWhite__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
-      columnNumber: 9
-    }
-  }), __jsx("div", {
-    id: "quote",
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 39,
       columnNumber: 9
     }
-  }, __jsx("p", {
+  }), __jsx(components_Quote__WEBPACK_IMPORTED_MODULE_10__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 40,
-      columnNumber: 11
+      columnNumber: 9
     }
-  }, "Aqu\xED va a una quote de alguien que ya tom\xF3 el taller y que dijo que est\xE1 b\xE1rbaro y que le cambi\xF3 la vida"), __jsx("div", {
+  })), __jsx(components_Tiers__WEBPACK_IMPORTED_MODULE_11__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
-      columnNumber: 11
-    }
-  }, __jsx("h6", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 45,
-      columnNumber: 13
-    }
-  }, "Juan Jos\xE9 de R\xE9gules"), __jsx("label", {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 46,
-      columnNumber: 13
-    }
-  }, "CEO Sherpa-X")))), __jsx(components_Tiers__WEBPACK_IMPORTED_MODULE_10__["default"], {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 42,
       columnNumber: 7
     }
   }), __jsx(SecondForm, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 43,
       columnNumber: 7
     }
   }, __jsx(SecondFormGrid, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52,
+      lineNumber: 44,
       columnNumber: 9
     }
   }, __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53,
+      lineNumber: 45,
       columnNumber: 11
     }
   }, __jsx("h5", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54,
+      lineNumber: 46,
       columnNumber: 13
     }
   }, "Prueba un poco de lo que ", __jsx("b", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 47,
       columnNumber: 40
     }
   }, "ofrecemos")), __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 49,
       columnNumber: 13
     }
   }, "Analizar los escenarios que podr\xEDan ocurrir a corto y largo plazo te ayudar\xE1 a organizar la informaci\xF3n que necesitas para enfrentar nuevas problem\xE1ticas y reducir riesgos.")), __jsx(components_FormComplete__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 55,
       columnNumber: 11
     }
   }))), __jsx(components_DataItemsDark__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 58,
       columnNumber: 7
     }
   }), __jsx(components_shared_Title__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 59,
       columnNumber: 7
     }
   }, __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 60,
       columnNumber: 9
     }
   }, "La estrategia de hoy es ", __jsx("b", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 61,
       columnNumber: 35
     }
   }, "sobrevivir")), __jsx("h3", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 71,
+      lineNumber: 63,
       columnNumber: 9
     }
   }, "Encuentra ", __jsx("b", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 72,
+      lineNumber: 64,
       columnNumber: 21
     }
   }, "certidumbre"), " con Deep Future Institute")), __jsx(components_shared_MainGrid__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -9953,7 +10028,7 @@ function Index(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 67,
       columnNumber: 7
     }
   }, __jsx(components_FormComplete__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -9961,7 +10036,7 @@ function Index(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 68,
       columnNumber: 9
     }
   })));
@@ -9977,7 +10052,7 @@ var Land = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(com
 var Intro = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].section.withConfig({
   displayName: "beta__Intro",
   componentId: "sc-1nzcelo-1"
-})(["color:", ";background-color:", ";width:100%;#quote{text-align:center;}"], function (props) {
+})(["color:", ";background-color:", ";width:100%;"], function (props) {
   return props.theme.colors.background;
 }, function (props) {
   return props.theme.colors.foreground;
@@ -10069,6 +10144,39 @@ function SvgTime(props) {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (SvgTime);
+
+/***/ }),
+
+/***/ "./public/assets/img/layout/quotes.svg":
+/*!*********************************************!*\
+  !*** ./public/assets/img/layout/quotes.svg ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+var _ref = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
+  d: "M31.4526 1L52.0871 13.7826C41.9917 28.502 36.7776 43.83 36.4448 59.7668V85H1V62.0909C1.11094 51.4664 3.99533 40.3992 9.65319 28.8893C15.422 17.2688 22.6884 7.97233 31.4526 1ZM87.3655 1L108 13.7826C97.9046 28.502 92.6905 43.83 92.3577 59.7668V85H56.9129V62.0909C57.0238 51.4664 59.9082 40.3992 65.5661 28.8893C71.3349 17.2688 78.6013 7.97233 87.3655 1Z",
+  fill: "#F4F4F4"
+});
+
+function SvgQuotes(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("svg", _extends({
+    width: 109,
+    height: 86,
+    viewBox: "0 0 109 86",
+    fill: "none"
+  }, props), _ref);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (SvgQuotes);
 
 /***/ }),
 
