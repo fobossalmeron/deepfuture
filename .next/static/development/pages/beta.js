@@ -602,7 +602,7 @@ var Input = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].input.with
 var Button = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button.withConfig({
   displayName: "EmailCollector__Button",
   componentId: "jldx4s-4"
-})(["padding:14px 0%;margin:4px 0;text-align:center;width:", ";background-color:", ";color:", ";border:0;font-size:1.8rem;border-radius:", ";cursor:pointer;transition:0.3s ease all;@media (hover:hover) and (pointer:fine){&:hover{background-color:#27ae60;color:", ";span{background-size:0 0;}}}"], function (props) {
+})(["padding:14px 0%;margin:4px 0;text-align:center;width:", ";background-color:", ";color:", ";border:0;font-size:1.8rem;border-radius:", ";cursor:pointer;transition:0.3s ease all;"], function (props) {
   return props["short"] ? "50%" : "100%";
 }, function (props) {
   return props.theme.colors.cta;
@@ -610,8 +610,6 @@ var Button = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button.wi
   return props.theme.colors.background;
 }, function (props) {
   return props["short"] ? "0px 4px 4px 0px" : "4px";
-}, function (props) {
-  return props.theme.colors.background;
 });
 var CrossContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "EmailCollector__CrossContainer",
@@ -1216,80 +1214,304 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var components_shared_MainGrid__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/shared/MainGrid */ "./components/shared/MainGrid.js");
 /* harmony import */ var components_shared_Title__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! components/shared/Title */ "./components/shared/Title.js");
-var _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/components/Tiers.js";
+/* harmony import */ var components_shared_Dangerously__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/shared/Dangerously */ "./components/shared/Dangerously.js");
+/* harmony import */ var public_assets_img_layout_check_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! public/assets/img/layout/check.svg */ "./public/assets/img/layout/check.svg");
+/* harmony import */ var public_assets_img_layout_uncheck_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! public/assets/img/layout/uncheck.svg */ "./public/assets/img/layout/uncheck.svg");
+var _this = undefined,
+    _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/components/Tiers.js";
+
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-var items = [{
-  title: "Prepárate<br/> para el futuro",
-  description: "Analizar los escenarios que podrían ocurrir a corto y largo plazo te ayudará a organizar la información que necesitas para enfrentar nuevas problemáticas y reducir riesgos."
+
+
+
+var tiers = [{
+  title: "autogestivo",
+  description: "Cómo generar certidumbre ante el impacto del <b>COVID-19</b> y la <b>4T</b>",
+  price: "1,400",
+  originalPrice: "2,500",
+  perks: {
+    prospectiva: true,
+    worksheets: true,
+    expertos: false,
+    acciones: false,
+    empresarial: false
+  }
 }, {
-  title: "Con la mejor<br/>información",
-  description: "Encuentra claridad y certidumbre en estos tiempos de crisis humanitarias y financieras. Nuestro trabajo de investigación es el futuro y hacemos una constante evaluación de hechos del mundo para anticipar los riesgos y oportunidades."
+  title: "personal",
+  description: "Genera certidumbre ante el impacto del <b>COVID-19</b> y la <b>4T</b> junto con <b>expertos</b>",
+  price: "10,000",
+  originalPrice: "25,000",
+  color: "#62AF9A",
+  perks: {
+    prospectiva: true,
+    worksheets: true,
+    expertos: true,
+    acciones: false,
+    empresarial: false
+  }
 }, {
-  title: "Y el equipo<br/>mejor preparado",
-  description: "Nuestro equipo de expertos, prospectistas, investigadores, académicos y analistas tienen más de 12 años de experiencia ampliando y completando la percepción de la gravedad de la incertidumbre."
+  title: "empresarial",
+  description: "Minimiza los riesgos del impacto del <b>COVID-19</b> y la <b>4T</b> junto con <b>expertos</b>",
+  price: "desde $57,000",
+  color: "#1C4794",
+  perks: {
+    prospectiva: true,
+    worksheets: true,
+    expertos: true,
+    acciones: true,
+    empresarial: true
+  }
 }];
 
+var Tier = function Tier(_ref) {
+  var tier = _ref.tier;
+  return __jsx(TierContainer, {
+    color: tier.color,
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 38,
+      columnNumber: 5
+    }
+  }, __jsx(Padded, {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39,
+      columnNumber: 7
+    }
+  }, __jsx("h2", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 40,
+      columnNumber: 9
+    }
+  }, "Taller ", __jsx("b", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 41,
+      columnNumber: 18
+    }
+  }, tier.title)), __jsx(components_shared_Dangerously__WEBPACK_IMPORTED_MODULE_4__["H3"], {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 43,
+      columnNumber: 9
+    }
+  }, tier.description), __jsx(Price, {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 44,
+      columnNumber: 9
+    }
+  }, __jsx("span", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45,
+      columnNumber: 11
+    }
+  }, "$", tier.price, " ", __jsx("span", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45,
+      columnNumber: 31
+    }
+  }, "MXN")), __jsx("span", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 46,
+      columnNumber: 11
+    }
+  }, tier.originalPrice ? "$" + tier.originalPrice : null)), __jsx(Button, {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48,
+      columnNumber: 9
+    }
+  }, "Comprar")), __jsx(Stats, {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 50,
+      columnNumber: 7
+    }
+  }, __jsx("li", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 51,
+      columnNumber: 9
+    }
+  }, "18"), Object.entries(tier.perks).map(function (perk, i) {
+    return __jsx("li", {
+      key: "tp-".concat(i, "-").concat(tier.price),
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 53,
+        columnNumber: 11
+      }
+    }, perk[1] ? __jsx(public_assets_img_layout_check_svg__WEBPACK_IMPORTED_MODULE_5__["default"], {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 54,
+        columnNumber: 24
+      }
+    }) : __jsx(public_assets_img_layout_uncheck_svg__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      __self: _this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 54,
+        columnNumber: 36
+      }
+    }));
+  })));
+};
+
 function Tiers() {
+  var _this2 = this;
+
   return __jsx(TiersSection, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 64,
       columnNumber: 5
     }
   }, __jsx(components_shared_Title__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
-      columnNumber: 9
+      lineNumber: 65,
+      columnNumber: 7
     }
   }, __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
-      columnNumber: 11
+      lineNumber: 66,
+      columnNumber: 9
     }
   }, "Prep\xE1rate para los escenarios de ", __jsx("b", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28,
-      columnNumber: 46
+      lineNumber: 67,
+      columnNumber: 44
     }
   }, "futuro")), __jsx("h3", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
-      columnNumber: 11
+      lineNumber: 69,
+      columnNumber: 9
     }
   }, "Conoce nuestros ", __jsx("b", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
-      columnNumber: 29
+      lineNumber: 70,
+      columnNumber: 27
     }
   }, "talleres"))), __jsx(TiersGrid, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 34,
+      lineNumber: 73,
+      columnNumber: 7
+    }
+  }, __jsx(Includes, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 74,
       columnNumber: 9
     }
-  }));
+  }, __jsx("span", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 75,
+      columnNumber: 11
+    }
+  }, "Incluye"), __jsx(Stats, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 76,
+      columnNumber: 11
+    }
+  })), tiers.map(function (tier, i) {
+    return __jsx(Tier, {
+      key: "tier" + i,
+      tier: tier,
+      __self: _this2,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 79,
+        columnNumber: 11
+      }
+    });
+  })));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Tiers);
+var Stats = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].ul.withConfig({
+  displayName: "Tiers__Stats",
+  componentId: "jz88wp-0"
+})(["text-align:center;"]);
+var Padded = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+  displayName: "Tiers__Padded",
+  componentId: "jz88wp-1"
+})(["padding:5%;::after{content:\" \";height:2px;opacity:0.2;display:flex;padding-top:5%;width:100%;}"]);
+var Price = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+  displayName: "Tiers__Price",
+  componentId: "jz88wp-2"
+})(["display:flex;justify-content:space-between;font-size:2.7rem;margin:10% 0;span{span{font-size:2rem;}:nth-of-type(1){color:", ";}:nth-of-type(2){color:", ";text-decoration:line-through;}}"], function (props) {
+  return props.theme.colors.accent;
+}, function (props) {
+  return props.theme.colors.foreground_low;
+});
+var Button = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button.withConfig({
+  displayName: "Tiers__Button",
+  componentId: "jz88wp-3"
+})(["width:100%;background-color:", ";color:", ";"], function (props) {
+  return props.theme.colors.accent;
+}, function (props) {
+  return props.theme.colors.foreground;
+});
+var TierContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+  displayName: "Tiers__TierContainer",
+  componentId: "jz88wp-4"
+})(["grid-column-end:span 3;box-shadow:", ";border-radius:3px;::before{content:\" \";display:flex;border-radius:3px 3px 0px 0px;height:80px;width:100%;background-color:", ";}h2{font-size:2.7rem;color:", ";font-weight:300;padding-bottom:20px;b{font-weight:400;}}h3{font-size:2rem;color:", ";opacity:0.6;}"], function (props) {
+  return "-4px -6px 11px ".concat(props.theme.colors.lightlight, ", \n    4px 4px 12px ").concat(props.theme.colors.lightshadow);
+}, function (props) {
+  return props.color ? props.color : props.theme.colors.background;
+}, function (props) {
+  return props.theme.colors.accent;
+}, function (props) {
+  return props.theme.colors.foreground_lowest;
+});
+var Includes = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+  displayName: "Tiers__Includes",
+  componentId: "jz88wp-5"
+})(["grid-column-end:span 3;"]);
 var TiersGrid = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(components_shared_MainGrid__WEBPACK_IMPORTED_MODULE_2__["default"]).withConfig({
   displayName: "Tiers__TiersGrid",
-  componentId: "jz88wp-0"
+  componentId: "jz88wp-6"
 })(["background-color:", ";color:", ";"], function (props) {
   return props.theme.colors.foreground;
 }, function (props) {
@@ -1297,7 +1519,7 @@ var TiersGrid = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"]
 });
 var TiersSection = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].section.withConfig({
   displayName: "Tiers__TiersSection",
-  componentId: "jz88wp-1"
+  componentId: "jz88wp-7"
 })(["color:", ";background-color:", ";width:100%;"], function (props) {
   return props.theme.colors.background;
 }, function (props) {
@@ -9775,6 +9997,42 @@ var SecondFormGrid = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["defa
 
 /***/ }),
 
+/***/ "./public/assets/img/layout/check.svg":
+/*!********************************************!*\
+  !*** ./public/assets/img/layout/check.svg ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+var _ref = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
+  d: "M27 7L10.5 23.5L3 16.5",
+  stroke: "#4F478B",
+  strokeWidth: 3,
+  strokeLinecap: "round",
+  strokeLinejoin: "round"
+});
+
+function SvgCheck(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("svg", _extends({
+    width: 30,
+    height: 30,
+    viewBox: "0 0 30 30",
+    fill: "none"
+  }, props), _ref);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (SvgCheck);
+
+/***/ }),
+
 /***/ "./public/assets/img/layout/icons/time.svg":
 /*!*************************************************!*\
   !*** ./public/assets/img/layout/icons/time.svg ***!
@@ -9811,6 +10069,42 @@ function SvgTime(props) {
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (SvgTime);
+
+/***/ }),
+
+/***/ "./public/assets/img/layout/uncheck.svg":
+/*!**********************************************!*\
+  !*** ./public/assets/img/layout/uncheck.svg ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+var _ref = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
+  d: "M7 7L23.5 23.5M23.5 7L7 23.5",
+  stroke: "#C8C8C8",
+  strokeWidth: 3,
+  strokeLinecap: "round",
+  strokeLinejoin: "round"
+});
+
+function SvgUncheck(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("svg", _extends({
+    width: 30,
+    height: 30,
+    viewBox: "0 0 30 30",
+    fill: "none"
+  }, props), _ref);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (SvgUncheck);
 
 /***/ }),
 

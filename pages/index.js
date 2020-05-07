@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import styled from "styled-components";
 import { H1, H2 } from "components/shared/Dangerously";
 import Head from "components/Head";
+import Imago from "public/assets/img/layout/logos/dfiimago.svg"
 
 function Index(props) {
   // let t = props.locale.home_page;
@@ -19,6 +20,8 @@ function Index(props) {
         />
         <Land id="land">
           <LandContainer>
+            <Imago/>
+            <p>Sitio en construcción</p>
           </LandContainer>
         </Land>
         <Intro id="removeArrow">
@@ -101,12 +104,16 @@ const Land = styled.section`
 const LandContainer = styled.div`
   display: flex;
   flex-direction: column;
-  grid-column: 2 / span 10;
-  @media (max-width: 570px) {
-    grid-column: 1 / span 11;
+  align-items:center;
+  grid-column: 1 / span 12;
+  svg{
+    max-width:100px;
+    margin-bottom:30px;
   }
-  @media (max-width: 420px) {
-    grid-column: 1 / span 12;
+  p{
+    font-size:3rem;
+    opacity:0.6;
+    font-weight:400;
   }
 `;
 

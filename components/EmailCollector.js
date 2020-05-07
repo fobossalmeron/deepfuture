@@ -232,15 +232,6 @@ const Button = styled.button`
   border-radius: ${(props) => (props.short ? "0px 4px 4px 0px" : "4px")};
   cursor: pointer;
   transition: 0.3s ease all;
-  @media (hover: hover) and (pointer: fine) {
-    &:hover {
-      background-color: #27ae60;
-      color: ${(props) => props.theme.colors.background};
-      span {
-        background-size: 0 0;
-      }
-    }
-  }
 `;
 
 const CrossContainer = styled.div`

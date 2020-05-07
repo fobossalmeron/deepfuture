@@ -46,7 +46,7 @@ export default ({
 
   useEffect(() => {
     // const options = {
-    //   autoConfig: true, 
+    //   autoConfig: true,
     //   debug: false,
     // };
     // ReactPixel.init("506854653278097", null, options);
@@ -101,10 +101,7 @@ export default ({
   // }, [isOpen]);
 
   const checkScroll = () => {
-    if (
-      document.body.scrollTop > 100 ||
-      window.scrollY > 100
-    ) {
+    if (document.body.scrollTop > 100 || window.scrollY > 100) {
       document.body.onscroll = null;
       // document.querySelector("#Clipper").onscroll = null;
       setShowArrow(false);
@@ -132,14 +129,16 @@ export default ({
         onMouseMove={showSketch | isAbout ? onMouseMove : undefined}
         onTouchMove={showSketch | isAbout ? onTouchMove : undefined}
       >
-        <Header
-          isOpen={isOpen}
-          headerTitle={headerTitle}
-          hasLoaded={hasLoaded}
-          closeNav={closeNav}
-          locale={locale}
-          route={router.route}
-        />
+        {!showSketch && (
+          <Header
+            isOpen={isOpen}
+            headerTitle={headerTitle}
+            hasLoaded={hasLoaded}
+            closeNav={closeNav}
+            locale={locale}
+            route={router.route}
+          />
+        )}
         {React.cloneElement(children, {
           setTitle: setTitle,
           hasLoaded: hasLoaded,
@@ -153,8 +152,8 @@ export default ({
         <BodyOverflow isOpen={isOpen} hasLoaded={hasLoaded} />
         {showPopup && <NewsletterPopup />}
         <Footer>
-        © Deep Future Institute, 2020
-        <Imago/>
+          © Deep Future Institute, 2020
+          <Imago />
         </Footer>
       </PageWrapper>
     </>
@@ -196,18 +195,18 @@ const BodyOverflow = createGlobalStyle`
 `;
 
 const Footer = styled.footer`
-display:flex;
-width:100%;
-max-width:1500px;
-margin:0 auto;
-justify-content:space-between;
-color: ${props => props.theme.colors.foreground_low};
-font-size:1.5rem;
-padding-bottom:3%;
-align-items:center;
-svg{
-  width:35px;
-}
+  display: flex;
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  justify-content: space-between;
+  color: ${(props) => props.theme.colors.foreground_low};
+  font-size: 1.5rem;
+  padding-bottom: 3%;
+  align-items: center;
+  svg {
+    width: 35px;
+  }
 `;
 
 const BackgroundOpacity = styled.div`

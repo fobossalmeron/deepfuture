@@ -1380,6 +1380,17 @@ const styles = `
   ol {
     margin: 0;
     padding: 0;
+    list-style:none;
+  }
+  button{
+    padding: 14px 0%;
+    margin: 4px 0;
+    text-align: center;
+    border: 0;
+    font-size: 1.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s ease all;
   }
 `;
 
@@ -1397,7 +1408,7 @@ function renderStyles() {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 207,
+    lineNumber: 218,
     columnNumber: 22
   }
 }));

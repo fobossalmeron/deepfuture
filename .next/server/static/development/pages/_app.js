@@ -548,7 +548,7 @@ const Input = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.input.wit
 const Button = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
   displayName: "EmailCollector__Button",
   componentId: "jldx4s-4"
-})(["padding:14px 0%;margin:4px 0;text-align:center;width:", ";background-color:", ";color:", ";border:0;font-size:1.8rem;border-radius:", ";cursor:pointer;transition:0.3s ease all;@media (hover:hover) and (pointer:fine){&:hover{background-color:#27ae60;color:", ";span{background-size:0 0;}}}"], props => props.short ? "50%" : "100%", props => props.theme.colors.cta, props => props.theme.colors.background, props => props.short ? "0px 4px 4px 0px" : "4px", props => props.theme.colors.background);
+})(["padding:14px 0%;margin:4px 0;text-align:center;width:", ";background-color:", ";color:", ";border:0;font-size:1.8rem;border-radius:", ";cursor:pointer;transition:0.3s ease all;"], props => props.short ? "50%" : "100%", props => props.theme.colors.cta, props => props.theme.colors.background, props => props.short ? "0px 4px 4px 0px" : "4px");
 const CrossContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "EmailCollector__CrossContainer",
   componentId: "jldx4s-5"
@@ -1084,7 +1084,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     mouse.current = [x - window.innerWidth / 2, y - window.innerHeight / 2];
   }, [mouse.current]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {// const options = {
-    //   autoConfig: true, 
+    //   autoConfig: true,
     //   debug: false,
     // };
     // ReactPixel.init("506854653278097", null, options);
@@ -1164,10 +1164,10 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130,
+      lineNumber: 127,
       columnNumber: 7
     }
-  }, __jsx(_header__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, !showSketch && __jsx(_header__WEBPACK_IMPORTED_MODULE_2__["default"], {
     isOpen: isOpen,
     headerTitle: headerTitle,
     hasLoaded: hasLoaded,
@@ -1177,8 +1177,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 135,
-      columnNumber: 9
+      lineNumber: 133,
+      columnNumber: 11
     }
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.cloneElement(children, {
     setTitle: setTitle,
@@ -1191,7 +1191,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 148,
+      lineNumber: 147,
       columnNumber: 9
     }
   }), __jsx(BodyOverflow, {
@@ -1200,29 +1200,29 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 153,
+      lineNumber: 152,
       columnNumber: 9
     }
   }), showPopup && __jsx(_NewsletterPopup__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 154,
+      lineNumber: 153,
       columnNumber: 23
     }
   }), __jsx(Footer, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 155,
+      lineNumber: 154,
       columnNumber: 9
     }
   }, "\xA9 Deep Future Institute, 2020", __jsx(public_assets_img_layout_logos_dfiimago_svg__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 157,
-      columnNumber: 9
+      lineNumber: 156,
+      columnNumber: 11
     }
   }))));
 });
