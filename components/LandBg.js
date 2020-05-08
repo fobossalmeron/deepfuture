@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
-const trans1 = (x, y) => `translate3d(${x / 10}px,${y / 10}px,0)`;
-const trans2 = (x, y) => `translate3d(${x / 8 + 35}px,${y / 8 - 230}px,0)`;
-const trans3 = (x, y) => `translate3d(${x / 6 - 250}px,${y / 6 - 200}px,0)`;
-const trans4 = (x, y) => `translate3d(${x / 4.5}px,${y / 4.5}px,0)`;
+const trans1 = (x, y) => `translate3d(${x / 11}px,${y / 10}px,0)`;
+const trans2 = (x, y) => `translate3d(${x / 10 + 30}px,${y / 8 - 230}px,0)`;
+const trans3 = (x, y) => `translate3d(${x / 9 - 350}px,${y / 8 - 200}px,0)`;
+const trans4 = (x, y) => `translate3d(${x / 8}px,${y / 6.5}px,0)`;
 
 function LandBg() {
   const [props, set] = useSpring(() => ({
@@ -28,7 +28,7 @@ export default LandBg;
 
 const Bg = styled.div`
   width: 100%;
-  height: 100%;
+  height: 100vh;
   position: absolute;
   div {
     box-shadow: ${(props) =>
@@ -37,30 +37,30 @@ const Bg = styled.div`
     border-radius: 50%;
     background-color: ${(props) => props.theme.colors.background};
     position: absolute;
-    height:0;
+    height: 0;
     :nth-of-type(1) {
-      width: 37%;
-      padding-bottom: 37%;
-      top: 5%;
-      left: 24%;
+      width: 47%;
+      padding-bottom: 47%;
+      top: 15%;
+      left: 20%;
     }
     :nth-of-type(2) {
-      width: 20%;
-      padding-bottom: 20%;
-      top: 10%;
-      right: 13%;
+      width: 15%;
+      padding-bottom: 15%;
+      top: 40%;
+      right: 10%;
     }
     :nth-of-type(3) {
       width: 10%;
       padding-bottom: 10%;
-      top: 18%;
-      left: 44%;
+      top: 78%;
+      left: 48%;
     }
     :nth-of-type(4) {
       width: 5%;
       padding-bottom: 5%;
-      top: 10%;
-      left: 42%;
+      top: 35%;
+      left: 35%;
     }
   }
 `;

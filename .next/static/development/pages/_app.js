@@ -16,7 +16,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var public_assets_img_layout_cross_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! public/assets/img/layout/cross.svg */ "./public/assets/img/layout/cross.svg");
 var _this = undefined,
-    _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/components/CookieMessage.js";
+    _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/CookieMessage.js";
 
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -170,7 +170,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var react_mailchimp_subscribe__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-mailchimp-subscribe */ "./node_modules/react-mailchimp-subscribe/es/index.js");
 var _this = undefined,
-    _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/components/EmailCollector.js";
+    _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/EmailCollector.js";
 
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -455,19 +455,9 @@ var EmailCollector = function EmailCollector(_ref2) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (EmailCollector);
-var Background = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
-  displayName: "EmailCollector__Background",
-  componentId: "jldx4s-0"
-})(["background-color:", ";opacity:", ";position:fixed;pointer-events:", ";left:0;bottom:0;right:0;top:0;z-index:13;transition:opacity 0.4s ease;"], function (props) {
-  return props.theme.colors.background;
-}, function (props) {
-  return props.visible ? 0.6 : 0;
-}, function (props) {
-  return props.visible ? "auto" : "none";
-});
 var Message = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "EmailCollector__Message",
-  componentId: "jldx4s-1"
+  componentId: "jldx4s-0"
 })(["color:", ";font-size:", ";padding-bottom:5px;@media (max-width:600px),(max-height:450px){font-size:1.5rem;}"], function (props) {
   return props.error ? props.theme.colors.error : props.success ? props.theme.colors.success : props.theme.colors.accent;
 }, function (props) {
@@ -475,11 +465,11 @@ var Message = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.with
 });
 var Label = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].label.withConfig({
   displayName: "EmailCollector__Label",
-  componentId: "jldx4s-2"
+  componentId: "jldx4s-1"
 })(["margin:0;span{font-size:0;height:0;width:0;position:absolute;}"]);
 var Input = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].input.withConfig({
   displayName: "EmailCollector__Input",
-  componentId: "jldx4s-3"
+  componentId: "jldx4s-2"
 })(["width:100%;padding:13px 18px 13px 26px;line-height:100%;background-color:", ";border-radius:", ";border:none;font-size:1.7rem;margin:4px 0;height:48px;color:", ";-webkit-appearance:textfield;appearance:textfield;::placeholder{padding-top:4px;color:#31302e;opacity:0.5;}"], function (props) {
   return props.theme.colors.foreground;
 }, function (props) {
@@ -489,8 +479,8 @@ var Input = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].input.with
 });
 var Button = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button.withConfig({
   displayName: "EmailCollector__Button",
-  componentId: "jldx4s-4"
-})(["padding:14px 0%;margin:4px 0;text-align:center;width:", ";background-color:", ";color:", ";border:0;font-size:1.8rem;border-radius:", ";cursor:pointer;transition:0.3s ease all;"], function (props) {
+  componentId: "jldx4s-3"
+})(["padding:14px 0%;margin:4px 0;text-align:center;width:", ";background-color:", ";color:", ";border:0;font-size:1.7rem;border-radius:", ";cursor:pointer;transition:0.3s ease all;"], function (props) {
   return props["short"] ? "50%" : "100%";
 }, function (props) {
   return props.theme.colors.cta;
@@ -498,20 +488,6 @@ var Button = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button.wi
   return props.theme.colors.background;
 }, function (props) {
   return props["short"] ? "0px 4px 4px 0px" : "4px";
-});
-var CrossContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
-  displayName: "EmailCollector__CrossContainer",
-  componentId: "jldx4s-5"
-})(["width:50px;height:50px;padding:12px;position:absolute;top:3%;right:3%;svg{width:100%;cursor:pointer;}"]);
-var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
-  displayName: "EmailCollector__Wrapper",
-  componentId: "jldx4s-6"
-})(["pointer-events:", ";opacity:", ";max-width:440px;width:80%;top:50%;left:50%;transform:translateX(-50%) translateY(-50%) ", ";font-weight:100;position:fixed;transition:opacity 0.4s ease,transform 0.5s ease;z-index:14;@media (max-width:600px){max-width:calc(100% - 36px);width:100%;margin-left:18px;margin-right:18px;z-index:100;left:0;transform:translateX(0px) translateY(-50%);h4{font-size:2.5rem;}}"], function (props) {
-  return props.clickable ? "auto" : "none";
-}, function (props) {
-  return props.clickable ? "1" : "0";
-}, function (props) {
-  return props.clickable ? "translateY(0%)" : "translateY(5%)";
 });
 
 /***/ }),
@@ -532,7 +508,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_mailchimp_subscribe__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-mailchimp-subscribe */ "./node_modules/react-mailchimp-subscribe/es/index.js");
 /* harmony import */ var body_scroll_lock__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! body-scroll-lock */ "./node_modules/body-scroll-lock/lib/bodyScrollLock.mjs");
 var _this = undefined,
-    _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/components/NewsletterPopup.js";
+    _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/NewsletterPopup.js";
 
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -893,7 +869,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var public_assets_img_layout_logos_dfilogo_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! public/assets/img/layout/logos/dfilogo.svg */ "./public/assets/img/layout/logos/dfilogo.svg");
 /* harmony import */ var components_EmailCollector__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/EmailCollector */ "./components/EmailCollector.js");
-var _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/components/header.js";
+var _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/header.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -938,7 +914,7 @@ function Header(_ref) {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 17,
-      columnNumber: 7
+      columnNumber: 9
     }
   }, __jsx(LogoLink, {
     onClick: backUp,
@@ -946,28 +922,28 @@ function Header(_ref) {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 18,
-      columnNumber: 9
+      columnNumber: 11
     }
   }, __jsx("h1", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 19,
-      columnNumber: 11
+      columnNumber: 13
     }
   }, "DFI"), __jsx(public_assets_img_layout_logos_dfilogo_svg__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 20,
-      columnNumber: 11
+      columnNumber: 13
     }
   }))), __jsx(Form, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 23,
-      columnNumber: 7
+      columnNumber: 9
     }
   }, __jsx(components_EmailCollector__WEBPACK_IMPORTED_MODULE_4__["default"], {
     "short": true,
@@ -975,7 +951,7 @@ function Header(_ref) {
     __source: {
       fileName: _jsxFileName,
       lineNumber: 24,
-      columnNumber: 9
+      columnNumber: 11
     }
   }))));
 }
@@ -988,7 +964,7 @@ var HeaderContainer = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].
 var TopHeader = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].header.withConfig({
   displayName: "header__TopHeader",
   componentId: "sc-12e98ec-1"
-})(["background-color:", ";position:fixed;width:100%;top:0;left:0;right:0;padding:16px 80px 16px 50px;z-index:12;opacity:", ";transition:opacity 0.3s ease 0.3s;box-shadow:", ";"], function (props) {
+})(["background-color:", ";position:fixed;width:100%;top:0;left:0;right:0;padding:11px 80px 11px 50px;z-index:12;opacity:", ";transition:opacity 0.3s ease 0.3s;box-shadow:", ";"], function (props) {
   return props.theme.colors.background;
 }, function (props) {
   return props.reveal ? 1 : 0;
@@ -998,7 +974,7 @@ var TopHeader = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].header
 var LogoLink = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].a.withConfig({
   displayName: "header__LogoLink",
   componentId: "sc-12e98ec-2"
-})(["display:flex;grid-column:1 / span 2;max-width:130px;margin:0;cursor:pointer;color:inherit;text-decoration:none;pointer-events:auto;h1{font-size:0;}svg{max-width:75px;width:100%;path{fill:", ";}}"], function (props) {
+})(["display:flex;grid-column:1 / span 2;max-width:130px;margin:0;cursor:pointer;color:inherit;text-decoration:none;pointer-events:auto;h1{font-size:0;}svg{max-width:70px;width:100%;path{fill:", ";}}"], function (props) {
   return props.theme.colors.white;
 });
 var Form = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].form.withConfig({
@@ -1034,7 +1010,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _this = undefined,
-    _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/components/layout.js";
+    _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/layout.js";
 
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
@@ -11993,7 +11969,7 @@ var public_locales_es_common_json__WEBPACK_IMPORTED_MODULE_16___namespace = /*#_
 
 
 
-var _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/pages/_app.js";
+var _jsxFileName = "/Users/salmeron/Sites/deepfuture/pages/_app.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_8___default.a.createElement;
 
 function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function () { var Super = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__["default"])(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = Object(_babel_runtime_helpers_esm_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__["default"])(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return Object(_babel_runtime_helpers_esm_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__["default"])(this, result); }; }
@@ -12455,7 +12431,7 @@ var logException = function logException() {
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! next-client-pages-loader?page=%2F_app&absolutePagePath=private-next-pages%2F_app.js&hotRouterUpdates=true! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2F_app&absolutePagePath=private-next-pages%2F_app.js&hotRouterUpdates=true!./");
-module.exports = __webpack_require__(/*! /Users/rodrigosalmeron/Sites/deepfuture/node_modules/next/dist/client/router.js */"./node_modules/next/dist/client/router.js");
+module.exports = __webpack_require__(/*! /Users/salmeron/Sites/deepfuture/node_modules/next/dist/client/router.js */"./node_modules/next/dist/client/router.js");
 
 
 /***/ }),

@@ -15,7 +15,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var components_shared_DataItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/shared/DataItem */ "./components/shared/DataItem.js");
 /* harmony import */ var public_assets_img_layout_icons_time_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! public/assets/img/layout/icons/time.svg */ "./public/assets/img/layout/icons/time.svg");
 /* harmony import */ var components_shared_MainGrid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/shared/MainGrid */ "./components/shared/MainGrid.js");
-var _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/components/DataItemsDark.js";
+var _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/DataItemsDark.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -186,7 +186,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var components_shared_DataItem__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/shared/DataItem */ "./components/shared/DataItem.js");
 /* harmony import */ var public_assets_img_layout_icons_time_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! public/assets/img/layout/icons/time.svg */ "./public/assets/img/layout/icons/time.svg");
 /* harmony import */ var components_shared_MainGrid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/shared/MainGrid */ "./components/shared/MainGrid.js");
-var _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/components/DataItemsWhite.js";
+var _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/DataItemsWhite.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -282,7 +282,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var react_mailchimp_subscribe__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-mailchimp-subscribe */ "./node_modules/react-mailchimp-subscribe/es/index.js");
 var _this = undefined,
-    _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/components/EmailCollector.js";
+    _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/EmailCollector.js";
 
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -567,19 +567,9 @@ var EmailCollector = function EmailCollector(_ref2) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (EmailCollector);
-var Background = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
-  displayName: "EmailCollector__Background",
-  componentId: "jldx4s-0"
-})(["background-color:", ";opacity:", ";position:fixed;pointer-events:", ";left:0;bottom:0;right:0;top:0;z-index:13;transition:opacity 0.4s ease;"], function (props) {
-  return props.theme.colors.background;
-}, function (props) {
-  return props.visible ? 0.6 : 0;
-}, function (props) {
-  return props.visible ? "auto" : "none";
-});
 var Message = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "EmailCollector__Message",
-  componentId: "jldx4s-1"
+  componentId: "jldx4s-0"
 })(["color:", ";font-size:", ";padding-bottom:5px;@media (max-width:600px),(max-height:450px){font-size:1.5rem;}"], function (props) {
   return props.error ? props.theme.colors.error : props.success ? props.theme.colors.success : props.theme.colors.accent;
 }, function (props) {
@@ -587,11 +577,11 @@ var Message = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.with
 });
 var Label = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].label.withConfig({
   displayName: "EmailCollector__Label",
-  componentId: "jldx4s-2"
+  componentId: "jldx4s-1"
 })(["margin:0;span{font-size:0;height:0;width:0;position:absolute;}"]);
 var Input = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].input.withConfig({
   displayName: "EmailCollector__Input",
-  componentId: "jldx4s-3"
+  componentId: "jldx4s-2"
 })(["width:100%;padding:13px 18px 13px 26px;line-height:100%;background-color:", ";border-radius:", ";border:none;font-size:1.7rem;margin:4px 0;height:48px;color:", ";-webkit-appearance:textfield;appearance:textfield;::placeholder{padding-top:4px;color:#31302e;opacity:0.5;}"], function (props) {
   return props.theme.colors.foreground;
 }, function (props) {
@@ -601,8 +591,8 @@ var Input = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].input.with
 });
 var Button = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button.withConfig({
   displayName: "EmailCollector__Button",
-  componentId: "jldx4s-4"
-})(["padding:14px 0%;margin:4px 0;text-align:center;width:", ";background-color:", ";color:", ";border:0;font-size:1.8rem;border-radius:", ";cursor:pointer;transition:0.3s ease all;"], function (props) {
+  componentId: "jldx4s-3"
+})(["padding:14px 0%;margin:4px 0;text-align:center;width:", ";background-color:", ";color:", ";border:0;font-size:1.7rem;border-radius:", ";cursor:pointer;transition:0.3s ease all;"], function (props) {
   return props["short"] ? "50%" : "100%";
 }, function (props) {
   return props.theme.colors.cta;
@@ -610,20 +600,6 @@ var Button = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button.wi
   return props.theme.colors.background;
 }, function (props) {
   return props["short"] ? "0px 4px 4px 0px" : "4px";
-});
-var CrossContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
-  displayName: "EmailCollector__CrossContainer",
-  componentId: "jldx4s-5"
-})(["width:50px;height:50px;padding:12px;position:absolute;top:3%;right:3%;svg{width:100%;cursor:pointer;}"]);
-var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
-  displayName: "EmailCollector__Wrapper",
-  componentId: "jldx4s-6"
-})(["pointer-events:", ";opacity:", ";max-width:440px;width:80%;top:50%;left:50%;transform:translateX(-50%) translateY(-50%) ", ";font-weight:100;position:fixed;transition:opacity 0.4s ease,transform 0.5s ease;z-index:14;@media (max-width:600px){max-width:calc(100% - 36px);width:100%;margin-left:18px;margin-right:18px;z-index:100;left:0;transform:translateX(0px) translateY(-50%);h4{font-size:2.5rem;}}"], function (props) {
-  return props.clickable ? "auto" : "none";
-}, function (props) {
-  return props.clickable ? "1" : "0";
-}, function (props) {
-  return props.clickable ? "translateY(0%)" : "translateY(5%)";
 });
 
 /***/ }),
@@ -642,7 +618,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var components_shared_Dangerously__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/shared/Dangerously */ "./components/shared/Dangerously.js");
 /* harmony import */ var components_EmailCollector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! components/EmailCollector */ "./components/EmailCollector.js");
-var _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/components/FormComplete.js";
+var _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/FormComplete.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -794,7 +770,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/head */ "./node_modules/next/dist/next-server/lib/head.js");
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_1__);
 var _this = undefined,
-    _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/components/Head.js";
+    _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/Head.js";
 
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -1089,7 +1065,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var react_spring__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-spring */ "./node_modules/react-spring/web.js");
 
-var _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/components/LandBg.js";
+var _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/LandBg.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
@@ -1101,19 +1077,19 @@ var calc = function calc(x, y) {
 };
 
 var trans1 = function trans1(x, y) {
-  return "translate3d(".concat(x / 10, "px,").concat(y / 10, "px,0)");
+  return "translate3d(".concat(x / 11, "px,").concat(y / 10, "px,0)");
 };
 
 var trans2 = function trans2(x, y) {
-  return "translate3d(".concat(x / 8 + 35, "px,").concat(y / 8 - 230, "px,0)");
+  return "translate3d(".concat(x / 10 + 30, "px,").concat(y / 8 - 230, "px,0)");
 };
 
 var trans3 = function trans3(x, y) {
-  return "translate3d(".concat(x / 6 - 250, "px,").concat(y / 6 - 200, "px,0)");
+  return "translate3d(".concat(x / 9 - 350, "px,").concat(y / 8 - 200, "px,0)");
 };
 
 var trans4 = function trans4(x, y) {
-  return "translate3d(".concat(x / 4.5, "px,").concat(y / 4.5, "px,0)");
+  return "translate3d(".concat(x / 8, "px,").concat(y / 6.5, "px,0)");
 };
 
 function LandBg() {
@@ -1192,7 +1168,7 @@ function LandBg() {
 var Bg = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "LandBg__Bg",
   componentId: "sc-1tfgvoe-0"
-})(["width:100%;height:100%;position:absolute;div{box-shadow:", ";border-radius:50%;background-color:", ";position:absolute;height:0;:nth-of-type(1){width:37%;padding-bottom:37%;top:5%;left:24%;}:nth-of-type(2){width:20%;padding-bottom:20%;top:10%;right:13%;}:nth-of-type(3){width:10%;padding-bottom:10%;top:18%;left:44%;}:nth-of-type(4){width:5%;padding-bottom:5%;top:10%;left:42%;}}"], function (props) {
+})(["width:100%;height:100vh;position:absolute;div{box-shadow:", ";border-radius:50%;background-color:", ";position:absolute;height:0;:nth-of-type(1){width:47%;padding-bottom:47%;top:15%;left:20%;}:nth-of-type(2){width:15%;padding-bottom:15%;top:40%;right:10%;}:nth-of-type(3){width:10%;padding-bottom:10%;top:78%;left:48%;}:nth-of-type(4){width:5%;padding-bottom:5%;top:35%;left:35%;}}"], function (props) {
   return "-10px -10px 20px ".concat(props.theme.colors.darklight, ", \n    10px 10px 20px ").concat(props.theme.colors.darkshadow);
 }, function (props) {
   return props.theme.colors.background;
@@ -1212,9 +1188,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var public_assets_img_layout_icons_time_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! public/assets/img/layout/icons/time.svg */ "./public/assets/img/layout/icons/time.svg");
-/* harmony import */ var public_assets_img_layout_quotes_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! public/assets/img/layout/quotes.svg */ "./public/assets/img/layout/quotes.svg");
-var _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/components/Quote.js";
+/* harmony import */ var public_assets_img_layout_quoteOpen_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! public/assets/img/layout/quoteOpen.svg */ "./public/assets/img/layout/quoteOpen.svg");
+/* harmony import */ var public_assets_img_layout_quoteClose_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! public/assets/img/layout/quoteClose.svg */ "./public/assets/img/layout/quoteClose.svg");
+var _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/Quote.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -1222,82 +1198,101 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 function Quote() {
-  return __jsx(QuoteContainer, {
+  return __jsx(FullContainer, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 7,
       columnNumber: 5
     }
-  }, __jsx("span", {
+  }, __jsx(QuoteContainer, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 8,
       columnNumber: 7
     }
-  }, __jsx(public_assets_img_layout_quotes_svg__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, __jsx(public_assets_img_layout_quoteOpen_svg__WEBPACK_IMPORTED_MODULE_2__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 9,
       columnNumber: 9
     }
-  })), __jsx("p", {
+  }), __jsx(TextContainer, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10,
+      columnNumber: 9
+    }
+  }, __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 11,
-      columnNumber: 7
+      columnNumber: 11
     }
   }, "Aqu\xED va a una quote de alguien que ya tom\xF3 el taller y que dijo que est\xE1 b\xE1rbaro y que le cambi\xF3 la vida"), __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 15,
-      columnNumber: 7
+      columnNumber: 11
     }
   }, __jsx("h6", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 16,
-      columnNumber: 9
+      columnNumber: 13
     }
   }, "Juan Jos\xE9 de R\xE9gules"), __jsx("label", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 17,
-      columnNumber: 9
+      columnNumber: 13
     }
-  }, "CEO Sherpa-X")), __jsx("span", {
+  }, "CEO Sherpa-X"), __jsx("img", {
+    src: "/assets/img/layout/profile.jpg",
+    alt: "Juan Jos\xE9 de R\xE9gules",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 19,
-      columnNumber: 7
+      lineNumber: 18,
+      columnNumber: 13
     }
-  }, __jsx(public_assets_img_layout_quotes_svg__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }))), __jsx(public_assets_img_layout_quoteClose_svg__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
+      lineNumber: 24,
       columnNumber: 9
     }
   })));
 }
 
 /* harmony default export */ __webpack_exports__["default"] = (Quote);
+var FullContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+  displayName: "Quote__FullContainer",
+  componentId: "sc-146iyan-0"
+})(["display:flex;justify-content:center;width:100%;padding-bottom:5%;"]);
+var TextContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
+  displayName: "Quote__TextContainer",
+  componentId: "sc-146iyan-1"
+})(["display:flex;align-items:center;flex-direction:column;p{color:", ";font-size:2.5rem;font-weight:400;max-width:660px;text-align:center;padding:17% 2% 4%;}div{font-size:1.5rem;display:grid;text-align:right;grid-template-columns:auto,33px;grid-template-rows:16px,16px;position:relative;padding-top:20px;&::before{content:\" \";height:2px;background-color:", ";width:280px;position:absolute;top:0;left:-50px;}h6{font-size:inherit;margin:0;grid-row:1 / span 1;align-self:flex-end;}label{grid-row:2 / span 1;}img{width:43px;height:43px;border-radius:50%;grid-row:1 / span 2;margin-left:10px;}}"], function (props) {
+  return props.theme.colors.accent;
+}, function (props) {
+  return props.theme.colors.foreground_lower;
+});
 var QuoteContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "Quote__QuoteContainer",
-  componentId: "sc-146iyan-0"
-})(["display:flex;align-items:center;flex-direction:column;svg{width:100px;height:100px;path{fill:", ";box-shadow:", ";}}p{color:", ";font-size:2.5rem;font-weight:300;max-width:660px;text-align:center;}div{font-size:2rem;}"], function (props) {
-  return props.theme.colors.accent;
+  componentId: "sc-146iyan-2"
+})(["display:flex;align-items:center;svg{width:150px;height:150px;opacity:0.8;:nth-of-type(1){align-self:flex-start;}:nth-of-type(2){align-self:flex-end;margin-bottom:-5%;}path{fill:", ";box-shadow:", ";}}"], function (props) {
+  return props.theme.colors.foreground;
 }, function (props) {
   return "-2px -4px 11px ".concat(props.theme.colors.lightlight, ",\n        2px 2px 4px ").concat(props.theme.colors.lightshadow);
-}, function (props) {
-  return props.theme.colors.accent;
 });
 
 /***/ }),
@@ -1320,7 +1315,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var public_assets_img_layout_check_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! public/assets/img/layout/check.svg */ "./public/assets/img/layout/check.svg");
 /* harmony import */ var public_assets_img_layout_uncheck_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! public/assets/img/layout/uncheck.svg */ "./public/assets/img/layout/uncheck.svg");
 var _this = undefined,
-    _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/components/Tiers.js";
+    _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/Tiers.js";
 
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -1330,6 +1325,25 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+var includes = [{
+  title: "<b>Variables</b> de riesgo",
+  subtitle: "Riesgo, oportunidades y COVID-19"
+}, {
+  title: "Proceso de <b>prospectiva</b",
+  subtitle: "Aprende a reducir la incertidumbre"
+}, {
+  title: "<b>Worksheets</b> de trabajo",
+  subtitle: "Te brindamos los materiales necesarios"
+}, {
+  title: "Taller con <b>expertos</b>",
+  subtitle: "Con más de 20 años de experiencia"
+}, {
+  title: "Plan de <b>acciones</b> con expertos",
+  subtitle: "Prepárate para los escenarios futuros"
+}, {
+  title: "<b>Personalización</b> para tu empresa",
+  subtitle: "Ten a tu equipo en la misma página"
+}];
 var tiers = [{
   title: "autogestivo",
   description: "Cómo generar certidumbre ante el impacto del <b>COVID-19</b> y la <b>4T</b>",
@@ -1376,84 +1390,84 @@ var Tier = function Tier(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 83,
       columnNumber: 5
     }
   }, __jsx(Padded, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
+      lineNumber: 84,
       columnNumber: 7
     }
   }, __jsx("h2", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 40,
+      lineNumber: 85,
       columnNumber: 9
     }
   }, "Taller ", __jsx("b", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 41,
+      lineNumber: 86,
       columnNumber: 18
     }
   }, tier.title)), __jsx(components_shared_Dangerously__WEBPACK_IMPORTED_MODULE_4__["H3"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43,
+      lineNumber: 88,
       columnNumber: 9
     }
   }, tier.description), __jsx(Price, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44,
+      lineNumber: 89,
       columnNumber: 9
     }
   }, __jsx("span", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 90,
       columnNumber: 11
     }
   }, "$", tier.price, " ", __jsx("span", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
-      columnNumber: 31
+      lineNumber: 91,
+      columnNumber: 27
     }
   }, "MXN")), __jsx("span", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 93,
       columnNumber: 11
     }
   }, tier.originalPrice ? "$" + tier.originalPrice : null)), __jsx(Button, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 95,
       columnNumber: 9
     }
   }, "Comprar")), __jsx(Stats, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 97,
       columnNumber: 7
     }
   }, __jsx("li", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 51,
+      lineNumber: 98,
       columnNumber: 9
     }
   }, "18"), Object.entries(tier.perks).map(function (perk, i) {
@@ -1462,21 +1476,21 @@ var Tier = function Tier(_ref) {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 53,
+        lineNumber: 100,
         columnNumber: 11
       }
     }, perk[1] ? __jsx(public_assets_img_layout_check_svg__WEBPACK_IMPORTED_MODULE_5__["default"], {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54,
+        lineNumber: 101,
         columnNumber: 24
       }
     }) : __jsx(public_assets_img_layout_uncheck_svg__WEBPACK_IMPORTED_MODULE_6__["default"], {
       __self: _this,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 54,
+        lineNumber: 101,
         columnNumber: 36
       }
     }));
@@ -1490,80 +1504,104 @@ function Tiers() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 111,
       columnNumber: 5
     }
   }, __jsx(components_shared_Title__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
+      lineNumber: 112,
       columnNumber: 7
     }
   }, __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 113,
       columnNumber: 9
     }
   }, "Prep\xE1rate para los escenarios de ", __jsx("b", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 114,
       columnNumber: 44
     }
   }, "futuro")), __jsx("h3", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 116,
       columnNumber: 9
     }
   }, "Conoce nuestros ", __jsx("b", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 117,
       columnNumber: 27
     }
   }, "talleres"))), __jsx(TiersGrid, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 73,
+      lineNumber: 120,
       columnNumber: 7
     }
   }, __jsx(Includes, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 74,
+      lineNumber: 121,
       columnNumber: 9
     }
   }, __jsx("span", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 75,
+      lineNumber: 122,
       columnNumber: 11
     }
   }, "Incluye"), __jsx(Stats, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 76,
+      lineNumber: 123,
       columnNumber: 11
     }
-  })), tiers.map(function (tier, i) {
+  }, includes.map(function (include, i) {
+    return __jsx("li", {
+      key: "include" + i,
+      __self: _this2,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 125,
+        columnNumber: 15
+      }
+    }, __jsx(components_shared_Dangerously__WEBPACK_IMPORTED_MODULE_4__["H2"], {
+      __self: _this2,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 126,
+        columnNumber: 17
+      }
+    }, include.title, " "), " ", __jsx(components_shared_Dangerously__WEBPACK_IMPORTED_MODULE_4__["H3"], {
+      __self: _this2,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 126,
+        columnNumber: 43
+      }
+    }, include.subtitle));
+  }))), tiers.map(function (tier, i) {
     return __jsx(Tier, {
       key: "tier" + i,
       tier: tier,
       __self: _this2,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 79,
+        lineNumber: 132,
         columnNumber: 11
       }
     });
@@ -1657,7 +1695,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var _this = undefined,
-    _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/components/shared/Dangerously.js";
+    _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/shared/Dangerously.js";
 
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
@@ -1814,7 +1852,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var components_shared_Dangerously__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/shared/Dangerously */ "./components/shared/Dangerously.js");
 /* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-reveal/Fade */ "./node_modules/react-reveal/Fade.js");
 /* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/components/shared/DataItem.js";
+var _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/shared/DataItem.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -1938,8 +1976,8 @@ __webpack_require__.r(__webpack_exports__);
 var MainGrid = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].section.withConfig({
   displayName: "MainGrid",
   componentId: "sc-101fp4f-0"
-})(["grid-template-columns:repeat(12,1fr);grid-gap:25px;width:100%;margin:0 auto;max-width:1500px;display:grid;padding:", ";position:relative;h1{font-size:4.65rem;line-height:135%;margin-bottom:3%;}p{grid-column:7 / span 5;position:relative;}"], function (props) {
-  return props.notoppadding ? "0% 0% 5% 0%" : "5% 0%";
+})(["grid-template-columns:repeat(12,1fr);grid-gap:25px;width:100%;margin:0 auto;max-width:1500px;display:grid;padding:", ";position:relative;h1{font-size:4.65rem;line-height:135%;margin-bottom:3%;}p{grid-column:7 / span 5;position:relative;opacity:0.8;}"], function (props) {
+  return props.notoppadding ? "0% 0% 7% 0%" : "7% 0%";
 });
 /* harmony default export */ __webpack_exports__["default"] = (MainGrid);
 
@@ -1960,7 +1998,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var components_shared_MainGrid__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/shared/MainGrid */ "./components/shared/MainGrid.js");
 /* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-reveal/Fade */ "./node_modules/react-reveal/Fade.js");
 /* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_3__);
-var _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/components/shared/Title.js";
+var _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/shared/Title.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -3780,10 +3818,10 @@ module.exports = (__webpack_require__(/*! dll-reference dll_c2e10d183b950a67d9e7
 
 /***/ }),
 
-/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fbeta&absolutePagePath=%2FUsers%2Frodrigosalmeron%2FSites%2Fdeepfuture%2Fpages%2Fbeta.js&hotRouterUpdates=true!./":
-/*!********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fbeta&absolutePagePath=%2FUsers%2Frodrigosalmeron%2FSites%2Fdeepfuture%2Fpages%2Fbeta.js&hotRouterUpdates=true ***!
-  \********************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fbeta&absolutePagePath=%2FUsers%2Fsalmeron%2FSites%2Fdeepfuture%2Fpages%2Fbeta.js&hotRouterUpdates=true!./":
+/*!*************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fbeta&absolutePagePath=%2FUsers%2Fsalmeron%2FSites%2Fdeepfuture%2Fpages%2Fbeta.js&hotRouterUpdates=true ***!
+  \*************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -9804,7 +9842,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var components_LandBg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! components/LandBg */ "./components/LandBg.js");
 /* harmony import */ var components_Quote__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! components/Quote */ "./components/Quote.js");
 /* harmony import */ var components_Tiers__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! components/Tiers */ "./components/Tiers.js");
-var _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/pages/beta.js";
+var _jsxFileName = "/Users/salmeron/Sites/deepfuture/pages/beta.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -10046,7 +10084,7 @@ function Index(props) {
 var Land = Object(styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])(components_shared_MainGrid__WEBPACK_IMPORTED_MODULE_5__["default"]).withConfig({
   displayName: "beta__Land",
   componentId: "sc-1nzcelo-0"
-})(["min-height:100vh;align-items:center;padding-top:13%;pointer-events:none;#landtext{color:", ";grid-column:2 / span 10;h1{max-width:870px;grid-column:2 / span 8;b{font-weight:500;}}h2{font-size:2.55rem;line-height:135%;max-width:650px;margin-top:0;}}"], function (props) {
+})(["min-height:100vh;align-items:center;padding-top:13%;pointer-events:none;#landtext{color:", ";grid-column:2 / span 10;padding-bottom:7%;h1{max-width:870px;grid-column:2 / span 8;b{font-weight:500;}}h2{font-size:2.55rem;line-height:135%;max-width:650px;margin-top:0;}}"], function (props) {
   return props.theme.colors.foreground;
 });
 var Intro = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].section.withConfig({
@@ -10147,10 +10185,10 @@ function SvgTime(props) {
 
 /***/ }),
 
-/***/ "./public/assets/img/layout/quotes.svg":
-/*!*********************************************!*\
-  !*** ./public/assets/img/layout/quotes.svg ***!
-  \*********************************************/
+/***/ "./public/assets/img/layout/quoteClose.svg":
+/*!*************************************************!*\
+  !*** ./public/assets/img/layout/quoteClose.svg ***!
+  \*************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -10162,21 +10200,174 @@ function _extends() { _extends = Object.assign || function (target) { for (var i
 
 
 
-var _ref = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
-  d: "M31.4526 1L52.0871 13.7826C41.9917 28.502 36.7776 43.83 36.4448 59.7668V85H1V62.0909C1.11094 51.4664 3.99533 40.3992 9.65319 28.8893C15.422 17.2688 22.6884 7.97233 31.4526 1ZM87.3655 1L108 13.7826C97.9046 28.502 92.6905 43.83 92.3577 59.7668V85H56.9129V62.0909C57.0238 51.4664 59.9082 40.3992 65.5661 28.8893C71.3349 17.2688 78.6013 7.97233 87.3655 1Z",
+var _ref = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("g", {
+  clipPath: "url(#clip0)"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("g", {
+  filter: "url(#filter0_dd)"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
+  d: "M83.5474 93L62.9129 80.2174C73.0083 65.498 78.2224 50.17 78.5552 34.2332L78.5552 9L114 9L114 31.9091C113.889 42.5336 111.005 53.6008 105.347 65.1107C99.578 76.7312 92.3116 86.0277 83.5474 93ZM27.6345 93L7 80.2174C17.0954 65.498 22.3095 50.17 22.6423 34.2332L22.6423 8.99999L58.0871 9L58.0871 31.9091C57.9762 42.5336 55.0918 53.6008 49.4339 65.1107C43.6651 76.7312 36.3987 86.0277 27.6345 93Z",
   fill: "#F4F4F4"
-});
+})));
 
-function SvgQuotes(props) {
+var _ref2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("defs", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("filter", {
+  id: "filter0_dd",
+  x: -6,
+  y: -6,
+  width: 129,
+  height: 106,
+  filterUnits: "userSpaceOnUse",
+  colorInterpolationFilters: "sRGB"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("feFlood", {
+  floodOpacity: 0,
+  result: "BackgroundImageFix"
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("feColorMatrix", {
+  "in": "SourceAlpha",
+  type: "matrix",
+  values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("feOffset", {
+  dx: -2,
+  dy: -4
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("feGaussianBlur", {
+  stdDeviation: 5.5
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("feColorMatrix", {
+  type: "matrix",
+  values: "0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.9 0"
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("feBlend", {
+  mode: "normal",
+  in2: "BackgroundImageFix",
+  result: "effect1_dropShadow"
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("feColorMatrix", {
+  "in": "SourceAlpha",
+  type: "matrix",
+  values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("feOffset", {
+  dx: 2,
+  dy: 2
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("feGaussianBlur", {
+  stdDeviation: 2
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("feColorMatrix", {
+  type: "matrix",
+  values: "0 0 0 0 0.300658 0 0 0 0 0.299566 0 0 0 0 0.354167 0 0 0 0.19 0"
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("feBlend", {
+  mode: "exclusion",
+  in2: "effect1_dropShadow",
+  result: "effect2_dropShadow"
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("feBlend", {
+  mode: "normal",
+  "in": "SourceGraphic",
+  in2: "effect2_dropShadow",
+  result: "shape"
+})), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("clipPath", {
+  id: "clip0"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("rect", {
+  width: 126,
+  height: 101,
+  fill: "white"
+})));
+
+function SvgQuoteClose(props) {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("svg", _extends({
-    width: 109,
-    height: 86,
-    viewBox: "0 0 109 86",
+    width: 126,
+    height: 101,
+    viewBox: "0 0 126 101",
     fill: "none"
-  }, props), _ref);
+  }, props), _ref, _ref2);
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (SvgQuotes);
+/* harmony default export */ __webpack_exports__["default"] = (SvgQuoteClose);
+
+/***/ }),
+
+/***/ "./public/assets/img/layout/quoteOpen.svg":
+/*!************************************************!*\
+  !*** ./public/assets/img/layout/quoteOpen.svg ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+var _ref = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("g", {
+  clipPath: "url(#clip0)"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("g", {
+  filter: "url(#filter0_dd)"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
+  d: "M42.4526 8L63.0871 20.7826C52.9917 35.502 47.7776 50.83 47.4448 66.7668V92H12V69.0909C12.1109 58.4664 14.9953 47.3992 20.6532 35.8893C26.422 24.2688 33.6884 14.9723 42.4526 8ZM98.3655 8L119 20.7826C108.905 35.502 103.691 50.83 103.358 66.7668V92H67.9129V69.0909C68.0238 58.4664 70.9082 47.3992 76.5661 35.8893C82.3349 24.2688 89.6013 14.9723 98.3655 8Z",
+  fill: "#F4F4F4"
+})));
+
+var _ref2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("defs", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("filter", {
+  id: "filter0_dd",
+  x: -1,
+  y: -7,
+  width: 129,
+  height: 106,
+  filterUnits: "userSpaceOnUse",
+  colorInterpolationFilters: "sRGB"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("feFlood", {
+  floodOpacity: 0,
+  result: "BackgroundImageFix"
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("feColorMatrix", {
+  "in": "SourceAlpha",
+  type: "matrix",
+  values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("feOffset", {
+  dx: -2,
+  dy: -4
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("feGaussianBlur", {
+  stdDeviation: 5.5
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("feColorMatrix", {
+  type: "matrix",
+  values: "0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.9 0"
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("feBlend", {
+  mode: "normal",
+  in2: "BackgroundImageFix",
+  result: "effect1_dropShadow"
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("feColorMatrix", {
+  "in": "SourceAlpha",
+  type: "matrix",
+  values: "0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("feOffset", {
+  dx: 2,
+  dy: 2
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("feGaussianBlur", {
+  stdDeviation: 2
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("feColorMatrix", {
+  type: "matrix",
+  values: "0 0 0 0 0.300658 0 0 0 0 0.299566 0 0 0 0 0.354167 0 0 0 0.19 0"
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("feBlend", {
+  mode: "exclusion",
+  in2: "effect1_dropShadow",
+  result: "effect2_dropShadow"
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("feBlend", {
+  mode: "normal",
+  "in": "SourceGraphic",
+  in2: "effect2_dropShadow",
+  result: "shape"
+})), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("clipPath", {
+  id: "clip0"
+}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("rect", {
+  width: 126,
+  height: 101,
+  fill: "white"
+})));
+
+function SvgQuoteOpen(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("svg", _extends({
+    width: 126,
+    height: 101,
+    viewBox: "0 0 126 101",
+    fill: "none"
+  }, props), _ref, _ref2);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (SvgQuoteOpen);
 
 /***/ }),
 
@@ -10236,13 +10427,13 @@ function createMarkup(i) {
 /***/ }),
 
 /***/ 2:
-/*!************************************************************************************************************************************************************!*\
-  !*** multi next-client-pages-loader?page=%2Fbeta&absolutePagePath=%2FUsers%2Frodrigosalmeron%2FSites%2Fdeepfuture%2Fpages%2Fbeta.js&hotRouterUpdates=true ***!
-  \************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************!*\
+  !*** multi next-client-pages-loader?page=%2Fbeta&absolutePagePath=%2FUsers%2Fsalmeron%2FSites%2Fdeepfuture%2Fpages%2Fbeta.js&hotRouterUpdates=true ***!
+  \*****************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fbeta&absolutePagePath=%2FUsers%2Frodrigosalmeron%2FSites%2Fdeepfuture%2Fpages%2Fbeta.js&hotRouterUpdates=true! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fbeta&absolutePagePath=%2FUsers%2Frodrigosalmeron%2FSites%2Fdeepfuture%2Fpages%2Fbeta.js&hotRouterUpdates=true!./");
+module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2Fbeta&absolutePagePath=%2FUsers%2Fsalmeron%2FSites%2Fdeepfuture%2Fpages%2Fbeta.js&hotRouterUpdates=true! */"./node_modules/next/dist/build/webpack/loaders/next-client-pages-loader.js?page=%2Fbeta&absolutePagePath=%2FUsers%2Fsalmeron%2FSites%2Fdeepfuture%2Fpages%2Fbeta.js&hotRouterUpdates=true!./");
 
 
 /***/ }),

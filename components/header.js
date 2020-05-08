@@ -14,15 +14,15 @@ function Header({ hasLoaded, headerTitle, isOpen, closeNav, locale, route }) {
   return (
     <TopHeader reveal={hasLoaded}>
       <HeaderContainer>
-      <Link href="/" passHref>
-        <LogoLink onClick={backUp}>
-          <h1>DFI</h1>
-          <Logo />
-        </LogoLink>
-      </Link>
-      <Form>
-        <EmailCollector short />
-      </Form>
+        <Link href="/" passHref>
+          <LogoLink onClick={backUp}>
+            <h1>DFI</h1>
+            <Logo />
+          </LogoLink>
+        </Link>
+        <Form>
+          <EmailCollector short />
+        </Form>
       </HeaderContainer>
     </TopHeader>
   );
@@ -44,12 +44,11 @@ const TopHeader = styled.header`
   top: 0;
   left: 0;
   right: 0;
-  padding: 16px 80px 16px 50px;
+  padding: 11px 80px 11px 50px;
   z-index: 12;
   opacity: ${(props) => (props.reveal ? 1 : 0)};
   transition: opacity 0.3s ease 0.3s;
-  box-shadow: ${(props) =>
-    `9px 9px 25px ${props.theme.colors.darkshadow}`};
+  box-shadow: ${(props) => `9px 9px 25px ${props.theme.colors.darkshadow}`};
 `;
 
 const LogoLink = styled.a`
@@ -65,7 +64,7 @@ const LogoLink = styled.a`
     font-size: 0;
   }
   svg {
-    max-width: 75px;
+    max-width: 70px;
     width: 100%;
     path {
       fill: ${(props) => props.theme.colors.white};

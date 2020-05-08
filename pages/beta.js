@@ -81,6 +81,7 @@ const Land = styled(MainGrid)`
   #landtext {
     color: ${(props) => props.theme.colors.foreground};
     grid-column: 2 / span 10;
+    padding-bottom: 7%;
     h1 {
       max-width: 870px;
       grid-column: 2 / span 8;

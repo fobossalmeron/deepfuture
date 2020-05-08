@@ -5,6 +5,33 @@ import { H2, H3 } from "components/shared/Dangerously";
 import Check from "public/assets/img/layout/check.svg";
 import Uncheck from "public/assets/img/layout/uncheck.svg";
 
+const includes = [
+  {
+    title: "<b>Variables</b> de riesgo",
+    subtitle: "Riesgo, oportunidades y COVID-19",
+  },
+  {
+    title: "Proceso de <b>prospectiva</b",
+    subtitle: "Aprende a reducir la incertidumbre",
+  },
+  {
+    title: "<b>Worksheets</b> de trabajo",
+    subtitle: "Te brindamos los materiales necesarios",
+  },
+  {
+    title: "Taller con <b>expertos</b>",
+    subtitle: "Con más de 20 años de experiencia",
+  },
+  {
+    title: "Plan de <b>acciones</b> con expertos",
+    subtitle: "Prepárate para los escenarios futuros",
+  },
+  {
+    title: "<b>Personalización</b> para tu empresa",
+    subtitle: "Ten a tu equipo en la misma página",
+  },
+];
+
 const tiers = [
   {
     title: "autogestivo",
@@ -12,7 +39,13 @@ const tiers = [
       "Cómo generar certidumbre ante el impacto del <b>COVID-19</b> y la <b>4T</b>",
     price: "1,400",
     originalPrice: "2,500",
-    perks: { prospectiva: true, worksheets: true, expertos: false, acciones: false, empresarial: false },
+    perks: {
+      prospectiva: true,
+      worksheets: true,
+      expertos: false,
+      acciones: false,
+      empresarial: false,
+    },
   },
   {
     title: "personal",
@@ -21,7 +54,13 @@ const tiers = [
     price: "10,000",
     originalPrice: "25,000",
     color: "#62AF9A",
-    perks: { prospectiva: true, worksheets: true, expertos: true, acciones: false, empresarial: false },
+    perks: {
+      prospectiva: true,
+      worksheets: true,
+      expertos: true,
+      acciones: false,
+      empresarial: false,
+    },
   },
   {
     title: "empresarial",
@@ -29,7 +68,13 @@ const tiers = [
       "Minimiza los riesgos del impacto del <b>COVID-19</b> y la <b>4T</b> junto con <b>expertos</b>",
     price: "desde $57,000",
     color: "#1C4794",
-    perks: { prospectiva: true, worksheets: true, expertos: true, acciones: true, empresarial: true },
+    perks: {
+      prospectiva: true,
+      worksheets: true,
+      expertos: true,
+      acciones: true,
+      empresarial: true,
+    },
   },
 ];
 
@@ -42,8 +87,10 @@ const Tier = ({ tier }) => {
         </h2>
         <H3>{tier.description}</H3>
         <Price>
-          <span>${tier.price} <span>MXN</span></span>
-          <span>{tier.originalPrice ? "$" + tier.originalPrice: null}</span>
+          <span>
+            ${tier.price} <span>MXN</span>
+          </span>
+          <span>{tier.originalPrice ? "$" + tier.originalPrice : null}</span>
         </Price>
         <Button>Comprar</Button>
       </Padded>
@@ -73,7 +120,13 @@ function Tiers() {
       <TiersGrid>
         <Includes>
           <span>Incluye</span>
-          <Stats></Stats>
+          <Stats>
+            {includes.map((include, i) => (
+              <li key={"include" + i}>
+                <H2>{include.title} </H2> <H3>{include.subtitle}</H3>
+              </li>
+            ))}
+          </Stats>
         </Includes>
         {tiers.map((tier, i) => (
           <Tier key={"tier" + i} tier={tier} />
@@ -86,7 +139,7 @@ function Tiers() {
 export default Tiers;
 
 const Stats = styled.ul`
-text-align:center;
+  text-align: center;
 `;
 
 const Padded = styled.div`
@@ -104,11 +157,11 @@ const Padded = styled.div`
 const Price = styled.div`
   display: flex;
   justify-content: space-between;
-  font-size:2.7rem;
-  margin:10% 0;
+  font-size: 2.7rem;
+  margin: 10% 0;
   span {
-    span{
-      font-size:2rem;
+    span {
+      font-size: 2rem;
     }
     :nth-of-type(1) {
       color: ${(props) => props.theme.colors.accent};
@@ -145,7 +198,7 @@ const TierContainer = styled.div`
     font-size: 2.7rem;
     color: ${(props) => props.theme.colors.accent};
     font-weight: 300;
-    padding-bottom:20px;
+    padding-bottom: 20px;
     b {
       font-weight: 400;
     }
@@ -153,7 +206,7 @@ const TierContainer = styled.div`
   h3 {
     font-size: 2rem;
     color: ${(props) => props.theme.colors.foreground_lowest};
-    opacity:0.6;
+    opacity: 0.6;
   }
 `;
 
