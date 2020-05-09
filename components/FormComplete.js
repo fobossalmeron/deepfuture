@@ -46,14 +46,14 @@ const Form = styled.div`
   justify-content: space-between;
   width: 100%;
   transition: all 0.3s ease-in;
-  pointer-events:auto;
+  pointer-events: auto;
 `;
 
 const Column = styled.div`
   max-width: 330px;
   width: 100%;
   color: ${(props) => props.theme.colors.foreground};
-  :nth-of-type(1){
+  :nth-of-type(1) {
     padding-right: 5%;
   }
   h4 {
@@ -63,5 +63,8 @@ const Column = styled.div`
     b {
       font-weight: 500;
     }
+  }
+  p {
+    opacity: 1 !important;
   }
 `;

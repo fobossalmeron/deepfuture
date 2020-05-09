@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import MainGrid from "components/shared/MainGrid";
 import Title from "components/shared/Title";
-import { H2, H3 } from "components/shared/Dangerously";
+import { P, H3 } from "components/shared/Dangerously";
 import Check from "public/assets/img/layout/check.svg";
 import Uncheck from "public/assets/img/layout/uncheck.svg";
 
@@ -37,7 +37,7 @@ const tiers = [
     title: "autogestivo",
     description:
       "Cómo generar certidumbre ante el impacto del <b>COVID-19</b> y la <b>4T</b>",
-    price: "1,400",
+    price: "$1,400",
     originalPrice: "2,500",
     perks: {
       prospectiva: true,
@@ -51,7 +51,7 @@ const tiers = [
     title: "personal",
     description:
       "Genera certidumbre ante el impacto del <b>COVID-19</b> y la <b>4T</b> junto con <b>expertos</b>",
-    price: "10,000",
+    price: "$10,000",
     originalPrice: "25,000",
     color: "#62AF9A",
     perks: {
@@ -66,7 +66,7 @@ const tiers = [
     title: "empresarial",
     description:
       "Minimiza los riesgos del impacto del <b>COVID-19</b> y la <b>4T</b> junto con <b>expertos</b>",
-    price: "desde $57,000",
+    price: "$57,000",
     color: "#1C4794",
     perks: {
       prospectiva: true,
@@ -82,26 +82,23 @@ const Tier = ({ tier }) => {
   return (
     <TierContainer color={tier.color}>
       <Padded>
-        <h2>
-          Taller <b>{tier.title}</b>
-        </h2>
-        <H3>{tier.description}</H3>
-        <Price>
-          <span>
-            ${tier.price} <span>MXN</span>
-          </span>
-          <span>{tier.originalPrice ? "$" + tier.originalPrice : null}</span>
-        </Price>
-        <Button>Comprar</Button>
+        <div>
+          <h2>
+            Taller <b>{tier.title}</b>
+          </h2>
+          <H3>{tier.description}</H3>
+        </div>
+        <div>
+          <Price>
+            <span>
+              {tier.title === "empresarial" && <span>desde </span>}
+              {tier.price} <span>MXN</span>
+            </span>
+            <span>{tier.originalPrice ? "$" + tier.originalPrice : null}</span>
+          </Price>
+          <Button>Comprar</Button>
+        </div>
       </Padded>
-      <Stats>
-        <li>18</li>
-        {Object.entries(tier.perks).map((perk, i) => (
-          <li key={`tp-${i}-${tier.price}`}>
-            {perk[1] ? <Check /> : <Uncheck />}
-          </li>
-        ))}
-      </Stats>
     </TierContainer>
   );
 };
@@ -117,19 +114,34 @@ function Tiers() {
           Conoce nuestros <b>talleres</b>
         </h3>
       </Title>
-      <TiersGrid>
+      <TiersGrid notoppadding>
+        <TierBackground />
+        <TierBackground />
+        <TierBackground />
+        <Includes></Includes>
+        {tiers.map((tier, i) => (
+          <Tier key={"tier" + i} tier={tier} />
+        ))}
         <Includes>
           <span>Incluye</span>
-          <Stats>
+          <StatsInclude>
             {includes.map((include, i) => (
               <li key={"include" + i}>
-                <H2>{include.title} </H2> <H3>{include.subtitle}</H3>
+                <H3>{include.title}</H3>
+                <P>{include.subtitle}</P>
+              </li>
+            ))}
+          </StatsInclude>
+        </Includes>
+        {tiers.map((tier, i) => (
+          <Stats key={"tierstats" + i}>
+            <li>18</li>
+            {Object.entries(tier.perks).map((perk, i) => (
+              <li key={`tp-${i}-${tier.price}`}>
+                {perk[1] ? <Check /> : <Uncheck />}
               </li>
             ))}
           </Stats>
-        </Includes>
-        {tiers.map((tier, i) => (
-          <Tier key={"tier" + i} tier={tier} />
         ))}
       </TiersGrid>
     </TiersSection>
@@ -140,17 +152,54 @@ export default Tiers;
 
 const Stats = styled.ul`
   text-align: center;
+  grid-column-end: span 3;
+  padding-bottom: 25px;
+  li {
+    padding: 17px 0;
+  }
+`;
+
+const StatsInclude = styled(Stats)`
+  li {
+    text-align: left;
+    padding: 10px 0;
+    h3 {
+      font-size: 2rem;
+      color: ${(props) => props.theme.colors.accent};
+    }
+    p {
+      font-size: 1.7rem;
+      color: ${(props) => props.theme.colors.foreground_low};
+    }
+  }
+`;
+
+const Includes = styled.div`
+  grid-column-end: span 3;
+  position: relative;
+  span {
+    font-size: 3rem;
+    position: absolute;
+    top: -50px;
+  }
 `;
 
 const Padded = styled.div`
-  padding: 5%;
-  ::after {
-    content: " ";
-    height: 2px;
-    opacity: 0.2;
-    display: flex;
-    padding-top: 5%;
-    width: 100%;
+  padding: 8%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: calc(100% - 80px);
+  div:nth-of-type(2) {
+    ::after {
+      content: " ";
+      height: 2px;
+      display: flex;
+      margin-top: 40px;
+      width: 100%;
+      opacity: 0.8;
+      background-color: ${(props) => props.theme.colors.foreground_lower};
+    }
   }
 `;
 
@@ -181,10 +230,10 @@ const Button = styled.button`
 
 const TierContainer = styled.div`
   grid-column-end: span 3;
-  box-shadow: ${(props) =>
+  /* box-shadow: ${(props) =>
     `-4px -6px 11px ${props.theme.colors.lightlight}, 
-    4px 4px 12px ${props.theme.colors.lightshadow}`};
-  border-radius: 3px;
+    4px 4px 12px ${props.theme.colors.lightshadow}`}; */
+  /* border-radius: 3px; */
   ::before {
     content: " ";
     display: flex;
@@ -195,12 +244,12 @@ const TierContainer = styled.div`
       props.color ? props.color : props.theme.colors.background};
   }
   h2 {
-    font-size: 2.7rem;
+    font-size: 2.6rem;
     color: ${(props) => props.theme.colors.accent};
-    font-weight: 300;
+    font-weight: 400;
     padding-bottom: 20px;
     b {
-      font-weight: 400;
+      font-weight: 500;
     }
   }
   h3 {
@@ -210,13 +259,33 @@ const TierContainer = styled.div`
   }
 `;
 
-const Includes = styled.div`
+const TierBackground = styled.div`
+  box-shadow: ${(props) =>
+    `-4px -6px 11px ${props.theme.colors.lightlight}, 
+    4px 4px 12px ${props.theme.colors.lightshadow}`};
+  border-radius: 3px;
   grid-column-end: span 3;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  grid-row: 1 / span 2;
 `;
 
 const TiersGrid = styled(MainGrid)`
   background-color: ${(props) => props.theme.colors.foreground};
   color: ${(props) => props.theme.colors.background};
+  ${TierBackground} {
+    :nth-of-type(1) {
+      grid-column-start: 4;
+    }
+    :nth-of-type(2) {
+      grid-column-start: 7;
+    }
+    :nth-of-type(3) {
+      grid-column-start: 10;
+    }
+  }
 `;
 
 const TiersSection = styled.section`

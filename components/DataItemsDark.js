@@ -7,31 +7,31 @@ const items = [
   {
     title: "Organiza la información<br/> y úsala para tu beneficio",
     description:
-      "Aprendamos juntos del pasado y el presente para conocer mejor el futuro.",
+      "Brindamos datos recopilados de +11 organismos públicos (INEGI, Banxico, Coneval y más) para analizar +200 variables relevantes del país.",
     icon: <Time />,
   },
   {
     title: "Hazlo desde casa, <br/>en este momento",
     description:
-      "This is content describing the first benefit of your product or service. It should act as a supporting description of the benefit statements you wrote above.",
+      "Comienza ya con nuestro taller digital, una modalidad de nuestro servicio que puedes ejecutar para tu negocio en este mismo momento.",
     icon: <Time />,
   },
   {
     title: "Anticipa riesgos <br/>y oportunidades",
     description:
-      "This is content describing the first benefit of your product or service. It should act as a supporting description of the benefit statements you wrote above.",
+      "Interpreta los hechos del mundo y el país para hacer sentido sobre cómo afectan a tu organización y/o institución.",
     icon: <Time />,
   },
   {
-    title: "Asesórate con expertos",
+    title: "Con expertos con más de una década de experiencia",
     description:
-      "This is content describing the first benefit of your product or service. It should act as a supporting description of the benefit statements you wrote above.",
+      "Nuestras investigaciones son sustentadas por rospectivistas, investigadores, ácadémicos y analistas con más de 12 años de experiencia.",
     icon: <Time />,
   },
   {
-    title: "Dimensiona el problema",
+    title: "Para dimensionar los problemas del mundo",
     description:
-      "This is content describing the first benefit of your product or service. It should act as a supporting description of the benefit statements you wrote above.",
+      "Un error común es no dimensionar los escenarios de riesgo. Tener un acercamiento estratégico y sistémico hacia el futuro te ayudará a alcanzar tus metas de negocio.",
     icon: <Time />,
   },
 ];

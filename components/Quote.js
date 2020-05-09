@@ -1,28 +1,31 @@
 import styled from "styled-components";
 import QuoteOpen from "public/assets/img/layout/quoteOpen.svg";
 import QuoteClose from "public/assets/img/layout/quoteClose.svg";
+import Fade from "react-reveal/Fade";
 
 function Quote() {
   return (
     <FullContainer>
-      <QuoteContainer>
-        <QuoteOpen />
-        <TextContainer>
-          <p>
-            Aquí va a una quote de alguien que ya tomó el taller y que dijo que
-            está bárbaro y que le cambió la vida
-          </p>
-          <div>
-            <h6>Juan José de Régules</h6>
-            <label>CEO Sherpa-X</label>
-            <img
-              src="/assets/img/layout/profile.jpg"
-              alt="Juan José de Régules"
-            />
-          </div>
-        </TextContainer>
-        <QuoteClose />
-      </QuoteContainer>
+      <Fade>
+        <QuoteContainer>
+          <QuoteOpen />
+          <TextContainer>
+            <p>
+              Aquí va a una quote de alguien que ya tomó el taller y que dijo
+              que está bárbaro y que le cambió la vida
+            </p>
+            <div>
+              <h6>Juan José de Régules</h6>
+              <label>CEO Sherpa-X</label>
+              <img
+                src="/assets/img/layout/profile.jpg"
+                alt="Juan José de Régules"
+              />
+            </div>
+          </TextContainer>
+          <QuoteClose />
+        </QuoteContainer>
+      </Fade>
     </FullContainer>
   );
 }
