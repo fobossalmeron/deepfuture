@@ -4,6 +4,7 @@ import Title from "components/shared/Title";
 import { P, H3 } from "components/shared/Dangerously";
 import Check from "public/assets/img/layout/check.svg";
 import Uncheck from "public/assets/img/layout/uncheck.svg";
+import Fade from "react-reveal/Fade";
 
 const includes = [
   {
@@ -11,7 +12,7 @@ const includes = [
     subtitle: "Riesgo, oportunidades y COVID-19",
   },
   {
-    title: "Proceso de <b>prospectiva</b",
+    title: "Proceso de <b>prospectiva</b>",
     subtitle: "Aprende a reducir la incertidumbre",
   },
   {
@@ -82,13 +83,13 @@ const Tier = ({ tier }) => {
   return (
     <TierContainer color={tier.color}>
       <Padded>
-        <div>
+        <Fade>
           <h2>
             Taller <b>{tier.title}</b>
           </h2>
           <H3>{tier.description}</H3>
-        </div>
-        <div>
+        </Fade>
+        <Fade>
           <Price>
             <span>
               {tier.title === "empresarial" && <span>desde </span>}
@@ -97,7 +98,7 @@ const Tier = ({ tier }) => {
             <span>{tier.originalPrice ? "$" + tier.originalPrice : null}</span>
           </Price>
           <Button>Comprar</Button>
-        </div>
+        </Fade>
       </Padded>
     </TierContainer>
   );
@@ -126,9 +127,12 @@ function Tiers() {
           <span>Incluye</span>
           <StatsInclude>
             {includes.map((include, i) => (
-              <li key={"include" + i}>
+              <li key={"include" + (i + 100)}>
                 <H3>{include.title}</H3>
-                <P>{include.subtitle}</P>
+                {
+                  //aquí hay un problema
+                }
+                <p>{include.subtitle}</p>
               </li>
             ))}
           </StatsInclude>

@@ -42,16 +42,18 @@ function Index(props) {
       <Tiers />
       <SecondForm>
         <SecondFormGrid>
-          <div>
-            <h5>
-              Prueba un poco de lo que <b>ofrecemos</b>
-            </h5>
-            <p>
-              Analizar los escenarios que podrían ocurrir a corto y largo plazo
-              te ayudará a organizar la información que necesitas para enfrentar
-              nuevas problemáticas y reducir riesgos.
-            </p>
-          </div>
+          <Fade>
+            <div>
+              <h5>
+                Prueba un poco de lo que <b>ofrecemos</b>
+              </h5>
+              <p>
+                Analizar los escenarios que podrían ocurrir a corto y largo
+                plazo te ayudará a organizar la información que necesitas para
+                enfrentar nuevas problemáticas y reducir riesgos.
+              </p>
+            </div>
+          </Fade>
           <FormComplete />
         </SecondFormGrid>
       </SecondForm>

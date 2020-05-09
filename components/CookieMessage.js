@@ -7,21 +7,21 @@ const CookieMessage = (props) => {
   return (
     <Wrapper borderTop={props.borderTop} clickable={props.hasToConsent}>
       <Border>
+        <Button>
+          <span>{t.title}</span>
+        </Button>
+        <CrossContainer>
+          <Cross />
+        </CrossContainer>
         <Divider onClick={props.doConsentToCookies}>
-          <Button>
-            <span>{t.title}</span>
-          </Button>
-          <CrossContainer>
-            <Cross />
-          </CrossContainer>
+          <p>
+            {t.p}
+            <Link href="/cookies" passHref>
+              <a>{t.link}</a>
+            </Link>
+            {t.p_continued}
+          </p>
         </Divider>
-        <p>
-          {t.p}
-          <Link href="/cookies" passHref>
-           <a>{t.link}</a>
-          </Link>
-          {t.p_continued}
-        </p>
       </Border>
     </Wrapper>
   );
@@ -30,28 +30,24 @@ const CookieMessage = (props) => {
 export default CookieMessage;
 
 const Border = styled.div`
-  border: ${(props) => props.theme.stroke} solid
-    ${(props) => props.theme.colors.foreground};
   background-color: ${(props) => props.theme.colors.background};
+  padding: 15px 25px 20px;
+  border-radius: 3px;
 `;
 
 const Button = styled.button`
   padding: 14px 0%;
   text-align: center;
-  width: calc(100% - 45px);
+  width: calc(100% - 50px);
   background-color: ${(props) => props.theme.colors.accent};
   color: ${(props) => props.theme.colors.foreground};
   border: 0;
-  font-weight: 100;
   font-size: 1.8rem;
-  border-right: ${(props) => props.theme.stroke} solid
-    ${(props) => props.theme.colors.foreground};
   cursor: pointer;
   transition: 0.3s ease all;
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       background-color: ${(props) => props.theme.colors.success};
-      color: ${(props) => props.theme.colors.background};
       span {
         background-size: 0 0;
       }
@@ -60,18 +56,20 @@ const Button = styled.button`
 `;
 
 const Divider = styled.div`
-  border-bottom: ${(props) => props.theme.stroke} solid
-    ${(props) => props.theme.colors.foreground};
   display: flex;
 `;
 
 const CrossContainer = styled.div`
-  width: 45px;
-  height: 45px;
-  padding: 12px;
+  width: 79px;
+  height: 84px;
+  padding: 15px 25px;
+  margin: 0;
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
   svg {
     width: 100%;
-    max-width: 30px;
     cursor: pointer;
   }
 `;
@@ -85,13 +83,14 @@ const Wrapper = styled.div`
   left: 50%;
   transform: translateX(-50%)
     ${(props) => (props.clickable ? "translateY(0%)" : "translateY(5%)")};
-  font-weight: 100;
   position: fixed;
   transition: opacity 0.4s ease, transform 0.5s ease;
   z-index: 12;
   p {
-    font-size: 1.2rem;
-    padding: 2.5% 4% 3% 4%;
+    font-size: 1.3rem;
+    padding-top: 10px;
+    width: 100%;
+    text-align: center;
   }
   @media (max-width: 600px) {
     left: 0;

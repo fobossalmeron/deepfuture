@@ -1324,6 +1324,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var components_shared_Dangerously__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/shared/Dangerously */ "./components/shared/Dangerously.js");
 /* harmony import */ var public_assets_img_layout_check_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! public/assets/img/layout/check.svg */ "./public/assets/img/layout/check.svg");
 /* harmony import */ var public_assets_img_layout_uncheck_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! public/assets/img/layout/uncheck.svg */ "./public/assets/img/layout/uncheck.svg");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-reveal/Fade */ "./node_modules/react-reveal/Fade.js");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_7__);
 var _this = undefined,
     _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/Tiers.js";
 
@@ -1335,11 +1337,12 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
+
 var includes = [{
   title: "<b>Variables</b> de riesgo",
   subtitle: "Riesgo, oportunidades y COVID-19"
 }, {
-  title: "Proceso de <b>prospectiva</b",
+  title: "Proceso de <b>prospectiva</b>",
   subtitle: "Aprende a reducir la incertidumbre"
 }, {
   title: "<b>Worksheets</b> de trabajo",
@@ -1400,91 +1403,91 @@ var Tier = function Tier(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 84,
       columnNumber: 5
     }
   }, __jsx(Padded, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84,
+      lineNumber: 85,
       columnNumber: 7
     }
-  }, __jsx("div", {
+  }, __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_7___default.a, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
+      lineNumber: 86,
       columnNumber: 9
     }
   }, __jsx("h2", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 86,
+      lineNumber: 87,
       columnNumber: 11
     }
   }, "Taller ", __jsx("b", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
+      lineNumber: 88,
       columnNumber: 20
     }
   }, tier.title)), __jsx(components_shared_Dangerously__WEBPACK_IMPORTED_MODULE_4__["H3"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89,
+      lineNumber: 90,
       columnNumber: 11
     }
-  }, tier.description)), __jsx("div", {
+  }, tier.description)), __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_7___default.a, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91,
+      lineNumber: 92,
       columnNumber: 9
     }
   }, __jsx(Price, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92,
+      lineNumber: 93,
       columnNumber: 11
     }
   }, __jsx("span", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93,
+      lineNumber: 94,
       columnNumber: 13
     }
   }, tier.title === "empresarial" && __jsx("span", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94,
+      lineNumber: 95,
       columnNumber: 48
     }
   }, "desde "), tier.price, " ", __jsx("span", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95,
+      lineNumber: 96,
       columnNumber: 28
     }
   }, "MXN")), __jsx("span", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 97,
+      lineNumber: 98,
       columnNumber: 13
     }
   }, tier.originalPrice ? "$" + tier.originalPrice : null)), __jsx(Button, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 100,
       columnNumber: 11
     }
   }, "Comprar"))));
@@ -1497,42 +1500,42 @@ function Tiers() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108,
+      lineNumber: 109,
       columnNumber: 5
     }
   }, __jsx(components_shared_Title__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109,
+      lineNumber: 110,
       columnNumber: 7
     }
   }, __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110,
+      lineNumber: 111,
       columnNumber: 9
     }
   }, "Prep\xE1rate para los escenarios de ", __jsx("b", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111,
+      lineNumber: 112,
       columnNumber: 44
     }
   }, "futuro")), __jsx("h3", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113,
+      lineNumber: 114,
       columnNumber: 9
     }
   }, "Conoce nuestros ", __jsx("b", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114,
+      lineNumber: 115,
       columnNumber: 27
     }
   }, "talleres"))), __jsx(TiersGrid, {
@@ -1540,17 +1543,10 @@ function Tiers() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117,
+      lineNumber: 118,
       columnNumber: 7
     }
   }, __jsx(TierBackground, {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 118,
-      columnNumber: 9
-    }
-  }), __jsx(TierBackground, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -1564,11 +1560,18 @@ function Tiers() {
       lineNumber: 120,
       columnNumber: 9
     }
-  }), __jsx(Includes, {
+  }), __jsx(TierBackground, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 121,
+      columnNumber: 9
+    }
+  }), __jsx(Includes, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 122,
       columnNumber: 9
     }
   }), tiers.map(function (tier, i) {
@@ -1578,7 +1581,7 @@ function Tiers() {
       __self: _this2,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 123,
+        lineNumber: 124,
         columnNumber: 11
       }
     });
@@ -1586,44 +1589,44 @@ function Tiers() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 125,
+      lineNumber: 126,
       columnNumber: 9
     }
   }, __jsx("span", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126,
+      lineNumber: 127,
       columnNumber: 11
     }
   }, "Incluye"), __jsx(StatsInclude, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 127,
+      lineNumber: 128,
       columnNumber: 11
     }
   }, includes.map(function (include, i) {
     return __jsx("li", {
-      key: "include" + i,
+      key: "include" + (i + 100),
       __self: _this2,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 129,
+        lineNumber: 130,
         columnNumber: 15
       }
     }, __jsx(components_shared_Dangerously__WEBPACK_IMPORTED_MODULE_4__["H3"], {
       __self: _this2,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 130,
+        lineNumber: 131,
         columnNumber: 17
       }
-    }, include.title), __jsx(components_shared_Dangerously__WEBPACK_IMPORTED_MODULE_4__["P"], {
+    }, include.title), __jsx("p", {
       __self: _this2,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 131,
+        lineNumber: 135,
         columnNumber: 17
       }
     }, include.subtitle));
@@ -1633,14 +1636,14 @@ function Tiers() {
       __self: _this2,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 137,
+        lineNumber: 141,
         columnNumber: 11
       }
     }, __jsx("li", {
       __self: _this2,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 138,
+        lineNumber: 142,
         columnNumber: 13
       }
     }, "18"), Object.entries(tier.perks).map(function (perk, i) {
@@ -1649,21 +1652,21 @@ function Tiers() {
         __self: _this2,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 140,
+          lineNumber: 144,
           columnNumber: 15
         }
       }, perk[1] ? __jsx(public_assets_img_layout_check_svg__WEBPACK_IMPORTED_MODULE_5__["default"], {
         __self: _this2,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 141,
+          lineNumber: 145,
           columnNumber: 28
         }
       }) : __jsx(public_assets_img_layout_uncheck_svg__WEBPACK_IMPORTED_MODULE_6__["default"], {
         __self: _this2,
         __source: {
           fileName: _jsxFileName,
-          lineNumber: 141,
+          lineNumber: 145,
           columnNumber: 40
         }
       }));
@@ -10061,81 +10064,88 @@ function Index(props) {
       lineNumber: 44,
       columnNumber: 9
     }
-  }, __jsx("div", {
+  }, __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_2___default.a, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 45,
       columnNumber: 11
     }
-  }, __jsx("h5", {
+  }, __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 46,
       columnNumber: 13
     }
-  }, "Prueba un poco de lo que ", __jsx("b", {
+  }, __jsx("h5", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 47,
-      columnNumber: 40
+      columnNumber: 15
+    }
+  }, "Prueba un poco de lo que ", __jsx("b", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 48,
+      columnNumber: 42
     }
   }, "ofrecemos")), __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 49,
-      columnNumber: 13
+      lineNumber: 50,
+      columnNumber: 15
     }
-  }, "Analizar los escenarios que podr\xEDan ocurrir a corto y largo plazo te ayudar\xE1 a organizar la informaci\xF3n que necesitas para enfrentar nuevas problem\xE1ticas y reducir riesgos.")), __jsx(components_FormComplete__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, "Analizar los escenarios que podr\xEDan ocurrir a corto y largo plazo te ayudar\xE1 a organizar la informaci\xF3n que necesitas para enfrentar nuevas problem\xE1ticas y reducir riesgos."))), __jsx(components_FormComplete__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 55,
+      lineNumber: 57,
       columnNumber: 11
     }
   }))), __jsx(components_DataItemsDark__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 58,
+      lineNumber: 60,
       columnNumber: 7
     }
   }), __jsx(components_shared_Title__WEBPACK_IMPORTED_MODULE_8__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 59,
+      lineNumber: 61,
       columnNumber: 7
     }
   }, __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 62,
       columnNumber: 9
     }
   }, "La estrategia de hoy es ", __jsx("b", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 63,
       columnNumber: 35
     }
   }, "sobrevivir")), __jsx("h3", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 65,
       columnNumber: 9
     }
   }, "Encuentra ", __jsx("b", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 64,
+      lineNumber: 66,
       columnNumber: 21
     }
   }, "certidumbre"), " con Deep Future Institute")), __jsx(components_shared_MainGrid__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -10143,7 +10153,7 @@ function Index(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 67,
+      lineNumber: 69,
       columnNumber: 7
     }
   }, __jsx(components_FormComplete__WEBPACK_IMPORTED_MODULE_4__["default"], {
@@ -10151,7 +10161,7 @@ function Index(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 68,
+      lineNumber: 70,
       columnNumber: 9
     }
   })));
@@ -10503,7 +10513,7 @@ function createMarkup(i) {
 
 /***/ }),
 
-/***/ 3:
+/***/ 2:
 /*!*****************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2Fbeta&absolutePagePath=%2FUsers%2Fsalmeron%2FSites%2Fdeepfuture%2Fpages%2Fbeta.js&hotRouterUpdates=true ***!
   \*****************************************************************************************************************************************************/
@@ -10526,5 +10536,5 @@ module.exports = dll_c2e10d183b950a67d9e7;
 
 /***/ })
 
-},[[3,"static/runtime/webpack.js"]]]);
+},[[2,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=beta.js.map

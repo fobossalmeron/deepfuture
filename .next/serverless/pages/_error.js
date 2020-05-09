@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "skj9");
+/******/ 	return __webpack_require__(__webpack_require__.s = "BONu");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1030,35 +1030,35 @@ const CookieMessage = props => {
   return CookieMessage_jsx(Wrapper, {
     borderTop: props.borderTop,
     clickable: props.hasToConsent
-  }, CookieMessage_jsx(Border, null, CookieMessage_jsx(Divider, {
+  }, CookieMessage_jsx(Border, null, CookieMessage_jsx(Button, null, CookieMessage_jsx("span", null, t.title)), CookieMessage_jsx(CrossContainer, null, CookieMessage_jsx(cross, null)), CookieMessage_jsx(Divider, {
     onClick: props.doConsentToCookies
-  }, CookieMessage_jsx(Button, null, CookieMessage_jsx("span", null, t.title)), CookieMessage_jsx(CrossContainer, null, CookieMessage_jsx(cross, null))), CookieMessage_jsx("p", null, t.p, CookieMessage_jsx(link_default.a, {
+  }, CookieMessage_jsx("p", null, t.p, CookieMessage_jsx(link_default.a, {
     href: "/cookies",
     passHref: true
-  }, CookieMessage_jsx("a", null, t.link)), t.p_continued)));
+  }, CookieMessage_jsx("a", null, t.link)), t.p_continued))));
 };
 
 /* harmony default export */ var components_CookieMessage = (CookieMessage);
 const Border = styled_components_cjs_default.a.div.withConfig({
   displayName: "CookieMessage__Border",
   componentId: "krtr03-0"
-})(["border:", " solid ", ";background-color:", ";"], props => props.theme.stroke, props => props.theme.colors.foreground, props => props.theme.colors.background);
+})(["background-color:", ";padding:15px 25px 20px;border-radius:3px;"], props => props.theme.colors.background);
 const Button = styled_components_cjs_default.a.button.withConfig({
   displayName: "CookieMessage__Button",
   componentId: "krtr03-1"
-})(["padding:14px 0%;text-align:center;width:calc(100% - 45px);background-color:", ";color:", ";border:0;font-weight:100;font-size:1.8rem;border-right:", " solid ", ";cursor:pointer;transition:0.3s ease all;@media (hover:hover) and (pointer:fine){&:hover{background-color:", ";color:", ";span{background-size:0 0;}}}"], props => props.theme.colors.accent, props => props.theme.colors.foreground, props => props.theme.stroke, props => props.theme.colors.foreground, props => props.theme.colors.success, props => props.theme.colors.background);
+})(["padding:14px 0%;text-align:center;width:calc(100% - 50px);background-color:", ";color:", ";border:0;font-size:1.8rem;cursor:pointer;transition:0.3s ease all;@media (hover:hover) and (pointer:fine){&:hover{background-color:", ";span{background-size:0 0;}}}"], props => props.theme.colors.accent, props => props.theme.colors.foreground, props => props.theme.colors.success);
 const Divider = styled_components_cjs_default.a.div.withConfig({
   displayName: "CookieMessage__Divider",
   componentId: "krtr03-2"
-})(["border-bottom:", " solid ", ";display:flex;"], props => props.theme.stroke, props => props.theme.colors.foreground);
+})(["display:flex;"]);
 const CrossContainer = styled_components_cjs_default.a.div.withConfig({
   displayName: "CookieMessage__CrossContainer",
   componentId: "krtr03-3"
-})(["width:45px;height:45px;padding:12px;svg{width:100%;max-width:30px;cursor:pointer;}"]);
+})(["width:79px;height:84px;padding:15px 25px;margin:0;display:flex;position:absolute;top:0;right:0;svg{width:100%;cursor:pointer;}"]);
 const Wrapper = styled_components_cjs_default.a.div.withConfig({
   displayName: "CookieMessage__Wrapper",
   componentId: "krtr03-4"
-})(["pointer-events:", ";opacity:", ";max-width:590px;width:80%;bottom:5%;left:50%;transform:translateX(-50%) ", ";font-weight:100;position:fixed;transition:opacity 0.4s ease,transform 0.5s ease;z-index:12;p{font-size:1.2rem;padding:2.5% 4% 3% 4%;}@media (max-width:600px){left:0;transform:none;width:calc(100% - 36px);margin-left:18px;margin-right:18px;bottom:18px;z-index:100;}"], props => props.clickable ? "auto" : "none", props => props.clickable ? "1" : "0", props => props.clickable ? "translateY(0%)" : "translateY(5%)");
+})(["pointer-events:", ";opacity:", ";max-width:590px;width:80%;bottom:5%;left:50%;transform:translateX(-50%) ", ";position:fixed;transition:opacity 0.4s ease,transform 0.5s ease;z-index:12;p{font-size:1.3rem;padding-top:10px;width:100%;text-align:center;}@media (max-width:600px){left:0;transform:none;width:calc(100% - 36px);margin-left:18px;margin-right:18px;bottom:18px;z-index:100;}"], props => props.clickable ? "auto" : "none", props => props.clickable ? "1" : "0", props => props.clickable ? "translateY(0%)" : "translateY(5%)");
 // EXTERNAL MODULE: ./node_modules/react-ga/dist/react-ga.js
 var react_ga = __webpack_require__("vVMA");
 var react_ga_default = /*#__PURE__*/__webpack_require__.n(react_ga);
@@ -3297,6 +3297,215 @@ function createUrl(router) {
 
 /***/ }),
 
+/***/ "BONu":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticParams", function() { return unstable_getStaticParams; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStaticProps", function() { return getStaticProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStaticPaths", function() { return getStaticPaths; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getServerSideProps", function() { return getServerSideProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticProps", function() { return unstable_getStaticProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticPaths", function() { return unstable_getStaticPaths; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getServerProps", function() { return unstable_getServerProps; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "config", function() { return config; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_app", function() { return _app; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderReqToHTML", function() { return renderReqToHTML; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony import */ var next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("GX0O");
+/* harmony import */ var next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("KqAr");
+
+    
+    
+    
+    const runtimeConfig = {}
+    const {parse} = __webpack_require__("bzos")
+    const {parse: parseQs} = __webpack_require__("8xkj")
+    const {renderToHTML} = __webpack_require__("/bjS");
+    const { tryGetPreviewData } = __webpack_require__("PCLx");
+    const {sendHTML} = __webpack_require__("LuNM");
+    const {sendPayload} = __webpack_require__("KyNf");
+    const buildManifest = __webpack_require__("LZ9C");
+    const reactLoadableManifest = __webpack_require__("67Bq");
+    const Document = __webpack_require__("5w0S").default;
+    const Error = __webpack_require__("Y0NT").default;
+    const App = __webpack_require__("1TCz").default;
+    
+    
+    const { rewrites } = __webpack_require__("Skye")
+    const { pathToRegexp, default: pathMatch } = __webpack_require__("uDRR")
+  
+
+    const ComponentInfo = __webpack_require__("Y0NT")
+
+    const Component = ComponentInfo.default
+    /* harmony default export */ __webpack_exports__["default"] = (Component);
+    const unstable_getStaticParams = ComponentInfo['unstable_getStaticParam' + 's']
+    const getStaticProps = ComponentInfo['getStaticProp' + 's']
+    const getStaticPaths = ComponentInfo['getStaticPath' + 's']
+    const getServerSideProps = ComponentInfo['getServerSideProp' + 's']
+
+    // kept for detecting legacy exports
+    const unstable_getStaticProps = ComponentInfo['unstable_getStaticProp' + 's']
+    const unstable_getStaticPaths = ComponentInfo['unstable_getStaticPath' + 's']
+    const unstable_getServerProps = ComponentInfo['unstable_getServerProp' + 's']
+
+    
+    
+    const getCustomRouteMatcher = pathMatch(true)
+    const {prepareDestination} = __webpack_require__("dtb4")
+
+    function handleRewrites(parsedUrl) {
+      for (const rewrite of rewrites) {
+        const matcher = getCustomRouteMatcher(rewrite.source)
+        const params = matcher(parsedUrl.pathname)
+
+        if (params) {
+          const { parsedDestination } = prepareDestination(
+            rewrite.destination,
+            params,
+            parsedUrl.query
+          )
+          Object.assign(parsedUrl.query, parsedDestination.query, params)
+          delete parsedDestination.query
+
+          Object.assign(parsedUrl, parsedDestination)
+
+          if (parsedUrl.pathname === '/_error'){
+            break
+          }
+          
+        }
+      }
+
+      return parsedUrl
+    }
+  
+
+    const config = ComponentInfo['confi' + 'g'] || {}
+    const _app = App
+    async function renderReqToHTML(req, res, renderMode, _renderOpts, _params) {
+      const fromExport = renderMode === 'export' || renderMode === true;
+      
+      const options = {
+        App,
+        Document,
+        buildManifest,
+        getStaticProps,
+        getServerSideProps,
+        getStaticPaths,
+        reactLoadableManifest,
+        canonicalBase: "",
+        buildId: "ufs1xTCOUJx7_bI6eRvMx",
+        assetPrefix: "",
+        runtimeConfig: runtimeConfig.publicRuntimeConfig || {},
+        previewProps: {previewModeId:"bf2130be3edccb0276c350379b69c276",previewModeSigningKey:"4562ad7549dd81ebd9dcc8891882e8d08b88d0a5dfc53b69d5bdaa67f33b8de5",previewModeEncryptionKey:"96bc4aa7b6b83a70fda9e37778630c66659941a7f3096a7566a4aa6f14f02764"},
+        env: process.env,
+        basePath: "",
+        ..._renderOpts
+      }
+      let _nextData = false
+      let parsedUrl
+
+      try {
+        parsedUrl = handleRewrites(parse(req.url, true))
+
+        if (parsedUrl.pathname.match(/_next\/data/)) {
+          _nextData = true
+          parsedUrl.pathname = parsedUrl.pathname
+            .replace(new RegExp('/_next/data/ufs1xTCOUJx7_bI6eRvMx/'), '/')
+            .replace(/\.json$/, '')
+        }
+
+        const renderOpts = Object.assign(
+          {
+            Component,
+            pageConfig: config,
+            nextExport: fromExport
+          },
+          options,
+        )
+
+        
+          if (!res.statusCode) {
+            res.statusCode = 404
+          }
+        
+
+        const params = {};
+        const nowParams = null;
+        // make sure to set renderOpts to the correct params e.g. _params
+        // if provided from worker or params if we're parsing them here
+        renderOpts.params = _params || params
+
+        const isFallback = parsedUrl.query.__nextFallback
+
+        const previewData = tryGetPreviewData(req, res, options.previewProps)
+        const isPreviewMode = previewData !== false
+
+        let result = await renderToHTML(req, res, "/_error", Object.assign({}, getStaticProps ? { ...(parsedUrl.query.amp ? { amp: '1' } : {}) } : parsedUrl.query, nowParams ? nowParams : params, _params, isFallback ? { __nextFallback: 'true' } : {}), renderOpts)
+
+        if (!renderMode) {
+          if (_nextData || getStaticProps || getServerSideProps) {
+            sendPayload(res, _nextData ? JSON.stringify(renderOpts.pageData) : result, _nextData ? 'json' : 'html', {
+              private: isPreviewMode,
+              stateful: !!getServerSideProps,
+              revalidate: renderOpts.revalidate,
+            })
+            return null
+          }
+        } else if (isPreviewMode) {
+          res.setHeader(
+            'Cache-Control',
+            'private, no-cache, no-store, max-age=0, must-revalidate'
+          )
+        }
+
+        if (renderMode) return { html: result, renderOpts }
+        return result
+      } catch (err) {
+        if (!parsedUrl) {
+          parsedUrl = parse(req.url, true)
+        }
+
+        if (err.code === 'ENOENT') {
+          res.statusCode = 404
+        } else if (err.code === 'DECODE_FAILED') {
+          res.statusCode = 400
+        } else {
+          console.error(err)
+          res.statusCode = 500
+        }
+
+        const result = await renderToHTML(req, res, "/_error", parsedUrl.query, Object.assign({}, options, {
+          getStaticProps: undefined,
+          getStaticPaths: undefined,
+          getServerSideProps: undefined,
+          Component: Error,
+          err: res.statusCode === 404 ? undefined : err
+        }))
+        return result
+      }
+    }
+    async function render (req, res) {
+      try {
+        await Object(next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__["default"])()
+        const html = await renderReqToHTML(req, res)
+        if (html) {
+          sendHTML(req, res, html, {generateEtags: true})
+        }
+      } catch(err) {
+        await Object(next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__["default"])(err)
+        console.error(err)
+        res.statusCode = 500
+        res.end('Internal Server Error')
+      }
+    }
+  
+
+/***/ }),
+
 /***/ "C+bE":
 /***/ (function(module, exports) {
 
@@ -4548,7 +4757,7 @@ exports.default = index;
 /***/ "LZ9C":
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"devFiles\":[],\"lowPriorityFiles\":[\"static/mBoURdcYd5Nul7nOhBEyc/_buildManifest.js\",\"static/mBoURdcYd5Nul7nOhBEyc/_ssgManifest.js\"],\"pages\":{\"/\":[\"static/runtime/webpack-c212667a5f965e81e004.js\",\"static/chunks/framework.4dd1003cc9c949c7fcd3.js\",\"static/chunks/e81998a5989fd345021bc995c48ebcb07ca6beff.2a5ad1e5aa59f198bab4.js\",\"static/chunks/20dcc43a1693402533321b571f1c58aa8e6b9538.57763c29b480253fd5c1.js\",\"static/runtime/main-1f344c99046c566fd40a.js\"],\"/_app\":[\"static/runtime/webpack-c212667a5f965e81e004.js\",\"static/chunks/framework.4dd1003cc9c949c7fcd3.js\",\"static/chunks/e81998a5989fd345021bc995c48ebcb07ca6beff.2a5ad1e5aa59f198bab4.js\",\"static/chunks/bdfdd1575e66910e90962947d354dd4b75bd64d3.21a3843b59611e08b292.js\",\"static/chunks/d59a61c85d409d2f9446925c110384602ae73873.4bace49af79cc5b09a2d.js\",\"static/runtime/main-1f344c99046c566fd40a.js\"],\"/_error\":[\"static/runtime/webpack-c212667a5f965e81e004.js\",\"static/chunks/framework.4dd1003cc9c949c7fcd3.js\",\"static/runtime/main-1f344c99046c566fd40a.js\"],\"/_polyfills\":[\"static/runtime/polyfills-42651cc75ef14fa3642d.js\"],\"/beta\":[\"static/runtime/webpack-c212667a5f965e81e004.js\",\"static/chunks/framework.4dd1003cc9c949c7fcd3.js\",\"static/chunks/e81998a5989fd345021bc995c48ebcb07ca6beff.2a5ad1e5aa59f198bab4.js\",\"static/chunks/20dcc43a1693402533321b571f1c58aa8e6b9538.57763c29b480253fd5c1.js\",\"static/chunks/d59a61c85d409d2f9446925c110384602ae73873.4bace49af79cc5b09a2d.js\",\"static/runtime/main-1f344c99046c566fd40a.js\"],\"/index\":[\"static/runtime/webpack-c212667a5f965e81e004.js\",\"static/chunks/framework.4dd1003cc9c949c7fcd3.js\",\"static/chunks/e81998a5989fd345021bc995c48ebcb07ca6beff.2a5ad1e5aa59f198bab4.js\",\"static/chunks/20dcc43a1693402533321b571f1c58aa8e6b9538.57763c29b480253fd5c1.js\",\"static/runtime/main-1f344c99046c566fd40a.js\"]}}");
+module.exports = JSON.parse("{\"devFiles\":[],\"lowPriorityFiles\":[\"static/ufs1xTCOUJx7_bI6eRvMx/_buildManifest.js\",\"static/ufs1xTCOUJx7_bI6eRvMx/_ssgManifest.js\"],\"pages\":{\"/\":[\"static/runtime/webpack-c212667a5f965e81e004.js\",\"static/chunks/framework.4dd1003cc9c949c7fcd3.js\",\"static/chunks/aa9a20650a0c384b5a0cfd45383217be69d0fe4b.2a5ad1e5aa59f198bab4.js\",\"static/chunks/1c0a2ee750da422ceae9cb61ced463991ec93a64.b51e738ced95d8bd50fd.js\",\"static/runtime/main-70ea941a3795959d0760.js\"],\"/_app\":[\"static/runtime/webpack-c212667a5f965e81e004.js\",\"static/chunks/framework.4dd1003cc9c949c7fcd3.js\",\"static/chunks/aa9a20650a0c384b5a0cfd45383217be69d0fe4b.2a5ad1e5aa59f198bab4.js\",\"static/chunks/18d0e7640faa318a1883f7373279f154f2e4e0b3.37302fba0344cd0ccc6b.js\",\"static/chunks/d8407831435474135d6a28f69dd7dd046d5f00f7.4bace49af79cc5b09a2d.js\",\"static/runtime/main-70ea941a3795959d0760.js\"],\"/_error\":[\"static/runtime/webpack-c212667a5f965e81e004.js\",\"static/chunks/framework.4dd1003cc9c949c7fcd3.js\",\"static/runtime/main-70ea941a3795959d0760.js\"],\"/_polyfills\":[\"static/runtime/polyfills-97d14923417c0c47048c.js\"],\"/beta\":[\"static/runtime/webpack-c212667a5f965e81e004.js\",\"static/chunks/framework.4dd1003cc9c949c7fcd3.js\",\"static/chunks/aa9a20650a0c384b5a0cfd45383217be69d0fe4b.2a5ad1e5aa59f198bab4.js\",\"static/chunks/1c0a2ee750da422ceae9cb61ced463991ec93a64.b51e738ced95d8bd50fd.js\",\"static/chunks/d8407831435474135d6a28f69dd7dd046d5f00f7.4bace49af79cc5b09a2d.js\",\"static/runtime/main-70ea941a3795959d0760.js\"],\"/index\":[\"static/runtime/webpack-c212667a5f965e81e004.js\",\"static/chunks/framework.4dd1003cc9c949c7fcd3.js\",\"static/chunks/aa9a20650a0c384b5a0cfd45383217be69d0fe4b.2a5ad1e5aa59f198bab4.js\",\"static/chunks/1c0a2ee750da422ceae9cb61ced463991ec93a64.b51e738ced95d8bd50fd.js\",\"static/runtime/main-70ea941a3795959d0760.js\"]}}");
 
 /***/ }),
 
@@ -11670,215 +11879,6 @@ if (true) {
   module.exports = __webpack_require__("L/Hi");
 } else {}
 
-
-/***/ }),
-
-/***/ "skj9":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticParams", function() { return unstable_getStaticParams; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStaticProps", function() { return getStaticProps; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getStaticPaths", function() { return getStaticPaths; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getServerSideProps", function() { return getServerSideProps; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticProps", function() { return unstable_getStaticProps; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getStaticPaths", function() { return unstable_getStaticPaths; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "unstable_getServerProps", function() { return unstable_getServerProps; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "config", function() { return config; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "_app", function() { return _app; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderReqToHTML", function() { return renderReqToHTML; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony import */ var next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("GX0O");
-/* harmony import */ var next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("KqAr");
-
-    
-    
-    
-    const runtimeConfig = {}
-    const {parse} = __webpack_require__("bzos")
-    const {parse: parseQs} = __webpack_require__("8xkj")
-    const {renderToHTML} = __webpack_require__("/bjS");
-    const { tryGetPreviewData } = __webpack_require__("PCLx");
-    const {sendHTML} = __webpack_require__("LuNM");
-    const {sendPayload} = __webpack_require__("KyNf");
-    const buildManifest = __webpack_require__("LZ9C");
-    const reactLoadableManifest = __webpack_require__("67Bq");
-    const Document = __webpack_require__("5w0S").default;
-    const Error = __webpack_require__("Y0NT").default;
-    const App = __webpack_require__("1TCz").default;
-    
-    
-    const { rewrites } = __webpack_require__("Skye")
-    const { pathToRegexp, default: pathMatch } = __webpack_require__("uDRR")
-  
-
-    const ComponentInfo = __webpack_require__("Y0NT")
-
-    const Component = ComponentInfo.default
-    /* harmony default export */ __webpack_exports__["default"] = (Component);
-    const unstable_getStaticParams = ComponentInfo['unstable_getStaticParam' + 's']
-    const getStaticProps = ComponentInfo['getStaticProp' + 's']
-    const getStaticPaths = ComponentInfo['getStaticPath' + 's']
-    const getServerSideProps = ComponentInfo['getServerSideProp' + 's']
-
-    // kept for detecting legacy exports
-    const unstable_getStaticProps = ComponentInfo['unstable_getStaticProp' + 's']
-    const unstable_getStaticPaths = ComponentInfo['unstable_getStaticPath' + 's']
-    const unstable_getServerProps = ComponentInfo['unstable_getServerProp' + 's']
-
-    
-    
-    const getCustomRouteMatcher = pathMatch(true)
-    const {prepareDestination} = __webpack_require__("dtb4")
-
-    function handleRewrites(parsedUrl) {
-      for (const rewrite of rewrites) {
-        const matcher = getCustomRouteMatcher(rewrite.source)
-        const params = matcher(parsedUrl.pathname)
-
-        if (params) {
-          const { parsedDestination } = prepareDestination(
-            rewrite.destination,
-            params,
-            parsedUrl.query
-          )
-          Object.assign(parsedUrl.query, parsedDestination.query, params)
-          delete parsedDestination.query
-
-          Object.assign(parsedUrl, parsedDestination)
-
-          if (parsedUrl.pathname === '/_error'){
-            break
-          }
-          
-        }
-      }
-
-      return parsedUrl
-    }
-  
-
-    const config = ComponentInfo['confi' + 'g'] || {}
-    const _app = App
-    async function renderReqToHTML(req, res, renderMode, _renderOpts, _params) {
-      const fromExport = renderMode === 'export' || renderMode === true;
-      
-      const options = {
-        App,
-        Document,
-        buildManifest,
-        getStaticProps,
-        getServerSideProps,
-        getStaticPaths,
-        reactLoadableManifest,
-        canonicalBase: "",
-        buildId: "mBoURdcYd5Nul7nOhBEyc",
-        assetPrefix: "",
-        runtimeConfig: runtimeConfig.publicRuntimeConfig || {},
-        previewProps: {previewModeId:"f69b622be4d866c90ce6f40025f60112",previewModeSigningKey:"3952cf23b7f9c660e739df5c5caeb1aa7802940a659da9d1600d67c6f39efc36",previewModeEncryptionKey:"431bd0cca7aea035205d48721d0ef6e78ac4d60ca80e4e2fa6ab3bd9fa945e3e"},
-        env: process.env,
-        basePath: "",
-        ..._renderOpts
-      }
-      let _nextData = false
-      let parsedUrl
-
-      try {
-        parsedUrl = handleRewrites(parse(req.url, true))
-
-        if (parsedUrl.pathname.match(/_next\/data/)) {
-          _nextData = true
-          parsedUrl.pathname = parsedUrl.pathname
-            .replace(new RegExp('/_next/data/mBoURdcYd5Nul7nOhBEyc/'), '/')
-            .replace(/\.json$/, '')
-        }
-
-        const renderOpts = Object.assign(
-          {
-            Component,
-            pageConfig: config,
-            nextExport: fromExport
-          },
-          options,
-        )
-
-        
-          if (!res.statusCode) {
-            res.statusCode = 404
-          }
-        
-
-        const params = {};
-        const nowParams = null;
-        // make sure to set renderOpts to the correct params e.g. _params
-        // if provided from worker or params if we're parsing them here
-        renderOpts.params = _params || params
-
-        const isFallback = parsedUrl.query.__nextFallback
-
-        const previewData = tryGetPreviewData(req, res, options.previewProps)
-        const isPreviewMode = previewData !== false
-
-        let result = await renderToHTML(req, res, "/_error", Object.assign({}, getStaticProps ? { ...(parsedUrl.query.amp ? { amp: '1' } : {}) } : parsedUrl.query, nowParams ? nowParams : params, _params, isFallback ? { __nextFallback: 'true' } : {}), renderOpts)
-
-        if (!renderMode) {
-          if (_nextData || getStaticProps || getServerSideProps) {
-            sendPayload(res, _nextData ? JSON.stringify(renderOpts.pageData) : result, _nextData ? 'json' : 'html', {
-              private: isPreviewMode,
-              stateful: !!getServerSideProps,
-              revalidate: renderOpts.revalidate,
-            })
-            return null
-          }
-        } else if (isPreviewMode) {
-          res.setHeader(
-            'Cache-Control',
-            'private, no-cache, no-store, max-age=0, must-revalidate'
-          )
-        }
-
-        if (renderMode) return { html: result, renderOpts }
-        return result
-      } catch (err) {
-        if (!parsedUrl) {
-          parsedUrl = parse(req.url, true)
-        }
-
-        if (err.code === 'ENOENT') {
-          res.statusCode = 404
-        } else if (err.code === 'DECODE_FAILED') {
-          res.statusCode = 400
-        } else {
-          console.error(err)
-          res.statusCode = 500
-        }
-
-        const result = await renderToHTML(req, res, "/_error", parsedUrl.query, Object.assign({}, options, {
-          getStaticProps: undefined,
-          getStaticPaths: undefined,
-          getServerSideProps: undefined,
-          Component: Error,
-          err: res.statusCode === 404 ? undefined : err
-        }))
-        return result
-      }
-    }
-    async function render (req, res) {
-      try {
-        await Object(next_plugin_loader_middleware_on_init_server___WEBPACK_IMPORTED_MODULE_0__["default"])()
-        const html = await renderReqToHTML(req, res)
-        if (html) {
-          sendHTML(req, res, html, {generateEtags: true})
-        }
-      } catch(err) {
-        await Object(next_plugin_loader_middleware_on_error_server___WEBPACK_IMPORTED_MODULE_1__["default"])(err)
-        console.error(err)
-        res.statusCode = 500
-        res.end('Internal Server Error')
-      }
-    }
-  
 
 /***/ }),
 

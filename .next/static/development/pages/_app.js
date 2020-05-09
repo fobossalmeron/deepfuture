@@ -42,48 +42,48 @@ var CookieMessage = function CookieMessage(props) {
       lineNumber: 9,
       columnNumber: 7
     }
-  }, __jsx(Divider, {
-    onClick: props.doConsentToCookies,
+  }, __jsx(Button, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 10,
       columnNumber: 9
     }
-  }, __jsx(Button, {
+  }, __jsx("span", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 11,
       columnNumber: 11
     }
-  }, __jsx("span", {
+  }, t.title)), __jsx(CrossContainer, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 12,
-      columnNumber: 13
+      lineNumber: 13,
+      columnNumber: 9
     }
-  }, t.title)), __jsx(CrossContainer, {
+  }, __jsx(public_assets_img_layout_cross_svg__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 14,
       columnNumber: 11
     }
-  }, __jsx(public_assets_img_layout_cross_svg__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  })), __jsx(Divider, {
+    onClick: props.doConsentToCookies,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 15,
-      columnNumber: 13
-    }
-  }))), __jsx("p", {
-    __self: _this,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 16,
       columnNumber: 9
+    }
+  }, __jsx("p", {
+    __self: _this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 11
     }
   }, t.p, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: "/cookies",
@@ -91,62 +91,48 @@ var CookieMessage = function CookieMessage(props) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20,
-      columnNumber: 11
+      lineNumber: 19,
+      columnNumber: 13
     }
   }, __jsx("a", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21,
-      columnNumber: 12
+      lineNumber: 20,
+      columnNumber: 15
     }
-  }, t.link)), t.p_continued)));
+  }, t.link)), t.p_continued))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (CookieMessage);
 var Border = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "CookieMessage__Border",
   componentId: "krtr03-0"
-})(["border:", " solid ", ";background-color:", ";"], function (props) {
-  return props.theme.stroke;
-}, function (props) {
-  return props.theme.colors.foreground;
-}, function (props) {
+})(["background-color:", ";padding:15px 25px 20px;border-radius:3px;"], function (props) {
   return props.theme.colors.background;
 });
 var Button = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button.withConfig({
   displayName: "CookieMessage__Button",
   componentId: "krtr03-1"
-})(["padding:14px 0%;text-align:center;width:calc(100% - 45px);background-color:", ";color:", ";border:0;font-weight:100;font-size:1.8rem;border-right:", " solid ", ";cursor:pointer;transition:0.3s ease all;@media (hover:hover) and (pointer:fine){&:hover{background-color:", ";color:", ";span{background-size:0 0;}}}"], function (props) {
+})(["padding:14px 0%;text-align:center;width:calc(100% - 50px);background-color:", ";color:", ";border:0;font-size:1.8rem;cursor:pointer;transition:0.3s ease all;@media (hover:hover) and (pointer:fine){&:hover{background-color:", ";span{background-size:0 0;}}}"], function (props) {
   return props.theme.colors.accent;
 }, function (props) {
   return props.theme.colors.foreground;
 }, function (props) {
-  return props.theme.stroke;
-}, function (props) {
-  return props.theme.colors.foreground;
-}, function (props) {
   return props.theme.colors.success;
-}, function (props) {
-  return props.theme.colors.background;
 });
 var Divider = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "CookieMessage__Divider",
   componentId: "krtr03-2"
-})(["border-bottom:", " solid ", ";display:flex;"], function (props) {
-  return props.theme.stroke;
-}, function (props) {
-  return props.theme.colors.foreground;
-});
+})(["display:flex;"]);
 var CrossContainer = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "CookieMessage__CrossContainer",
   componentId: "krtr03-3"
-})(["width:45px;height:45px;padding:12px;svg{width:100%;max-width:30px;cursor:pointer;}"]);
+})(["width:79px;height:84px;padding:15px 25px;margin:0;display:flex;position:absolute;top:0;right:0;svg{width:100%;cursor:pointer;}"]);
 var Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "CookieMessage__Wrapper",
   componentId: "krtr03-4"
-})(["pointer-events:", ";opacity:", ";max-width:590px;width:80%;bottom:5%;left:50%;transform:translateX(-50%) ", ";font-weight:100;position:fixed;transition:opacity 0.4s ease,transform 0.5s ease;z-index:12;p{font-size:1.2rem;padding:2.5% 4% 3% 4%;}@media (max-width:600px){left:0;transform:none;width:calc(100% - 36px);margin-left:18px;margin-right:18px;bottom:18px;z-index:100;}"], function (props) {
+})(["pointer-events:", ";opacity:", ";max-width:590px;width:80%;bottom:5%;left:50%;transform:translateX(-50%) ", ";position:fixed;transition:opacity 0.4s ease,transform 0.5s ease;z-index:12;p{font-size:1.3rem;padding-top:10px;width:100%;text-align:center;}@media (max-width:600px){left:0;transform:none;width:calc(100% - 36px);margin-left:18px;margin-right:18px;bottom:18px;z-index:100;}"], function (props) {
   return props.clickable ? "auto" : "none";
 }, function (props) {
   return props.clickable ? "1" : "0";
