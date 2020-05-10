@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import styled from "styled-components";
 import { H1, H2 } from "components/shared/Dangerously";
-import EmailCollector from "components/EmailCollector";
+import LeadCollector from "components/shared/LeadCollector";
 
-function FormComplete({ centered }) {
+function FormComplete({ centered, collectorId }) {
   return (
     <Form centered={centered}>
       <Column>
@@ -29,7 +29,7 @@ function FormComplete({ centered }) {
         )}
       </Column>
       <Column>
-        <EmailCollector complete />
+        <LeadCollector complete collectorId={collectorId} />
       </Column>
     </Form>
   );

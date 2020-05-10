@@ -79,7 +79,7 @@ const tiers = [
   },
 ];
 
-const Tier = ({ tier }) => {
+const Tier = ({ tier, setShowPopup }) => {
   return (
     <TierContainer color={tier.color}>
       <Padded>
@@ -97,14 +97,18 @@ const Tier = ({ tier }) => {
             </span>
             <span>{tier.originalPrice ? "$" + tier.originalPrice : null}</span>
           </Price>
-          <Button>Comprar</Button>
+          {tier.title !== "empresarial" ? (
+            <Button>Comprar</Button>
+          ) : (
+            <Button onClick={setShowPopup}>Contacta a un asesor</Button>
+          )}
         </Fade>
       </Padded>
     </TierContainer>
   );
 };
 
-function Tiers() {
+function Tiers({ setShowPopup }) {
   return (
     <TiersSection>
       <Title>
@@ -121,7 +125,7 @@ function Tiers() {
         <TierBackground />
         <Includes></Includes>
         {tiers.map((tier, i) => (
-          <Tier key={"tier" + i} tier={tier} />
+          <Tier setShowPopup={setShowPopup} key={"tier" + i} tier={tier} />
         ))}
         <Includes>
           <span>Incluye</span>

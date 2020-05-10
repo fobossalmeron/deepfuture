@@ -143,6 +143,7 @@ export default ({
           setTitle: setTitle,
           hasLoaded: hasLoaded,
           mouse: mouse,
+          setShowPopup: setShowPopup,
         })}
         <CookieMessage
           locale={locale}
@@ -150,7 +151,7 @@ export default ({
           hasToConsent={hasToConsent}
         />
         <BodyOverflow isOpen={isOpen} hasLoaded={hasLoaded} />
-        {showPopup && <NewsletterPopup />}
+        {showPopup && <NewsletterPopup setShowPopup={setShowPopup} />}
         <Footer>
           © Deep Future Institute, 2020
           <Imago />

@@ -345,312 +345,6 @@ const DataSection = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(com
 
 /***/ }),
 
-/***/ "./components/EmailCollector.js":
-/*!**************************************!*\
-  !*** ./components/EmailCollector.js ***!
-  \**************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_mailchimp_subscribe__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-mailchimp-subscribe */ "react-mailchimp-subscribe");
-/* harmony import */ var react_mailchimp_subscribe__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_mailchimp_subscribe__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/EmailCollector.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-const url = "https://studio.us19.list-manage.com/subscribe/post?u=c9d7bbb792de4cdbe363fad75&amp;id=434dbf9f3b";
-const isEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-const CustomForm = ({
-  status,
-  message,
-  onValidated,
-  enterprise,
-  complete,
-  short
-}) => {
-  const {
-    0: displayMessage,
-    1: setMessage
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
-  const {
-    0: showMessage,
-    1: setShowMessage
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
-  let email, name, industry, company, employees;
-
-  const submitEnterprise = () => {
-    if (!name.value) {
-      setShowMessage(true), setMessage("Ingresa tu nombre");
-    } else if (!lastname.value) {
-      setShowMessage(true), setMessage("Ingresa tu apellido");
-    } else if (!email.value) {
-      setShowMessage(true), setMessage("Ingresa tu email");
-    } else if (!isEmail.test(email.value)) {
-      setShowMessage(true), setMessage("Email en formato incorrecto");
-    } else {
-      setShowMessage(false), onValidated({
-        NAME: name.value,
-        EMAIL: email.value,
-        COMPANY: company.value,
-        EMPLOYEES: employees.value
-      });
-    }
-  };
-
-  const submitComplete = () => {
-    if (!name.value) {
-      setShowMessage(true), setMessage("Ingresa tu nombre");
-    } else if (!email.value) {
-      setShowMessage(true), setMessage("Ingresa tu email");
-    } else if (!isEmail.test(email.value)) {
-      setShowMessage(true), setMessage("Email en formato incorrecto");
-    } else {
-      setShowMessage(false), onValidated({
-        NAME: name.value,
-        EMAIL: email.value,
-        INDUSTRY: industry.value
-      });
-    }
-  };
-
-  const submitShort = () => {
-    if (!email.value) {
-      setShowMessage(true), setMessage("Ingresa tu email");
-    } else if (!isEmail.test(email.value)) {
-      setShowMessage(true), setMessage("Email en formato incorrecto");
-    } else {
-      setShowMessage(false), onValidated({
-        EMAIL: email.value
-      });
-    }
-  };
-
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, status === "sending" && __jsx(Message, {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 73,
-      columnNumber: 32
-    }
-  }, "Enviando..."), showMessage ? __jsx(Message, {
-    error: true,
-    dangerouslySetInnerHTML: {
-      __html: displayMessage
-    },
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 75,
-      columnNumber: 9
-    }
-  }) : null, status === "error" && __jsx(Message, {
-    error: true,
-    dangerouslySetInnerHTML: {
-      __html: message
-    },
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 78,
-      columnNumber: 9
-    }
-  }), status === "success" && __jsx(Message, {
-    success: true,
-    dangerouslySetInnerHTML: {
-      __html: message
-    },
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 81,
-      columnNumber: 9
-    }
-  }), status !== "success" && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Label, {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 85,
-      columnNumber: 11
-    }
-  }, __jsx("span", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 86,
-      columnNumber: 13
-    }
-  }, "email"), __jsx(Input, {
-    ref: node => email = node,
-    type: "email",
-    placeholder: short ? "Tu correo" : "Email",
-    short: short,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 87,
-      columnNumber: 13
-    }
-  })), !short && __jsx(Label, {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 95,
-      columnNumber: 13
-    }
-  }, __jsx("span", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 96,
-      columnNumber: 15
-    }
-  }, "nombre"), __jsx(Input, {
-    ref: node => name = node,
-    type: "text",
-    placeholder: "Nombre",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 97,
-      columnNumber: 15
-    }
-  })), complete && __jsx(Label, {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 105,
-      columnNumber: 13
-    }
-  }, __jsx("span", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 106,
-      columnNumber: 15
-    }
-  }, "industria"), __jsx(Input, {
-    ref: node => industry = node,
-    type: "text",
-    placeholder: "Industria",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 107,
-      columnNumber: 15
-    }
-  })), enterprise && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Input, {
-    ref: node => company = node,
-    type: "text",
-    placeholder: "compa\xF1\xEDa",
-    id: "compa\xF1\xEDa",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 116,
-      columnNumber: 15
-    }
-  }), __jsx(Label, {
-    htmlFor: "compa\xF1\xEDa",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 122,
-      columnNumber: 15
-    }
-  }, "compa\xF1\xEDa"), __jsx(Input, {
-    ref: node => employees = node,
-    type: "text",
-    placeholder: "empleados",
-    id: "empleados",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 123,
-      columnNumber: 15
-    }
-  }), __jsx(Label, {
-    htmlFor: "empleados",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 129,
-      columnNumber: 15
-    }
-  }, "empleados")), __jsx(Button, {
-    short: short,
-    onClick: short ? submitShort : complete ? submitComplete : submitEnterprise,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 132,
-      columnNumber: 11
-    }
-  }, short ? "Descargar PDF gratuito" : "Descargar gratis")));
-};
-
-const EmailCollector = ({
-  enterprise,
-  complete,
-  short
-}) => {
-  return __jsx(react_mailchimp_subscribe__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    url: url,
-    render: ({
-      subscribe,
-      status,
-      message
-    }) => __jsx(CustomForm, {
-      enterprise: enterprise,
-      complete: complete,
-      short: short,
-      status: status,
-      message: message,
-      onValidated: formData => subscribe(formData),
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 151,
-        columnNumber: 9
-      }
-    }),
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 148,
-      columnNumber: 5
-    }
-  });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (EmailCollector);
-const Message = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
-  displayName: "EmailCollector__Message",
-  componentId: "jldx4s-0"
-})(["color:", ";font-size:", ";padding-bottom:5px;@media (max-width:600px),(max-height:450px){font-size:1.5rem;}"], props => props.error ? props.theme.colors.error : props.success ? props.theme.colors.success : props.theme.colors.accent, props => props.success ? "1.8rem" : "1.5rem");
-const Label = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.label.withConfig({
-  displayName: "EmailCollector__Label",
-  componentId: "jldx4s-1"
-})(["margin:0;span{font-size:0;height:0;width:0;position:absolute;}"]);
-const Input = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.input.withConfig({
-  displayName: "EmailCollector__Input",
-  componentId: "jldx4s-2"
-})(["width:100%;padding:13px 18px 13px 26px;line-height:100%;background-color:", ";border-radius:", ";border:none;font-size:1.7rem;margin:4px 0;height:48px;color:", ";-webkit-appearance:textfield;appearance:textfield;::placeholder{padding-top:4px;color:#31302e;opacity:0.5;}"], props => props.theme.colors.foreground, props => props.short ? "4px 0px 0px 4px" : "4px", props => props.theme.colors.foreground_lowest);
-const Button = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
-  displayName: "EmailCollector__Button",
-  componentId: "jldx4s-3"
-})(["padding:14px 0%;margin:4px 0;text-align:center;width:", ";background-color:", ";color:", ";border:0;font-size:1.7rem;border-radius:", ";cursor:pointer;transition:0.3s ease all;"], props => props.short ? "50%" : "100%", props => props.theme.colors.cta, props => props.theme.colors.background, props => props.short ? "0px 4px 4px 0px" : "4px");
-
-/***/ }),
-
 /***/ "./components/FormComplete.js":
 /*!************************************!*\
   !*** ./components/FormComplete.js ***!
@@ -665,7 +359,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var components_shared_Dangerously__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/shared/Dangerously */ "./components/shared/Dangerously.js");
-/* harmony import */ var components_EmailCollector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! components/EmailCollector */ "./components/EmailCollector.js");
+/* harmony import */ var components_shared_LeadCollector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! components/shared/LeadCollector */ "./components/shared/LeadCollector.js");
 var _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/FormComplete.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -675,7 +369,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 function FormComplete({
-  centered
+  centered,
+  collectorId
 }) {
   return __jsx(Form, {
     centered: centered,
@@ -776,8 +471,9 @@ function FormComplete({
       lineNumber: 31,
       columnNumber: 7
     }
-  }, __jsx(components_EmailCollector__WEBPACK_IMPORTED_MODULE_3__["default"], {
+  }, __jsx(components_shared_LeadCollector__WEBPACK_IMPORTED_MODULE_3__["default"], {
     complete: true,
+    collectorId: collectorId,
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -1411,7 +1107,8 @@ const tiers = [{
 }];
 
 const Tier = ({
-  tier
+  tier,
+  setShowPopup
 }) => {
   return __jsx(TierContainer, {
     color: tier.color,
@@ -1498,57 +1195,67 @@ const Tier = ({
       lineNumber: 98,
       columnNumber: 13
     }
-  }, tier.originalPrice ? "$" + tier.originalPrice : null)), __jsx(Button, {
+  }, tier.originalPrice ? "$" + tier.originalPrice : null)), tier.title !== "empresarial" ? __jsx(Button, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100,
-      columnNumber: 11
+      lineNumber: 101,
+      columnNumber: 13
     }
-  }, "Comprar"))));
+  }, "Comprar") : __jsx(Button, {
+    onClick: setShowPopup,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 103,
+      columnNumber: 13
+    }
+  }, "Contacta a un asesor"))));
 };
 
-function Tiers() {
+function Tiers({
+  setShowPopup
+}) {
   return __jsx(TiersSection, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109,
+      lineNumber: 113,
       columnNumber: 5
     }
   }, __jsx(components_shared_Title__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110,
+      lineNumber: 114,
       columnNumber: 7
     }
   }, __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 111,
+      lineNumber: 115,
       columnNumber: 9
     }
   }, "Prep\xE1rate para los escenarios de ", __jsx("b", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 112,
+      lineNumber: 116,
       columnNumber: 44
     }
   }, "futuro")), __jsx("h3", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114,
+      lineNumber: 118,
       columnNumber: 9
     }
   }, "Conoce nuestros ", __jsx("b", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115,
+      lineNumber: 119,
       columnNumber: 27
     }
   }, "talleres"))), __jsx(TiersGrid, {
@@ -1556,65 +1263,66 @@ function Tiers() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118,
+      lineNumber: 122,
       columnNumber: 7
     }
   }, __jsx(TierBackground, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119,
+      lineNumber: 123,
       columnNumber: 9
     }
   }), __jsx(TierBackground, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 120,
+      lineNumber: 124,
       columnNumber: 9
     }
   }), __jsx(TierBackground, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 121,
+      lineNumber: 125,
       columnNumber: 9
     }
   }), __jsx(Includes, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122,
+      lineNumber: 126,
       columnNumber: 9
     }
   }), tiers.map((tier, i) => __jsx(Tier, {
+    setShowPopup: setShowPopup,
     key: "tier" + i,
     tier: tier,
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124,
+      lineNumber: 128,
       columnNumber: 11
     }
   })), __jsx(Includes, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126,
+      lineNumber: 130,
       columnNumber: 9
     }
   }, __jsx("span", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 127,
+      lineNumber: 131,
       columnNumber: 11
     }
   }, "Incluye"), __jsx(StatsInclude, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 128,
+      lineNumber: 132,
       columnNumber: 11
     }
   }, includes.map((include, i) => __jsx("li", {
@@ -1622,21 +1330,21 @@ function Tiers() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 130,
+      lineNumber: 134,
       columnNumber: 15
     }
   }, __jsx(components_shared_Dangerously__WEBPACK_IMPORTED_MODULE_4__["H3"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 131,
+      lineNumber: 135,
       columnNumber: 17
     }
   }, include.title), __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 135,
+      lineNumber: 139,
       columnNumber: 17
     }
   }, include.subtitle))))), tiers.map((tier, i) => __jsx(Stats, {
@@ -1644,14 +1352,14 @@ function Tiers() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 141,
+      lineNumber: 145,
       columnNumber: 11
     }
   }, __jsx("li", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 142,
+      lineNumber: 146,
       columnNumber: 13
     }
   }, "18"), Object.entries(tier.perks).map((perk, i) => __jsx("li", {
@@ -1659,21 +1367,21 @@ function Tiers() {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 144,
+      lineNumber: 148,
       columnNumber: 15
     }
   }, perk[1] ? __jsx(public_assets_img_layout_check_svg__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145,
+      lineNumber: 149,
       columnNumber: 28
     }
   }) : __jsx(public_assets_img_layout_uncheck_svg__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145,
+      lineNumber: 149,
       columnNumber: 40
     }
   })))))));
@@ -2027,6 +1735,337 @@ const ColumnSecond = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.di
 
 /***/ }),
 
+/***/ "./components/shared/Forms.js":
+/*!************************************!*\
+  !*** ./components/shared/Forms.js ***!
+  \************************************/
+/*! exports provided: Message, Label, Input, Select, Button, selectStyles, isEmail */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Message", function() { return Message; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Label", function() { return Label; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Input", function() { return Input; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Select", function() { return Select; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Button", function() { return Button; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectStyles", function() { return selectStyles; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isEmail", function() { return isEmail; });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+const Message = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
+  displayName: "Forms__Message",
+  componentId: "qrpl3s-0"
+})(["color:", ";font-size:", ";padding-bottom:5px;", ";", ";@media (max-width:600px),(max-height:450px){font-size:1.5rem;}"], props => props.error ? props.theme.colors.error : props.success ? props.theme.colors.successf : props.theme.colors.foreground, props => props.success ? "1.8rem" : "1.5rem", props => props.short && !props.success && `position: absolute;  
+     bottom: -30px;
+     padding: 10px;
+     border-radius: 3px;
+     background-color: ${props.theme.colors.background};
+    `, props => props.short && props.success && `width: 100%;
+     text-align:right;
+    `);
+const Label = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.label.withConfig({
+  displayName: "Forms__Label",
+  componentId: "qrpl3s-1"
+})(["width:", ";margin:0;span{font-size:0;height:0;width:0;position:absolute;}"], props => props.short ? "50%" : "100%");
+const Input = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.input.withConfig({
+  displayName: "Forms__Input",
+  componentId: "qrpl3s-2"
+})(["width:100%;padding:13px 18px 13px 26px;line-height:100%;background-color:", ";border-radius:", ";border:none;font-size:1.7rem;margin:4px 0;height:48px;color:", ";-webkit-appearance:textfield;appearance:textfield;::placeholder{padding-top:4px;color:#31302e;opacity:0.5;}"], props => props.theme.colors.foreground, props => props.short ? "4px 0px 0px 4px" : "4px", props => props.theme.colors.foreground_lowest);
+const Select = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.select.withConfig({
+  displayName: "Forms__Select",
+  componentId: "qrpl3s-3"
+})(["width:100%;padding:13px 18px 13px 26px;line-height:100%;background-color:", ";border-radius:", ";border:none;font-size:1.7rem;margin:4px 0;height:48px;color:", ";"], props => props.theme.colors.foreground, props => props.short ? "4px 0px 0px 4px" : "4px", props => props.theme.colors.foreground_lowest);
+const Button = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.button.withConfig({
+  displayName: "Forms__Button",
+  componentId: "qrpl3s-4"
+})(["padding:14px 0%;margin:4px 0;text-align:center;width:", ";background-color:", ";color:", ";border:0;font-size:1.7rem;border-radius:", ";cursor:pointer;transition:0.3s ease all;@media (hover:hover) and (pointer:fine){&:hover{background-color:", ";}}"], props => props.short ? "50%" : "100%", props => props.theme.colors.cta, props => props.theme.colors.background, props => props.short ? "0px 4px 4px 0px" : "4px", props => props.theme.colors.success);
+const selectStyles = {
+  option: provided => _objectSpread({}, provided, {
+    color: "#4F4F4F",
+    fontSize: "1.7rem"
+  }),
+  singleValue: provided => _objectSpread({}, provided, {
+    color: "#4F4F4F"
+  }),
+  container: provided => _objectSpread({}, provided, {
+    margin: "4px 0",
+    height: "48px"
+  }),
+  control: provided => _objectSpread({}, provided, {
+    height: "100%",
+    border: 0
+  }),
+  valueContainer: provided => _objectSpread({}, provided, {
+    padding: "1px 18px 13px 26px",
+    lineHeight: "100%"
+  }),
+  placeholder: provided => _objectSpread({}, provided, {
+    paddingTop: "4px",
+    color: "#31302e",
+    opacity: 0.5,
+    padding: 0,
+    margin: 0,
+    fontSize: "1.7rem"
+  })
+};
+const isEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+/***/ }),
+
+/***/ "./components/shared/LeadCollector.js":
+/*!********************************************!*\
+  !*** ./components/shared/LeadCollector.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! components/shared/Forms */ "./components/shared/Forms.js");
+/* harmony import */ var react_select___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-select/ */ "react-select/");
+/* harmony import */ var react_select___WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_select___WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/shared/LeadCollector.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+const LeadCollector = ({
+  complete,
+  short,
+  collectorId
+}) => {
+  const {
+    0: displayMessage,
+    1: setMessage
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const {
+    0: showMessage,
+    1: setShowMessage
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const {
+    0: industryOption,
+    1: setIndustryOption
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
+  const {
+    0: status,
+    1: setStatus
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("");
+  let email, name;
+
+  const handleIndustryChange = selectedIndustry => {
+    setIndustryOption(selectedIndustry);
+  };
+
+  const call = async () => {
+    setStatus("sending");
+    let requestOptions = {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        "content-type": "application/json",
+        "api-key": "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"
+      },
+      body: JSON.stringify({
+        updateEnabled: false,
+        email: email.value,
+        listIds: [6],
+        attributes: {
+          FIRSTNAME: name ? name.value : " ",
+          INDUSTRY: industryOption !== null ? industryOption.value : " "
+        }
+      })
+    };
+    const response = await fetch("https://api.sendinblue.com/v3/contacts", requestOptions);
+    const data = await response.json();
+    setMessage(data.id ? "Recibirás el reporte en tu correo! Éxito" : "El correo que ingresaste ya fue registrado");
+    setStatus(data.id ? "success" : "error");
+  };
+
+  const submitComplete = () => {
+    if (!name.value) {
+      setShowMessage(true), setMessage("Ingresa tu nombre");
+    } else if (!email.value) {
+      setShowMessage(true), setMessage("Ingresa tu email");
+    } else if (!components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["isEmail"].test(email.value)) {
+      setShowMessage(true), setMessage("Email en formato incorrecto");
+    } else {
+      setShowMessage(false), call();
+    }
+  };
+
+  const submitShort = () => {
+    if (!email.value) {
+      setShowMessage(true), setMessage("Ingresa tu email");
+    } else if (!components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["isEmail"].test(email.value)) {
+      setShowMessage(true), setMessage("Email en formato incorrecto");
+    } else {
+      setShowMessage(false), call();
+    }
+  };
+
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, status === "sending" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Message"], {
+    short: short,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 83,
+      columnNumber: 32
+    }
+  }, "Enviando..."), showMessage && //Mensajes de validación
+  __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Message"], {
+    short: short,
+    error: true,
+    dangerouslySetInnerHTML: {
+      __html: displayMessage
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 86,
+      columnNumber: 9
+    }
+  }), status === "error" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Message"], {
+    short: short,
+    error: true,
+    dangerouslySetInnerHTML: {
+      __html: displayMessage
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 93,
+      columnNumber: 9
+    }
+  }), status === "success" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Message"], {
+    short: short,
+    success: true,
+    dangerouslySetInnerHTML: {
+      __html: displayMessage
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 100,
+      columnNumber: 9
+    }
+  }), status !== "success" && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+    short: short,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 108,
+      columnNumber: 11
+    }
+  }, __jsx("span", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 109,
+      columnNumber: 13
+    }
+  }, "email"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+    ref: node => email = node,
+    type: "email",
+    placeholder: short ? "Tu correo" : "Email*",
+    short: short,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 110,
+      columnNumber: 13
+    }
+  })), complete && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 119,
+      columnNumber: 15
+    }
+  }, __jsx("span", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 120,
+      columnNumber: 17
+    }
+  }, "nombre"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+    ref: node => name = node,
+    type: "text",
+    placeholder: "Nombre*",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 121,
+      columnNumber: 17
+    }
+  })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 127,
+      columnNumber: 15
+    }
+  }, __jsx("span", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 128,
+      columnNumber: 17
+    }
+  }, "industria"), __jsx(react_select___WEBPACK_IMPORTED_MODULE_2___default.a, {
+    styles: components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["selectStyles"],
+    placeholder: "Industria",
+    instanceId: "Industria" + collectorId,
+    isSearchable: false,
+    options: [{
+      value: "Aviación",
+      label: "Aviación"
+    }, {
+      value: "Automotriz",
+      label: "Automotriz"
+    }, {
+      value: "Cine",
+      label: "Cine"
+    }, {
+      value: "Hospitalaria",
+      label: "Hospitalaria"
+    }],
+    value: industryOption,
+    onChange: handleIndustryChange,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 129,
+      columnNumber: 17
+    }
+  }))), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    short: short,
+    onClick: short ? submitShort : submitComplete,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 146,
+      columnNumber: 11
+    }
+  }, short && "Descargar PDF gratuito", complete && "Descargar gratis")));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (LeadCollector);
+
+/***/ }),
+
 /***/ "./components/shared/MainGrid.js":
 /*!***************************************!*\
   !*** ./components/shared/MainGrid.js ***!
@@ -2125,13 +2164,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var components_shared_MainGrid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! components/shared/MainGrid */ "./components/shared/MainGrid.js");
 /* harmony import */ var components_DataItemsWhite__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! components/DataItemsWhite */ "./components/DataItemsWhite.js");
 /* harmony import */ var components_DataItemsDark__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! components/DataItemsDark */ "./components/DataItemsDark.js");
-/* harmony import */ var components_shared_Title__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! components/shared/Title */ "./components/shared/Title.js");
-/* harmony import */ var components_LandBg__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! components/LandBg */ "./components/LandBg.js");
-/* harmony import */ var components_Quote__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! components/Quote */ "./components/Quote.js");
-/* harmony import */ var components_Tiers__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! components/Tiers */ "./components/Tiers.js");
+/* harmony import */ var components_shared_LeadCollector__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! components/shared/LeadCollector */ "./components/shared/LeadCollector.js");
+/* harmony import */ var components_shared_Title__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! components/shared/Title */ "./components/shared/Title.js");
+/* harmony import */ var components_LandBg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! components/LandBg */ "./components/LandBg.js");
+/* harmony import */ var components_Quote__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! components/Quote */ "./components/Quote.js");
+/* harmony import */ var components_Tiers__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! components/Tiers */ "./components/Tiers.js");
 var _jsxFileName = "/Users/salmeron/Sites/deepfuture/pages/beta.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -2153,14 +2194,14 @@ function Index(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 18,
+      lineNumber: 19,
       columnNumber: 7
     }
-  }), __jsx(components_LandBg__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }), __jsx(components_LandBg__WEBPACK_IMPORTED_MODULE_10__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23,
+      lineNumber: 24,
       columnNumber: 7
     }
   }), __jsx(Land, {
@@ -2168,7 +2209,7 @@ function Index(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24,
+      lineNumber: 25,
       columnNumber: 7
     }
   }, __jsx("div", {
@@ -2176,183 +2217,186 @@ function Index(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25,
+      lineNumber: 26,
       columnNumber: 9
     }
   }, __jsx("h1", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26,
+      lineNumber: 27,
       columnNumber: 11
     }
   }, "Genera ", __jsx("b", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27,
+      lineNumber: 28,
       columnNumber: 20
     }
   }, "certidumbre"), " en la crisis econ\xF3mica del COVID-19 y la 4T en M\xE9xico"), __jsx("h2", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30,
+      lineNumber: 31,
       columnNumber: 11
     }
   }, "Facilita la toma de ", __jsx("b", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 32,
       columnNumber: 33
     }
   }, "decisiones"), " y minimiza el ", __jsx("b", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31,
+      lineNumber: 32,
       columnNumber: 65
     }
   }, "riesgo"), " de tu negocio u organizaci\xF3n en el ", __jsx("b", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32,
+      lineNumber: 33,
       columnNumber: 45
     }
   }, "futuro"), " con este taller autogestivo o guiado por expertos")), __jsx(components_FormComplete__WEBPACK_IMPORTED_MODULE_4__["default"], {
     centered: true,
+    collectorId: "LandingCollector",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 36,
+      lineNumber: 37,
       columnNumber: 9
     }
   })), __jsx(Intro, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 38,
+      lineNumber: 39,
       columnNumber: 7
     }
   }, __jsx(components_DataItemsWhite__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39,
-      columnNumber: 9
-    }
-  }), __jsx(components_Quote__WEBPACK_IMPORTED_MODULE_10__["default"], {
-    __self: this,
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 40,
       columnNumber: 9
     }
-  })), __jsx(components_Tiers__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }), __jsx(components_Quote__WEBPACK_IMPORTED_MODULE_11__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42,
-      columnNumber: 7
+      lineNumber: 41,
+      columnNumber: 9
     }
-  }), __jsx(SecondForm, {
+  })), __jsx(components_Tiers__WEBPACK_IMPORTED_MODULE_12__["default"], {
+    setShowPopup: props.setShowPopup,
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 43,
       columnNumber: 7
     }
-  }, __jsx(SecondFormGrid, {
+  }), __jsx(SecondForm, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 44,
+      columnNumber: 7
+    }
+  }, __jsx(SecondFormGrid, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 45,
       columnNumber: 9
     }
   }, __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_2___default.a, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 45,
+      lineNumber: 46,
       columnNumber: 11
     }
   }, __jsx("div", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 46,
+      lineNumber: 47,
       columnNumber: 13
     }
   }, __jsx("h5", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47,
+      lineNumber: 48,
       columnNumber: 15
     }
   }, "Prueba un poco de lo que ", __jsx("b", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 48,
+      lineNumber: 49,
       columnNumber: 42
     }
   }, "ofrecemos")), __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50,
+      lineNumber: 51,
       columnNumber: 15
     }
   }, "Analizar los escenarios que podr\xEDan ocurrir a corto y largo plazo te ayudar\xE1 a organizar la informaci\xF3n que necesitas para enfrentar nuevas problem\xE1ticas y reducir riesgos."))), __jsx(components_FormComplete__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    collectorId: "TiersCollector",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 57,
+      lineNumber: 58,
       columnNumber: 11
     }
   }))), __jsx(components_DataItemsDark__WEBPACK_IMPORTED_MODULE_7__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 60,
+      lineNumber: 61,
       columnNumber: 7
     }
-  }), __jsx(components_shared_Title__WEBPACK_IMPORTED_MODULE_8__["default"], {
+  }), __jsx(components_shared_Title__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 61,
+      lineNumber: 62,
       columnNumber: 7
     }
   }, __jsx("p", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 62,
+      lineNumber: 63,
       columnNumber: 9
     }
   }, "La estrategia de hoy es ", __jsx("b", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 63,
+      lineNumber: 64,
       columnNumber: 35
     }
   }, "sobrevivir")), __jsx("h3", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 65,
+      lineNumber: 66,
       columnNumber: 9
     }
   }, "Encuentra ", __jsx("b", {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 66,
+      lineNumber: 67,
       columnNumber: 21
     }
   }, "certidumbre"), " con Deep Future Institute")), __jsx(components_shared_MainGrid__WEBPACK_IMPORTED_MODULE_5__["default"], {
@@ -2360,15 +2404,16 @@ function Index(props) {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 69,
+      lineNumber: 70,
       columnNumber: 7
     }
   }, __jsx(components_FormComplete__WEBPACK_IMPORTED_MODULE_4__["default"], {
     centered: true,
+    collectorId: "FooterCollector",
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 70,
+      lineNumber: 71,
       columnNumber: 9
     }
   })));
@@ -2744,17 +2789,6 @@ module.exports = require("react");
 
 /***/ }),
 
-/***/ "react-mailchimp-subscribe":
-/*!********************************************!*\
-  !*** external "react-mailchimp-subscribe" ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("react-mailchimp-subscribe");
-
-/***/ }),
-
 /***/ "react-reveal/Fade":
 /*!************************************!*\
   !*** external "react-reveal/Fade" ***!
@@ -2763,6 +2797,17 @@ module.exports = require("react-mailchimp-subscribe");
 /***/ (function(module, exports) {
 
 module.exports = require("react-reveal/Fade");
+
+/***/ }),
+
+/***/ "react-select/":
+/*!********************************!*\
+  !*** external "react-select/" ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-select/");
 
 /***/ }),
 

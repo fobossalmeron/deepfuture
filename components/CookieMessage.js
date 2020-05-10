@@ -5,15 +5,15 @@ import Cross from "public/assets/img/layout/cross.svg";
 const CookieMessage = (props) => {
   let t = props.locale.cookie_message;
   return (
-    <Wrapper borderTop={props.borderTop} clickable={props.hasToConsent}>
+    <Wrapper clickable={props.hasToConsent}>
       <Border>
-        <Button>
+        <Button onClick={props.doConsentToCookies}>
           <span>{t.title}</span>
         </Button>
-        <CrossContainer>
+        <CrossContainer onClick={props.doConsentToCookies}>
           <Cross />
         </CrossContainer>
-        <Divider onClick={props.doConsentToCookies}>
+        <Divider>
           <p>
             {t.p}
             <Link href="/cookies" passHref>

@@ -5,9 +5,9 @@ const path = require("path");
 const withOffline = require("next-offline");
 
 const nextConfig = {
-  //start of WPA config
+  //PWA config
   target: "serverless",
-  transformManifest: manifest => ["/"].concat(manifest),
+  transformManifest: (manifest) => ["/"].concat(manifest),
   // generateInDevMode: true,
   workboxOpts: {
     swDest: "static/service-worker.js",
@@ -20,15 +20,16 @@ const nextConfig = {
           networkTimeoutSeconds: 15,
           expiration: {
             maxEntries: 150,
-            maxAgeSeconds: 30 * 24 * 60 * 60 // 1 month
+            maxAgeSeconds: 30 * 24 * 60 * 60, // 1 month
           },
           cacheableResponse: {
-            statuses: [0, 200]
-          }
-        }
-      }
-    ]
-  }, //end of WPA config
+            statuses: [0, 200],
+          },
+        },
+      },
+    ],
+  },
+  //nextjs config
   exportTrailingSlash: false,
   webpack: (config, options) => {
     config.module.rules.push({
@@ -37,14 +38,18 @@ const nextConfig = {
         {
           loader: "@svgr/webpack",
           options: {
-            svgo: false
-          }
-        }
-      ]
+            svgo: false,
+          },
+        },
+      ],
     });
     config.resolve.modules.push(path.resolve("./"));
     return config;
-  }
+  },
+  //env config
+  env: {
+    SENDINBLUE_API: process.env.SENDINBLUE_API,
+  },
 };
 
 // module.exports = withBundleAnalyzer(nextConfig);

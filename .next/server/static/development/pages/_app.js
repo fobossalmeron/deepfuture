@@ -141,7 +141,6 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 const CookieMessage = props => {
   let t = props.locale.cookie_message;
   return __jsx(Wrapper, {
-    borderTop: props.borderTop,
     clickable: props.hasToConsent,
     __self: undefined,
     __source: {
@@ -157,6 +156,7 @@ const CookieMessage = props => {
       columnNumber: 7
     }
   }, __jsx(Button, {
+    onClick: props.doConsentToCookies,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -171,6 +171,7 @@ const CookieMessage = props => {
       columnNumber: 11
     }
   }, t.title)), __jsx(CrossContainer, {
+    onClick: props.doConsentToCookies,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -185,7 +186,6 @@ const CookieMessage = props => {
       columnNumber: 11
     }
   })), __jsx(Divider, {
-    onClick: props.doConsentToCookies,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
@@ -242,312 +242,6 @@ const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.wit
 
 /***/ }),
 
-/***/ "./components/EmailCollector.js":
-/*!**************************************!*\
-  !*** ./components/EmailCollector.js ***!
-  \**************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_mailchimp_subscribe__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-mailchimp-subscribe */ "react-mailchimp-subscribe");
-/* harmony import */ var react_mailchimp_subscribe__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_mailchimp_subscribe__WEBPACK_IMPORTED_MODULE_2__);
-var _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/EmailCollector.js";
-
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
-
-
-const url = "https://studio.us19.list-manage.com/subscribe/post?u=c9d7bbb792de4cdbe363fad75&amp;id=434dbf9f3b";
-const isEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-const CustomForm = ({
-  status,
-  message,
-  onValidated,
-  enterprise,
-  complete,
-  short
-}) => {
-  const {
-    0: displayMessage,
-    1: setMessage
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
-  const {
-    0: showMessage,
-    1: setShowMessage
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
-  let email, name, industry, company, employees;
-
-  const submitEnterprise = () => {
-    if (!name.value) {
-      setShowMessage(true), setMessage("Ingresa tu nombre");
-    } else if (!lastname.value) {
-      setShowMessage(true), setMessage("Ingresa tu apellido");
-    } else if (!email.value) {
-      setShowMessage(true), setMessage("Ingresa tu email");
-    } else if (!isEmail.test(email.value)) {
-      setShowMessage(true), setMessage("Email en formato incorrecto");
-    } else {
-      setShowMessage(false), onValidated({
-        NAME: name.value,
-        EMAIL: email.value,
-        COMPANY: company.value,
-        EMPLOYEES: employees.value
-      });
-    }
-  };
-
-  const submitComplete = () => {
-    if (!name.value) {
-      setShowMessage(true), setMessage("Ingresa tu nombre");
-    } else if (!email.value) {
-      setShowMessage(true), setMessage("Ingresa tu email");
-    } else if (!isEmail.test(email.value)) {
-      setShowMessage(true), setMessage("Email en formato incorrecto");
-    } else {
-      setShowMessage(false), onValidated({
-        NAME: name.value,
-        EMAIL: email.value,
-        INDUSTRY: industry.value
-      });
-    }
-  };
-
-  const submitShort = () => {
-    if (!email.value) {
-      setShowMessage(true), setMessage("Ingresa tu email");
-    } else if (!isEmail.test(email.value)) {
-      setShowMessage(true), setMessage("Email en formato incorrecto");
-    } else {
-      setShowMessage(false), onValidated({
-        EMAIL: email.value
-      });
-    }
-  };
-
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, status === "sending" && __jsx(Message, {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 73,
-      columnNumber: 32
-    }
-  }, "Enviando..."), showMessage ? __jsx(Message, {
-    error: true,
-    dangerouslySetInnerHTML: {
-      __html: displayMessage
-    },
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 75,
-      columnNumber: 9
-    }
-  }) : null, status === "error" && __jsx(Message, {
-    error: true,
-    dangerouslySetInnerHTML: {
-      __html: message
-    },
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 78,
-      columnNumber: 9
-    }
-  }), status === "success" && __jsx(Message, {
-    success: true,
-    dangerouslySetInnerHTML: {
-      __html: message
-    },
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 81,
-      columnNumber: 9
-    }
-  }), status !== "success" && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Label, {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 85,
-      columnNumber: 11
-    }
-  }, __jsx("span", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 86,
-      columnNumber: 13
-    }
-  }, "email"), __jsx(Input, {
-    ref: node => email = node,
-    type: "email",
-    placeholder: short ? "Tu correo" : "Email",
-    short: short,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 87,
-      columnNumber: 13
-    }
-  })), !short && __jsx(Label, {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 95,
-      columnNumber: 13
-    }
-  }, __jsx("span", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 96,
-      columnNumber: 15
-    }
-  }, "nombre"), __jsx(Input, {
-    ref: node => name = node,
-    type: "text",
-    placeholder: "Nombre",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 97,
-      columnNumber: 15
-    }
-  })), complete && __jsx(Label, {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 105,
-      columnNumber: 13
-    }
-  }, __jsx("span", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 106,
-      columnNumber: 15
-    }
-  }, "industria"), __jsx(Input, {
-    ref: node => industry = node,
-    type: "text",
-    placeholder: "Industria",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 107,
-      columnNumber: 15
-    }
-  })), enterprise && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Input, {
-    ref: node => company = node,
-    type: "text",
-    placeholder: "compa\xF1\xEDa",
-    id: "compa\xF1\xEDa",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 116,
-      columnNumber: 15
-    }
-  }), __jsx(Label, {
-    htmlFor: "compa\xF1\xEDa",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 122,
-      columnNumber: 15
-    }
-  }, "compa\xF1\xEDa"), __jsx(Input, {
-    ref: node => employees = node,
-    type: "text",
-    placeholder: "empleados",
-    id: "empleados",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 123,
-      columnNumber: 15
-    }
-  }), __jsx(Label, {
-    htmlFor: "empleados",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 129,
-      columnNumber: 15
-    }
-  }, "empleados")), __jsx(Button, {
-    short: short,
-    onClick: short ? submitShort : complete ? submitComplete : submitEnterprise,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 132,
-      columnNumber: 11
-    }
-  }, short ? "Descargar PDF gratuito" : "Descargar gratis")));
-};
-
-const EmailCollector = ({
-  enterprise,
-  complete,
-  short
-}) => {
-  return __jsx(react_mailchimp_subscribe__WEBPACK_IMPORTED_MODULE_2___default.a, {
-    url: url,
-    render: ({
-      subscribe,
-      status,
-      message
-    }) => __jsx(CustomForm, {
-      enterprise: enterprise,
-      complete: complete,
-      short: short,
-      status: status,
-      message: message,
-      onValidated: formData => subscribe(formData),
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 151,
-        columnNumber: 9
-      }
-    }),
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 148,
-      columnNumber: 5
-    }
-  });
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (EmailCollector);
-const Message = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
-  displayName: "EmailCollector__Message",
-  componentId: "jldx4s-0"
-})(["color:", ";font-size:", ";padding-bottom:5px;@media (max-width:600px),(max-height:450px){font-size:1.5rem;}"], props => props.error ? props.theme.colors.error : props.success ? props.theme.colors.success : props.theme.colors.accent, props => props.success ? "1.8rem" : "1.5rem");
-const Label = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.label.withConfig({
-  displayName: "EmailCollector__Label",
-  componentId: "jldx4s-1"
-})(["margin:0;span{font-size:0;height:0;width:0;position:absolute;}"]);
-const Input = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.input.withConfig({
-  displayName: "EmailCollector__Input",
-  componentId: "jldx4s-2"
-})(["width:100%;padding:13px 18px 13px 26px;line-height:100%;background-color:", ";border-radius:", ";border:none;font-size:1.7rem;margin:4px 0;height:48px;color:", ";-webkit-appearance:textfield;appearance:textfield;::placeholder{padding-top:4px;color:#31302e;opacity:0.5;}"], props => props.theme.colors.foreground, props => props.short ? "4px 0px 0px 4px" : "4px", props => props.theme.colors.foreground_lowest);
-const Button = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
-  displayName: "EmailCollector__Button",
-  componentId: "jldx4s-3"
-})(["padding:14px 0%;margin:4px 0;text-align:center;width:", ";background-color:", ";color:", ";border:0;font-size:1.7rem;border-radius:", ";cursor:pointer;transition:0.3s ease all;"], props => props.short ? "50%" : "100%", props => props.theme.colors.cta, props => props.theme.colors.background, props => props.short ? "0px 4px 4px 0px" : "4px");
-
-/***/ }),
-
 /***/ "./components/NewsletterPopup.js":
 /*!***************************************!*\
   !*** ./components/NewsletterPopup.js ***!
@@ -562,10 +256,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var public_assets_img_layout_cross_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! public/assets/img/layout/cross.svg */ "./public/assets/img/layout/cross.svg");
-/* harmony import */ var react_mailchimp_subscribe__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-mailchimp-subscribe */ "react-mailchimp-subscribe");
-/* harmony import */ var react_mailchimp_subscribe__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_mailchimp_subscribe__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var body_scroll_lock__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! body-scroll-lock */ "body-scroll-lock");
-/* harmony import */ var body_scroll_lock__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(body_scroll_lock__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var body_scroll_lock__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! body-scroll-lock */ "body-scroll-lock");
+/* harmony import */ var body_scroll_lock__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(body_scroll_lock__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var components_SalesForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/SalesForm */ "./components/SalesForm.js");
 var _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/NewsletterPopup.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -575,259 +268,71 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const url = "https://studio.us19.list-manage.com/subscribe/post?u=c9d7bbb792de4cdbe363fad75&amp;id=434dbf9f3b";
-const isEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-const CustomForm = ({
-  status,
-  message,
-  onValidated
+const NewsletterPopup = ({
+  setShowPopup
 }) => {
   const {
-    0: displayMessage,
-    1: setMessage
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
-  const {
-    0: showMessage,
-    1: setShowMessage
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
-  let email, name, lastname;
-
-  const submit = () => {
-    if (!name.value) {
-      setShowMessage(true), setMessage("Ingresa tu nombre");
-    } else if (!lastname.value) {
-      setShowMessage(true), setMessage("Ingresa tu apellido");
-    } else if (!email.value) {
-      setShowMessage(true), setMessage("Ingresa tu email");
-    } else if (!isEmail.test(email.value)) {
-      setShowMessage(true), setMessage("Email en formato incorrecto");
-    } else {
-      setShowMessage(false), onValidated({
-        EMAIL: email.value,
-        FNAME: name.value,
-        FLASTNAME: lastname.value
-      });
-    }
-  };
-
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("h4", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 37,
-      columnNumber: 7
-    }
-  }, "suscr\xEDbete y", __jsx("br", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 38,
-      columnNumber: 21
-    }
-  }), "te actualizamos"), __jsx("p", {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 41,
-      columnNumber: 7
-    }
-  }, "Recibe un correo cada vez que publiquemos un cap\xEDtulo nuevo."), status === "sending" && __jsx(Message, {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 42,
-      columnNumber: 32
-    }
-  }, "Enviando..."), status === "error" && __jsx(Message, {
-    error: true,
-    dangerouslySetInnerHTML: {
-      __html: message
-    },
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 44,
-      columnNumber: 9
-    }
-  }), showMessage ? __jsx(Message, {
-    error: true,
-    dangerouslySetInnerHTML: {
-      __html: displayMessage
-    },
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 47,
-      columnNumber: 9
-    }
-  }) : null, status === "success" && __jsx(Message, {
-    success: true,
-    dangerouslySetInnerHTML: {
-      __html: message
-    },
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 50,
-      columnNumber: 9
-    }
-  }), status !== "success" && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx("input", {
-    ref: node => name = node,
-    type: "text",
-    placeholder: "nombre",
-    id: "name",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 54,
-      columnNumber: 11
-    }
-  }), __jsx("label", {
-    htmlFor: "name",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 60,
-      columnNumber: 11
-    }
-  }, "nombre"), __jsx("input", {
-    ref: node => lastname = node,
-    type: "text",
-    placeholder: "apellido",
-    id: "lastname",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 61,
-      columnNumber: 11
-    }
-  }), __jsx("label", {
-    htmlFor: "lastname",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 67,
-      columnNumber: 11
-    }
-  }, "last name"), __jsx("input", {
-    ref: node => email = node,
-    type: "email",
-    placeholder: "email",
-    id: "email",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 68,
-      columnNumber: 11
-    }
-  }), __jsx("label", {
-    htmlFor: "email",
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 74,
-      columnNumber: 11
-    }
-  }, "email"), __jsx(Button, {
-    onClick: submit,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 75,
-      columnNumber: 11
-    }
-  }, "suscribirme")));
-};
-
-const NewsletterPopup = () => {
-  const {
-    0: showPopup,
-    1: setShowPopup
+    0: internalShowPopup,
+    1: setInternalShowPopup
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    let timer1 = setTimeout(() => popupShow(), 10000);
-    return () => {
-      clearTimeout(timer1);
-    };
+    popupShow();
   }, []);
 
   const popupShow = () => {
     // Disable scroll
     const targetElement = document.querySelector("#NewsletterPopup"); //dummy
 
-    Object(body_scroll_lock__WEBPACK_IMPORTED_MODULE_4__["disableBodyScroll"])(targetElement);
-    setShowPopup(true);
+    Object(body_scroll_lock__WEBPACK_IMPORTED_MODULE_3__["disableBodyScroll"])(targetElement);
+    setInternalShowPopup(true);
   };
 
   const unlockScreen = () => {
     const targetElement = document.querySelector("#NewsletterPopup"); //dummy
 
-    Object(body_scroll_lock__WEBPACK_IMPORTED_MODULE_4__["enableBodyScroll"])(targetElement);
+    Object(body_scroll_lock__WEBPACK_IMPORTED_MODULE_3__["enableBodyScroll"])(targetElement);
+    setInternalShowPopup(false);
     setShowPopup(false);
   };
 
   return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(Wrapper, {
-    clickable: showPopup,
+    clickable: internalShowPopup,
     id: "NewsletterPopup",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107,
+      lineNumber: 30,
       columnNumber: 7
     }
-  }, __jsx(Border, {
+  }, __jsx(components_SalesForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108,
+      lineNumber: 31,
       columnNumber: 9
-    }
-  }, __jsx(react_mailchimp_subscribe__WEBPACK_IMPORTED_MODULE_3___default.a, {
-    url: url,
-    render: ({
-      subscribe,
-      status,
-      message
-    }) => __jsx(CustomForm, {
-      status: status,
-      message: message,
-      onValidated: formData => subscribe(formData),
-      __self: undefined,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 112,
-        columnNumber: 15
-      }
-    }),
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 109,
-      columnNumber: 11
     }
   }), __jsx(CrossContainer, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119,
-      columnNumber: 11
+      lineNumber: 32,
+      columnNumber: 9
     }
   }, __jsx(public_assets_img_layout_cross_svg__WEBPACK_IMPORTED_MODULE_2__["default"], {
     onClick: unlockScreen,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 120,
-      columnNumber: 13
+      lineNumber: 33,
+      columnNumber: 11
     }
-  })))), __jsx(Background, {
-    visible: showPopup,
+  }))), __jsx(Background, {
+    visible: internalShowPopup,
     onClick: unlockScreen,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124,
+      lineNumber: 36,
       columnNumber: 7
     }
   }));
@@ -837,27 +342,96 @@ const NewsletterPopup = () => {
 const Background = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "NewsletterPopup__Background",
   componentId: "ad5xhy-0"
-})(["background-color:", ";opacity:", ";position:fixed;pointer-events:", ";left:0;bottom:0;right:0;top:0;z-index:13;transition:opacity 0.4s ease;"], props => props.theme.colors.background, props => props.visible ? 0.6 : 0, props => props.visible ? "auto" : "none");
-const Message = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
-  displayName: "NewsletterPopup__Message",
-  componentId: "ad5xhy-1"
-})(["color:", ";font-size:", ";padding-bottom:5px;@media (max-width:600px),(max-height:450px){font-size:1.5rem;}"], props => props.error ? props.theme.colors.error : props.success ? props.theme.colors.success : props.theme.colors.accent, props => props.success ? "1.8rem" : "1.5rem");
-const Border = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
-  displayName: "NewsletterPopup__Border",
-  componentId: "ad5xhy-2"
-})(["border:", " solid ", ";background-color:", ";padding:10% 15% 14% 15%;@media (max-width:380px){padding:10% 10% 14% 10%;}"], props => props.theme.stroke, props => props.theme.colors.foreground, props => props.theme.colors.background);
-const Button = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
-  displayName: "NewsletterPopup__Button",
-  componentId: "ad5xhy-3"
-})(["padding:14px 0%;margin-top:5px;text-align:center;width:100%;background-color:", ";color:", ";border:0;font-weight:100;font-size:1.8rem;cursor:pointer;transition:0.3s ease all;@media (hover:hover) and (pointer:fine){&:hover{background-color:#27ae60;color:", ";span{background-size:0 0;}}}"], props => props.theme.colors.accent, props => props.theme.colors.foreground, props => props.theme.colors.background);
+})(["opacity:", ";position:fixed;pointer-events:", ";left:0;bottom:0;right:0;top:0;z-index:13;transition:opacity 0.4s ease;background-color:rgba(0,0,0,0.6);"], props => props.visible ? 0.6 : 0, props => props.visible ? "auto" : "none");
 const CrossContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "NewsletterPopup__CrossContainer",
-  componentId: "ad5xhy-4"
-})(["width:50px;height:50px;padding:12px;position:absolute;top:3%;right:3%;svg{width:100%;cursor:pointer;}"]);
+  componentId: "ad5xhy-1"
+})(["width:50px;height:50px;padding:12px;position:absolute;top:2%;right:1%;svg{width:100%;cursor:pointer;}"]);
 const Wrapper = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "NewsletterPopup__Wrapper",
-  componentId: "ad5xhy-5"
-})(["pointer-events:", ";opacity:", ";max-width:440px;width:80%;top:50%;left:50%;transform:translateX(-50%) translateY(-50%) ", ";font-weight:100;position:fixed;transition:opacity 0.4s ease,transform 0.5s ease;z-index:14;p{color:", ";padding-bottom:20px;}h4{color:", ";font-size:3rem;font-weight:300;line-height:110%;margin-bottom:5%;}label{font-size:0;height:0;width:0;position:absolute;}input{font-weight:100;border-radius:0;width:100%;padding:10px 18px 13px 18px;line-height:100%;background-color:transparent;border:", " solid ", ";margin:4px 0;color:", ";-webkit-appearance:textfield;appearance:textfield;::placeholder{padding-top:4px;}}@media (max-width:600px){max-width:calc(100% - 36px);width:100%;margin-left:18px;margin-right:18px;z-index:100;left:0;transform:translateX(0px) translateY(-50%);h4{font-size:2.5rem;}}@media (max-width:380px){}"], props => props.clickable ? "auto" : "none", props => props.clickable ? "1" : "0", props => props.clickable ? "translateY(0%)" : "translateY(5%)", props => props.theme.colors.foreground_low, props => props.theme.colors.accent, props => props.theme.stroke, props => props.theme.colors.foreground_lowest, props => props.theme.colors.foreground);
+  componentId: "ad5xhy-2"
+})(["pointer-events:", ";opacity:", ";width:80%;max-width:1000px;top:50%;left:50%;transform:translateX(-50%) translateY(-50%) ", ";position:fixed;transition:opacity 0.4s ease,transform 0.5s ease;z-index:14;"], props => props.clickable ? "auto" : "none", props => props.clickable ? "1" : "0", props => props.clickable ? "translateY(0%)" : "translateY(5%)");
+
+/***/ }),
+
+/***/ "./components/SalesForm.js":
+/*!*********************************!*\
+  !*** ./components/SalesForm.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var components_shared_Dangerously__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/shared/Dangerously */ "./components/shared/Dangerously.js");
+/* harmony import */ var components_shared_SalesCollector__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! components/shared/SalesCollector */ "./components/shared/SalesCollector.js");
+var _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/SalesForm.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+
+function SalesForm() {
+  return __jsx(Form, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8,
+      columnNumber: 5
+    }
+  }, __jsx(Column, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9,
+      columnNumber: 7
+    }
+  }, __jsx("h4", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 10,
+      columnNumber: 9
+    }
+  }, "Nosotros te contactaremos"), __jsx("p", {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11,
+      columnNumber: 9
+    }
+  }, "D\xE9janos tus datos y te contactar\xE1 un asesor de ventas")), __jsx(Column, {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 13,
+      columnNumber: 7
+    }
+  }, __jsx(components_shared_SalesCollector__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    __self: this,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14,
+      columnNumber: 9
+    }
+  })));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (SalesForm);
+const Form = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "SalesForm__Form",
+  componentId: "vloynh-0"
+})(["background-color:", ";grid-column:3 / span 8;border-radius:5px;padding:5% 6.5%;display:flex;justify-content:space-between;width:100%;transition:all 0.3s ease-in;pointer-events:auto;"], props => props.theme.colors.accent);
+const Column = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
+  displayName: "SalesForm__Column",
+  componentId: "vloynh-1"
+})(["max-width:330px;width:100%;color:", ";:nth-of-type(1){padding-right:5%;}h4{font-weight:300;font-size:3rem;margin-bottom:23px;b{font-weight:500;}}p{opacity:1 !important;}"], props => props.theme.colors.foreground);
 
 /***/ }),
 
@@ -877,7 +451,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var public_assets_img_layout_logos_dfilogo_svg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! public/assets/img/layout/logos/dfilogo.svg */ "./public/assets/img/layout/logos/dfilogo.svg");
-/* harmony import */ var components_EmailCollector__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/EmailCollector */ "./components/EmailCollector.js");
+/* harmony import */ var components_shared_LeadCollector__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/shared/LeadCollector */ "./components/shared/LeadCollector.js");
 var _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/header.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -888,7 +462,6 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 function Header({
   hasLoaded,
-  headerTitle,
   isOpen,
   closeNav,
   locale,
@@ -954,8 +527,9 @@ function Header({
       lineNumber: 23,
       columnNumber: 9
     }
-  }, __jsx(components_EmailCollector__WEBPACK_IMPORTED_MODULE_4__["default"], {
+  }, __jsx(components_shared_LeadCollector__WEBPACK_IMPORTED_MODULE_4__["default"], {
     short: true,
+    collectorId: "smallCollector",
     __self: this,
     __source: {
       fileName: _jsxFileName,
@@ -965,7 +539,7 @@ function Header({
   }))));
 }
 
-/* harmony default export */ __webpack_exports__["default"] = (react__WEBPACK_IMPORTED_MODULE_0___default.a.memo(Header));
+/* harmony default export */ __webpack_exports__["default"] = (Header);
 const HeaderContainer = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "header__HeaderContainer",
   componentId: "sc-12e98ec-0"
@@ -973,12 +547,12 @@ const HeaderContainer = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a
 const TopHeader = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.header.withConfig({
   displayName: "header__TopHeader",
   componentId: "sc-12e98ec-1"
-})(["background-color:", ";position:fixed;width:100%;top:0;left:0;right:0;padding:11px 80px 11px 50px;z-index:12;opacity:", ";transition:opacity 0.3s ease 0.3s;box-shadow:", ";"], props => props.theme.colors.background, props => props.reveal ? 1 : 0, props => `9px 9px 25px ${props.theme.colors.darkshadow}`);
+})(["background-color:", ";position:fixed;width:100%;top:0;left:0;right:0;padding:11px 50px;display:flex;align-items:center;z-index:12;height:78px;opacity:", ";transition:opacity 0.3s ease 0.3s;box-shadow:", ";"], props => props.theme.colors.background, props => props.reveal ? 1 : 0, props => `9px 9px 25px ${props.theme.colors.darkshadow}`);
 const LogoLink = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.a.withConfig({
   displayName: "header__LogoLink",
   componentId: "sc-12e98ec-2"
 })(["display:flex;grid-column:1 / span 2;max-width:130px;margin:0;cursor:pointer;color:inherit;text-decoration:none;pointer-events:auto;h1{font-size:0;}svg{max-width:70px;width:100%;path{fill:", ";}}"], props => props.theme.colors.white);
-const Form = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.form.withConfig({
+const Form = styled_components__WEBPACK_IMPORTED_MODULE_2___default.a.div.withConfig({
   displayName: "header__Form",
   componentId: "sc-12e98ec-3"
 })(["width:100%;max-width:500px;align-self:flex-end;display:flex;"]);
@@ -1171,7 +745,8 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.cloneElement(children, {
     setTitle: setTitle,
     hasLoaded: hasLoaded,
-    mouse: mouse
+    mouse: mouse,
+    setShowPopup: setShowPopup
   }), __jsx(_CookieMessage__WEBPACK_IMPORTED_MODULE_4__["default"], {
     locale: locale,
     doConsentToCookies: doConsentToCookies,
@@ -1179,7 +754,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 147,
+      lineNumber: 148,
       columnNumber: 9
     }
   }), __jsx(BodyOverflow, {
@@ -1188,28 +763,29 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 152,
+      lineNumber: 153,
       columnNumber: 9
     }
   }), showPopup && __jsx(_NewsletterPopup__WEBPACK_IMPORTED_MODULE_8__["default"], {
+    setShowPopup: setShowPopup,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 153,
+      lineNumber: 154,
       columnNumber: 23
     }
   }), __jsx(Footer, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 154,
+      lineNumber: 155,
       columnNumber: 9
     }
   }, "\xA9 Deep Future Institute, 2020", __jsx(public_assets_img_layout_logos_dfiimago_svg__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 156,
+      lineNumber: 157,
       columnNumber: 11
     }
   }))));
@@ -1263,6 +839,774 @@ const Border = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.with
   displayName: "layout__Border",
   componentId: "sc-18mrapy-3"
 })(["opacity:1;pointer-events:none;z-index:99;width:calc(100% - 36px);height:calc(100% - 36px);background-color:none;position:fixed;left:18px;top:18px;right:18px;bottom:18px;margin:0 auto;max-width:1504px;mix-blend-mode:exclusion;transition:opacity 0.3s ease-in,border 0.3s ease-in;border:", ";@media (max-width:600px),(max-height:450px){mix-blend-mode:normal;}"], props => `${props.theme.stroke} solid ${props.theme.colors.foreground}`);
+
+/***/ }),
+
+/***/ "./components/shared/Dangerously.js":
+/*!******************************************!*\
+  !*** ./components/shared/Dangerously.js ***!
+  \******************************************/
+/*! exports provided: H1, P, H2, H3, H4, B, Blockquote */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H1", function() { return H1; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "P", function() { return P; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H2", function() { return H2; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H3", function() { return H3; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "H4", function() { return H4; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "B", function() { return B; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Blockquote", function() { return Blockquote; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var utils_createMarkup__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! utils/createMarkup */ "./utils/createMarkup.js");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-reveal/Fade */ "react-reveal/Fade");
+/* harmony import */ var react_reveal_Fade__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/shared/Dangerously.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+
+function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+
+
+
+const H1 = (_ref) => {
+  let {
+    children
+  } = _ref,
+      props = _objectWithoutProperties(_ref, ["children"]);
+
+  return __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 5,
+      columnNumber: 3
+    }
+  }, __jsx("h1", _extends({}, props, {
+    dangerouslySetInnerHTML: Object(utils_createMarkup__WEBPACK_IMPORTED_MODULE_1__["default"])(children),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 6,
+      columnNumber: 5
+    }
+  })));
+};
+const P = (_ref2) => {
+  let {
+    children
+  } = _ref2,
+      props = _objectWithoutProperties(_ref2, ["children"]);
+
+  return __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 11,
+      columnNumber: 3
+    }
+  }, __jsx("p", _extends({}, props, {
+    dangerouslySetInnerHTML: Object(utils_createMarkup__WEBPACK_IMPORTED_MODULE_1__["default"])(children),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 12,
+      columnNumber: 5
+    }
+  })));
+};
+const H2 = (_ref3) => {
+  let {
+    children
+  } = _ref3,
+      props = _objectWithoutProperties(_ref3, ["children"]);
+
+  return __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 17,
+      columnNumber: 3
+    }
+  }, __jsx("h2", _extends({}, props, {
+    dangerouslySetInnerHTML: Object(utils_createMarkup__WEBPACK_IMPORTED_MODULE_1__["default"])(children),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18,
+      columnNumber: 5
+    }
+  })));
+};
+const H3 = (_ref4) => {
+  let {
+    children
+  } = _ref4,
+      props = _objectWithoutProperties(_ref4, ["children"]);
+
+  return __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 23,
+      columnNumber: 3
+    }
+  }, __jsx("h3", _extends({}, props, {
+    dangerouslySetInnerHTML: Object(utils_createMarkup__WEBPACK_IMPORTED_MODULE_1__["default"])(children),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24,
+      columnNumber: 5
+    }
+  })));
+};
+const H4 = (_ref5) => {
+  let {
+    children
+  } = _ref5,
+      props = _objectWithoutProperties(_ref5, ["children"]);
+
+  return __jsx(react_reveal_Fade__WEBPACK_IMPORTED_MODULE_2___default.a, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29,
+      columnNumber: 3
+    }
+  }, __jsx("h4", _extends({}, props, {
+    dangerouslySetInnerHTML: Object(utils_createMarkup__WEBPACK_IMPORTED_MODULE_1__["default"])(children),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 30,
+      columnNumber: 5
+    }
+  })));
+};
+const B = (_ref6) => {
+  let {
+    children
+  } = _ref6,
+      props = _objectWithoutProperties(_ref6, ["children"]);
+
+  return __jsx("b", _extends({}, props, {
+    dangerouslySetInnerHTML: Object(utils_createMarkup__WEBPACK_IMPORTED_MODULE_1__["default"])(children),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 35,
+      columnNumber: 3
+    }
+  }));
+};
+const Blockquote = (_ref7) => {
+  let {
+    children
+  } = _ref7,
+      props = _objectWithoutProperties(_ref7, ["children"]);
+
+  return __jsx("blockquote", _extends({}, props, {
+    dangerouslySetInnerHTML: Object(utils_createMarkup__WEBPACK_IMPORTED_MODULE_1__["default"])(children),
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 39,
+      columnNumber: 3
+    }
+  }));
+};
+
+/***/ }),
+
+/***/ "./components/shared/Forms.js":
+/*!************************************!*\
+  !*** ./components/shared/Forms.js ***!
+  \************************************/
+/*! exports provided: Message, Label, Input, Select, Button, selectStyles, isEmail */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Message", function() { return Message; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Label", function() { return Label; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Input", function() { return Input; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Select", function() { return Select; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Button", function() { return Button; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectStyles", function() { return selectStyles; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isEmail", function() { return isEmail; });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+
+const Message = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
+  displayName: "Forms__Message",
+  componentId: "qrpl3s-0"
+})(["color:", ";font-size:", ";padding-bottom:5px;", ";", ";@media (max-width:600px),(max-height:450px){font-size:1.5rem;}"], props => props.error ? props.theme.colors.error : props.success ? props.theme.colors.successf : props.theme.colors.foreground, props => props.success ? "1.8rem" : "1.5rem", props => props.short && !props.success && `position: absolute;  
+     bottom: -30px;
+     padding: 10px;
+     border-radius: 3px;
+     background-color: ${props.theme.colors.background};
+    `, props => props.short && props.success && `width: 100%;
+     text-align:right;
+    `);
+const Label = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.label.withConfig({
+  displayName: "Forms__Label",
+  componentId: "qrpl3s-1"
+})(["width:", ";margin:0;span{font-size:0;height:0;width:0;position:absolute;}"], props => props.short ? "50%" : "100%");
+const Input = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.input.withConfig({
+  displayName: "Forms__Input",
+  componentId: "qrpl3s-2"
+})(["width:100%;padding:13px 18px 13px 26px;line-height:100%;background-color:", ";border-radius:", ";border:none;font-size:1.7rem;margin:4px 0;height:48px;color:", ";-webkit-appearance:textfield;appearance:textfield;::placeholder{padding-top:4px;color:#31302e;opacity:0.5;}"], props => props.theme.colors.foreground, props => props.short ? "4px 0px 0px 4px" : "4px", props => props.theme.colors.foreground_lowest);
+const Select = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.select.withConfig({
+  displayName: "Forms__Select",
+  componentId: "qrpl3s-3"
+})(["width:100%;padding:13px 18px 13px 26px;line-height:100%;background-color:", ";border-radius:", ";border:none;font-size:1.7rem;margin:4px 0;height:48px;color:", ";"], props => props.theme.colors.foreground, props => props.short ? "4px 0px 0px 4px" : "4px", props => props.theme.colors.foreground_lowest);
+const Button = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.button.withConfig({
+  displayName: "Forms__Button",
+  componentId: "qrpl3s-4"
+})(["padding:14px 0%;margin:4px 0;text-align:center;width:", ";background-color:", ";color:", ";border:0;font-size:1.7rem;border-radius:", ";cursor:pointer;transition:0.3s ease all;@media (hover:hover) and (pointer:fine){&:hover{background-color:", ";}}"], props => props.short ? "50%" : "100%", props => props.theme.colors.cta, props => props.theme.colors.background, props => props.short ? "0px 4px 4px 0px" : "4px", props => props.theme.colors.success);
+const selectStyles = {
+  option: provided => _objectSpread({}, provided, {
+    color: "#4F4F4F",
+    fontSize: "1.7rem"
+  }),
+  singleValue: provided => _objectSpread({}, provided, {
+    color: "#4F4F4F"
+  }),
+  container: provided => _objectSpread({}, provided, {
+    margin: "4px 0",
+    height: "48px"
+  }),
+  control: provided => _objectSpread({}, provided, {
+    height: "100%",
+    border: 0
+  }),
+  valueContainer: provided => _objectSpread({}, provided, {
+    padding: "1px 18px 13px 26px",
+    lineHeight: "100%"
+  }),
+  placeholder: provided => _objectSpread({}, provided, {
+    paddingTop: "4px",
+    color: "#31302e",
+    opacity: 0.5,
+    padding: 0,
+    margin: 0,
+    fontSize: "1.7rem"
+  })
+};
+const isEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+/***/ }),
+
+/***/ "./components/shared/LeadCollector.js":
+/*!********************************************!*\
+  !*** ./components/shared/LeadCollector.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! components/shared/Forms */ "./components/shared/Forms.js");
+/* harmony import */ var react_select___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-select/ */ "react-select/");
+/* harmony import */ var react_select___WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_select___WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/shared/LeadCollector.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+const LeadCollector = ({
+  complete,
+  short,
+  collectorId
+}) => {
+  const {
+    0: displayMessage,
+    1: setMessage
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const {
+    0: showMessage,
+    1: setShowMessage
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const {
+    0: industryOption,
+    1: setIndustryOption
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
+  const {
+    0: status,
+    1: setStatus
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("");
+  let email, name;
+
+  const handleIndustryChange = selectedIndustry => {
+    setIndustryOption(selectedIndustry);
+  };
+
+  const call = async () => {
+    setStatus("sending");
+    let requestOptions = {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        "content-type": "application/json",
+        "api-key": "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"
+      },
+      body: JSON.stringify({
+        updateEnabled: false,
+        email: email.value,
+        listIds: [6],
+        attributes: {
+          FIRSTNAME: name ? name.value : " ",
+          INDUSTRY: industryOption !== null ? industryOption.value : " "
+        }
+      })
+    };
+    const response = await fetch("https://api.sendinblue.com/v3/contacts", requestOptions);
+    const data = await response.json();
+    setMessage(data.id ? "Recibirás el reporte en tu correo! Éxito" : "El correo que ingresaste ya fue registrado");
+    setStatus(data.id ? "success" : "error");
+  };
+
+  const submitComplete = () => {
+    if (!name.value) {
+      setShowMessage(true), setMessage("Ingresa tu nombre");
+    } else if (!email.value) {
+      setShowMessage(true), setMessage("Ingresa tu email");
+    } else if (!components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["isEmail"].test(email.value)) {
+      setShowMessage(true), setMessage("Email en formato incorrecto");
+    } else {
+      setShowMessage(false), call();
+    }
+  };
+
+  const submitShort = () => {
+    if (!email.value) {
+      setShowMessage(true), setMessage("Ingresa tu email");
+    } else if (!components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["isEmail"].test(email.value)) {
+      setShowMessage(true), setMessage("Email en formato incorrecto");
+    } else {
+      setShowMessage(false), call();
+    }
+  };
+
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, status === "sending" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Message"], {
+    short: short,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 83,
+      columnNumber: 32
+    }
+  }, "Enviando..."), showMessage && //Mensajes de validación
+  __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Message"], {
+    short: short,
+    error: true,
+    dangerouslySetInnerHTML: {
+      __html: displayMessage
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 86,
+      columnNumber: 9
+    }
+  }), status === "error" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Message"], {
+    short: short,
+    error: true,
+    dangerouslySetInnerHTML: {
+      __html: displayMessage
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 93,
+      columnNumber: 9
+    }
+  }), status === "success" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Message"], {
+    short: short,
+    success: true,
+    dangerouslySetInnerHTML: {
+      __html: displayMessage
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 100,
+      columnNumber: 9
+    }
+  }), status !== "success" && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+    short: short,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 108,
+      columnNumber: 11
+    }
+  }, __jsx("span", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 109,
+      columnNumber: 13
+    }
+  }, "email"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+    ref: node => email = node,
+    type: "email",
+    placeholder: short ? "Tu correo" : "Email*",
+    short: short,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 110,
+      columnNumber: 13
+    }
+  })), complete && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 119,
+      columnNumber: 15
+    }
+  }, __jsx("span", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 120,
+      columnNumber: 17
+    }
+  }, "nombre"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+    ref: node => name = node,
+    type: "text",
+    placeholder: "Nombre*",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 121,
+      columnNumber: 17
+    }
+  })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 127,
+      columnNumber: 15
+    }
+  }, __jsx("span", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 128,
+      columnNumber: 17
+    }
+  }, "industria"), __jsx(react_select___WEBPACK_IMPORTED_MODULE_2___default.a, {
+    styles: components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["selectStyles"],
+    placeholder: "Industria",
+    instanceId: "Industria" + collectorId,
+    isSearchable: false,
+    options: [{
+      value: "Aviación",
+      label: "Aviación"
+    }, {
+      value: "Automotriz",
+      label: "Automotriz"
+    }, {
+      value: "Cine",
+      label: "Cine"
+    }, {
+      value: "Hospitalaria",
+      label: "Hospitalaria"
+    }],
+    value: industryOption,
+    onChange: handleIndustryChange,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 129,
+      columnNumber: 17
+    }
+  }))), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    short: short,
+    onClick: short ? submitShort : submitComplete,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 146,
+      columnNumber: 11
+    }
+  }, short && "Descargar PDF gratuito", complete && "Descargar gratis")));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (LeadCollector);
+
+/***/ }),
+
+/***/ "./components/shared/SalesCollector.js":
+/*!*********************************************!*\
+  !*** ./components/shared/SalesCollector.js ***!
+  \*********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! components/shared/Forms */ "./components/shared/Forms.js");
+/* harmony import */ var react_select___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-select/ */ "react-select/");
+/* harmony import */ var react_select___WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_select___WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "/Users/salmeron/Sites/deepfuture/components/shared/SalesCollector.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+const SalesCollector = () => {
+  const {
+    0: displayMessage,
+    1: setMessage
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const {
+    0: showMessage,
+    1: setShowMessage
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  const {
+    0: employeeOption,
+    1: setEmployeeOption
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(null);
+  const {
+    0: status,
+    1: setStatus
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("");
+  let email, name, company;
+
+  const handleEmployeeChange = selectedEmployee => {
+    setEmployeeOption(selectedEmployee);
+  };
+
+  const call = async () => {
+    setStatus("sending");
+    let requestOptions = {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        "content-type": "application/json",
+        "api-key": "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"
+      },
+      body: JSON.stringify({
+        updateEnabled: true,
+        email: email.value,
+        listIds: [9],
+        attributes: {
+          FIRSTNAME: name.value,
+          COMPANY: company.value,
+          EMPLOYEES: employeeOption.value
+        }
+      })
+    };
+    console.log(employeeOption);
+    const response = await fetch("https://api.sendinblue.com/v3/contacts", requestOptions);
+    const data = await response;
+    console.log(data);
+    data.status !== 400 ? (setMessage("Gracias! Un asesor te contactará dentro de 24 horas hábiles"), setStatus("success")) : (setMessage("Algo salió mal"), setStatus("error"));
+  };
+
+  const submitEnterprise = () => {
+    if (!email.value) {
+      setShowMessage(true), setMessage("Ingresa tu email");
+    } else if (!name.value) {
+      setShowMessage(true), setMessage("Ingresa tu nombre");
+    } else if (!components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["isEmail"].test(email.value)) {
+      setShowMessage(true), setMessage("Email en formato incorrecto");
+    } else if (!company.value) {
+      setShowMessage(true), setMessage("Ingresa tu empresa");
+    } else if (employeeOption === null) {
+      setShowMessage(true), setMessage("Selecciona tu número de empleados");
+    } else {
+      setShowMessage(false), call();
+    }
+  };
+
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, status === "sending" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Message"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 79,
+      columnNumber: 32
+    }
+  }, "Enviando..."), showMessage ? __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Message"], {
+    error: true,
+    dangerouslySetInnerHTML: {
+      __html: displayMessage
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 81,
+      columnNumber: 9
+    }
+  }) : null, status === "error" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Message"], {
+    error: true,
+    dangerouslySetInnerHTML: {
+      __html: displayMessage
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 84,
+      columnNumber: 9
+    }
+  }), status === "success" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Message"], {
+    success: true,
+    dangerouslySetInnerHTML: {
+      __html: displayMessage
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 87,
+      columnNumber: 9
+    }
+  }), status !== "success" && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 91,
+      columnNumber: 11
+    }
+  }, __jsx("span", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 92,
+      columnNumber: 13
+    }
+  }, "email"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+    ref: node => email = node,
+    type: "email",
+    placeholder: "Email*",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 93,
+      columnNumber: 13
+    }
+  })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 99,
+      columnNumber: 11
+    }
+  }, __jsx("span", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 100,
+      columnNumber: 13
+    }
+  }, "nombre"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+    ref: node => name = node,
+    type: "text",
+    placeholder: "Nombre*",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 101,
+      columnNumber: 13
+    }
+  })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 107,
+      columnNumber: 11
+    }
+  }, __jsx("span", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 108,
+      columnNumber: 13
+    }
+  }, "empresa"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+    ref: node => company = node,
+    type: "text",
+    placeholder: "Empresa*",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 109,
+      columnNumber: 13
+    }
+  })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 115,
+      columnNumber: 11
+    }
+  }, __jsx("span", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 116,
+      columnNumber: 13
+    }
+  }, "N\xFAmero de empleados"), __jsx(react_select___WEBPACK_IMPORTED_MODULE_2___default.a, {
+    styles: components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["selectStyles"],
+    placeholder: "N\xFAmero de empleados",
+    instanceId: "Employees",
+    isSearchable: false,
+    options: [{
+      value: "1-10",
+      label: "1 - 10"
+    }, {
+      value: "10-100",
+      label: "10 - 100"
+    }, {
+      value: "10-1000",
+      label: "100 - 1000"
+    }, {
+      value: "+1000",
+      label: "Más de 1000"
+    }],
+    value: employeeOption,
+    onChange: handleEmployeeChange,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 117,
+      columnNumber: 13
+    }
+  })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    onClick: submitEnterprise,
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 132,
+      columnNumber: 11
+    }
+  }, "Contactar asesor")));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (SalesCollector);
 
 /***/ }),
 
@@ -3810,6 +4154,25 @@ const logException = (description = "", fatal = false) => {
 
 /***/ }),
 
+/***/ "./utils/createMarkup.js":
+/*!*******************************!*\
+  !*** ./utils/createMarkup.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return createMarkup; });
+function createMarkup(i) {
+  return {
+    __html: i
+  };
+}
+;
+
+/***/ }),
+
 /***/ 0:
 /*!****************************************!*\
   !*** multi private-next-pages/_app.js ***!
@@ -3910,14 +4273,25 @@ module.exports = require("react-ga");
 
 /***/ }),
 
-/***/ "react-mailchimp-subscribe":
-/*!********************************************!*\
-  !*** external "react-mailchimp-subscribe" ***!
-  \********************************************/
+/***/ "react-reveal/Fade":
+/*!************************************!*\
+  !*** external "react-reveal/Fade" ***!
+  \************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = require("react-mailchimp-subscribe");
+module.exports = require("react-reveal/Fade");
+
+/***/ }),
+
+/***/ "react-select/":
+/*!********************************!*\
+  !*** external "react-select/" ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("react-select/");
 
 /***/ }),
 

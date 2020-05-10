@@ -6,6 +6,7 @@ import FormComplete from "components/FormComplete";
 import MainGrid from "components/shared/MainGrid";
 import DataItemsWhite from "components/DataItemsWhite";
 import DataItemsDark from "components/DataItemsDark";
+import LeadCollector from "components/shared/LeadCollector";
 import Title from "components/shared/Title";
 import LandBg from "components/LandBg";
 import Quote from "components/Quote";
@@ -33,13 +34,13 @@ function Index(props) {
             autogestivo o guiado por expertos
           </h2>
         </div>
-        <FormComplete centered />
+        <FormComplete centered collectorId="LandingCollector" />
       </Land>
       <Intro>
         <DataItemsWhite />
         <Quote />
       </Intro>
-      <Tiers />
+      <Tiers setShowPopup={props.setShowPopup} />
       <SecondForm>
         <SecondFormGrid>
           <Fade>
@@ -54,7 +55,7 @@ function Index(props) {
               </p>
             </div>
           </Fade>
-          <FormComplete />
+          <FormComplete collectorId="TiersCollector" />
         </SecondFormGrid>
       </SecondForm>
       <DataItemsDark />
@@ -67,7 +68,7 @@ function Index(props) {
         </h3>
       </Title>
       <MainGrid notoppadding>
-        <FormComplete centered />
+        <FormComplete centered collectorId="FooterCollector" />
       </MainGrid>
     </>
   );
