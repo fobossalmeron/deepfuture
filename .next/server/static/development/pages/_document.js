@@ -1163,7 +1163,25 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
         lineNumber: 90,
         columnNumber: 11
       }
-    })));
+    })), __jsx("script", {
+      type: "text/javascript",
+      src: "https://js.openpay.mx/openpay.v1.min.js",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 92,
+        columnNumber: 9
+      }
+    }), __jsx("script", {
+      type: "text/javascript",
+      src: "https://js.openpay.mx/openpay-data.v1.min.js",
+      __self: this,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 96,
+        columnNumber: 9
+      }
+    }));
   }
 
 }

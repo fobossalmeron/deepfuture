@@ -79,7 +79,9 @@ const tiers = [
   },
 ];
 
-const Tier = ({ tier, setShowPopup }) => {
+const Tier = ({ tier, setShowPopup, setShowPay, setProduct }) => {
+  const buyOption = () => (setProduct(tier), setShowPay(true));
+
   return (
     <TierContainer color={tier.color}>
       <Padded>
@@ -92,13 +94,13 @@ const Tier = ({ tier, setShowPopup }) => {
         <Fade>
           <Price>
             <span>
-              {tier.title === "empresarial" && <span>desde </span>}
+              {tier.title === "empresarial" && <PreSpan>desde </PreSpan>}
               {tier.price} <span>MXN</span>
             </span>
             <span>{tier.originalPrice ? "$" + tier.originalPrice : null}</span>
           </Price>
           {tier.title !== "empresarial" ? (
-            <Button>Comprar</Button>
+            <Button onClick={buyOption}>Comprar</Button>
           ) : (
             <Button onClick={setShowPopup}>Contacta a un asesor</Button>
           )}
@@ -108,7 +110,7 @@ const Tier = ({ tier, setShowPopup }) => {
   );
 };
 
-function Tiers({ setShowPopup }) {
+function Tiers({ setShowPopup, setShowPay, setProduct }) {
   return (
     <TiersSection>
       <Title>
@@ -125,7 +127,13 @@ function Tiers({ setShowPopup }) {
         <TierBackground />
         <Includes></Includes>
         {tiers.map((tier, i) => (
-          <Tier setShowPopup={setShowPopup} key={"tier" + i} tier={tier} />
+          <Tier
+            setShowPopup={setShowPopup}
+            setShowPay={setShowPay}
+            key={"tier" + i}
+            tier={tier}
+            setProduct={setProduct}
+          />
         ))}
         <Includes>
           <span>Incluye</span>
@@ -133,9 +141,6 @@ function Tiers({ setShowPopup }) {
             {includes.map((include, i) => (
               <li key={"include" + (i + 100)}>
                 <H3>{include.title}</H3>
-                {
-                  //aquí hay un problema
-                }
                 <p>{include.subtitle}</p>
               </li>
             ))}
@@ -198,7 +203,7 @@ const Padded = styled.div`
   justify-content: space-between;
   flex-direction: column;
   height: calc(100% - 80px);
-  div:nth-of-type(2) {
+  div:nth-of-type(3) {
     ::after {
       content: " ";
       height: 2px;
@@ -211,11 +216,18 @@ const Padded = styled.div`
   }
 `;
 
+const PreSpan = styled.div`
+  font-size: 2rem;
+  display: inline-flex;
+  margin-right: 5px;
+`;
+
 const Price = styled.div`
   display: flex;
   justify-content: space-between;
   font-size: 2.7rem;
   margin: 10% 0;
+  align-items: flex-end;
   span {
     span {
       font-size: 2rem;
@@ -226,6 +238,7 @@ const Price = styled.div`
     :nth-of-type(2) {
       color: ${(props) => props.theme.colors.foreground_low};
       text-decoration: line-through;
+      font-size: 1.7rem;
     }
   }
 `;

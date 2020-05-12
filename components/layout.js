@@ -4,9 +4,11 @@ import Header from "./header";
 import { useRouter } from "next/router";
 import CookieMessage from "./CookieMessage";
 import { initGA, logPageView } from "utils/analytics";
+import TagManager from "react-gtm-module";
 import ReactPixel from "react-facebook-pixel";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
-import NewsletterPopup from "./NewsletterPopup";
+import NewsletterPopup from "components/NewsletterPopup";
+import PayPopup from "components/PayPopup";
 import Imago from "public/assets/img/layout/logos/dfiimago.svg";
 
 export default ({
@@ -19,12 +21,13 @@ export default ({
   locale,
 }) => {
   const [isOpen, setOpen] = useState(false);
-  const [showSketch, setShowSketch] = useState(true);
+  const [isHome, setIsHome] = useState(true);
   const [isAbout, setIsAbout] = useState(false);
   const [headerTitle, setTitle] = useState("");
   const [showArrow, setShowArrow] = useState(false);
   const [showConsentMessage, setShowConsentMessage] = useState(true);
   const [showPopup, setShowPopup] = useState(false);
+  const [showPay, setShowPay] = useState(false);
   const router = useRouter();
   const mouse = useRef([1200, 1]);
 
@@ -45,6 +48,12 @@ export default ({
   );
 
   useEffect(() => {
+    // GTM
+    const tagManagerArgs = {
+      gtmId: "GTM-000000",
+    };
+    TagManager.initialize(tagManagerArgs);
+    // ReactPixel
     // const options = {
     //   autoConfig: true,
     //   debug: false,
@@ -53,43 +62,29 @@ export default ({
   }, []);
 
   useEffect(() => {
-    // if (!window.GA_INITIALIZED) {
-    //   initGA();
-    //   window.GA_INITIALIZED = true;
-    // }
-    // logPageView();
+    //Google Analytics
+    if (!window.GA_INITIALIZED) {
+      initGA();
+      window.GA_INITIALIZED = true;
+    }
+    logPageView();
+    // ReactPixel
     // ReactPixel.pageView(); // For tracking page view
-    mouse.current[0] = window.innerWidth > 600 ? 1200 : 300;
+
     if (router.route === "/" || router.route === "/en") {
-      setShowSketch(true);
-      setShowArrow(true);
-      setIsAbout(false);
-      setShowPopup(false);
-    } else if (router.route === "/nosotros" || router.route === "/en/about") {
-      setIsAbout(true);
-      setShowSketch(false);
-      setShowArrow(false);
-      setShowPopup(false);
-    } else if (router.route === "/podcast") {
-      setIsAbout(false);
-      setShowSketch(false);
-      setShowArrow(false);
-      setShowPopup(true);
+      setIsHome(true);
     } else {
-      setShowSketch(false);
-      setShowArrow(false);
-      setIsAbout(false);
-      setShowPopup(false);
+      setIsHome(false);
     }
   }, [router.route]);
 
   useEffect(() => {
-    if (showArrow || showConsentMessage) {
+    if (showConsentMessage) {
       document.body.onscroll = function () {
         checkScroll();
       };
     }
-  }, [showArrow]);
+  }, []);
 
   // useEffect(() => {
   //   let targetElement = document.querySelector("#Nav");
@@ -104,7 +99,6 @@ export default ({
     if (document.body.scrollTop > 100 || window.scrollY > 100) {
       document.body.onscroll = null;
       // document.querySelector("#Clipper").onscroll = null;
-      setShowArrow(false);
       checkForConsent();
       setShowConsentMessage(false);
     }
@@ -126,10 +120,10 @@ export default ({
     <>
       <PageWrapper
         id="Wrapper"
-        onMouseMove={showSketch | isAbout ? onMouseMove : undefined}
-        onTouchMove={showSketch | isAbout ? onTouchMove : undefined}
+        // onMouseMove={isHome | isAbout ? onMouseMove : undefined}
+        // onTouchMove={isHome | isAbout ? onTouchMove : undefined}
       >
-        {!showSketch && (
+        {!isHome && (
           <Header
             isOpen={isOpen}
             headerTitle={headerTitle}

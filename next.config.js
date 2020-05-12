@@ -43,12 +43,21 @@ const nextConfig = {
         },
       ],
     });
+    // (config.node.fs = "empty"),
+    config.node = {
+      console: true,
+      fs: "empty",
+      net: "empty",
+      tls: "empty",
+    };
     config.resolve.modules.push(path.resolve("./"));
     return config;
   },
   //env config
   env: {
     SENDINBLUE_API: process.env.SENDINBLUE_API,
+    OPENPAY_ID: process.env.OPENPAY_ID,
+    OPENPAY_PUBLIC: process.env.OPENPAY_PUBLIC,
   },
 };
 

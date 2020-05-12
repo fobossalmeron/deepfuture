@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 import Head from "components/Head";
@@ -10,10 +10,14 @@ import LeadCollector from "components/shared/LeadCollector";
 import Title from "components/shared/Title";
 import LandBg from "components/LandBg";
 import Quote from "components/Quote";
+import PayPopup from "components/PayPopup";
 
 import Tiers from "components/Tiers";
 
 function Index(props) {
+  const [showPay, setShowPay] = useState(false);
+  const [product, setProduct] = useState(null);
+
   return (
     <>
       <Head
@@ -40,7 +44,11 @@ function Index(props) {
         <DataItemsWhite />
         <Quote />
       </Intro>
-      <Tiers setShowPopup={props.setShowPopup} />
+      <Tiers
+        setShowPopup={props.setShowPopup}
+        setShowPay={setShowPay}
+        setProduct={setProduct}
+      />
       <SecondForm>
         <SecondFormGrid>
           <Fade>
@@ -70,6 +78,7 @@ function Index(props) {
       <MainGrid notoppadding>
         <FormComplete centered collectorId="FooterCollector" />
       </MainGrid>
+      {showPay && <PayPopup setShowPay={setShowPay} product={product} />}
     </>
   );
 }

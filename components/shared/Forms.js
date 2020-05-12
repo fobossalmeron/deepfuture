@@ -78,16 +78,22 @@ export const Button = styled.button`
   margin: 4px 0;
   text-align: center;
   width: ${(props) => (props.short ? "50%" : "100%")};
-  background-color: ${(props) => props.theme.colors.cta};
+  background-color: ${(props) =>
+    !props.disabled
+      ? props.theme.colors.cta
+      : props.theme.colors.foreground_low};
   color: ${(props) => props.theme.colors.background};
   border: 0;
   font-size: 1.7rem;
   border-radius: ${(props) => (props.short ? "0px 4px 4px 0px" : "4px")};
-  cursor: pointer;
+  cursor: ${(props) => (!props.disabled ? "pointer" : "no-drop")};
   transition: 0.3s ease all;
   @media (hover: hover) and (pointer: fine) {
     &:hover {
-      background-color: ${(props) => props.theme.colors.success};
+      background-color: ${(props) =>
+        !props.disabled
+          ? props.theme.colors.success
+          : props.theme.colors.foreground_low};
     }
   }
 `;

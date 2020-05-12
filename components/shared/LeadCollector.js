@@ -46,6 +46,7 @@ const LeadCollector = ({ complete, short, collectorId }) => {
       "https://api.sendinblue.com/v3/contacts",
       requestOptions
     );
+
     const data = await response.json();
 
     setMessage(
