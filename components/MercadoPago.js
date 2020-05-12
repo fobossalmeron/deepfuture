@@ -8,40 +8,13 @@ import {
   isEmail,
 } from "components/shared/Forms";
 import Cookies from "js-cookie/dist/js.cookie";
-// import mercadopago from "mercadopago";
 
-const MercadoPagu = (tier) => {
+const MercadoPago = ({product}) => {
   const [displayMessage, setMessage] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
   const [status, setStatus] = useState("");
   const [readyToPay, isReadyToPay] = useState(false);
   let email;
-
-  useEffect(() => {
-    // mercadopago.configure({
-    //   access_token:
-    //     "TEST-6846732972230100-051121-140a3e7c6e98731335172f00639b3a59-566499606",
-    // });
-    // let preference = {
-    //   items: [
-    //     {
-    //       title: "Taller autogestivo",
-    //       unit_price: 1400,
-    //       quantity: 1,
-    //     },
-    //   ],
-    // };
-    // mercadopago.preferences
-    //   .create(preference)
-    //   .then(function (response) {
-    //     // Este valor reemplazará el string "$$init_point$$" en tu HTML
-    //     console.log(response);
-    //     // global.init_point = response.body.init_point;
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //   });
-  }, []);
 
   const call = async () => {
     setStatus("sending");
@@ -76,6 +49,7 @@ const MercadoPagu = (tier) => {
   };
 
   const validate = () => {
+    console.log(product)
     console.log("validate called");
     if (!email.value) {
       setShowMessage(true), isReadyToPay(false), setMessage("Ingresa tu email");
@@ -92,10 +66,16 @@ const MercadoPagu = (tier) => {
   };
 
   const submit = () => {
-    validate() && Cookies.set("comprarTier1", "true");
+    const tier1PayUrl = "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=566499606-ea18cbbb-bcfb-4dc5-9dc1-1061975d01fc"
+    const tier2PayUrl = "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=566499606-d21f88c2-374c-4bfe-86eb-2edb5026a3db"
+    if (product.id === 1){
+      validate() && Cookies.set("comprarTier1", "true");
+    } else if (product.id === 2){
+      validate() && Cookies.set("comprarTier2", "true");
+    }
     Cookies.set("userEmail", email.value);
     window.location.href =
-      "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=566499606-ea18cbbb-bcfb-4dc5-9dc1-1061975d01fc";
+      product.id === 1 ? tier1PayUrl : tier2PayUrl;
   };
 
   return (
@@ -151,7 +131,7 @@ const MercadoPagu = (tier) => {
   );
 };
 
-export default MercadoPagu;
+export default MercadoPago;
 
 const Warning = styled.div`
   margin-bottom: 10px;

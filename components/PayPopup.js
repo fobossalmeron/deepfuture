@@ -3,9 +3,9 @@ import { useState, useEffect } from "react";
 import Cross from "public/assets/img/layout/cross.svg";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import { P, H2 } from "components/shared/Dangerously";
-import PayCollector from "components/shared/PayCollector";
 import MercadoPago from "components/MercadoPago";
 import MercadoLogo from "public/assets/img/layout/logos/mercadopago.svg";
+import currency from "currency.js"
 
 const PayPopup = ({ setShowPay, product }) => {
   const [internalShowPopup, setInternalShowPopup] = useState(false);
@@ -35,43 +35,14 @@ const PayPopup = ({ setShowPay, product }) => {
         <Left>
           <H2>{`Taller <b>${product.title}</b>`}</H2>
           <P>{product.description}</P>
-          <span>{product.price}</span>
+          <span>{currency(product.price,{symbol: "$", formatWithSymbol: true }).format()} MXN</span>
         </Left>
         <Right>
-          <MercadoPago />
-          {/* <h4>Pago con tarjeta</h4>
-          <CardOptions>
-            <div>
-              <h5>Tarjetas de crédito</h5>
-              <img
-                src="/assets/img/layout/cards1.png"
-                alt="tarjetas de crédito"
-              />
-            </div>
-            <div>
-              <h5>Tarjetas de débito</h5>
-              <img
-                src="/assets/img/layout/cards2.png"
-                alt="tarjetas de crédito"
-              />
-            </div>
-          </CardOptions> */}
-          {/* <PayCollector product={product} /> */}
+          <MercadoPago product={product}/>
           <Transacciones>
             <p>Transacciones seguras con</p>
-            {/* <img
-                src="/assets/img/layout/openpay.png"
-                alt="tarjetas de crédito"
-              /> */}
             <MercadoLogo />
           </Transacciones>
-          {/* <div>
-              Tus pagos se realizan de forma segura con encriptación de 256 bits
-              <img
-                src="/assets/img/layout/security.png"
-                alt="tarjetas de crédito"
-              />
-            </div> */}
         </Right>
       </Wrapper>
       <Background visible={internalShowPopup}>
@@ -99,6 +70,9 @@ const Left = styled.div`
   font-weight: 400;
   p {
     max-width: 80%;
+  }
+  h2 b{
+    font-weight:500;
   }
   span {
     font-size: 2.6rem;

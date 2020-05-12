@@ -5,6 +5,7 @@ import { P, H3 } from "components/shared/Dangerously";
 import Check from "public/assets/img/layout/check.svg";
 import Uncheck from "public/assets/img/layout/uncheck.svg";
 import Fade from "react-reveal/Fade";
+import currency from "currency.js"
 
 const includes = [
   {
@@ -36,9 +37,10 @@ const includes = [
 const tiers = [
   {
     title: "autogestivo",
+    id: 1,
     description:
       "Cómo generar certidumbre ante el impacto del <b>COVID-19</b> y la <b>4T</b>",
-    price: "$1,400",
+    price: "$1400",
     originalPrice: "2,500",
     perks: {
       prospectiva: true,
@@ -50,10 +52,11 @@ const tiers = [
   },
   {
     title: "personal",
+    id:2,
     description:
       "Genera certidumbre ante el impacto del <b>COVID-19</b> y la <b>4T</b> junto con <b>expertos</b>",
-    price: "$10,000",
-    originalPrice: "25,000",
+    price: "$10000",
+    originalPrice: "25000",
     color: "#62AF9A",
     perks: {
       prospectiva: true,
@@ -65,9 +68,10 @@ const tiers = [
   },
   {
     title: "empresarial",
+    id:3,
     description:
       "Minimiza los riesgos del impacto del <b>COVID-19</b> y la <b>4T</b> junto con <b>expertos</b>",
-    price: "$57,000",
+    price: "$57000",
     color: "#1C4794",
     perks: {
       prospectiva: true,
@@ -95,9 +99,9 @@ const Tier = ({ tier, setShowPopup, setShowPay, setProduct }) => {
           <Price>
             <span>
               {tier.title === "empresarial" && <PreSpan>desde </PreSpan>}
-              {tier.price} <span>MXN</span>
+              {currency(tier.price,{precision:0,symbol: "$", formatWithSymbol: true }).format()} <span>MXN</span>
             </span>
-            <span>{tier.originalPrice ? "$" + tier.originalPrice : null}</span>
+            <span>{tier.originalPrice ? currency(tier.originalPrice,{precision:0,symbol: "$", formatWithSymbol: true }).format() : null}</span>
           </Price>
           {tier.title !== "empresarial" ? (
             <Button onClick={buyOption}>Comprar</Button>

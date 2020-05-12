@@ -8,6 +8,8 @@ import {
   isEmail,
 } from "components/shared/Forms";
 import Select from "react-select/";
+import TagManager from "react-gtm-module";
+import Cookies from "js-cookie/dist/js.cookie.mjs";
 
 const LeadCollector = ({ complete, short, collectorId }) => {
   const [displayMessage, setMessage] = useState(false);
@@ -42,6 +44,15 @@ const LeadCollector = ({ complete, short, collectorId }) => {
       }),
     };
 
+    const emailAddress = email.value;
+
+    const tagManagerArgs = {
+      gtmId: "GTM-NS8QPN4",
+      events: {
+        validate: email.value,
+      },
+    };
+
     const response = await fetch(
       "https://api.sendinblue.com/v3/contacts",
       requestOptions
@@ -55,6 +66,10 @@ const LeadCollector = ({ complete, short, collectorId }) => {
         : "El correo que ingresaste ya fue registrado"
     );
     setStatus(data.id ? "success" : "error");
+    data.id &&
+      (TagManager.initialize(tagManagerArgs),
+      Cookies.set("userEmail", emailAddress),
+      console.log("tag manager debío recibir info"));
   };
 
   const submitComplete = () => {

@@ -3,17 +3,17 @@ import styled, { createGlobalStyle } from "styled-components";
 import Header from "./header";
 import { useRouter } from "next/router";
 import CookieMessage from "./CookieMessage";
+import Cookies from "js-cookie/dist/js.cookie";
 import { initGA, logPageView } from "utils/analytics";
 import TagManager from "react-gtm-module";
 import ReactPixel from "react-facebook-pixel";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import NewsletterPopup from "components/NewsletterPopup";
-import PayPopup from "components/PayPopup";
 import Imago from "public/assets/img/layout/logos/dfiimago.svg";
+import { validate } from "utils/validate";
 
 export default ({
   children,
-  toggleLang,
   checkForConsent,
   consentToCookies,
   hasToConsent,
@@ -22,7 +22,6 @@ export default ({
 }) => {
   const [isOpen, setOpen] = useState(false);
   const [isHome, setIsHome] = useState(true);
-  const [isAbout, setIsAbout] = useState(false);
   const [headerTitle, setTitle] = useState("");
   const [showArrow, setShowArrow] = useState(false);
   const [showConsentMessage, setShowConsentMessage] = useState(true);
@@ -50,15 +49,20 @@ export default ({
   useEffect(() => {
     // GTM
     const tagManagerArgs = {
-      gtmId: "GTM-000000",
+      gtmId: "GTM-NS8QPN4",
+      // dataLayer: {
+      //   userId: "600114731",
+      //   userProject: "deepfuture.institute",
+      // },
     };
     TagManager.initialize(tagManagerArgs);
+    ReactPixel;
+    const options = {
+      autoConfig: true,
+      debug: false,
+    };
     // ReactPixel
-    // const options = {
-    //   autoConfig: true,
-    //   debug: false,
-    // };
-    // ReactPixel.init("506854653278097", null, options);
+    ReactPixel.init("266265964568832", null, options);
   }, []);
 
   useEffect(() => {
@@ -69,12 +73,27 @@ export default ({
     }
     logPageView();
     // ReactPixel
-    // ReactPixel.pageView(); // For tracking page view
+    ReactPixel.pageView();
 
     if (router.route === "/" || router.route === "/en") {
       setIsHome(true);
     } else {
       setIsHome(false);
+    }
+    // var _email = Cookies.get("userEmail");
+    // if (_email === undefined) {
+    //   setUserDidPay(false);
+    // } else {
+    //   getUserEmail(_email);
+    // }
+
+    var _userEmail = Cookies.get("userEmail");
+    if (_userEmail === undefined) {
+      console.log("no había cookie");
+      //call
+    } else {
+      console.log("debió hacerse un validate");
+      validate(_userEmail);
     }
   }, [router.route]);
 
@@ -123,16 +142,14 @@ export default ({
         // onMouseMove={isHome | isAbout ? onMouseMove : undefined}
         // onTouchMove={isHome | isAbout ? onTouchMove : undefined}
       >
-        {!isHome && (
-          <Header
-            isOpen={isOpen}
-            headerTitle={headerTitle}
-            hasLoaded={hasLoaded}
-            closeNav={closeNav}
-            locale={locale}
-            route={router.route}
-          />
-        )}
+        <Header
+          isOpen={isOpen}
+          headerTitle={headerTitle}
+          hasLoaded={hasLoaded}
+          closeNav={closeNav}
+          locale={locale}
+          route={router.route}
+        />
         {React.cloneElement(children, {
           setTitle: setTitle,
           hasLoaded: hasLoaded,

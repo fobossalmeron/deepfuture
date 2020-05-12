@@ -13,12 +13,11 @@ function PagoConfirmado(props) {
   const [userEmail, getUserEmail] = useState(null);
 
   useEffect(() => {
-    // Check if cookie message has been closed before
     var ref = document.referrer;
     console.log(ref);
     if (!ref.includes("mercadopago")) {
-      window.location.replace("/");
-      console.log("el ref incluye mercadopago");
+      // window.location.replace("/");
+      console.log("el ref no incluye mercadopago");
     }
     var _tier1 = Cookies.get("comprarTier1");
     if (_tier1 === undefined) {
@@ -35,6 +34,10 @@ function PagoConfirmado(props) {
 
     // TODO meter al usuario a la lista correcta
   }, []);
+
+//   useEffect(()=>(
+// //descargar archivo automatico si es tier1
+//   ), [])
 
   return (
     <>
