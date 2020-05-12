@@ -16,9 +16,8 @@ function PagoConfirmado(props) {
     // Check if cookie message has been closed before
     var ref = document.referrer;
     console.log(ref);
-    if (ref.includes("mercadopago")) {
+    if (!ref.includes("mercadopago")) {
       window.location.replace("/");
-      // TODO: cambiar a negativo el ref.includes
       console.log("el ref incluye mercadopago");
     }
     var _tier1 = Cookies.get("comprarTier1");
