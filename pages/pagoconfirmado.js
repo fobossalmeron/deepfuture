@@ -17,7 +17,7 @@ function PagoConfirmado(props) {
     var ref = document.referrer;
     console.log(ref);
     if (ref.includes("mercadopago")) {
-      // window.location.replace("/");
+      window.location.replace("/");
       // TODO: cambiar a negativo el ref.includes
       console.log("el ref incluye mercadopago");
     }
