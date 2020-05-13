@@ -632,8 +632,7 @@ function _templateObject() {
     if (_userEmail === undefined) {
       console.log("no había cookie"); //call
     } else {
-      console.log("debió hacerse un validate");
-      Object(utils_validate__WEBPACK_IMPORTED_MODULE_13__["validate"])(_userEmail);
+      console.log("debió hacerse un validate"); // identify(_userEmail);
     }
   }, [router.route]);
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
@@ -19896,29 +19895,28 @@ function createMarkup(i) {
 /*!***************************!*\
   !*** ./utils/validate.js ***!
   \***************************/
-/*! exports provided: validate */
+/*! exports provided: identify */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(console) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validate", function() { return validate; });
+/* WEBPACK VAR INJECTION */(function(console) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "identify", function() { return identify; });
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 
-var validate = function validate(email) {
+var identify = function identify(email) {
   var requestOptions, response, data;
-  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function validate$(_context) {
+  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function identify$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
         case 0:
           console.log(email);
           requestOptions = {
-            // mode: "no-cors",
+            mode: "no-cors",
             method: "POST",
             headers: {
               accept: "application/json",
               "content-type": "application/json",
-              // "access-control-allow-origin" : "http://localhost:3000",
               "api-key": "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",
               "ma-key": "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"
             },

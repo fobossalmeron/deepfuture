@@ -698,8 +698,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     if (_userEmail === undefined) {
       console.log("no había cookie"); //call
     } else {
-      console.log("debió hacerse un validate");
-      Object(utils_validate__WEBPACK_IMPORTED_MODULE_12__["validate"])(_userEmail);
+      console.log("debió hacerse un validate"); // identify(_userEmail);
     }
   }, [router.route]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
@@ -4332,21 +4331,20 @@ function createMarkup(i) {
 /*!***************************!*\
   !*** ./utils/validate.js ***!
   \***************************/
-/*! exports provided: validate */
+/*! exports provided: identify */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "validate", function() { return validate; });
-const validate = async email => {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "identify", function() { return identify; });
+const identify = async email => {
   console.log(email);
   let requestOptions = {
-    // mode: "no-cors",
+    mode: "no-cors",
     method: "POST",
     headers: {
       accept: "application/json",
       "content-type": "application/json",
-      // "access-control-allow-origin" : "http://localhost:3000",
       "api-key": "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",
       "ma-key": "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"
     },

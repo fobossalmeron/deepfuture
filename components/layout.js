@@ -10,7 +10,7 @@ import ReactPixel from "react-facebook-pixel";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import NewsletterPopup from "components/NewsletterPopup";
 import Imago from "public/assets/img/layout/logos/dfiimago.svg";
-import { validate } from "utils/validate";
+import { identify } from "utils/validate";
 
 export default ({
   children,
@@ -93,7 +93,7 @@ export default ({
       //call
     } else {
       console.log("debió hacerse un validate");
-      validate(_userEmail);
+      // identify(_userEmail);
     }
   }, [router.route]);
 

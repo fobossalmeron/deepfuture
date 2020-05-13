@@ -30,9 +30,9 @@ const MercadoPago = ({product}) => {
         updateEnabled: true,
         email: email.value,
         listIds: [7],
-        attributes: {
-          Tier1: true,
-        },
+        // attributes: {
+        //   COMPROTIER1: true,
+        // },
       }),
     };
 
@@ -71,7 +71,7 @@ const MercadoPago = ({product}) => {
     if (product.id === 1){
       validate() && Cookies.set("comprarTier1", "true");
     } else if (product.id === 2){
-      validate() && Cookies.set("comprarTier2", "true");
+      validate() && Cookies.set("adquirirTier2", "true");
     }
     Cookies.set("userEmail", email.value);
     window.location.href =

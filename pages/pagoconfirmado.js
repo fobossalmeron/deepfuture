@@ -11,19 +11,36 @@ function PagoConfirmado(props) {
   const [product, setProduct] = useState(null);
   const [userDidPay, setUserDidPay] = useState(false);
   const [userEmail, getUserEmail] = useState(null);
+  const [productBought, setProductBought] = useState(null);
 
   useEffect(() => {
     var ref = document.referrer;
     console.log(ref);
     if (!ref.includes("mercadopago")) {
-      // window.location.replace("/");
-      console.log("el ref no incluye mercadopago");
+      window.location.replace("/");
+      console.log("No viene de mercadopago");
     }
+    // if (ref.includes("test")) {
+    //   // window.location.replace("/");
+    //   console.log("Viene del test");
+    // }
     var _tier1 = Cookies.get("comprarTier1");
-    if (_tier1 === undefined) {
-      setUserDidPay(false);
-    } else if (_tier1 === "true") {
+    var _tier2 = Cookies.get("adquirirTier2");
+    if (_tier1 === undefined && _tier2 === undefined){
+      window.location.replace("/");
+      console.log("No hubo cookies");
+    }
+    if (_tier1 === "true") {
+      console.log("Cookie dice compro tier 1", _tier1);
       setUserDidPay(true);
+      setProductBought(1);
+      Cookies.remove('comprarTier1')
+    }
+    if (_tier2 === "true") {
+      console.log("Cookie dice compro tier 2", _tier2);
+      setUserDidPay(true);
+      setProductBought(2);
+      Cookies.remove('adquirirTier2')
     }
     var _email = Cookies.get("userEmail");
     if (_email === undefined) {
@@ -31,13 +48,44 @@ function PagoConfirmado(props) {
     } else {
       getUserEmail(_email);
     }
-
-    // TODO meter al usuario a la lista correcta
   }, []);
+  
+  // TODO: descargar archivo automatico si es tier1
+  //   useEffect(()=>(
+  //   ), [])
 
-//   useEffect(()=>(
-// //descargar archivo automatico si es tier1
-//   ), [])
+  useEffect(() => {
+    console.log(userDidPay, productBought);
+    var _email = Cookies.get("userEmail");
+    var attributes =
+      productBought === 1 ? { COMPROTIER1: true } : { COMPROTIER2: true };
+
+    if (userDidPay) {
+      const call = async () => {
+        let requestOptions = {
+          method: "POST",
+          headers: {
+            accept: "application/json",
+            "content-type": "application/json",
+            "api-key": process.env.SENDINBLUE_API,
+          },
+          body: JSON.stringify({
+            updateEnabled: true,
+            email: _email,
+            attributes: attributes,
+          }),
+        };
+
+        const response = await fetch(
+          "https://api.sendinblue.com/v3/contacts",
+          requestOptions
+        );
+        const data = await response;
+        console.log(data);
+      };
+      call();
+    }
+  }, [userDidPay]);
 
   return (
     <>
@@ -49,14 +97,24 @@ function PagoConfirmado(props) {
       <LandBg />
       <Land id="land">
         <div id="landtext">
-          {userDidPay ? (
+          {userDidPay && productBought === 1 && (
             <>
+              {console.log("product bought 1")}
               <h2>Gracias por tu pago</h2>
               <p>Tu taller será enviado a {userEmail}</p>
             </>
-          ) : (
-            <h2>Parece que llegaste a esta página por error</h2>
           )}
+          {userDidPay && productBought === 2 && (
+            <>
+              {console.log("product bought 1")}
+              <h2>Gracias por tu pago</h2>
+              <p>
+                Un representate se contactará contigo en {userEmail} para
+                establecer la fecha y hora del taller
+              </p>
+            </>
+          )}
+          {!userDidPay && <h2>Parece que llegaste a esta página por error</h2>}
         </div>
       </Land>
     </>

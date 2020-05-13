@@ -1,12 +1,11 @@
-export const validate = async (email) => {
+export const identify = async (email) => {
   console.log(email)
   let requestOptions = {
-    // mode: "no-cors",
+    mode: "no-cors",
     method: "POST",
     headers: {
       accept: "application/json",
       "content-type": "application/json",
-      // "access-control-allow-origin" : "http://localhost:3000",
       "api-key": process.env.SENDINBLUE_API,
       "ma-key": process.env.SENDINBLUE_API,
     },
