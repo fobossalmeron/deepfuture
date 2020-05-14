@@ -99,10 +99,13 @@ export const Button = styled.button`
 `;
 
 export const selectStyles = {
-  option: (provided) => ({
+  option: (provided, { isSelected, isFocused }) => ({
     ...provided,
-    color: "#4F4F4F",
+    color: isSelected ? "#F4F4F4": "#4F4F4F",
     fontSize: "1.7rem",
+    backgroundColor: isSelected ? "#4F478B" : isFocused ? "rgba(79,71,139,0.18)" : "#F4F4F4",
+    transition: ".3s ease all",
+    cursor:"pointer",
   }),
   singleValue: (provided) => ({
     ...provided,
@@ -117,11 +120,13 @@ export const selectStyles = {
     ...provided,
     height: "100%",
     border: 0,
+    backgroundColor: "#F4F4F4",
   }),
   valueContainer: (provided) => ({
     ...provided,
     padding: "1px 18px 13px 26px",
     lineHeight: "100%",
+    backgroundColor: "#F4F4F4",
   }),
   placeholder: (provided) => ({
     ...provided,

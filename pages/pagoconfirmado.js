@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import Fade from "react-reveal/Fade";
 import Head from "components/Head";
 import MainGrid from "components/shared/MainGrid";
 import LandBg from "components/LandBg";
 import Cookies from "js-cookie/dist/js.cookie";
+import { Button } from "components/shared/Forms";
+import downloadWorkshop from "utils/downloadWorkshop";
+
+const production = true;
 
 function PagoConfirmado(props) {
-  const [showPay, setShowPay] = useState(false);
-  const [product, setProduct] = useState(null);
   const [userDidPay, setUserDidPay] = useState(false);
   const [userEmail, getUserEmail] = useState(null);
   const [productBought, setProductBought] = useState(null);
@@ -17,30 +18,32 @@ function PagoConfirmado(props) {
     var ref = document.referrer;
     console.log(ref);
     if (!ref.includes("mercadopago")) {
-      window.location.replace("/");
-      console.log("No viene de mercadopago");
+      if (production) {
+        window.location.replace("/");
+        console.log("No viene de mercadopago");
+      }
     }
-    // if (ref.includes("test")) {
-    //   // window.location.replace("/");
-    //   console.log("Viene del test");
-    // }
     var _tier1 = Cookies.get("comprarTier1");
     var _tier2 = Cookies.get("adquirirTier2");
-    if (_tier1 === undefined && _tier2 === undefined){
-      window.location.replace("/");
-      console.log("No hubo cookies");
+    if (_tier1 === undefined && _tier2 === undefined) {
+      if (production) {
+        window.location.replace("/");
+        console.log("No hubo cookies");
+      }
     }
     if (_tier1 === "true") {
       console.log("Cookie dice compro tier 1", _tier1);
       setUserDidPay(true);
       setProductBought(1);
-      Cookies.remove('comprarTier1')
+      if (production) {
+        Cookies.remove("comprarTier1");
+      }
     }
     if (_tier2 === "true") {
       console.log("Cookie dice compro tier 2", _tier2);
       setUserDidPay(true);
       setProductBought(2);
-      Cookies.remove('adquirirTier2')
+      Cookies.remove("adquirirTier2");
     }
     var _email = Cookies.get("userEmail");
     if (_email === undefined) {
@@ -49,43 +52,50 @@ function PagoConfirmado(props) {
       getUserEmail(_email);
     }
   }, []);
-  
-  // TODO: descargar archivo automatico si es tier1
-  //   useEffect(()=>(
-  //   ), [])
+
+  // useEffect(() => {
+  //   if (productBought === 1) {
+  //     console.log("ey");
+
+  //     downloadWorkshop();
+  //   }
+  // }, [productBought]);
 
   useEffect(() => {
     console.log(userDidPay, productBought);
-    var _email = Cookies.get("userEmail");
-    var attributes =
-      productBought === 1 ? { COMPROTIER1: true } : { COMPROTIER2: true };
-
     if (userDidPay) {
-      const call = async () => {
-        let requestOptions = {
-          method: "POST",
-          headers: {
-            accept: "application/json",
-            "content-type": "application/json",
-            "api-key": process.env.SENDINBLUE_API,
-          },
-          body: JSON.stringify({
-            updateEnabled: true,
-            email: _email,
-            attributes: attributes,
-          }),
-        };
-
-        const response = await fetch(
-          "https://api.sendinblue.com/v3/contacts",
-          requestOptions
-        );
-        const data = await response;
-        console.log(data);
-      };
-      call();
+      setUserPayAttributesAndLists();
     }
   }, [userDidPay]);
+
+  const setUserPayAttributesAndLists = async () => {
+    var attributes =
+      productBought === 1 ? { COMPROTIER1: true } : { COMPROTIER2: true };
+    var listIds = productBought === 1 ? [7] : [8];
+    var _email = Cookies.get("userEmail");
+
+    let requestOptions = {
+      method: "POST",
+      headers: {
+        accept: "application/json",
+        "content-type": "application/json",
+        "api-key": process.env.SENDINBLUE_API,
+      },
+      body: JSON.stringify({
+        updateEnabled: true,
+        email: _email,
+        attributes: attributes,
+        listIds: listIds,
+      }),
+    };
+
+    const response = await fetch(
+      "https://api.sendinblue.com/v3/contacts",
+      requestOptions
+    );
+    const data = await response;
+    console.log(data);
+  };
 
   return (
     <>
@@ -99,14 +109,16 @@ function PagoConfirmado(props) {
         <div id="landtext">
           {userDidPay && productBought === 1 && (
             <>
-              {console.log("product bought 1")}
               <h2>Gracias por tu pago</h2>
-              <p>Tu taller será enviado a {userEmail}</p>
+              <p>
+                Haz click en el botón para descargar tu taller. De igual forma
+                te será enviado a {userEmail}.
+              </p>
+              <Button onClick={downloadWorkshop}>Descargar</Button>
             </>
           )}
           {userDidPay && productBought === 2 && (
             <>
-              {console.log("product bought 1")}
               <h2>Gracias por tu pago</h2>
               <p>
                 Un representate se contactará contigo en {userEmail} para
@@ -127,7 +139,6 @@ const Land = styled(MainGrid)`
   min-height: 100vh;
   align-items: center;
   padding-top: 13%;
-  pointer-events: none;
   #landtext {
     color: ${(props) => props.theme.colors.foreground};
     grid-column: 2 / span 10;

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 220 220">
+    <path stroke="#4F478B" stroke-width="8" d="M138 157v-29.5a28.5 28.5 0 10-57 0V157"/>
+    <circle cx="109.5" cy="73.5" r="11.5" stroke="#4F478B" stroke-width="8"/>
+    <rect class="mutant-stroke" width="210" height="129" x="5" y="28" stroke="#1D1D1B" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" rx="10"/>
+    <rect class="mutant-stroke" width="139" height="13" x="4" y="-4" stroke="#1D1D1B" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" rx="6" transform="matrix(1 0 0 -1 37 188)"/>
+    <path class="mutant-stroke" stroke="#1D1D1B" stroke-linecap="round" stroke-linejoin="round" stroke-width="8" d="M100 157h21v20h-21z"/>
+</svg>

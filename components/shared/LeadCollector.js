@@ -8,7 +8,6 @@ import {
   isEmail,
 } from "components/shared/Forms";
 import Select from "react-select/";
-import TagManager from "react-gtm-module";
 import Cookies from "js-cookie/dist/js.cookie.mjs";
 
 const LeadCollector = ({ complete, short, collectorId }) => {
@@ -46,13 +45,6 @@ const LeadCollector = ({ complete, short, collectorId }) => {
 
     const emailAddress = email.value;
 
-    const tagManagerArgs = {
-      gtmId: "GTM-NS8QPN4",
-      events: {
-        validate: email.value,
-      },
-    };
-
     const response = await fetch(
       "https://api.sendinblue.com/v3/contacts",
       requestOptions
@@ -66,10 +58,7 @@ const LeadCollector = ({ complete, short, collectorId }) => {
         : "El correo que ingresaste ya fue registrado"
     );
     setStatus(data.id ? "success" : "error");
-    data.id &&
-      (TagManager.initialize(tagManagerArgs),
-      Cookies.set("userEmail", emailAddress),
-      console.log("tag manager debío recibir info"));
+    data.id && Cookies.set("userEmail", emailAddress);
   };
 
   const submitComplete = () => {
@@ -148,10 +137,13 @@ const LeadCollector = ({ complete, short, collectorId }) => {
                   instanceId={"Industria" + collectorId}
                   isSearchable={false}
                   options={[
-                    { value: "Aviación", label: "Aviación" },
-                    { value: "Automotriz", label: "Automotriz" },
-                    { value: "Cine", label: "Cine" },
-                    { value: "Hospitalaria", label: "Hospitalaria" },
+                    { value: "B2C", label: "Servicios al consumidor" },
+                    { value: "B2B", label: "Servicios B2B" },
+                    { value: "Manufactura", label: "Manufactura" },
+                    { value: "Energía", label: "Energía" },
+                    { value: "Minería", label: "Minería" },
+                    { value: "Agricultura", label: "Agricultura" },
+                    { value: "Otro", label: "Otro" },
                   ]}
                   value={industryOption}
                   onChange={handleIndustryChange}

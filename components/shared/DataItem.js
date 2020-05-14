@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { H3, P } from "components/shared/Dangerously";
 import Fade from "react-reveal/Fade";
+import CircleIcon from "components/shared/CircleIcon";
 
 function DataItem({ item, columns, light, dark }) {
   function IconFaded() {
@@ -39,33 +40,12 @@ const Column = styled.div`
   grid-column-end: span 1;
 `;
 
-const Icon = styled.div`
+const Icon = styled(CircleIcon)`
 width:100px;
 height:100px;
-  border-radius: 50%;
-  background-color: ${(props) =>
-    props.light
-      ? props.theme.colors.foreground
-      : props.theme.colors.background};
-  box-shadow: ${(props) =>
-    props.light
-      ? `-2px -4px 11px ${props.theme.colors.lightlight},
-    2px 2px 4px ${props.theme.colors.lightshadow}`
-      : `-5px -5px 7px ${props.theme.colors.darklight}, 
-    5px 5px 7px ${props.theme.colors.darkshadow}`};
-  position: relative;
   margin-bottom:10%;
-  svg {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate3d(-50%, -50%, 0);
-    .mutant {
-      fill: ${(props) =>
-        props.light
-          ? props.theme.colors.background
-          : props.theme.colors.foreground};
-    }
+  svg{
+    padding:22%;
   }
 `;
 

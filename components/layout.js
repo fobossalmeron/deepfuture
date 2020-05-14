@@ -5,12 +5,10 @@ import { useRouter } from "next/router";
 import CookieMessage from "./CookieMessage";
 import Cookies from "js-cookie/dist/js.cookie";
 import { initGA, logPageView } from "utils/analytics";
-import TagManager from "react-gtm-module";
 import ReactPixel from "react-facebook-pixel";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import NewsletterPopup from "components/NewsletterPopup";
 import Imago from "public/assets/img/layout/logos/dfiimago.svg";
-import { identify } from "utils/validate";
 
 export default ({
   children,
@@ -47,21 +45,12 @@ export default ({
   );
 
   useEffect(() => {
-    // GTM
-    const tagManagerArgs = {
-      gtmId: "GTM-NS8QPN4",
-      // dataLayer: {
-      //   userId: "600114731",
-      //   userProject: "deepfuture.institute",
-      // },
-    };
-    TagManager.initialize(tagManagerArgs);
+    // ReactPixel
     ReactPixel;
     const options = {
       autoConfig: true,
       debug: false,
     };
-    // ReactPixel
     ReactPixel.init("266265964568832", null, options);
   }, []);
 
@@ -79,21 +68,6 @@ export default ({
       setIsHome(true);
     } else {
       setIsHome(false);
-    }
-    // var _email = Cookies.get("userEmail");
-    // if (_email === undefined) {
-    //   setUserDidPay(false);
-    // } else {
-    //   getUserEmail(_email);
-    // }
-
-    var _userEmail = Cookies.get("userEmail");
-    if (_userEmail === undefined) {
-      console.log("no había cookie");
-      //call
-    } else {
-      console.log("debió hacerse un validate");
-      // identify(_userEmail);
     }
   }, [router.route]);
 

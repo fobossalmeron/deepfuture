@@ -5,7 +5,7 @@ import { P, H3 } from "components/shared/Dangerously";
 import Check from "public/assets/img/layout/check.svg";
 import Uncheck from "public/assets/img/layout/uncheck.svg";
 import Fade from "react-reveal/Fade";
-import currency from "currency.js"
+import currency from "currency.js";
 
 const includes = [
   {
@@ -38,10 +38,13 @@ const tiers = [
   {
     title: "autogestivo",
     id: 1,
-    description:
+    subtitle:
       "Cómo generar certidumbre ante el impacto del <b>COVID-19</b> y la <b>4T</b>",
+    description: "Taller descargable con insights de la crisis del COVID-19 y la Cuarta Transformación donde podrás aplicar principios de prospectiva a tu negocio u organización para generar certidumbre y responder estratégicamente.",
     price: "$1400",
     originalPrice: "2,500",
+    insights: "18",
+    color: "#62AF9A",
     perks: {
       prospectiva: true,
       worksheets: true,
@@ -52,12 +55,14 @@ const tiers = [
   },
   {
     title: "personal",
-    id:2,
-    description:
+    id: 2,
+    subtitle:
       "Genera certidumbre ante el impacto del <b>COVID-19</b> y la <b>4T</b> junto con <b>expertos</b>",
+    description: "Taller virtual con insights de la crisis del COVID-19 y la Cuarta Transformación donde podrás, guiado por expertos, aplicar principios de prospectiva a tu negocio u organización para generar certidumbre y responder estratégicamente.",
     price: "$10000",
     originalPrice: "25000",
-    color: "#62AF9A",
+    color: "#1C4794",
+    insights: "26",
     perks: {
       prospectiva: true,
       worksheets: true,
@@ -68,11 +73,11 @@ const tiers = [
   },
   {
     title: "empresarial",
-    id:3,
-    description:
+    id: 3,
+    subtitle:
       "Minimiza los riesgos del impacto del <b>COVID-19</b> y la <b>4T</b> junto con <b>expertos</b>",
     price: "$57000",
-    color: "#1C4794",
+    insights: "26 +",
     perks: {
       prospectiva: true,
       worksheets: true,
@@ -93,18 +98,31 @@ const Tier = ({ tier, setShowPopup, setShowPay, setProduct }) => {
           <h2>
             Taller <b>{tier.title}</b>
           </h2>
-          <H3>{tier.description}</H3>
+          <H3>{tier.subtitle}</H3>
         </Fade>
         <Fade>
           <Price>
             <span>
               {tier.title === "empresarial" && <PreSpan>desde </PreSpan>}
-              {currency(tier.price,{precision:0,symbol: "$", formatWithSymbol: true }).format()} <span>MXN</span>
+              {currency(tier.price, {
+                precision: 0,
+                symbol: "$",
+                formatWithSymbol: true,
+              }).format()}{" "}
+              <span>MXN</span>
             </span>
-            <span>{tier.originalPrice ? currency(tier.originalPrice,{precision:0,symbol: "$", formatWithSymbol: true }).format() : null}</span>
+            <span>
+              {tier.originalPrice
+                ? currency(tier.originalPrice, {
+                    precision: 0,
+                    symbol: "$",
+                    formatWithSymbol: true,
+                  }).format()
+                : null}
+            </span>
           </Price>
           {tier.title !== "empresarial" ? (
-            <Button onClick={buyOption}>Comprar</Button>
+            <Button onClick={buyOption}>Ver más</Button>
           ) : (
             <Button onClick={setShowPopup}>Contacta a un asesor</Button>
           )}
@@ -152,7 +170,7 @@ function Tiers({ setShowPopup, setShowPay, setProduct }) {
         </Includes>
         {tiers.map((tier, i) => (
           <Stats key={"tierstats" + i}>
-            <li>18</li>
+            <li className="insight">{tier.insights}</li>
             {Object.entries(tier.perks).map((perk, i) => (
               <li key={`tp-${i}-${tier.price}`}>
                 {perk[1] ? <Check /> : <Uncheck />}
@@ -173,6 +191,11 @@ const Stats = styled.ul`
   padding-bottom: 25px;
   li {
     padding: 17px 0;
+    &.insight {
+      font-weight: 500;
+      font-size: 2rem;
+      color: ${(props) => props.theme.colors.accent};
+    }
   }
 `;
 

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 220 220">
+  <path class="mutant-stroke" stroke="#000" stroke-linejoin="round" stroke-width="8" d="M184 98v45.2c0 2.1-1 4.1-2.8 5.3-8.8 5.5-36.6 21.5-67.7 21.5-33.4 0-59.7-16-67.9-21.5a6.1 6.1 0 01-2.6-5.2V98"/>
+  <path class="mutant-stroke" stroke="#1D1D1B" stroke-linejoin="round" stroke-width="8" d="M108 44.3a3 3 0 012 0L214 80.7a3 3 0 010 5.7l-102 35.3a3 3 0 01-2 0L6.2 85.3a3 3 0 010-5.7l102-35.3z"/>
+  <path class="mutant-fill" fill="#000" d="M109.5 77.8a4 4 0 00-3 7.4l3-7.4zm54.5 25.7h4a4 4 0 00-2.5-3.7l-1.5 3.7zm-57.5-18.3l56 22 3-7.4-56-22-3 7.4zm53.5 18.3v89h8v-89h-8z"/>
+  <circle cx="163.5" cy="204.5" r="11.5" stroke="#4F478B" stroke-width="8"/>
+</svg>

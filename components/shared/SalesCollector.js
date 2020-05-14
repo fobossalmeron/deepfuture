@@ -42,7 +42,7 @@ const SalesCollector = () => {
       }),
     };
 
-    console.log(employeeOption);
+    const emailAddress = email.value;
 
     const response = await fetch(
       "https://api.sendinblue.com/v3/contacts",
@@ -54,7 +54,8 @@ const SalesCollector = () => {
       ? (setMessage(
           "Gracias! Un asesor te contactará dentro de 24 horas hábiles"
         ),
-        setStatus("success"))
+        setStatus("success"),
+        Cookies.set("userEmail", emailAddress))
       : (setMessage("Algo salió mal"), setStatus("error"));
   };
 
@@ -121,9 +122,9 @@ const SalesCollector = () => {
               isSearchable={false}
               options={[
                 { value: "1-10", label: "1 - 10" },
-                { value: "10-100", label: "10 - 100" },
-                { value: "10-1000", label: "100 - 1000" },
-                { value: "+1000", label: "Más de 1000" },
+                { value: "11-50", label: "11 - 50" },
+                { value: "51-500", label: "51 - 500" },
+                { value: "+500", label: "Más de 500" },
               ]}
               value={employeeOption}
               onChange={handleEmployeeChange}

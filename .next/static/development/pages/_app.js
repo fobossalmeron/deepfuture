@@ -488,7 +488,7 @@ var Form = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withCon
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(console) {/* harmony import */ var _babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
+/* harmony import */ var _babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
@@ -498,14 +498,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _CookieMessage__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./CookieMessage */ "./components/CookieMessage.js");
 /* harmony import */ var js_cookie_dist_js_cookie__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! js-cookie/dist/js.cookie */ "./node_modules/js-cookie/dist/js.cookie.mjs");
 /* harmony import */ var utils_analytics__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! utils/analytics */ "./utils/analytics.js");
-/* harmony import */ var react_gtm_module__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-gtm-module */ "./node_modules/react-gtm-module/dist/index.js");
-/* harmony import */ var react_gtm_module__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_gtm_module__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var react_facebook_pixel__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-facebook-pixel */ "./node_modules/react-facebook-pixel/dist/fb-pixel.js");
-/* harmony import */ var react_facebook_pixel__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(react_facebook_pixel__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var body_scroll_lock__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! body-scroll-lock */ "./node_modules/body-scroll-lock/lib/bodyScrollLock.mjs");
-/* harmony import */ var components_NewsletterPopup__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! components/NewsletterPopup */ "./components/NewsletterPopup.js");
-/* harmony import */ var public_assets_img_layout_logos_dfiimago_svg__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! public/assets/img/layout/logos/dfiimago.svg */ "./public/assets/img/layout/logos/dfiimago.svg");
-/* harmony import */ var utils_validate__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! utils/validate */ "./utils/validate.js");
+/* harmony import */ var react_facebook_pixel__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-facebook-pixel */ "./node_modules/react-facebook-pixel/dist/fb-pixel.js");
+/* harmony import */ var react_facebook_pixel__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_facebook_pixel__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var body_scroll_lock__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! body-scroll-lock */ "./node_modules/body-scroll-lock/lib/bodyScrollLock.mjs");
+/* harmony import */ var components_NewsletterPopup__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! components/NewsletterPopup */ "./components/NewsletterPopup.js");
+/* harmony import */ var public_assets_img_layout_logos_dfiimago_svg__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! public/assets/img/layout/logos/dfiimago.svg */ "./public/assets/img/layout/logos/dfiimago.svg");
 
 
 var _this = undefined,
@@ -523,8 +520,6 @@ function _templateObject() {
 
   return data;
 }
-
-
 
 
 
@@ -587,22 +582,13 @@ function _templateObject() {
     mouse.current = [x - window.innerWidth / 2, y - window.innerHeight / 2];
   }, [mouse.current]);
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
-    // GTM
-    var tagManagerArgs = {
-      gtmId: "GTM-NS8QPN4" // dataLayer: {
-      //   userId: "600114731",
-      //   userProject: "deepfuture.institute",
-      // },
-
-    };
-    react_gtm_module__WEBPACK_IMPORTED_MODULE_8___default.a.initialize(tagManagerArgs);
-    react_facebook_pixel__WEBPACK_IMPORTED_MODULE_9___default.a;
+    // ReactPixel
+    react_facebook_pixel__WEBPACK_IMPORTED_MODULE_8___default.a;
     var options = {
       autoConfig: true,
       debug: false
-    }; // ReactPixel
-
-    react_facebook_pixel__WEBPACK_IMPORTED_MODULE_9___default.a.init("266265964568832", null, options);
+    };
+    react_facebook_pixel__WEBPACK_IMPORTED_MODULE_8___default.a.init("266265964568832", null, options);
   }, []);
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
     //Google Analytics
@@ -613,26 +599,12 @@ function _templateObject() {
 
     Object(utils_analytics__WEBPACK_IMPORTED_MODULE_7__["logPageView"])(); // ReactPixel
 
-    react_facebook_pixel__WEBPACK_IMPORTED_MODULE_9___default.a.pageView();
+    react_facebook_pixel__WEBPACK_IMPORTED_MODULE_8___default.a.pageView();
 
     if (router.route === "/" || router.route === "/en") {
       setIsHome(true);
     } else {
       setIsHome(false);
-    } // var _email = Cookies.get("userEmail");
-    // if (_email === undefined) {
-    //   setUserDidPay(false);
-    // } else {
-    //   getUserEmail(_email);
-    // }
-
-
-    var _userEmail = js_cookie_dist_js_cookie__WEBPACK_IMPORTED_MODULE_6__["default"].get("userEmail");
-
-    if (_userEmail === undefined) {
-      console.log("no había cookie"); //call
-    } else {
-      console.log("debió hacerse un validate"); // identify(_userEmail);
     }
   }, [router.route]);
   Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
@@ -678,7 +650,7 @@ function _templateObject() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 140,
+      lineNumber: 114,
       columnNumber: 7
     }
   }, __jsx(_header__WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -691,7 +663,7 @@ function _templateObject() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145,
+      lineNumber: 119,
       columnNumber: 9
     }
   }), react__WEBPACK_IMPORTED_MODULE_1___default.a.cloneElement(children, {
@@ -706,7 +678,7 @@ function _templateObject() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 159,
+      lineNumber: 133,
       columnNumber: 9
     }
   }), __jsx(BodyOverflow, {
@@ -715,29 +687,29 @@ function _templateObject() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 164,
+      lineNumber: 138,
       columnNumber: 9
     }
-  }), showPopup && __jsx(components_NewsletterPopup__WEBPACK_IMPORTED_MODULE_11__["default"], {
+  }), showPopup && __jsx(components_NewsletterPopup__WEBPACK_IMPORTED_MODULE_10__["default"], {
     setShowPopup: setShowPopup,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 165,
+      lineNumber: 139,
       columnNumber: 23
     }
   }), __jsx(Footer, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 166,
+      lineNumber: 140,
       columnNumber: 9
     }
-  }, "\xA9 Deep Future Institute, 2020", __jsx(public_assets_img_layout_logos_dfiimago_svg__WEBPACK_IMPORTED_MODULE_12__["default"], {
+  }, "\xA9 Deep Future Institute, 2020", __jsx(public_assets_img_layout_logos_dfiimago_svg__WEBPACK_IMPORTED_MODULE_11__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 168,
+      lineNumber: 142,
       columnNumber: 11
     }
   }))));
@@ -783,7 +755,6 @@ var Border = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withC
 })(["opacity:1;pointer-events:none;z-index:99;width:calc(100% - 36px);height:calc(100% - 36px);background-color:none;position:fixed;left:18px;top:18px;right:18px;bottom:18px;margin:0 auto;max-width:1504px;mix-blend-mode:exclusion;transition:opacity 0.3s ease-in,border 0.3s ease-in;border:", ";@media (max-width:600px),(max-height:450px){mix-blend-mode:normal;}"], function (props) {
   return "".concat(props.theme.stroke, " solid ").concat(props.theme.colors.foreground);
 });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js")))
 
 /***/ }),
 
@@ -1036,10 +1007,15 @@ var Button = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button.wi
   return !props.disabled ? props.theme.colors.success : props.theme.colors.foreground_low;
 });
 var selectStyles = {
-  option: function option(provided) {
+  option: function option(provided, _ref) {
+    var isSelected = _ref.isSelected,
+        isFocused = _ref.isFocused;
     return _objectSpread({}, provided, {
-      color: "#4F4F4F",
-      fontSize: "1.7rem"
+      color: isSelected ? "#F4F4F4" : "#4F4F4F",
+      fontSize: "1.7rem",
+      backgroundColor: isSelected ? "#4F478B" : isFocused ? "rgba(79,71,139,0.18)" : "#F4F4F4",
+      transition: ".3s ease all",
+      cursor: "pointer"
     });
   },
   singleValue: function singleValue(provided) {
@@ -1056,13 +1032,15 @@ var selectStyles = {
   control: function control(provided) {
     return _objectSpread({}, provided, {
       height: "100%",
-      border: 0
+      border: 0,
+      backgroundColor: "#F4F4F4"
     });
   },
   valueContainer: function valueContainer(provided) {
     return _objectSpread({}, provided, {
       padding: "1px 18px 13px 26px",
-      lineHeight: "100%"
+      lineHeight: "100%",
+      backgroundColor: "#F4F4F4"
     });
   },
   placeholder: function placeholder(provided) {
@@ -1089,15 +1067,13 @@ var isEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(console) {/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/shared/Forms */ "./components/shared/Forms.js");
 /* harmony import */ var react_select___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-select/ */ "./node_modules/react-select/dist/react-select.browser.esm.js");
-/* harmony import */ var react_gtm_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-gtm-module */ "./node_modules/react-gtm-module/dist/index.js");
-/* harmony import */ var react_gtm_module__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_gtm_module__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var js_cookie_dist_js_cookie_mjs__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! js-cookie/dist/js.cookie.mjs */ "./node_modules/js-cookie/dist/js.cookie.mjs");
+/* harmony import */ var js_cookie_dist_js_cookie_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! js-cookie/dist/js.cookie.mjs */ "./node_modules/js-cookie/dist/js.cookie.mjs");
 
 
 var _this = undefined,
@@ -1105,7 +1081,6 @@ var _this = undefined,
 
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
-
 
 
 
@@ -1139,7 +1114,7 @@ var LeadCollector = function LeadCollector(_ref) {
   };
 
   var call = function call() {
-    var requestOptions, emailAddress, tagManagerArgs, response, data;
+    var requestOptions, emailAddress, response, data;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function call$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -1163,27 +1138,21 @@ var LeadCollector = function LeadCollector(_ref) {
               })
             };
             emailAddress = email.value;
-            tagManagerArgs = {
-              gtmId: "GTM-NS8QPN4",
-              events: {
-                validate: email.value
-              }
-            };
-            _context.next = 6;
+            _context.next = 5;
             return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(fetch("https://api.sendinblue.com/v3/contacts", requestOptions));
 
-          case 6:
+          case 5:
             response = _context.sent;
-            _context.next = 9;
+            _context.next = 8;
             return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(response.json());
 
-          case 9:
+          case 8:
             data = _context.sent;
             setMessage(data.id ? "Recibirás el reporte en tu correo! Éxito" : "El correo que ingresaste ya fue registrado");
             setStatus(data.id ? "success" : "error");
-            data.id && (react_gtm_module__WEBPACK_IMPORTED_MODULE_4___default.a.initialize(tagManagerArgs), js_cookie_dist_js_cookie_mjs__WEBPACK_IMPORTED_MODULE_5__["default"].set("userEmail", emailAddress), console.log("tag manager debío recibir info"));
+            data.id && js_cookie_dist_js_cookie_mjs__WEBPACK_IMPORTED_MODULE_4__["default"].set("userEmail", emailAddress);
 
-          case 13:
+          case 12:
           case "end":
             return _context.stop();
         }
@@ -1218,7 +1187,7 @@ var LeadCollector = function LeadCollector(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 88,
       columnNumber: 32
     }
   }, "Enviando..."), showMessage && //Mensajes de validación
@@ -1231,7 +1200,7 @@ var LeadCollector = function LeadCollector(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 91,
       columnNumber: 9
     }
   }), status === "error" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Message"], {
@@ -1243,7 +1212,7 @@ var LeadCollector = function LeadCollector(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109,
+      lineNumber: 98,
       columnNumber: 9
     }
   }), status === "success" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Message"], {
@@ -1255,7 +1224,7 @@ var LeadCollector = function LeadCollector(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116,
+      lineNumber: 105,
       columnNumber: 9
     }
   }), status !== "success" && __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Label"], {
@@ -1263,14 +1232,14 @@ var LeadCollector = function LeadCollector(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124,
+      lineNumber: 113,
       columnNumber: 11
     }
   }, __jsx("span", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 125,
+      lineNumber: 114,
       columnNumber: 13
     }
   }, "email"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -1283,21 +1252,21 @@ var LeadCollector = function LeadCollector(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126,
+      lineNumber: 115,
       columnNumber: 13
     }
   })), complete && __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Label"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 135,
+      lineNumber: 124,
       columnNumber: 15
     }
   }, __jsx("span", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 136,
+      lineNumber: 125,
       columnNumber: 17
     }
   }, "nombre"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -1309,21 +1278,21 @@ var LeadCollector = function LeadCollector(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 137,
+      lineNumber: 126,
       columnNumber: 17
     }
   })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Label"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 143,
+      lineNumber: 132,
       columnNumber: 15
     }
   }, __jsx("span", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 144,
+      lineNumber: 133,
       columnNumber: 17
     }
   }, "industria"), __jsx(react_select___WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -1332,24 +1301,33 @@ var LeadCollector = function LeadCollector(_ref) {
     instanceId: "Industria" + collectorId,
     isSearchable: false,
     options: [{
-      value: "Aviación",
-      label: "Aviación"
+      value: "B2C",
+      label: "Servicios al consumidor"
     }, {
-      value: "Automotriz",
-      label: "Automotriz"
+      value: "B2B",
+      label: "Servicios B2B"
     }, {
-      value: "Cine",
-      label: "Cine"
+      value: "Manufactura",
+      label: "Manufactura"
     }, {
-      value: "Hospitalaria",
-      label: "Hospitalaria"
+      value: "Energía",
+      label: "Energía"
+    }, {
+      value: "Minería",
+      label: "Minería"
+    }, {
+      value: "Agricultura",
+      label: "Agricultura"
+    }, {
+      value: "Otro",
+      label: "Otro"
     }],
     value: industryOption,
     onChange: handleIndustryChange,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 145,
+      lineNumber: 134,
       columnNumber: 17
     }
   }))), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -1358,14 +1336,13 @@ var LeadCollector = function LeadCollector(_ref) {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 162,
+      lineNumber: 154,
       columnNumber: 11
     }
   }, _short && "Descargar PDF gratuito", complete && "Descargar gratis")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (LeadCollector);
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js")))
 
 /***/ }),
 
@@ -1419,7 +1396,7 @@ var SalesCollector = function SalesCollector() {
   };
 
   var call = function call() {
-    var requestOptions, response, data;
+    var requestOptions, emailAddress, response, data;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function call$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -1443,7 +1420,7 @@ var SalesCollector = function SalesCollector() {
                 }
               })
             };
-            console.log(employeeOption);
+            emailAddress = email.value;
             _context.next = 5;
             return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(fetch("https://api.sendinblue.com/v3/contacts", requestOptions));
 
@@ -1455,7 +1432,7 @@ var SalesCollector = function SalesCollector() {
           case 8:
             data = _context.sent;
             console.log(data);
-            data.status !== 400 ? (setMessage("Gracias! Un asesor te contactará dentro de 24 horas hábiles"), setStatus("success")) : (setMessage("Algo salió mal"), setStatus("error"));
+            data.status !== 400 ? (setMessage("Gracias! Un asesor te contactará dentro de 24 horas hábiles"), setStatus("success"), Cookies.set("userEmail", emailAddress)) : (setMessage("Algo salió mal"), setStatus("error"));
 
           case 11:
           case "end":
@@ -1485,7 +1462,7 @@ var SalesCollector = function SalesCollector() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79,
+      lineNumber: 80,
       columnNumber: 32
     }
   }, "Enviando..."), showMessage ? __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Message"], {
@@ -1496,7 +1473,7 @@ var SalesCollector = function SalesCollector() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81,
+      lineNumber: 82,
       columnNumber: 9
     }
   }) : null, status === "error" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Message"], {
@@ -1507,7 +1484,7 @@ var SalesCollector = function SalesCollector() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84,
+      lineNumber: 85,
       columnNumber: 9
     }
   }), status === "success" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Message"], {
@@ -1518,21 +1495,21 @@ var SalesCollector = function SalesCollector() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87,
+      lineNumber: 88,
       columnNumber: 9
     }
   }), status !== "success" && __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Label"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 91,
+      lineNumber: 92,
       columnNumber: 11
     }
   }, __jsx("span", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92,
+      lineNumber: 93,
       columnNumber: 13
     }
   }, "email"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -1544,21 +1521,21 @@ var SalesCollector = function SalesCollector() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93,
+      lineNumber: 94,
       columnNumber: 13
     }
   })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Label"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 100,
       columnNumber: 11
     }
   }, __jsx("span", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100,
+      lineNumber: 101,
       columnNumber: 13
     }
   }, "nombre"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -1570,21 +1547,21 @@ var SalesCollector = function SalesCollector() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101,
+      lineNumber: 102,
       columnNumber: 13
     }
   })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Label"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107,
+      lineNumber: 108,
       columnNumber: 11
     }
   }, __jsx("span", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108,
+      lineNumber: 109,
       columnNumber: 13
     }
   }, "empresa"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Input"], {
@@ -1596,21 +1573,21 @@ var SalesCollector = function SalesCollector() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109,
+      lineNumber: 110,
       columnNumber: 13
     }
   })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Label"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115,
+      lineNumber: 116,
       columnNumber: 11
     }
   }, __jsx("span", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116,
+      lineNumber: 117,
       columnNumber: 13
     }
   }, "N\xFAmero de empleados"), __jsx(react_select___WEBPACK_IMPORTED_MODULE_3__["default"], {
@@ -1622,21 +1599,21 @@ var SalesCollector = function SalesCollector() {
       value: "1-10",
       label: "1 - 10"
     }, {
-      value: "10-100",
-      label: "10 - 100"
+      value: "11-50",
+      label: "11 - 50"
     }, {
-      value: "10-1000",
-      label: "100 - 1000"
+      value: "51-500",
+      label: "51 - 500"
     }, {
-      value: "+1000",
-      label: "Más de 1000"
+      value: "+500",
+      label: "Más de 500"
     }],
     value: employeeOption,
     onChange: handleEmployeeChange,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117,
+      lineNumber: 118,
       columnNumber: 13
     }
   })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Button"], {
@@ -1644,7 +1621,7 @@ var SalesCollector = function SalesCollector() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 132,
+      lineNumber: 133,
       columnNumber: 11
     }
   }, "Contactar asesor")));
@@ -11026,186 +11003,6 @@ function trim(s) {
 
 /***/ }),
 
-/***/ "./node_modules/react-gtm-module/dist/Snippets.js":
-/*!********************************************************!*\
-  !*** ./node_modules/react-gtm-module/dist/Snippets.js ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _warn = __webpack_require__(/*! ./utils/warn */ "./node_modules/react-gtm-module/dist/utils/warn.js");
-
-var _warn2 = _interopRequireDefault(_warn);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// https://developers.google.com/tag-manager/quickstart
-
-var Snippets = {
-  tags: function tags(_ref) {
-    var id = _ref.id,
-        events = _ref.events,
-        dataLayer = _ref.dataLayer,
-        dataLayerName = _ref.dataLayerName,
-        preview = _ref.preview,
-        auth = _ref.auth;
-
-    var gtm_auth = '&gtm_auth=' + auth;
-    var gtm_preview = '&gtm_preview=' + preview;
-
-    if (!id) (0, _warn2.default)('GTM Id is required');
-
-    var iframe = '\n      <iframe src="https://www.googletagmanager.com/ns.html?id=' + id + gtm_auth + gtm_preview + '&gtm_cookies_win=x"\n        height="0" width="0" style="display:none;visibility:hidden" id="tag-manager"></iframe>';
-
-    var script = '\n      (function(w,d,s,l,i){w[l]=w[l]||[];\n        w[l].push({\'gtm.start\': new Date().getTime(),event:\'gtm.js\', ' + JSON.stringify(events).slice(1, -1) + '});\n        var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!=\'dataLayer\'?\'&l=\'+l:\'\';\n        j.async=true;j.src=\'https://www.googletagmanager.com/gtm.js?id=\'+i+dl+\'' + gtm_auth + gtm_preview + '&gtm_cookies_win=x\';\n        f.parentNode.insertBefore(j,f);\n      })(window,document,\'script\',\'' + dataLayerName + '\',\'' + id + '\');';
-
-    var dataLayerVar = this.dataLayer(dataLayer, dataLayerName);
-
-    return {
-      iframe: iframe,
-      script: script,
-      dataLayerVar: dataLayerVar
-    };
-  },
-  dataLayer: function dataLayer(_dataLayer, dataLayerName) {
-    return '\n      window.' + dataLayerName + ' = window.' + dataLayerName + ' || [];\n      window.' + dataLayerName + '.push(' + JSON.stringify(_dataLayer) + ')';
-  }
-};
-
-module.exports = Snippets;
-
-/***/ }),
-
-/***/ "./node_modules/react-gtm-module/dist/TagManager.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/react-gtm-module/dist/TagManager.js ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _Snippets = __webpack_require__(/*! ./Snippets */ "./node_modules/react-gtm-module/dist/Snippets.js");
-
-var _Snippets2 = _interopRequireDefault(_Snippets);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var TagManager = {
-  dataScript: function dataScript(dataLayer) {
-    var script = document.createElement('script');
-    script.innerHTML = dataLayer;
-    return script;
-  },
-  gtm: function gtm(args) {
-    var snippets = _Snippets2.default.tags(args);
-
-    var noScript = function noScript() {
-      var noscript = document.createElement('noscript');
-      noscript.innerHTML = snippets.iframe;
-      return noscript;
-    };
-
-    var script = function script() {
-      var script = document.createElement('script');
-      script.innerHTML = snippets.script;
-      return script;
-    };
-
-    var dataScript = this.dataScript(snippets.dataLayerVar);
-
-    return {
-      noScript: noScript,
-      script: script,
-      dataScript: dataScript
-    };
-  },
-  initialize: function initialize(_ref) {
-    var gtmId = _ref.gtmId,
-        _ref$events = _ref.events,
-        events = _ref$events === undefined ? {} : _ref$events,
-        dataLayer = _ref.dataLayer,
-        _ref$dataLayerName = _ref.dataLayerName,
-        dataLayerName = _ref$dataLayerName === undefined ? 'dataLayer' : _ref$dataLayerName,
-        _ref$auth = _ref.auth,
-        auth = _ref$auth === undefined ? '' : _ref$auth,
-        _ref$preview = _ref.preview,
-        preview = _ref$preview === undefined ? '' : _ref$preview;
-
-    var gtm = this.gtm({
-      id: gtmId,
-      events: events,
-      dataLayer: dataLayer || undefined,
-      dataLayerName: dataLayerName,
-      auth: auth,
-      preview: preview
-    });
-    if (dataLayer) document.head.appendChild(gtm.dataScript);
-    document.head.insertBefore(gtm.script(), document.head.childNodes[0]);
-    document.body.insertBefore(gtm.noScript(), document.body.childNodes[0]);
-  },
-  dataLayer: function dataLayer(_ref2) {
-    var _dataLayer = _ref2.dataLayer,
-        _ref2$dataLayerName = _ref2.dataLayerName,
-        dataLayerName = _ref2$dataLayerName === undefined ? 'dataLayer' : _ref2$dataLayerName;
-
-    if (window[dataLayerName]) return window[dataLayerName].push(_dataLayer);
-    var snippets = _Snippets2.default.dataLayer(_dataLayer, dataLayerName);
-    var dataScript = this.dataScript(snippets);
-    document.head.appendChild(dataScript);
-  }
-};
-
-module.exports = TagManager;
-
-/***/ }),
-
-/***/ "./node_modules/react-gtm-module/dist/index.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/react-gtm-module/dist/index.js ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _TagManager = __webpack_require__(/*! ./TagManager */ "./node_modules/react-gtm-module/dist/TagManager.js");
-
-var _TagManager2 = _interopRequireDefault(_TagManager);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-module.exports = _TagManager2.default;
-
-/***/ }),
-
-/***/ "./node_modules/react-gtm-module/dist/utils/warn.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/react-gtm-module/dist/utils/warn.js ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(console) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var warn = function warn(s) {
-  console.warn('[react-gtm]', s);
-};
-
-exports.default = warn;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../console-browserify/index.js */ "./node_modules/console-browserify/index.js")))
-
-/***/ }),
-
 /***/ "./node_modules/react-input-autosize/lib/AutosizeInput.js":
 /*!****************************************************************!*\
   !*** ./node_modules/react-input-autosize/lib/AutosizeInput.js ***!
@@ -19888,63 +19685,6 @@ function createMarkup(i) {
   };
 }
 ;
-
-/***/ }),
-
-/***/ "./utils/validate.js":
-/*!***************************!*\
-  !*** ./utils/validate.js ***!
-  \***************************/
-/*! exports provided: identify */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(console) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "identify", function() { return identify; });
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
-
-var identify = function identify(email) {
-  var requestOptions, response, data;
-  return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function identify$(_context) {
-    while (1) {
-      switch (_context.prev = _context.next) {
-        case 0:
-          console.log(email);
-          requestOptions = {
-            mode: "no-cors",
-            method: "POST",
-            headers: {
-              accept: "application/json",
-              "content-type": "application/json",
-              "api-key": "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",
-              "ma-key": "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"
-            },
-            body: JSON.stringify({
-              // updateEnabled: true,
-              email: email
-            })
-          };
-          _context.next = 4;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(fetch("https://in-automate.sendinblue.com/api/v2/identify", requestOptions));
-
-        case 4:
-          response = _context.sent;
-          _context.next = 7;
-          return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(response);
-
-        case 7:
-          data = _context.sent;
-          console.log(data);
-
-        case 9:
-        case "end":
-          return _context.stop();
-      }
-    }
-  }, null, null, null, Promise);
-};
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js")))
 
 /***/ }),
 
