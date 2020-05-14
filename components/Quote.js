@@ -36,7 +36,7 @@ const FullContainer = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  padding-bottom: 5%;
+  padding-bottom: 8%;
 `;
 
 const TextContainer = styled.div`

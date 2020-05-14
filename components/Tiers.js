@@ -135,7 +135,7 @@ const Tier = ({ tier, setShowPopup, setShowPay, setProduct }) => {
 function Tiers({ setShowPopup, setShowPay, setProduct }) {
   return (
     <TiersSection>
-      <Title>
+      <Title notoppadding>
         <p>
           Prepárate para los escenarios de <b>futuro</b>
         </p>

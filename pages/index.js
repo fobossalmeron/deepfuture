@@ -67,7 +67,7 @@ function Index(props) {
         </SecondFormGrid>
       </SecondForm>
       <DataItemsDark />
-      <Title>
+      <Title notoppadding>
         <p>
           La estrategia de hoy es <b>sobrevivir</b>
         </p>

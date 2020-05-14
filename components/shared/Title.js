@@ -2,15 +2,12 @@ import styled from "styled-components";
 import MainGrid from "components/shared/MainGrid";
 import Fade from "react-reveal/Fade";
 
-function Title({children}) {
+function Title(props) {
   return (
-      <MainGrid>
+      <MainGrid notoppadding={props.notoppadding}>
         <TitlePlaced>
           <Fade>
-          {children}
-
-
-
+          {props.children}
           </Fade>
         </TitlePlaced>
       </MainGrid>
