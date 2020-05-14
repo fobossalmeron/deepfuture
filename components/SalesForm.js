@@ -8,7 +8,10 @@ function SalesForm() {
     <Form>
       <Column>
         <h4>Nosotros te contactaremos</h4>
-        <p>Déjanos tus datos y te contactará un asesor de ventas</p>
+        <p>
+          Déjanos tus datos y te contactará un asesor de ventas en las próximas
+          24 horas.
+        </p>
       </Column>
       <Column>
         <SalesCollector />

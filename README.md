@@ -7,6 +7,3 @@ Development:
 Meta tags
 Pixel action y Google action on download
 Mobile styles
-
-Design:
-Iconos

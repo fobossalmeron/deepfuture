@@ -6,8 +6,9 @@ import LandBg from "components/LandBg";
 import Cookies from "js-cookie/dist/js.cookie";
 import { Button } from "components/shared/Forms";
 import downloadWorkshop from "utils/downloadWorkshop";
+import Tag from "components/shared/Tag";
 
-const production = true;
+const production = false;
 
 function PagoConfirmado(props) {
   const [userDidPay, setUserDidPay] = useState(false);
@@ -109,24 +110,30 @@ function PagoConfirmado(props) {
         <div id="landtext">
           {userDidPay && productBought === 1 && (
             <>
-              <h2>Gracias por tu pago</h2>
+              <Tag color="#62AF9A">
+                Taller <b>autogestivo</b>
+              </Tag>
+              <h3>¡Gracias por tu pago!</h3>
               <p>
                 Haz click en el botón para descargar tu taller. De igual forma
                 te será enviado a {userEmail}.
               </p>
-              <Button onClick={downloadWorkshop}>Descargar</Button>
+              <Button onClick={downloadWorkshop}>Descargar taller</Button>
             </>
           )}
           {userDidPay && productBought === 2 && (
             <>
-              <h2>Gracias por tu pago</h2>
+              <Tag color="#1C4794">
+                Taller <b>personal</b>
+              </Tag>
+              <h3>¡Gracias por tu pago!</h3>
               <p>
-                Un representate se contactará contigo en {userEmail} para
-                establecer la fecha y hora del taller
+                Nos pondremos en contacto contigo en {userEmail} para agendar el
+                día y la hora del taller.
               </p>
             </>
           )}
-          {!userDidPay && <h2>Parece que llegaste a esta página por error</h2>}
+          {!userDidPay && <><h2>Hay un error</h2><p>Si tienes problemas con tu pago por favor escríbenos a support@deepfuture.institute</p></>}
         </div>
       </Land>
     </>
@@ -136,25 +143,18 @@ function PagoConfirmado(props) {
 export default React.memo(PagoConfirmado);
 
 const Land = styled(MainGrid)`
-  min-height: 100vh;
+  min-height: 93vh;
   align-items: center;
   padding-top: 13%;
   #landtext {
     color: ${(props) => props.theme.colors.foreground};
-    grid-column: 2 / span 10;
+    grid-column: 2 / span 3;
     padding-bottom: 7%;
-    h1 {
-      max-width: 870px;
-      grid-column: 2 / span 8;
-      b {
-        font-weight: 500;
-      }
+    p{
+      margin: 20px 0;
     }
-    h2 {
-      font-size: 2.55rem;
-      line-height: 135%;
-      max-width: 650px;
-      margin-top: 0;
+    h3{
+      font-size:3.6rem;
     }
   }
 `;

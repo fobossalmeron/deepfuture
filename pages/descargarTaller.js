@@ -10,10 +10,11 @@ import {
   Button,
   isEmail,
 } from "components/shared/Forms";
+import Tag from "components/shared/Tag";
 import downloadWorkshop from "utils/downloadWorkshop";
 
 function PagoConfirmado(props) {
-  const [displayMessage, setMessage] = useState(false);
+  const [displayMessage, setMessage] = useState("");
   const [showMessage, setShowMessage] = useState(false);
   const [status, setStatus] = useState("");
   const [userEmail, setUserEmail] = useState(null);
@@ -21,13 +22,13 @@ function PagoConfirmado(props) {
 
   const submit = () => {
     if (!email.value) {
-      setShowMessage(true), setMessage("Ingresa tu email");
+      setMessage("Ingresa tu email"), setStatus("error");
       return false;
     } else if (!isEmail.test(email.value)) {
-      setShowMessage(true), setMessage("Email en formato incorrecto");
+      setMessage("Email en formato incorrecto"), setStatus("error");
       return false;
     } else {
-      setShowMessage(false), checkUserPurchase();
+      checkUserPurchase();
       return true;
     }
   };
@@ -61,9 +62,6 @@ function PagoConfirmado(props) {
     }
     const attributes = data.attributes;
     if (attributes.COMPROTIER1 && !attributes.DESCARGOTIER1) {
-      setMessage(
-        `Haz click en Descargar Taller para descargarlo, a tu correo ${userEmail} le queda (1) descarga.`
-      );
       setStatus("success");
       console.log(
         "compró tier 1: " + attributes.COMPROTIER1 + ", no lo ha descargado."
@@ -111,8 +109,7 @@ function PagoConfirmado(props) {
     const data = await response;
     console.log(data);
 
-    setMessage(data.status === 204 && "Gracias por descargar");
-    setShowMessage(true);
+    setStatus("thanks");
   };
 
   return (
@@ -125,35 +122,27 @@ function PagoConfirmado(props) {
       <LandBg />
       <Land id="land">
         <div id="landtext">
-          {status !== "success" && (
+          <Tag color="#62AF9A">
+            Taller <b>autogestivo</b>
+          </Tag>
+          <h3>Descarga el taller</h3>
+
+          {(status !== "success" && status !== "thanks") && (
             <>
-              <h2>Introduce tu email para descargar el taller</h2>
               <p>
-                Por motivos de seguridad solo permitimos una descarga por
-                usuario.
+                Introduce tu email para descargar el taller. Por motivos de
+                seguridad solo permitimos una descarga por usuario.
               </p>
             </>
           )}
-          {status === "sending" && <Message>Recibiendo correo...</Message>}
-          {showMessage ? (
-            <Message
-              error
-              dangerouslySetInnerHTML={{ __html: displayMessage }}
-            />
-          ) : null}
+          {status === "sending" && <Message>Verificando correo...</Message>}
           {status === "error" && (
             <Message
               error
               dangerouslySetInnerHTML={{ __html: displayMessage }}
             />
           )}
-          {status === "success" && (
-            <Message
-              success
-              dangerouslySetInnerHTML={{ __html: displayMessage }}
-            />
-          )}
-          {status !== "success" && (
+          {(status !== "success" && status !== "thanks") && (
             <>
               <Label>
                 <span>email</span>
@@ -166,8 +155,27 @@ function PagoConfirmado(props) {
               <Button onClick={submit}>Descargar taller</Button>
             </>
           )}
-          {status === "success" && !showMessage && (
-            <Button onClick={clickDownload}>Descargar</Button>
+          {status === "success" && (
+            <>
+              <p>
+                Después de descargar el archivo, ya no podrás hacerlo de nuevo,
+                guárdalo en un lugar seguro.
+                <br />
+                <br />
+                Cuenta: {userEmail}
+              </p>
+              <Button onClick={clickDownload}>Descargar</Button>
+            </>
+          )}
+          {status === "thanks" && (
+            <>
+              <p>
+                Gracias por descargar.
+                <br />
+                <br />
+                Cuenta: {userEmail}
+              </p>
+            </>
           )}
         </div>
       </Land>
@@ -178,25 +186,18 @@ function PagoConfirmado(props) {
 export default React.memo(PagoConfirmado);
 
 const Land = styled(MainGrid)`
-  min-height: 100vh;
+  min-height: 93vh;
   align-items: center;
   padding-top: 13%;
   #landtext {
     color: ${(props) => props.theme.colors.foreground};
-    grid-column: 2 / span 10;
+    grid-column: 2 / span 3;
     padding-bottom: 7%;
-    h1 {
-      max-width: 870px;
-      grid-column: 2 / span 8;
-      b {
-        font-weight: 500;
-      }
+    p {
+      margin: 20px 0;
     }
-    h2 {
-      font-size: 2.55rem;
-      line-height: 135%;
-      max-width: 650px;
-      margin-top: 0;
+    h3 {
+      font-size: 3.6rem;
     }
   }
 `;

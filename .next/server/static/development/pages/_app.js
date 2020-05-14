@@ -406,18 +406,18 @@ function SalesForm() {
       lineNumber: 11,
       columnNumber: 9
     }
-  }, "D\xE9janos tus datos y te contactar\xE1 un asesor de ventas")), __jsx(Column, {
+  }, "D\xE9janos tus datos y te contactar\xE1 un asesor de ventas en las pr\xF3ximas 24 horas.")), __jsx(Column, {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13,
+      lineNumber: 16,
       columnNumber: 7
     }
   }, __jsx(components_shared_SalesCollector__WEBPACK_IMPORTED_MODULE_3__["default"], {
     __self: this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 14,
+      lineNumber: 17,
       columnNumber: 9
     }
   })));
@@ -576,19 +576,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/router */ "next/router");
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _CookieMessage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./CookieMessage */ "./components/CookieMessage.js");
-/* harmony import */ var js_cookie_dist_js_cookie__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! js-cookie/dist/js.cookie */ "js-cookie/dist/js.cookie");
-/* harmony import */ var js_cookie_dist_js_cookie__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(js_cookie_dist_js_cookie__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var utils_analytics__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! utils/analytics */ "./utils/analytics.js");
-/* harmony import */ var react_facebook_pixel__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-facebook-pixel */ "react-facebook-pixel");
-/* harmony import */ var react_facebook_pixel__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(react_facebook_pixel__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var body_scroll_lock__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! body-scroll-lock */ "body-scroll-lock");
-/* harmony import */ var body_scroll_lock__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(body_scroll_lock__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var components_NewsletterPopup__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! components/NewsletterPopup */ "./components/NewsletterPopup.js");
-/* harmony import */ var public_assets_img_layout_logos_dfiimago_svg__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! public/assets/img/layout/logos/dfiimago.svg */ "./public/assets/img/layout/logos/dfiimago.svg");
+/* harmony import */ var utils_analytics__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! utils/analytics */ "./utils/analytics.js");
+/* harmony import */ var react_facebook_pixel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-facebook-pixel */ "react-facebook-pixel");
+/* harmony import */ var react_facebook_pixel__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_facebook_pixel__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var body_scroll_lock__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! body-scroll-lock */ "body-scroll-lock");
+/* harmony import */ var body_scroll_lock__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(body_scroll_lock__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var components_NewsletterPopup__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! components/NewsletterPopup */ "./components/NewsletterPopup.js");
+/* harmony import */ var components_shared_Footer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! components/shared/Footer */ "./components/shared/Footer.js");
 var _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/components/layout.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
-
 
 
 
@@ -649,23 +646,23 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
   }, [mouse.current]);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     // ReactPixel
-    react_facebook_pixel__WEBPACK_IMPORTED_MODULE_7___default.a;
+    react_facebook_pixel__WEBPACK_IMPORTED_MODULE_6___default.a;
     const options = {
       autoConfig: true,
       debug: false
     };
-    react_facebook_pixel__WEBPACK_IMPORTED_MODULE_7___default.a.init("266265964568832", null, options);
+    react_facebook_pixel__WEBPACK_IMPORTED_MODULE_6___default.a.init("266265964568832", null, options);
   }, []);
   Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
     //Google Analytics
     if (!window.GA_INITIALIZED) {
-      Object(utils_analytics__WEBPACK_IMPORTED_MODULE_6__["initGA"])();
+      Object(utils_analytics__WEBPACK_IMPORTED_MODULE_5__["initGA"])();
       window.GA_INITIALIZED = true;
     }
 
-    Object(utils_analytics__WEBPACK_IMPORTED_MODULE_6__["logPageView"])(); // ReactPixel
+    Object(utils_analytics__WEBPACK_IMPORTED_MODULE_5__["logPageView"])(); // ReactPixel
 
-    react_facebook_pixel__WEBPACK_IMPORTED_MODULE_7___default.a.pageView();
+    react_facebook_pixel__WEBPACK_IMPORTED_MODULE_6___default.a.pageView();
 
     if (router.route === "/" || router.route === "/en") {
       setIsHome(true);
@@ -716,7 +713,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114,
+      lineNumber: 113,
       columnNumber: 7
     }
   }, __jsx(_header__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -729,7 +726,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 119,
+      lineNumber: 118,
       columnNumber: 9
     }
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.cloneElement(children, {
@@ -744,7 +741,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133,
+      lineNumber: 132,
       columnNumber: 9
     }
   }), __jsx(BodyOverflow, {
@@ -753,32 +750,25 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 138,
+      lineNumber: 137,
       columnNumber: 9
     }
-  }), showPopup && __jsx(components_NewsletterPopup__WEBPACK_IMPORTED_MODULE_9__["default"], {
+  }), showPopup && __jsx(components_NewsletterPopup__WEBPACK_IMPORTED_MODULE_8__["default"], {
     setShowPopup: setShowPopup,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 139,
+      lineNumber: 138,
       columnNumber: 23
     }
-  }), __jsx(Footer, {
+  }), __jsx(components_shared_Footer__WEBPACK_IMPORTED_MODULE_9__["default"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 140,
+      lineNumber: 139,
       columnNumber: 9
     }
-  }, "\xA9 Deep Future Institute, 2020", __jsx(public_assets_img_layout_logos_dfiimago_svg__WEBPACK_IMPORTED_MODULE_10__["default"], {
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 142,
-      columnNumber: 11
-    }
-  }))));
+  })));
 });
 const BodyOverflow = styled_components__WEBPACK_IMPORTED_MODULE_1__["createGlobalStyle"]`
   .TopBar{
@@ -813,22 +803,44 @@ const BodyOverflow = styled_components__WEBPACK_IMPORTED_MODULE_1__["createGloba
     }  
   }
 `;
-const Footer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.footer.withConfig({
-  displayName: "layout__Footer",
-  componentId: "sc-18mrapy-0"
-})(["display:flex;width:100%;max-width:1500px;margin:0 auto;justify-content:space-between;color:", ";font-size:1.5rem;padding-bottom:3%;align-items:center;svg{width:35px;}"], props => props.theme.colors.foreground_low);
 const BackgroundOpacity = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "layout__BackgroundOpacity",
-  componentId: "sc-18mrapy-1"
+  componentId: "sc-18mrapy-0"
 })(["background-color:", ";opacity:", ";position:fixed;pointer-events:", ";left:0;bottom:0;right:0;top:0;z-index:13;transition:opacity 0.4s ease;"], props => props.theme.colors.background, props => props.visible ? 0.6 : 0, props => props.visible ? "auto" : "none");
 const PageWrapper = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "layout__PageWrapper",
-  componentId: "sc-18mrapy-2"
+  componentId: "sc-18mrapy-1"
 })(["top:-3px;position:relative;width:100%;flex-direction:column;display:flex;justify-content:flex-start;color:", ";background-color:", ";"], props => props.theme.colors.foreground, props => props.theme.colors.background);
 const Border = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "layout__Border",
-  componentId: "sc-18mrapy-3"
+  componentId: "sc-18mrapy-2"
 })(["opacity:1;pointer-events:none;z-index:99;width:calc(100% - 36px);height:calc(100% - 36px);background-color:none;position:fixed;left:18px;top:18px;right:18px;bottom:18px;margin:0 auto;max-width:1504px;mix-blend-mode:exclusion;transition:opacity 0.3s ease-in,border 0.3s ease-in;border:", ";@media (max-width:600px),(max-height:450px){mix-blend-mode:normal;}"], props => `${props.theme.stroke} solid ${props.theme.colors.foreground}`);
+
+/***/ }),
+
+/***/ "./components/shared/CircleIcon.js":
+/*!*****************************************!*\
+  !*** ./components/shared/CircleIcon.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! polished */ "polished");
+/* harmony import */ var polished__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(polished__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const CircleIcon = styled_components__WEBPACK_IMPORTED_MODULE_0___default.a.div.withConfig({
+  displayName: "CircleIcon",
+  componentId: "dck7ff-0"
+})(["width:100px;height:100px;border-radius:50%;background-color:", ";box-shadow:", ";position:relative;margin-bottom:10%;svg{position:absolute;left:50%;top:50%;transform:translate3d(-50%,-50%,0);width:100%;height:100%;.mutant-stroke{stroke:", ";}.mutant-fill{fill:", ";}}"], props => props.light ? props.theme.colors.foreground : props.dark ? props.theme.colors.background : props.color, props => props.light ? `-2px -4px 11px ${props.theme.colors.lightlight},
+    2px 2px 4px ${props.theme.colors.lightshadow}` : props.dark ? `-5px -5px 7px ${props.theme.colors.darklight}, 
+    5px 5px 7px ${props.theme.colors.darkshadow}` : `-5px -5px 7px ${Object(polished__WEBPACK_IMPORTED_MODULE_1__["darken"])(0.04, props.color)}, 
+    3px 3px 7px ${Object(polished__WEBPACK_IMPORTED_MODULE_1__["lighten"])(0.05, props.color)}`, props => props.light ? props.theme.colors.background : props.theme.colors.foreground, props => props.light ? props.theme.colors.background : props.theme.colors.foreground);
+/* harmony default export */ __webpack_exports__["default"] = (CircleIcon);
 
 /***/ }),
 
@@ -1015,6 +1027,50 @@ const Blockquote = (_ref7) => {
 
 /***/ }),
 
+/***/ "./components/shared/Footer.js":
+/*!*************************************!*\
+  !*** ./components/shared/Footer.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var public_assets_img_layout_logos_dfiimago_svg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! public/assets/img/layout/logos/dfiimago.svg */ "./public/assets/img/layout/logos/dfiimago.svg");
+var _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/components/shared/Footer.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+const Footer = () => __jsx(FooterContainer, {
+  __self: undefined,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 5,
+    columnNumber: 3
+  }
+}, "\xA9 Deep Future Institute, 2020", __jsx(public_assets_img_layout_logos_dfiimago_svg__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  __self: undefined,
+  __source: {
+    fileName: _jsxFileName,
+    lineNumber: 7,
+    columnNumber: 5
+  }
+}));
+
+/* harmony default export */ __webpack_exports__["default"] = (Footer);
+const FooterContainer = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.footer.withConfig({
+  displayName: "Footer__FooterContainer",
+  componentId: "sc-2tmph8-0"
+})(["display:flex;width:100%;max-width:1500px;margin:0 auto;justify-content:space-between;color:", ";font-size:1.5rem;padding-bottom:3%;align-items:center;svg{width:35px;z-index:0;}"], props => props.theme.colors.foreground_low);
+
+/***/ }),
+
 /***/ "./components/shared/Forms.js":
 /*!************************************!*\
   !*** ./components/shared/Forms.js ***!
@@ -1119,13 +1175,20 @@ const isEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@(
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! components/shared/Forms */ "./components/shared/Forms.js");
-/* harmony import */ var react_select___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-select/ */ "react-select/");
-/* harmony import */ var react_select___WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_select___WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var js_cookie_dist_js_cookie_mjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! js-cookie/dist/js.cookie.mjs */ "./node_modules/js-cookie/dist/js.cookie.mjs");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/shared/Forms */ "./components/shared/Forms.js");
+/* harmony import */ var react_select___WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-select/ */ "react-select/");
+/* harmony import */ var react_select___WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_select___WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var js_cookie_dist_js_cookie_mjs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! js-cookie/dist/js.cookie.mjs */ "./node_modules/js-cookie/dist/js.cookie.mjs");
+/* harmony import */ var public_assets_img_layout_icons_mail_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! public/assets/img/layout/icons/mail.svg */ "./public/assets/img/layout/icons/mail.svg");
+/* harmony import */ var components_shared_CircleIcon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! components/shared/CircleIcon */ "./components/shared/CircleIcon.js");
 var _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/components/shared/LeadCollector.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
 
 
 
@@ -1139,7 +1202,7 @@ const LeadCollector = ({
   const {
     0: displayMessage,
     1: setMessage
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("");
   const {
     0: showMessage,
     1: setShowMessage
@@ -1180,9 +1243,9 @@ const LeadCollector = ({
     const emailAddress = email.value;
     const response = await fetch("https://api.sendinblue.com/v3/contacts", requestOptions);
     const data = await response.json();
-    setMessage(data.id ? "Recibirás el reporte en tu correo! Éxito" : "El correo que ingresaste ya fue registrado");
+    setMessage(data.id ? `Gracias por descargar, enviaremos el PDF a tu correo.` : "El correo que ingresaste ya descargó el PDF");
     setStatus(data.id ? "success" : "error");
-    data.id && js_cookie_dist_js_cookie_mjs__WEBPACK_IMPORTED_MODULE_3__["default"].set("userEmail", emailAddress);
+    data.id && js_cookie_dist_js_cookie_mjs__WEBPACK_IMPORTED_MODULE_4__["default"].set("userEmail", emailAddress);
   };
 
   const submitComplete = () => {
@@ -1190,7 +1253,7 @@ const LeadCollector = ({
       setShowMessage(true), setMessage("Ingresa tu nombre");
     } else if (!email.value) {
       setShowMessage(true), setMessage("Ingresa tu email");
-    } else if (!components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["isEmail"].test(email.value)) {
+    } else if (!components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["isEmail"].test(email.value)) {
       setShowMessage(true), setMessage("Email en formato incorrecto");
     } else {
       setShowMessage(false), call();
@@ -1200,35 +1263,23 @@ const LeadCollector = ({
   const submitShort = () => {
     if (!email.value) {
       setShowMessage(true), setMessage("Ingresa tu email");
-    } else if (!components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["isEmail"].test(email.value)) {
+    } else if (!components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["isEmail"].test(email.value)) {
       setShowMessage(true), setMessage("Email en formato incorrecto");
     } else {
       setShowMessage(false), call();
     }
   };
 
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, status === "sending" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Message"], {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, status === "sending" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Message"], {
     short: short,
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 88,
-      columnNumber: 32
-    }
-  }, "Enviando..."), showMessage && //Mensajes de validación
-  __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Message"], {
-    short: short,
-    error: true,
-    dangerouslySetInnerHTML: {
-      __html: displayMessage
-    },
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 91,
-      columnNumber: 9
+      columnNumber: 32
     }
-  }), status === "error" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Message"], {
+  }, "Enviando..."), showMessage && //Mensajes de validación
+  __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Message"], {
     short: short,
     error: true,
     dangerouslySetInnerHTML: {
@@ -1237,10 +1288,22 @@ const LeadCollector = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98,
+      lineNumber: 94,
       columnNumber: 9
     }
-  }), status === "success" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Message"], {
+  }), status === "error" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Message"], {
+    short: short,
+    error: true,
+    dangerouslySetInnerHTML: {
+      __html: displayMessage
+    },
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 101,
+      columnNumber: 9
+    }
+  }), status === "success" && short && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Message"], {
     short: short,
     success: true,
     dangerouslySetInnerHTML: {
@@ -1249,25 +1312,61 @@ const LeadCollector = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105,
+      lineNumber: 109,
+      columnNumber: 11
+    }
+  })), status === "success" && complete && __jsx(Gracias, {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 117,
       columnNumber: 9
     }
-  }), status !== "success" && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+  }, __jsx(Icon, {
+    color: "#4F478B",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 118,
+      columnNumber: 11
+    }
+  }, __jsx(public_assets_img_layout_icons_mail_svg__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 119,
+      columnNumber: 13
+    }
+  })), __jsx("h5", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 122,
+      columnNumber: 11
+    }
+  }, "\xA1Gracias por descargar! "), __jsx("p", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 123,
+      columnNumber: 11
+    }
+  }, "Enviaremos el PDF a tu correo.")), status !== "success" && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Label"], {
     short: short,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 113,
+      lineNumber: 128,
       columnNumber: 11
     }
   }, __jsx("span", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114,
+      lineNumber: 129,
       columnNumber: 13
     }
-  }, "email"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+  }, "email"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Input"], {
     ref: node => email = node,
     type: "email",
     placeholder: short ? "Tu correo" : "Email*",
@@ -1275,49 +1374,49 @@ const LeadCollector = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115,
+      lineNumber: 130,
       columnNumber: 13
     }
-  })), complete && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+  })), complete && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Label"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124,
+      lineNumber: 139,
       columnNumber: 15
     }
   }, __jsx("span", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 125,
+      lineNumber: 140,
       columnNumber: 17
     }
-  }, "nombre"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+  }, "nombre"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Input"], {
     ref: node => name = node,
     type: "text",
     placeholder: "Nombre*",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 126,
+      lineNumber: 141,
       columnNumber: 17
     }
-  })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+  })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Label"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 132,
+      lineNumber: 147,
       columnNumber: 15
     }
   }, __jsx("span", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133,
+      lineNumber: 148,
       columnNumber: 17
     }
-  }, "industria"), __jsx(react_select___WEBPACK_IMPORTED_MODULE_2___default.a, {
-    styles: components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["selectStyles"],
+  }, "industria"), __jsx(react_select___WEBPACK_IMPORTED_MODULE_3___default.a, {
+    styles: components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["selectStyles"],
     placeholder: "Industria",
     instanceId: "Industria" + collectorId,
     isSearchable: false,
@@ -1348,22 +1447,43 @@ const LeadCollector = ({
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 134,
+      lineNumber: 149,
       columnNumber: 17
     }
-  }))), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+  }))), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Button"], {
     short: short,
     onClick: short ? submitShort : submitComplete,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 154,
+      lineNumber: 169,
       columnNumber: 11
     }
   }, short && "Descargar PDF gratuito", complete && "Descargar gratis")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (LeadCollector);
+const Icon = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(components_shared_CircleIcon__WEBPACK_IMPORTED_MODULE_6__["default"])`
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10%;
+  svg {
+    padding: 22%;
+  }
+`;
+const Gracias = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  h5 {
+    font-size: 2.4rem;
+    margin: 10px 0;
+    font-weight: 400;
+  }
+  p {
+    color: ${props => props.theme.colors.foreground_low};
+  }
+`;
 
 /***/ }),
 
@@ -1378,12 +1498,22 @@ const LeadCollector = ({
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! components/shared/Forms */ "./components/shared/Forms.js");
-/* harmony import */ var react_select___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-select/ */ "react-select/");
-/* harmony import */ var react_select___WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_select___WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! components/shared/Forms */ "./components/shared/Forms.js");
+/* harmony import */ var js_cookie_dist_js_cookie__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! js-cookie/dist/js.cookie */ "js-cookie/dist/js.cookie");
+/* harmony import */ var js_cookie_dist_js_cookie__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(js_cookie_dist_js_cookie__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_select___WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-select/ */ "react-select/");
+/* harmony import */ var react_select___WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_select___WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var public_assets_img_layout_icons_mail_svg__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! public/assets/img/layout/icons/mail.svg */ "./public/assets/img/layout/icons/mail.svg");
+/* harmony import */ var components_shared_CircleIcon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! components/shared/CircleIcon */ "./components/shared/CircleIcon.js");
 var _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/components/shared/SalesCollector.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
 
 
 
@@ -1392,10 +1522,6 @@ const SalesCollector = () => {
   const {
     0: displayMessage,
     1: setMessage
-  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
-  const {
-    0: showMessage,
-    1: setShowMessage
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false);
   const {
     0: employeeOption,
@@ -1435,44 +1561,33 @@ const SalesCollector = () => {
     const response = await fetch("https://api.sendinblue.com/v3/contacts", requestOptions);
     const data = await response;
     console.log(data);
-    data.status !== 400 ? (setMessage("Gracias! Un asesor te contactará dentro de 24 horas hábiles"), setStatus("success"), Cookies.set("userEmail", emailAddress)) : (setMessage("Algo salió mal"), setStatus("error"));
+    data.status !== 400 ? (setMessage("Gracias! Un asesor te contactará dentro de 24 horas hábiles"), setStatus("success"), js_cookie_dist_js_cookie__WEBPACK_IMPORTED_MODULE_3___default.a.set("userEmail", emailAddress)) : (setMessage("Algo salió mal"), setStatus("error"));
   };
 
   const submitEnterprise = () => {
     if (!email.value) {
-      setShowMessage(true), setMessage("Ingresa tu email");
+      setStatus("error"), setMessage("Ingresa tu email");
     } else if (!name.value) {
-      setShowMessage(true), setMessage("Ingresa tu nombre");
-    } else if (!components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["isEmail"].test(email.value)) {
-      setShowMessage(true), setMessage("Email en formato incorrecto");
+      setStatus("error"), setMessage("Ingresa tu nombre");
+    } else if (!components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["isEmail"].test(email.value)) {
+      setStatus("error"), setMessage("Email en formato incorrecto");
     } else if (!company.value) {
-      setShowMessage(true), setMessage("Ingresa tu empresa");
+      setStatus("error"), setMessage("Ingresa tu empresa");
     } else if (employeeOption === null) {
-      setShowMessage(true), setMessage("Selecciona tu número de empleados");
+      setStatus("error"), setMessage("Selecciona tu número de empleados");
     } else {
-      setShowMessage(false), call();
+      setStatus(""), call();
     }
   };
 
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, status === "sending" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Message"], {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, status === "sending" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Message"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80,
+      lineNumber: 83,
       columnNumber: 32
     }
-  }, "Enviando..."), showMessage ? __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Message"], {
-    error: true,
-    dangerouslySetInnerHTML: {
-      __html: displayMessage
-    },
-    __self: undefined,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 82,
-      columnNumber: 9
-    }
-  }) : null, status === "error" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Message"], {
+  }, "Enviando..."), status === "error" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Message"], {
     error: true,
     dangerouslySetInnerHTML: {
       __html: displayMessage
@@ -1483,105 +1598,130 @@ const SalesCollector = () => {
       lineNumber: 85,
       columnNumber: 9
     }
-  }), status === "success" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Message"], {
-    success: true,
-    dangerouslySetInnerHTML: {
-      __html: displayMessage
-    },
+  }), status === "success" && __jsx(Gracias, {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 88,
       columnNumber: 9
     }
-  }), status !== "success" && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+  }, __jsx(Icon, {
+    color: "#4F478B",
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 89,
+      columnNumber: 11
+    }
+  }, __jsx(public_assets_img_layout_icons_mail_svg__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 90,
+      columnNumber: 13
+    }
+  })), __jsx("h5", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 92,
       columnNumber: 11
     }
-  }, __jsx("span", {
+  }, "\xA1Gracias!"), __jsx("p", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
       lineNumber: 93,
+      columnNumber: 11
+    }
+  }, "Te contactaremos a la brevedad.")), status !== "success" && __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Label"], {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 98,
+      columnNumber: 11
+    }
+  }, __jsx("span", {
+    __self: undefined,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 99,
       columnNumber: 13
     }
-  }, "email"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+  }, "email"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Input"], {
     ref: node => email = node,
     type: "email",
     placeholder: "Email*",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94,
+      lineNumber: 100,
       columnNumber: 13
     }
-  })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+  })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Label"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100,
+      lineNumber: 106,
       columnNumber: 11
     }
   }, __jsx("span", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101,
+      lineNumber: 107,
       columnNumber: 13
     }
-  }, "nombre"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+  }, "nombre"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Input"], {
     ref: node => name = node,
     type: "text",
     placeholder: "Nombre*",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102,
+      lineNumber: 108,
       columnNumber: 13
     }
-  })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+  })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Label"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108,
+      lineNumber: 114,
       columnNumber: 11
     }
   }, __jsx("span", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109,
+      lineNumber: 115,
       columnNumber: 13
     }
-  }, "empresa"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Input"], {
+  }, "empresa"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Input"], {
     ref: node => company = node,
     type: "text",
     placeholder: "Empresa*",
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 110,
+      lineNumber: 116,
       columnNumber: 13
     }
-  })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Label"], {
+  })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Label"], {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116,
+      lineNumber: 122,
       columnNumber: 11
     }
   }, __jsx("span", {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 117,
+      lineNumber: 123,
       columnNumber: 13
     }
-  }, "N\xFAmero de empleados"), __jsx(react_select___WEBPACK_IMPORTED_MODULE_2___default.a, {
-    styles: components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["selectStyles"],
+  }, "N\xFAmero de empleados"), __jsx(react_select___WEBPACK_IMPORTED_MODULE_4___default.a, {
+    styles: components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["selectStyles"],
     placeholder: "N\xFAmero de empleados",
     instanceId: "Employees",
     isSearchable: false,
@@ -1603,21 +1743,42 @@ const SalesCollector = () => {
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 118,
+      lineNumber: 124,
       columnNumber: 13
     }
-  })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+  })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_2__["Button"], {
     onClick: submitEnterprise,
     __self: undefined,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 133,
+      lineNumber: 139,
       columnNumber: 11
     }
   }, "Contactar asesor")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (SalesCollector);
+const Icon = styled_components__WEBPACK_IMPORTED_MODULE_1___default()(components_shared_CircleIcon__WEBPACK_IMPORTED_MODULE_6__["default"])`
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+  svg {
+    padding: 22%;
+  }
+`;
+const Gracias = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div`
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  h5 {
+    font-size: 2.4rem;
+    margin: 10px 0;
+    font-weight: 400;
+  }
+  p {
+    color: ${props => props.theme.colors.foreground_low};
+  }
+`;
 
 /***/ }),
 
@@ -4103,6 +4264,73 @@ function SvgCross(props) {
 
 /***/ }),
 
+/***/ "./public/assets/img/layout/icons/mail.svg":
+/*!*************************************************!*\
+  !*** ./public/assets/img/layout/icons/mail.svg ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+var _ref = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
+  className: "mutant-stroke",
+  d: "M154.5 52.5742H17C15.8954 52.5742 15 53.4697 15 54.5742V166.28C15 168.347 16.5037 170 18.3834 170H188.304C190.183 170 191.687 168.347 191.687 166.28V92.5",
+  stroke: "#1D1D1B",
+  strokeWidth: 8,
+  strokeMiterlimit: 10
+});
+
+var _ref2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
+  className: "mutant-stroke",
+  d: "M15 52.5742L103.344 121.794L158.5 78.5772",
+  stroke: "#1D1D1B",
+  strokeWidth: 8,
+  strokeMiterlimit: 10,
+  strokeLinejoin: "round"
+});
+
+var _ref3 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("circle", {
+  cx: 184.5,
+  cy: 61.5,
+  r: 31.5,
+  stroke: "#219653",
+  strokeWidth: 8
+});
+
+var _ref4 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
+  d: "M184.333 49.0156V74.2567",
+  stroke: "#219653",
+  strokeWidth: 8,
+  strokeLinecap: "round"
+});
+
+var _ref5 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("path", {
+  d: "M196.954 61.6362L171.713 61.6362",
+  stroke: "#219653",
+  strokeWidth: 8,
+  strokeLinecap: "round"
+});
+
+function SvgMail(props) {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("svg", _extends({
+    width: 220,
+    height: 220,
+    viewBox: "0 0 220 220",
+    fill: "none"
+  }, props), _ref, _ref2, _ref3, _ref4, _ref5);
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (SvgMail);
+
+/***/ }),
+
 /***/ "./public/assets/img/layout/logos/dfiimago.svg":
 /*!*****************************************************!*\
   !*** ./public/assets/img/layout/logos/dfiimago.svg ***!
@@ -4349,6 +4577,17 @@ module.exports = require("js-cookie/dist/js.cookie");
 /***/ (function(module, exports) {
 
 module.exports = require("next/router");
+
+/***/ }),
+
+/***/ "polished":
+/*!***************************!*\
+  !*** external "polished" ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("polished");
 
 /***/ }),
 

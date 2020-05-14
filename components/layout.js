@@ -3,12 +3,11 @@ import styled, { createGlobalStyle } from "styled-components";
 import Header from "./header";
 import { useRouter } from "next/router";
 import CookieMessage from "./CookieMessage";
-import Cookies from "js-cookie/dist/js.cookie";
 import { initGA, logPageView } from "utils/analytics";
 import ReactPixel from "react-facebook-pixel";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import NewsletterPopup from "components/NewsletterPopup";
-import Imago from "public/assets/img/layout/logos/dfiimago.svg";
+import Footer from "components/shared/Footer";
 
 export default ({
   children,
@@ -137,10 +136,7 @@ export default ({
         />
         <BodyOverflow isOpen={isOpen} hasLoaded={hasLoaded} />
         {showPopup && <NewsletterPopup setShowPopup={setShowPopup} />}
-        <Footer>
-          © Deep Future Institute, 2020
-          <Imago />
-        </Footer>
+        <Footer />
       </PageWrapper>
     </>
   );
@@ -177,21 +173,6 @@ const BodyOverflow = createGlobalStyle`
         bottom:0;
       }
     }  
-  }
-`;
-
-const Footer = styled.footer`
-  display: flex;
-  width: 100%;
-  max-width: 1500px;
-  margin: 0 auto;
-  justify-content: space-between;
-  color: ${(props) => props.theme.colors.foreground_low};
-  font-size: 1.5rem;
-  padding-bottom: 3%;
-  align-items: center;
-  svg {
-    width: 35px;
   }
 `;
 

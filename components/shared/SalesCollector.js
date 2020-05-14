@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import styled from "styled-components";
 import {
   Message,
   Input,
@@ -7,11 +8,13 @@ import {
   selectStyles,
   isEmail,
 } from "components/shared/Forms";
+import Cookies from "js-cookie/dist/js.cookie";
 import Select from "react-select/";
+import Mail from "public/assets/img/layout/icons/mail.svg";
+import CircleIcon from "components/shared/CircleIcon";
 
 const SalesCollector = () => {
   const [displayMessage, setMessage] = useState(false);
-  const [showMessage, setShowMessage] = useState(false);
   const [employeeOption, setEmployeeOption] = useState(null);
   const [status, setStatus] = useState("");
   let email, name, company;
@@ -61,31 +64,34 @@ const SalesCollector = () => {
 
   const submitEnterprise = () => {
     if (!email.value) {
-      setShowMessage(true), setMessage("Ingresa tu email");
+      setStatus("error"), setMessage("Ingresa tu email");
     } else if (!name.value) {
-      setShowMessage(true), setMessage("Ingresa tu nombre");
+      setStatus("error"), setMessage("Ingresa tu nombre");
     } else if (!isEmail.test(email.value)) {
-      setShowMessage(true), setMessage("Email en formato incorrecto");
+      setStatus("error"), setMessage("Email en formato incorrecto");
     } else if (!company.value) {
-      setShowMessage(true), setMessage("Ingresa tu empresa");
+      setStatus("error"), setMessage("Ingresa tu empresa");
     } else if (employeeOption === null) {
-      setShowMessage(true), setMessage("Selecciona tu número de empleados");
+      setStatus("error"), setMessage("Selecciona tu número de empleados");
     } else {
-      setShowMessage(false), call();
+      setStatus(""), call();
     }
   };
 
   return (
     <>
       {status === "sending" && <Message>Enviando...</Message>}
-      {showMessage ? (
-        <Message error dangerouslySetInnerHTML={{ __html: displayMessage }} />
-      ) : null}
       {status === "error" && (
         <Message error dangerouslySetInnerHTML={{ __html: displayMessage }} />
       )}
       {status === "success" && (
-        <Message success dangerouslySetInnerHTML={{ __html: displayMessage }} />
+        <Gracias>
+          <Icon color={"#4F478B"}>
+            <Mail />
+          </Icon>
+          <h5>¡Gracias!</h5>
+          <p>Te contactaremos a la brevedad.</p>
+        </Gracias>
       )}
       {status !== "success" && (
         <>
@@ -138,3 +144,26 @@ const SalesCollector = () => {
 };
 
 export default SalesCollector;
+
+const Icon = styled(CircleIcon)`
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+  svg {
+    padding: 22%;
+  }
+`;
+
+const Gracias = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  h5 {
+    font-size: 2.4rem;
+    margin: 10px 0;
+    font-weight: 400;
+  }
+  p {
+    color: ${(props) => props.theme.colors.foreground_low};
+  }
+`;

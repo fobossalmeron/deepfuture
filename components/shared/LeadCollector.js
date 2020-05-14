@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styled from "styled-components";
 import {
   Message,
   Input,
@@ -9,9 +10,11 @@ import {
 } from "components/shared/Forms";
 import Select from "react-select/";
 import Cookies from "js-cookie/dist/js.cookie.mjs";
+import Mail from "public/assets/img/layout/icons/mail.svg";
+import CircleIcon from "components/shared/CircleIcon";
 
 const LeadCollector = ({ complete, short, collectorId }) => {
-  const [displayMessage, setMessage] = useState(false);
+  const [displayMessage, setMessage] = useState("");
   const [showMessage, setShowMessage] = useState(false);
   const [industryOption, setIndustryOption] = useState(null);
 
@@ -54,8 +57,8 @@ const LeadCollector = ({ complete, short, collectorId }) => {
 
     setMessage(
       data.id
-        ? "Recibirás el reporte en tu correo! Éxito"
-        : "El correo que ingresaste ya fue registrado"
+        ? `Gracias por descargar, enviaremos el PDF a tu correo.`
+        : "El correo que ingresaste ya descargó el PDF"
     );
     setStatus(data.id ? "success" : "error");
     data.id && Cookies.set("userEmail", emailAddress);
@@ -101,12 +104,24 @@ const LeadCollector = ({ complete, short, collectorId }) => {
           dangerouslySetInnerHTML={{ __html: displayMessage }}
         />
       )}
-      {status === "success" && (
-        <Message
-          short={short}
-          success
-          dangerouslySetInnerHTML={{ __html: displayMessage }}
-        />
+      {status === "success" && short && (
+        <>
+          <Message
+            short={short}
+            success
+            dangerouslySetInnerHTML={{ __html: displayMessage }}
+          />
+        </>
+      )}
+      {status === "success" && complete && (
+        <Gracias>
+          <Icon color={"#4F478B"}>
+            <Mail />
+          </Icon>
+
+          <h5>¡Gracias por descargar! </h5>
+          <p>Enviaremos el PDF a tu correo.</p>
+        </Gracias>
       )}
       {status !== "success" && (
         <>
@@ -162,3 +177,26 @@ const LeadCollector = ({ complete, short, collectorId }) => {
 };
 
 export default LeadCollector;
+
+const Icon = styled(CircleIcon)`
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10%;
+  svg {
+    padding: 22%;
+  }
+`;
+
+const Gracias = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  h5 {
+    font-size: 2.4rem;
+    margin: 10px 0;
+    font-weight: 400;
+  }
+  p {
+    color: ${(props) => props.theme.colors.foreground_low};
+  }
+`;

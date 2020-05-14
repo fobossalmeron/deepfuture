@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { darken, lighten, readableColor } from "polished";
 import Cross from "public/assets/img/layout/cross.svg";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
-import { P, H2, H3 } from "components/shared/Dangerously";
+import { H2, H3 } from "components/shared/Dangerously";
 import MercadoPago from "components/MercadoPago";
 import MercadoLogo from "public/assets/img/layout/logos/mercadopago.svg";
 import currency from "currency.js";
@@ -12,13 +12,13 @@ import Sheets from "public/assets/img/layout/icons/sheets.svg";
 import Meet from "public/assets/img/layout/icons/meet.svg";
 import Pdf from "public/assets/img/layout/icons/pdf.svg";
 import CircleIcon from "components/shared/CircleIcon";
+import Footer from "components/shared/Footer";
 
 const PayPopup = ({ setShowPay, product }) => {
   const [internalShowPopup, setInternalShowPopup] = useState(false);
 
   useEffect(() => {
     popupShow();
-    console.log(product);
   }, []);
 
   const popupShow = () => {
@@ -50,26 +50,25 @@ const PayPopup = ({ setShowPay, product }) => {
             <span>MXN</span>
           </span>
           <Icons>
-            {console.log(product.id)}
             {product.id === 1 && (
               <>
-                <Icon>
+                <Icon dark>
                   <Sheets />
                 </Icon>
-                <Icon>
+                <Icon dark>
                   <Pdf />
                 </Icon>
               </>
             )}
             {product.id === 2 && (
               <>
-                <Icon>
+                <Icon dark>
                   <Sheets />
                 </Icon>
-                <Icon>
+                <Icon dark>
                   <Forms />
                 </Icon>
-                <Icon>
+                <Icon dark>
                   <Meet />
                 </Icon>
               </>
@@ -103,12 +102,22 @@ const PayPopup = ({ setShowPay, product }) => {
         <CrossContainer>
           <Cross onClick={unlockScreen} />
         </CrossContainer>
+        <FooterStyled>
+          <Footer />
+        </FooterStyled>
       </Background>
     </>
   );
 };
 
 export default PayPopup;
+
+const FooterStyled = styled.div`
+  position: absolute;
+  bottom: 0;
+  width:100%;
+  margin:0 auto;
+`;
 
 const Warning = styled.div`
   margin-bottom: 15px;
