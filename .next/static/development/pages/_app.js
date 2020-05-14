@@ -1487,46 +1487,23 @@ var Gracias = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_tem
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function(console) {/* harmony import */ var _babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/taggedTemplateLiteral */ "./node_modules/@babel/runtime/helpers/esm/taggedTemplateLiteral.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
-/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
-/* harmony import */ var components_shared_Forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! components/shared/Forms */ "./components/shared/Forms.js");
-/* harmony import */ var js_cookie_dist_js_cookie__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! js-cookie/dist/js.cookie */ "./node_modules/js-cookie/dist/js.cookie.mjs");
-/* harmony import */ var react_select___WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-select/ */ "./node_modules/react-select/dist/react-select.browser.esm.js");
-/* harmony import */ var public_assets_img_layout_icons_mail_svg__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! public/assets/img/layout/icons/mail.svg */ "./public/assets/img/layout/icons/mail.svg");
-/* harmony import */ var components_shared_CircleIcon__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! components/shared/CircleIcon */ "./components/shared/CircleIcon.js");
-
+/* WEBPACK VAR INJECTION */(function(console) {/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var components_shared_Forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! components/shared/Forms */ "./components/shared/Forms.js");
+/* harmony import */ var js_cookie_dist_js_cookie__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! js-cookie/dist/js.cookie */ "./node_modules/js-cookie/dist/js.cookie.mjs");
+/* harmony import */ var react_select___WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-select/ */ "./node_modules/react-select/dist/react-select.browser.esm.js");
+/* harmony import */ var public_assets_img_layout_icons_mail_svg__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! public/assets/img/layout/icons/mail.svg */ "./public/assets/img/layout/icons/mail.svg");
+/* harmony import */ var components_shared_CircleIcon__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! components/shared/CircleIcon */ "./components/shared/CircleIcon.js");
 
 
 var _this = undefined,
     _jsxFileName = "/Users/rodrigosalmeron/Sites/deepfuture/components/shared/SalesCollector.js";
 
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement;
-
-function _templateObject2() {
-  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  display: flex;\n  width: 100%;\n  flex-direction: column;\n  h5 {\n    font-size: 2.4rem;\n    margin: 10px 0;\n    font-weight: 400;\n  }\n  p {\n    color: ", ";\n  }\n"]);
-
-  _templateObject2 = function _templateObject2() {
-    return data;
-  };
-
-  return data;
-}
-
-function _templateObject() {
-  var data = Object(_babel_runtime_helpers_esm_taggedTemplateLiteral__WEBPACK_IMPORTED_MODULE_0__["default"])(["\n  width: 100px;\n  height: 100px;\n  margin-bottom: 15px;\n  svg {\n    padding: 22%;\n  }\n"]);
-
-  _templateObject = function _templateObject() {
-    return data;
-  };
-
-  return data;
-}
-
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
 
@@ -1536,15 +1513,15 @@ function _templateObject() {
 
 
 var SalesCollector = function SalesCollector() {
-  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(false),
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(false),
       displayMessage = _useState[0],
       setMessage = _useState[1];
 
-  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(null),
+  var _useState2 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(null),
       employeeOption = _useState2[0],
       setEmployeeOption = _useState2[1];
 
-  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_2__["useState"])(""),
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_1__["useState"])(""),
       status = _useState3[0],
       setStatus = _useState3[1];
 
@@ -1556,7 +1533,7 @@ var SalesCollector = function SalesCollector() {
 
   var call = function call() {
     var requestOptions, emailAddress, response, data;
-    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.async(function call$(_context) {
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.async(function call$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
@@ -1581,17 +1558,17 @@ var SalesCollector = function SalesCollector() {
             };
             emailAddress = email.value;
             _context.next = 5;
-            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.awrap(fetch("https://api.sendinblue.com/v3/contacts", requestOptions));
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(fetch("https://api.sendinblue.com/v3/contacts", requestOptions));
 
           case 5:
             response = _context.sent;
             _context.next = 8;
-            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_1___default.a.awrap(response);
+            return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.awrap(response);
 
           case 8:
             data = _context.sent;
             console.log(data);
-            data.status !== 400 ? (setMessage("Gracias! Un asesor te contactará dentro de 24 horas hábiles"), setStatus("success"), js_cookie_dist_js_cookie__WEBPACK_IMPORTED_MODULE_5__["default"].set("userEmail", emailAddress)) : (setMessage("Algo salió mal"), setStatus("error"));
+            data.status !== 400 ? (setMessage("Gracias! Un asesor te contactará dentro de 24 horas hábiles"), setStatus("success"), js_cookie_dist_js_cookie__WEBPACK_IMPORTED_MODULE_4__["default"].set("userEmail", emailAddress)) : (setMessage("Algo salió mal"), setStatus("error"));
 
           case 11:
           case "end":
@@ -1604,10 +1581,12 @@ var SalesCollector = function SalesCollector() {
   var submitEnterprise = function submitEnterprise() {
     if (!email.value) {
       setStatus("error"), setMessage("Ingresa tu email");
+    } else if (!components_shared_Forms__WEBPACK_IMPORTED_MODULE_3__["isEmail"].test(email.value)) {
+      setStatus("error"), setMessage("Email en formato incorrecto");
+    } else if (email.value.includes("@gmail.com") || email.value.includes("@aol.com") || email.value.includes("@icloud.com") || email.value.includes("@me.com") || email.value.includes("@msn.com") || email.value.includes("@yahoo.com") || email.value.includes("@live.com") || email.value.includes("@hotmail.com")) {
+      setStatus("error"), setMessage("Ingresa un email de empresa");
     } else if (!name.value) {
       setStatus("error"), setMessage("Ingresa tu nombre");
-    } else if (!components_shared_Forms__WEBPACK_IMPORTED_MODULE_4__["isEmail"].test(email.value)) {
-      setStatus("error"), setMessage("Email en formato incorrecto");
     } else if (!company.value) {
       setStatus("error"), setMessage("Ingresa tu empresa");
     } else if (employeeOption === null) {
@@ -1617,14 +1596,14 @@ var SalesCollector = function SalesCollector() {
     }
   };
 
-  return __jsx(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, status === "sending" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_4__["Message"], {
+  return __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, status === "sending" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_3__["Message"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83,
+      lineNumber: 94,
       columnNumber: 32
     }
-  }, "Enviando..."), status === "error" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_4__["Message"], {
+  }, "Enviando..."), status === "error" && __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_3__["Message"], {
     error: true,
     dangerouslySetInnerHTML: {
       __html: displayMessage
@@ -1632,14 +1611,14 @@ var SalesCollector = function SalesCollector() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 85,
+      lineNumber: 96,
       columnNumber: 9
     }
   }), status === "success" && __jsx(Gracias, {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88,
+      lineNumber: 99,
       columnNumber: 9
     }
   }, __jsx(Icon, {
@@ -1647,45 +1626,45 @@ var SalesCollector = function SalesCollector() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89,
+      lineNumber: 100,
       columnNumber: 11
     }
-  }, __jsx(public_assets_img_layout_icons_mail_svg__WEBPACK_IMPORTED_MODULE_7__["default"], {
+  }, __jsx(public_assets_img_layout_icons_mail_svg__WEBPACK_IMPORTED_MODULE_6__["default"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90,
+      lineNumber: 101,
       columnNumber: 13
     }
   })), __jsx("h5", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 92,
+      lineNumber: 103,
       columnNumber: 11
     }
   }, "\xA1Gracias!"), __jsx("p", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93,
+      lineNumber: 104,
       columnNumber: 11
     }
-  }, "Te contactaremos a la brevedad.")), status !== "success" && __jsx(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_4__["Label"], {
+  }, "Te contactaremos a la brevedad.")), status !== "success" && __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_3__["Label"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98,
+      lineNumber: 109,
       columnNumber: 11
     }
   }, __jsx("span", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99,
+      lineNumber: 110,
       columnNumber: 13
     }
-  }, "email"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_4__["Input"], {
+  }, "email"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_3__["Input"], {
     ref: function ref(node) {
       return email = node;
     },
@@ -1694,24 +1673,24 @@ var SalesCollector = function SalesCollector() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100,
+      lineNumber: 111,
       columnNumber: 13
     }
-  })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_4__["Label"], {
+  })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_3__["Label"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106,
+      lineNumber: 117,
       columnNumber: 11
     }
   }, __jsx("span", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 107,
+      lineNumber: 118,
       columnNumber: 13
     }
-  }, "nombre"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_4__["Input"], {
+  }, "nombre"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_3__["Input"], {
     ref: function ref(node) {
       return name = node;
     },
@@ -1720,24 +1699,24 @@ var SalesCollector = function SalesCollector() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108,
+      lineNumber: 119,
       columnNumber: 13
     }
-  })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_4__["Label"], {
+  })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_3__["Label"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 114,
+      lineNumber: 125,
       columnNumber: 11
     }
   }, __jsx("span", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 115,
+      lineNumber: 126,
       columnNumber: 13
     }
-  }, "empresa"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_4__["Input"], {
+  }, "empresa"), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_3__["Input"], {
     ref: function ref(node) {
       return company = node;
     },
@@ -1746,25 +1725,25 @@ var SalesCollector = function SalesCollector() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 116,
+      lineNumber: 127,
       columnNumber: 13
     }
-  })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_4__["Label"], {
+  })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_3__["Label"], {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 122,
+      lineNumber: 133,
       columnNumber: 11
     }
   }, __jsx("span", {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 123,
+      lineNumber: 134,
       columnNumber: 13
     }
-  }, "N\xFAmero de empleados"), __jsx(react_select___WEBPACK_IMPORTED_MODULE_6__["default"], {
-    styles: components_shared_Forms__WEBPACK_IMPORTED_MODULE_4__["selectStyles"],
+  }, "N\xFAmero de empleados"), __jsx(react_select___WEBPACK_IMPORTED_MODULE_5__["default"], {
+    styles: components_shared_Forms__WEBPACK_IMPORTED_MODULE_3__["selectStyles"],
     placeholder: "N\xFAmero de empleados",
     instanceId: "Employees",
     isSearchable: false,
@@ -1786,23 +1765,29 @@ var SalesCollector = function SalesCollector() {
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 124,
+      lineNumber: 135,
       columnNumber: 13
     }
-  })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_4__["Button"], {
+  })), __jsx(components_shared_Forms__WEBPACK_IMPORTED_MODULE_3__["Button"], {
     onClick: submitEnterprise,
     __self: _this,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 139,
+      lineNumber: 150,
       columnNumber: 11
     }
   }, "Contactar asesor")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (SalesCollector);
-var Icon = Object(styled_components__WEBPACK_IMPORTED_MODULE_3__["default"])(components_shared_CircleIcon__WEBPACK_IMPORTED_MODULE_8__["default"])(_templateObject());
-var Gracias = styled_components__WEBPACK_IMPORTED_MODULE_3__["default"].div(_templateObject2(), function (props) {
+var Icon = Object(styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(components_shared_CircleIcon__WEBPACK_IMPORTED_MODULE_7__["default"]).withConfig({
+  displayName: "SalesCollector__Icon",
+  componentId: "wxvxw4-0"
+})(["width:100px;height:100px;margin-bottom:15px;svg{padding:22%;}"]);
+var Gracias = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
+  displayName: "SalesCollector__Gracias",
+  componentId: "wxvxw4-1"
+})(["display:flex;width:100%;flex-direction:column;h5{font-size:2.4rem;margin:10px 0;font-weight:400;}p{color:", ";}"], function (props) {
   return props.theme.colors.foreground_low;
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/console-browserify/index.js */ "./node_modules/console-browserify/index.js")))

@@ -65,10 +65,21 @@ const SalesCollector = () => {
   const submitEnterprise = () => {
     if (!email.value) {
       setStatus("error"), setMessage("Ingresa tu email");
-    } else if (!name.value) {
-      setStatus("error"), setMessage("Ingresa tu nombre");
     } else if (!isEmail.test(email.value)) {
       setStatus("error"), setMessage("Email en formato incorrecto");
+    } else if (
+      email.value.includes("@gmail.com") ||
+      email.value.includes("@aol.com") ||
+      email.value.includes("@icloud.com") ||
+      email.value.includes("@me.com") ||
+      email.value.includes("@msn.com") ||
+      email.value.includes("@yahoo.com") ||
+      email.value.includes("@live.com") ||
+      email.value.includes("@hotmail.com")
+    ) {
+      setStatus("error"), setMessage("Ingresa un email de empresa");
+    } else if (!name.value) {
+      setStatus("error"), setMessage("Ingresa tu nombre");
     } else if (!company.value) {
       setStatus("error"), setMessage("Ingresa tu empresa");
     } else if (employeeOption === null) {
