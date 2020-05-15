@@ -29,20 +29,65 @@ const items = [
 function DataItemsWhite() {
   return (
     <DataSection>
-      {items.map((item, i) => (
-        <DataItem light key={"dataItemWhite" + i} item={item} columns={3} />
-      ))}
+      <DataWhiteGrid>
+        {items.map((item, i) => (
+          <DataItem light key={"dataItemWhite" + i} item={item} columns={3} />
+        ))}
+      </DataWhiteGrid>
     </DataSection>
   );
 }
 
 export default DataItemsWhite;
 
+const DataWhiteGrid = styled.ul`
+  display: flex;
+  grid-column: span 12;
+  justify-content: space-between;
+  li {
+    @media (max-width: 1200px) {
+      flex-direction: column;
+    }
+  }
+  @media (max-width: 1300px) {
+    justify-content: space-around;
+    li:nth-of-type(3) div:nth-of-type(2) {
+      margin-right: 0 !important;
+      width: 100%;
+    }
+  }
+  @media (max-width: 900px) {
+    justify-content: space-around;
+    flex-direction: column;
+    align-items:center;
+    li{
+      flex-direction:row;
+      margin-bottom:5%;
+      & > div:nth-of-type(1){
+        width:25%;
+       
+      }
+    }
+  }
+  @media (max-width: 600px) {
+
+    li{
+      flex-direction:column;
+      margin-bottom:5%;
+      /* & > div:nth-of-type(1){
+        width:25%;
+       
+      } */
+    }
+  }
+`;
+
 const DataSection = styled(MainGrid)`
   background-color: ${(props) => props.theme.colors.foreground};
   color: ${(props) => props.theme.colors.background};
-  p{
+  padding-top: 6%;
+  padding-bottom:3%;
+  p {
     color: ${(props) => props.theme.colors.foreground_lowest};
-
   }
 `;

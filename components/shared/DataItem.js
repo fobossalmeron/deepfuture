@@ -15,7 +15,7 @@ function DataItem({ item, columns, light, dark }) {
   }
 
   return (
-    <>
+    <Item>
       {!dark && (
         <Column>
           <IconFaded />
@@ -30,43 +30,58 @@ function DataItem({ item, columns, light, dark }) {
         <H3>{item.title}</H3>
         <P>{item.description}</P>
       </ColumnSecond>
-    </>
+    </Item>
   );
 }
 
 export default DataItem;
 
+const Item = styled.li`
+  display: flex;
+`;
+
 const Column = styled.div`
-  grid-column-end: span 1;
+  width: 30%;
+  margin-right: 2%;
 `;
 
 const Icon = styled(CircleIcon)`
-width:100px;
-height:100px;
-  margin-bottom:10%;
-  svg{
-    padding:22%;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 18px;
+  svg {
+    padding: 22%;
+  }
+  @media (max-width: 1300px) {
+    width: 80px;
+    height: 80px;
+  }
+  @media (max-width: 600px) {
+    width: 60px;
+    height: 60px;
   }
 `;
 
 const ColumnSecond = styled.div`
-  /* div {
-    height: 30px;
-    width: 30px;
-    display: none;
-    :nth-of-type(1) {
-      background-color: ${(props) => props.theme.colors.darklight};
-    }
-    :nth-of-type(2) {
-      background-color: ${(props) => props.theme.colors.darkshadow};
-    }
-  } */
-  grid-column-end: ${(props) => "span " + props.columns};
+  width: 68%;
+  margin-right: 4%;
   h3 {
     font-size: 2.3rem;
     margin-bottom: 17px;
   }
   p {
     max-width: 340px;
+  }
+  @media (max-width: 1300px) {
+    width: 91%;
+    margin-right: 9%;
+  }
+  @media (max-width: 1000px) {
+    h3 {
+      font-size: 2rem;
+    }
+    p {
+    max-width: 420px;
+  }
   }
 `;

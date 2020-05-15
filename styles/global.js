@@ -64,11 +64,6 @@ const styles = `
     }
   }
 
-  #Wrapper{
-    overflow:hidden;
-    height:100%;
-  }
-
   /* normalize */
   figure {
     margin: 0;
@@ -146,10 +141,11 @@ const styles = `
     min-height: 100vh;
     width: 100%;
     letter-spacing: 0.02px;
+    overflow-x:hidden;
   }
-  @media (max-width: 600px), (max-height: 450px) {
+  @media (max-width: 1000px), (max-height: 450px) {
     body {
-      font-size: 1.5rem;
+      font-size: 1.7rem;
     }
   }
 

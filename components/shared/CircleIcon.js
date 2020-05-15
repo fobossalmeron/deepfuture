@@ -18,8 +18,8 @@ const CircleIcon = styled.div`
       : props.dark
       ? `-5px -5px 7px ${props.theme.colors.darklight}, 
     5px 5px 7px ${props.theme.colors.darkshadow}`
-      : `-5px -5px 7px ${darken(0.04,props.color)}, 
-    3px 3px 7px ${lighten(0.05,props.color)}`};
+      : `-5px -5px 7px ${lighten(0.05,props.color)}, 
+    3px 3px 7px ${darken(0.04,props.color)}`};
   position: relative;
   margin-bottom: 10%;
   svg {

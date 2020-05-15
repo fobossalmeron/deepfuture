@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { darken, lighten } from "polished";
 
 export const Message = styled.div`
   color: ${(props) =>
@@ -58,6 +59,9 @@ export const Input = styled.input`
     color: #31302e;
     opacity: 0.5;
   }
+  @media (max-width: 750px) {
+    padding: 10px 16px 11px 20px;
+  }
 `;
 
 export const Select = styled.select`
@@ -92,20 +96,27 @@ export const Button = styled.button`
     &:hover {
       background-color: ${(props) =>
         !props.disabled
-          ? props.theme.colors.success
+          ? darken(0.2, props.theme.colors.cta)
           : props.theme.colors.foreground_low};
     }
+  }
+  @media (max-width: 750px) {
+    padding: 11px 2%;
   }
 `;
 
 export const selectStyles = {
   option: (provided, { isSelected, isFocused }) => ({
     ...provided,
-    color: isSelected ? "#F4F4F4": "#4F4F4F",
+    color: isSelected ? "#F4F4F4" : "#4F4F4F",
     fontSize: "1.7rem",
-    backgroundColor: isSelected ? "#4F478B" : isFocused ? "rgba(79,71,139,0.18)" : "#F4F4F4",
+    backgroundColor: isSelected
+      ? "#4F478B"
+      : isFocused
+      ? "rgba(79,71,139,0.18)"
+      : "#F4F4F4",
     transition: ".3s ease all",
-    cursor:"pointer",
+    cursor: "pointer",
   }),
   singleValue: (provided) => ({
     ...provided,

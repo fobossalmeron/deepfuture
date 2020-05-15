@@ -151,28 +151,6 @@ const BodyOverflow = createGlobalStyle`
     animation: none !important;
     opacity: 1 !important;
     }
-    #Wrapper{
-      overflow: ${(props) => (props.hasLoaded ? "unset" : "hidden")};
-      height:${(props) => (props.hasLoaded ? "unset" : "100%")};
-    }
-    body {
-    overflow-y: ${(props) => (props.hasLoaded ? "auto" : "hidden")};
-      &:after,&:before{
-        content: " ";
-        position: fixed;
-        right: 0;
-        left: 0;
-        height: 18px;
-        z-index:100;
-        background-color: ${(props) => props.theme.colors.background};
-      }
-      &:before {
-        top:0;
-      }
-      &:after {
-        bottom:0;
-      }
-    }  
   }
 `;
 

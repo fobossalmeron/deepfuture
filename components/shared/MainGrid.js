@@ -7,7 +7,8 @@ const MainGrid = styled.section`
   margin: 0 auto;
   max-width: 1500px;
   display: grid;
-  padding: ${(props) => (props.notoppadding ? "0% 0% 7% 0%" : "7% 0%")};
+  padding-right:2%;
+  padding-left: 2%;
   position: relative;
   h1 {
     font-size: 4.65rem;
@@ -18,6 +19,13 @@ const MainGrid = styled.section`
     grid-column: 7 / span 5;
     position: relative;
     opacity: 0.8;
+  }
+  @media (max-width: 1000px) {
+    grid-gap: 2%;
+  }
+  @media (max-width: 600px) {
+    padding-right: 5%;
+    padding-left: 5%;
   }
 `;
 

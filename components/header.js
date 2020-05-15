@@ -20,9 +20,9 @@ function Header({ hasLoaded, isOpen, closeNav, locale, route }) {
             <Logo />
           </LogoLink>
         </Link>
-        <Form>
+        <HeaderCovidCollector>
           <LeadCollector short collectorId="smallCollector" />
-        </Form>
+        </HeaderCovidCollector>
       </HeaderContainer>
     </TopHeader>
   );
@@ -52,6 +52,13 @@ const TopHeader = styled.header`
   opacity: ${(props) => (props.reveal ? 1 : 0)};
   transition: opacity 0.3s ease 0.3s;
   box-shadow: ${(props) => `9px 9px 25px ${props.theme.colors.darkshadow}`};
+  @media(max-width:750px){
+    
+    height:58px;
+  }
+  @media(max-width:600px){
+    padding: 11px 6%;
+  }
 `;
 
 const LogoLink = styled.a`
@@ -75,9 +82,18 @@ const LogoLink = styled.a`
   }
 `;
 
-const Form = styled.div`
+const HeaderCovidCollector = styled.div`
   width: 100%;
   max-width: 500px;
   align-self: flex-end;
   display: flex;
+  @media (max-width: 750px) {
+    max-width: 400px;
+    label, button, input{
+      height:100%;
+    }
+  }
+  @media (max-width: 600px) {
+    display:none;
+  }
 `;

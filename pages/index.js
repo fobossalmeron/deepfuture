@@ -75,15 +75,19 @@ function Index(props) {
           Encuentra <b>certidumbre</b> con Deep Future Institute
         </h3>
       </Title>
-      <MainGrid notoppadding>
+      <LastForm>
         <FormComplete centered collectorId="FooterCollector" />
-      </MainGrid>
+      </LastForm>
       {showPay && <PayPopup setShowPay={setShowPay} product={product} />}
     </>
   );
 }
 
 export default React.memo(Index);
+
+const LastForm = styled(MainGrid)`
+padding-bottom:6%;
+`;
 
 const Land = styled(MainGrid)`
   min-height: 100vh;
@@ -120,10 +124,7 @@ const SecondForm = styled.section`
   color: ${(props) => props.theme.colors.background};
   background-color: ${(props) => props.theme.colors.foreground};
   width: 100%;
-
-  #quote {
-    text-align: center;
-  }
+  padding-bottom: 6%;
 `;
 
 const SecondFormGrid = styled(MainGrid)`

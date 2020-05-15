@@ -47,6 +47,9 @@ const Form = styled.div`
   width: 100%;
   transition: all 0.3s ease-in;
   pointer-events: auto;
+  @media (max-width: 1200px) {
+    grid-column: ${(props) => (props.centered ? "2 / span 9" : "6 / span 6")};
+  }
 `;
 
 const Column = styled.div`

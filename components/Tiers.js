@@ -2,6 +2,7 @@ import styled from "styled-components";
 import MainGrid from "components/shared/MainGrid";
 import Title from "components/shared/Title";
 import { P, H3 } from "components/shared/Dangerously";
+import { darken, lighten } from "polished";
 import Check from "public/assets/img/layout/check.svg";
 import Uncheck from "public/assets/img/layout/uncheck.svg";
 import Fade from "react-reveal/Fade";
@@ -40,7 +41,8 @@ const tiers = [
     id: 1,
     subtitle:
       "Cómo generar certidumbre ante el impacto del <b>COVID-19</b> y la <b>4T</b>",
-    description: "Taller descargable con insights de la crisis del COVID-19 y la Cuarta Transformación donde podrás aplicar principios de prospectiva a tu negocio u organización para generar certidumbre y responder estratégicamente.",
+    description:
+      "Taller descargable con insights de la crisis del COVID-19 y la Cuarta Transformación donde podrás aplicar principios de prospectiva a tu negocio u organización para generar certidumbre y responder estratégicamente.",
     price: "$1400",
     originalPrice: "2,500",
     insights: "18",
@@ -58,7 +60,8 @@ const tiers = [
     id: 2,
     subtitle:
       "Genera certidumbre ante el impacto del <b>COVID-19</b> y la <b>4T</b> junto con <b>expertos</b>",
-    description: "Taller virtual con insights de la crisis del COVID-19 y la Cuarta Transformación donde podrás, guiado por expertos, aplicar principios de prospectiva a tu negocio u organización para generar certidumbre y responder estratégicamente.",
+    description:
+      "Taller virtual con insights de la crisis del COVID-19 y la Cuarta Transformación donde podrás, guiado por expertos, aplicar principios de prospectiva a tu negocio u organización para generar certidumbre y responder estratégicamente.",
     price: "$10000",
     originalPrice: "25000",
     color: "#1C4794",
@@ -135,7 +138,7 @@ const Tier = ({ tier, setShowPopup, setShowPay, setProduct }) => {
 function Tiers({ setShowPopup, setShowPay, setProduct }) {
   return (
     <TiersSection>
-      <Title notoppadding>
+      <Title>
         <p>
           Prepárate para los escenarios de <b>futuro</b>
         </p>
@@ -143,11 +146,11 @@ function Tiers({ setShowPopup, setShowPay, setProduct }) {
           Conoce nuestros <b>talleres</b>
         </h3>
       </Title>
-      <TiersGrid notoppadding>
+      <TiersGrid>
         <TierBackground />
         <TierBackground />
         <TierBackground />
-        <Includes></Includes>
+        <PlaceHolder />
         {tiers.map((tier, i) => (
           <Tier
             setShowPopup={setShowPopup}
@@ -157,8 +160,9 @@ function Tiers({ setShowPopup, setShowPay, setProduct }) {
             setProduct={setProduct}
           />
         ))}
+        <StatsGrid>
         <Includes>
-          <span>Incluye</span>
+          {/* <span>Incluye</span> */}
           <StatsInclude>
             {includes.map((include, i) => (
               <li key={"include" + (i + 100)}>
@@ -178,6 +182,7 @@ function Tiers({ setShowPopup, setShowPay, setProduct }) {
             ))}
           </Stats>
         ))}
+        </StatsGrid>
       </TiersGrid>
     </TiersSection>
   );
@@ -185,9 +190,16 @@ function Tiers({ setShowPopup, setShowPay, setProduct }) {
 
 export default Tiers;
 
+const StatsGrid = styled.div`
+grid-template-columns: repeat(4, 1fr);
+grid-column: 1 / span 12;
+z-index:1;
+display:grid;
+`;
+
 const Stats = styled.ul`
   text-align: center;
-  grid-column-end: span 3;
+  grid-column-end: span 1;
   padding-bottom: 25px;
   li {
     padding: 17px 0;
@@ -214,8 +226,16 @@ const StatsInclude = styled(Stats)`
   }
 `;
 
-const Includes = styled.div`
+const PlaceHolder = styled.div`
+  pointer-events: none;
   grid-column-end: span 3;
+  @media (max-width: 950px) {
+    display: none;
+  }
+`;
+
+const Includes = styled.div`
+  grid-column-end: span 1;
   position: relative;
   span {
     font-size: 3rem;
@@ -274,6 +294,14 @@ const Button = styled.button`
   width: 100%;
   background-color: ${(props) => props.theme.colors.accent};
   color: ${(props) => props.theme.colors.foreground};
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      background-color: ${(props) =>
+        !props.disabled
+          ? darken(0.1, props.theme.colors.accent)
+          : props.theme.colors.foreground_low};
+    }
+  }
 `;
 
 const TierContainer = styled.div`
@@ -334,10 +362,30 @@ const TiersGrid = styled(MainGrid)`
       grid-column-start: 10;
     }
   }
+  @media (max-width: 950px) {
+    grid-template-columns: repeat(9, 1fr);
+    ${TierBackground} {
+      :nth-of-type(1) {
+        grid-column: 1 / span 9;
+      }
+      :nth-of-type(2),
+      :nth-of-type(3) {
+        display: none;
+      }
+    }
+    li {
+      flex-direction: row;
+      margin-bottom: 5%;
+      & > div:nth-of-type(1) {
+        width: 25%;
+      }
+    }
+  }
 `;
 
 const TiersSection = styled.section`
   color: ${(props) => props.theme.colors.background};
   background-color: ${(props) => props.theme.colors.foreground};
   width: 100%;
+  padding-bottom: 10%;
 `;

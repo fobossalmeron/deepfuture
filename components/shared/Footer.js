@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Imago from "public/assets/img/layout/logos/dfiimago.svg"
+import Imago from "public/assets/img/layout/logos/dfiimago.svg";
 
 const Footer = () => (
   <FooterContainer>
@@ -22,6 +22,12 @@ const FooterContainer = styled.footer`
   align-items: center;
   svg {
     width: 35px;
-    z-index:0;
+    z-index: 0;
+  }
+  @media (max-width: 1600px) {
+    padding: 20px 50px 3% 50px;
+  }
+  @media (max-width: 1600px) {
+    padding: 20px 6% 20px 6%;
   }
 `;

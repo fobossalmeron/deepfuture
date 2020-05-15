@@ -63,10 +63,11 @@ const TextContainer = styled.div`
       content: " ";
       height: 2px;
       background-color: ${(props) => props.theme.colors.foreground_lower};
-      width: 280px;
+      width: 170%;
       position: absolute;
       top: 0;
-      left: -50px;
+      left: 50%;
+      transform: translateX(-50%);
     }
     h6 {
       font-size: inherit;
@@ -83,6 +84,14 @@ const TextContainer = styled.div`
       border-radius: 50%;
       grid-row: 1 / span 2;
       margin-left: 10px;
+    }
+  }
+  @media (max-width: 900px) {
+    p {
+      font-size: 2rem;
+    }
+    div::before{
+      width:100%;
     }
   }
 `;
