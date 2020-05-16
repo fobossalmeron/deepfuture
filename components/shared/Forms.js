@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { darken, lighten } from "polished";
+import { darken } from "polished";
 
 export const Message = styled.div`
   color: ${(props) =>
@@ -56,8 +56,8 @@ export const Input = styled.input`
   appearance: textfield;
   ::placeholder {
     padding-top: 4px;
-    color: #31302e;
-    opacity: 0.5;
+    color: ${(props) => props.theme.colors.foreground_lowest};
+    opacity: 0.8;
   }
   @media (max-width: 750px) {
     padding: 10px 16px 11px 20px;
@@ -142,8 +142,8 @@ export const selectStyles = {
   placeholder: (provided) => ({
     ...provided,
     paddingTop: "4px",
-    color: "#31302e",
-    opacity: 0.5,
+    color: "#4F4F4F",
+    opacity: 0.8,
     padding: 0,
     margin: 0,
     fontSize: "1.7rem",
@@ -151,3 +151,22 @@ export const selectStyles = {
 };
 
 export const isEmail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+
+export const Gracias = styled.div`
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  h5 {
+    font-size: 2.4rem;
+    margin: 10px 0;
+    font-weight: 400;
+  }
+  p {
+    color: ${(props) => props.theme.colors.foreground_low};
+  }
+  @media(max-width:700px){
+    margin-top:20px;
+    align-items:center;
+    justify-content:center;
+  }
+`;

@@ -8,10 +8,9 @@ import {
   selectStyles,
   isEmail,
 } from "components/shared/Forms";
+import SuccessConfirmation from "components/shared/SuccessConfirmation"
 import Select from "react-select/";
 import Cookies from "js-cookie/dist/js.cookie.mjs";
-import Mail from "public/assets/img/layout/icons/mail.svg";
-import CircleIcon from "components/shared/CircleIcon";
 
 const LeadCollector = ({ complete, short, collectorId }) => {
   const [displayMessage, setMessage] = useState("");
@@ -114,14 +113,10 @@ const LeadCollector = ({ complete, short, collectorId }) => {
         </>
       )}
       {status === "success" && complete && (
-        <Gracias>
-          <Icon color={"#4F478B"}>
-            <Mail />
-          </Icon>
-
+        <SuccessConfirmation>
           <h5>¡Gracias por descargar! </h5>
           <p>Enviaremos el PDF a tu correo.</p>
-        </Gracias>
+        </SuccessConfirmation>
       )}
       {status !== "success" && (
         <>
@@ -177,26 +172,3 @@ const LeadCollector = ({ complete, short, collectorId }) => {
 };
 
 export default LeadCollector;
-
-const Icon = styled(CircleIcon)`
-  width: 100px;
-  height: 100px;
-  margin-bottom: 10%;
-  svg {
-    padding: 22%;
-  }
-`;
-
-const Gracias = styled.div`
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  h5 {
-    font-size: 2.4rem;
-    margin: 10px 0;
-    font-weight: 400;
-  }
-  p {
-    color: ${(props) => props.theme.colors.foreground_low};
-  }
-`;

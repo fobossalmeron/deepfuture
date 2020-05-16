@@ -6,7 +6,6 @@ import LoadingBar from "react-top-loading-bar";
 import Layout from "components/layout";
 import theme from "styles/theme";
 import Cookies from "js-cookie/dist/js.cookie";
-// import en from "public/locales/en/common.json";
 import es from "public/locales/es/common.json";
 import { LangProvider } from "utils/LangContext";
 import { withRouter } from "next/router";
@@ -16,10 +15,8 @@ class MyApp extends App {
   constructor(props) {
     super(props);
     this.state = {
-      // locale: props.router.route.includes("/en") ? en : es,
       locale: es,
       hasToConsent: false,
-      //return hasLoaded to false
       hasLoaded: true,
       readyToScroll: false
     };
@@ -74,8 +71,6 @@ class MyApp extends App {
           // transition out
           bordered.classList.add("hidden");
           logo.style.opacity = "0";
-          // bordered.style.transform = "scale(1)";
-          // bordered.style.borderWidth = "2px";
 
           setTimeout(() => {
             revealer.style.opacity = "0";

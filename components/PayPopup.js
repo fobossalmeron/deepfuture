@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { darken, lighten, readableColor } from "polished";
 import Cross from "public/assets/img/layout/cross.svg";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
-import { H2, H3 } from "components/shared/Dangerously";
+import { H3 } from "components/shared/Dangerously";
 import MercadoPago from "components/MercadoPago";
 import MercadoLogo from "public/assets/img/layout/logos/mercadopago.svg";
 import currency from "currency.js";
@@ -14,57 +14,54 @@ import Pdf from "public/assets/img/layout/icons/pdf.svg";
 import CircleIcon from "components/shared/CircleIcon";
 import Footer from "components/shared/Footer";
 
-const PayPopup = ({ setShowPay, product }) => {
-  const [internalShowPopup, setInternalShowPopup] = useState(false);
-
+const PayPopup = ({ setShowPay, showPay, product }) => {
   useEffect(() => {
-    popupShow();
-  }, []);
+    showPay && popupShow();
+    !showPay && unlockScreen();
+  }, [showPay]);
 
   const popupShow = () => {
     // Disable scroll
     const targetElement = document.querySelector("#PayPopup"); //dummy
     disableBodyScroll(targetElement);
-    setInternalShowPopup(true);
   };
 
   const unlockScreen = () => {
     const targetElement = document.querySelector("#PayPopup"); //dummy
     enableBodyScroll(targetElement);
-    setInternalShowPopup(false);
     setShowPay(false);
   };
 
   return (
     <>
-      <Wrapper clickable={internalShowPopup} id="PayPopup">
+      <Wrapper clickable={showPay} id="PayPopup">
+        <CrossContainerMobile>
+          <Cross onClick={unlockScreen} />
+        </CrossContainerMobile>
         <Left>
-          <H2>{`Taller <b>${product.title}</b>`}</H2>
-          <H3>{product.subtitle}</H3>
-          <p>{product.description}</p>
+          <h2>
+            Taller <b>{product ? product.title : null}</b>
+          </h2>
+          <H3>{product ? product.subtitle : null}</H3>
+          <p>{product ? product.description : null}</p>
           <span>
-            {currency(product.price, {
+            {currency(product ? product.price : 0, {
               symbol: "$",
               formatWithSymbol: true,
             }).format()}{" "}
             <span>MXN</span>
           </span>
           <Icons>
-            {product.id === 1 && (
-              <>
-                <Icon dark>
-                  <Sheets />
-                </Icon>
-                <Icon dark>
-                  <Pdf />
-                </Icon>
-              </>
+            <Icon dark>
+              <Sheets />
+            </Icon>
+            {product && product.id === 1 && (
+              <Icon dark>
+                <Pdf />
+              </Icon>
             )}
-            {product.id === 2 && (
+            {product && product.id === 2 && (
               <>
-                <Icon dark>
-                  <Sheets />
-                </Icon>
                 <Icon dark>
                   <Forms />
                 </Icon>
@@ -75,19 +72,19 @@ const PayPopup = ({ setShowPay, product }) => {
             )}
           </Icons>
         </Left>
-        <Right color={product.color}>
-          <Panel color={product.color}>
+        <Right color={product ? product.color : "red"}>
+          <Panel color={product ? product.color : "red"}>
             <Warning>
               <span>
                 *Confirma que tu correo sea correcto ya que ahí recibirás el
                 taller una vez realizada tu compra.
               </span>
             </Warning>
-            <MercadoPago product={product} />
+            <MercadoPago product={product ? product : null} />
           </Panel>
           <SmallPrint>
             <Transacciones>
-              <p>Transacciones seguras con</p>
+              <span>Transacciones seguras con</span>
               <MercadoLogo />
             </Transacciones>
             <p>
@@ -95,13 +92,16 @@ const PayPopup = ({ setShowPay, product }) => {
               Consulta nuestros Términos y Condiciones.
             </p>
           </SmallPrint>
+          <FooterStyledMobile>
+            <Footer />
+          </FooterStyledMobile>
         </Right>
       </Wrapper>
-      <Background visible={internalShowPopup}>
-        <TierBackground color={product.color} />
+      <Background visible={showPay}>
         <CrossContainer>
           <Cross onClick={unlockScreen} />
         </CrossContainer>
+        <TierBackground color={product ? product.color : "red"} />
         <FooterStyled>
           <Footer />
         </FooterStyled>
@@ -112,11 +112,25 @@ const PayPopup = ({ setShowPay, product }) => {
 
 export default PayPopup;
 
+const FooterStyledMobile = styled.div`
+  display: none;
+  @media (max-width: 950px) {
+    display: block;
+    footer {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+`;
+
 const FooterStyled = styled.div`
   position: absolute;
   bottom: 0;
-  width:100%;
-  margin:0 auto;
+  width: 100%;
+  margin: 0 auto;
+  @media (max-width: 950px) {
+    display: none;
+  }
 `;
 
 const Warning = styled.div`
@@ -129,6 +143,11 @@ const Warning = styled.div`
 
 const SmallPrint = styled.div`
   padding: 0 8%;
+  color: ${(props) => props.theme.colors.foreground};
+  padding-bottom: 20px;
+  @media (max-width: 370px) {
+    padding: 0 0 20px 0;
+  }
 `;
 
 const Transacciones = styled.div`
@@ -136,17 +155,17 @@ const Transacciones = styled.div`
   align-items: center;
   margin-top: 8%;
   margin-bottom: 10px;
-
   svg {
     max-width: 35px;
     margin-left: 10px;
   }
-  p {
-    font-size: 2.1rem !important;
+  span {
+    font-size: 2.1rem;
   }
 `;
 
 const Right = styled.div`
+  pointer-events: inherit;
   max-width: 450px;
   color: ${(props) =>
     readableColor(
@@ -165,9 +184,16 @@ const Right = styled.div`
     font-size: 1.4rem;
     opacity: 0.77;
   }
+  @media (max-width: 1250px) {
+    max-width: 350px;
+    ${Transacciones} span {
+      font-size: 1.8rem;
+    }
+  }
 `;
 
 const Panel = styled.div`
+  pointer-events: inherit;
   padding: 8%;
   background-color: ${(props) => props.color};
   border-radius: 5px;
@@ -175,14 +201,15 @@ const Panel = styled.div`
   box-shadow: ${(props) =>
     `-5px -5px 15px ${lighten(0.05, `${props.color}`)},
     4px 3px 11px ${darken(0.05, `${props.color}`)}`};
+  @media (max-width: 950px) {
+    box-shadow: none;
+  }
 `;
 
 const Left = styled.div`
+  pointer-events: inherit;
   max-width: 430px;
   font-weight: 400;
-  p {
-    color: ${(props) => props.theme.colors.foreground_low};
-  }
   h2 {
     font-weight: 300;
     b {
@@ -192,6 +219,7 @@ const Left = styled.div`
   h3 {
     padding-top: 10px;
     font-size: 2.4rem;
+    font-weight: 300;
     line-height: 130%;
     color: ${(props) => props.theme.colors.foreground_low};
     &::after {
@@ -204,6 +232,9 @@ const Left = styled.div`
       margin: 20px 0 35px;
     }
   }
+  p {
+    color: ${(props) => props.theme.colors.foreground_low};
+  }
   span {
     font-size: 2.6rem;
     margin-top: 15px;
@@ -214,11 +245,29 @@ const Left = styled.div`
       font-weight: 300;
     }
   }
+  @media (max-width: 1250px) {
+    max-width: 350px;
+    padding-top: 5%;
+    h2 {
+      font-size: 3rem;
+    }
+    h3 {
+      font-size: 2rem;
+    }
+  }
+  @media (max-width: 950px) {
+    h3::after {
+      margin: 15px 0 20px;
+    }
+  }
 `;
 
 const Icons = styled.div`
   display: flex;
   margin-top: 10%;
+  @media (max-width: 950px) {
+    margin-top: 15px;
+  }
 `;
 
 const Icon = styled(CircleIcon)`
@@ -227,6 +276,10 @@ const Icon = styled(CircleIcon)`
   margin-right: 20px;
   svg {
     padding: 24%;
+  }
+  @media (max-width: 950px) {
+    width: 50px;
+    height: 50px;
   }
 `;
 
@@ -237,9 +290,23 @@ const CrossContainer = styled.div`
   position: absolute;
   top: 20px;
   right: 20px;
+  z-index: 1;
   svg {
     width: 100%;
     cursor: pointer;
+  }
+  @media (max-width: 950px) {
+    display: none;
+  }
+`;
+
+const CrossContainerMobile = styled(CrossContainer)`
+  display: none;
+  @media (max-width: 950px) {
+    display: block;
+    position: fixed;
+    top: 10px;
+    right: 10px;
   }
 `;
 
@@ -258,6 +325,17 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media (max-width: 950px) {
+    flex-direction: column;
+    height: 100%;
+    justify-content: end;
+    width: 100%;
+    overflow-y: scroll;
+    top: 0;
+    transform: none;
+    left: 0;
+    padding: 30px 6%;
+  }
 `;
 
 const TierBackground = styled.div`
@@ -268,6 +346,10 @@ const TierBackground = styled.div`
   width: 50%;
   background-color: ${(props) => props.color};
   position: absolute;
+  pointer-events: inherit;
+  @media (max-width: 950px) {
+    display: none;
+  }
 `;
 
 const Background = styled.div`
@@ -279,6 +361,7 @@ const Background = styled.div`
   right: 0;
   top: 0;
   z-index: 13;
-  transition: opacity 0.4s ease;
+  transition: ${(props) =>
+    props.visible ? "opacity 0.4s ease" : "opacity 0.4s 0.4s ease"};
   background-color: ${(props) => props.theme.colors.background};
 `;

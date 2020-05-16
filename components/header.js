@@ -35,6 +35,7 @@ const HeaderContainer = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  height: 100%;
 `;
 
 const TopHeader = styled.header`
@@ -52,12 +53,12 @@ const TopHeader = styled.header`
   opacity: ${(props) => (props.reveal ? 1 : 0)};
   transition: opacity 0.3s ease 0.3s;
   box-shadow: ${(props) => `9px 9px 25px ${props.theme.colors.darkshadow}`};
-  @media(max-width:750px){
-    
-    height:58px;
+  @media (max-width: 750px) {
+    height: 63px;
   }
-  @media(max-width:600px){
+  @media (max-width: 600px) {
     padding: 11px 6%;
+    height: 58px;
   }
 `;
 
@@ -89,11 +90,17 @@ const HeaderCovidCollector = styled.div`
   display: flex;
   @media (max-width: 750px) {
     max-width: 400px;
-    label, button, input{
-      height:100%;
+    label,
+    button,
+    input {
+      height: 100%;
+      margin: 0;
+    }
+    button {
+      margin: 0;
     }
   }
   @media (max-width: 600px) {
-    display:none;
+    display: none;
   }
 `;

@@ -7,11 +7,12 @@ import {
   Button,
   selectStyles,
   isEmail,
+  Gracias
 } from "components/shared/Forms";
 import Cookies from "js-cookie/dist/js.cookie";
 import Select from "react-select/";
-import Mail from "public/assets/img/layout/icons/mail.svg";
-import CircleIcon from "components/shared/CircleIcon";
+import SuccessConfirmation from "components/shared/SuccessConfirmation"
+
 
 const SalesCollector = () => {
   const [displayMessage, setMessage] = useState(false);
@@ -96,13 +97,10 @@ const SalesCollector = () => {
         <Message error dangerouslySetInnerHTML={{ __html: displayMessage }} />
       )}
       {status === "success" && (
-        <Gracias>
-          <Icon color={"#4F478B"}>
-            <Mail />
-          </Icon>
+        <SuccessConfirmation>
           <h5>¡Gracias!</h5>
           <p>Te contactaremos a la brevedad.</p>
-        </Gracias>
+        </SuccessConfirmation>
       )}
       {status !== "success" && (
         <>
@@ -155,26 +153,3 @@ const SalesCollector = () => {
 };
 
 export default SalesCollector;
-
-const Icon = styled(CircleIcon)`
-  width: 100px;
-  height: 100px;
-  margin-bottom: 15px;
-  svg {
-    padding: 22%;
-  }
-`;
-
-const Gracias = styled.div`
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  h5 {
-    font-size: 2.4rem;
-    margin: 10px 0;
-    font-weight: 400;
-  }
-  p {
-    color: ${(props) => props.theme.colors.foreground_low};
-  }
-`;

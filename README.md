@@ -6,4 +6,3 @@ See here for info: https://err.sh/next.js/custom-error-no-custom-404
 Development:
 Meta tags
 Pixel action y Google action on download
-Mobile styles

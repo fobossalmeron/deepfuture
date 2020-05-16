@@ -6,16 +6,16 @@ import FormComplete from "components/FormComplete";
 import MainGrid from "components/shared/MainGrid";
 import DataItemsWhite from "components/DataItemsWhite";
 import DataItemsDark from "components/DataItemsDark";
-import LeadCollector from "components/shared/LeadCollector";
+import SalesPopup from "components/SalesPopup";
 import Title from "components/shared/Title";
 import LandBg from "components/LandBg";
 import Quote from "components/Quote";
 import PayPopup from "components/PayPopup";
-
-import Tiers from "components/Tiers";
+import Tiers from "components/Tiers/Tiers";
 
 function Index(props) {
   const [showPay, setShowPay] = useState(false);
+  const [showSales, setShowSales] = useState(false);
   const [product, setProduct] = useState(null);
 
   return (
@@ -45,7 +45,7 @@ function Index(props) {
         <Quote />
       </Intro>
       <Tiers
-        setShowPopup={props.setShowPopup}
+        setShowSales={setShowSales}
         setShowPay={setShowPay}
         setProduct={setProduct}
       />
@@ -78,7 +78,8 @@ function Index(props) {
       <LastForm>
         <FormComplete centered collectorId="FooterCollector" />
       </LastForm>
-      {showPay && <PayPopup setShowPay={setShowPay} product={product} />}
+      <PayPopup showPay={showPay} setShowPay={setShowPay} product={product} />
+      <SalesPopup showSales={showSales} setShowSales={setShowSales} />
     </>
   );
 }
@@ -166,11 +167,14 @@ const SecondForm = styled.section`
   color: ${(props) => props.theme.colors.background};
   background-color: ${(props) => props.theme.colors.foreground};
   width: 100%;
-  padding-bottom: 35px;
+  padding-bottom: 6%;
+  @media(max-width:900px){
+    padding-bottom:35px;
+  }
 `;
 
 const SecondFormGrid = styled(MainGrid)`
-  div:nth-of-type(1) {
+  & > div:nth-of-type(1) {
     grid-column: 2 / span 3;
     max-width: 340px;
     h5 {

@@ -1,22 +1,9 @@
 {
-  "nav": [
-    { "title": "pitch", "link": "/pitch" },
-    { "title": "nosotros", "link": "/nosotros" },
-    { "title": "portafolio", "link": "/portafolio" },
-    { "title": "contacto", "link": "#contact" }
-  ],
   "lang": "es",
   "cookie_message": {
     "title": "cookies bienvenidas",
     "p": "Solo usamos cookies para brindarte la mejor experiencia en nuestro sitio, pero puedes revisar nuestra ",
     "link": "política de cookies",
     "p_continued": " e inhibirlas si prefieres. Si sigues navegando por el sitio asumiremos que estás de acuerdo con ellas."
-  },
-  "error_page": {
-    "headerTitle": "Error",
-    "intro": {
-      "title": "Lo sentimos!<br/> página no encontrada",
-      "p": "Esta página no existe, por favor confirma que el URL es correcto."
-    }
   }
 }
