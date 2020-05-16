@@ -86,11 +86,15 @@ function Index(props) {
 export default React.memo(Index);
 
 const LastForm = styled(MainGrid)`
-padding-bottom:6%;
+  padding-bottom: 6%;
+  @media (max-width: 950px) {
+    padding-bottom: 0;
+  }
 `;
 
 const Land = styled(MainGrid)`
   min-height: 100vh;
+  padding-bottom: 6%;
   align-items: center;
   padding-top: 13%;
   pointer-events: none;
@@ -99,7 +103,7 @@ const Land = styled(MainGrid)`
     grid-column: 2 / span 10;
     padding-bottom: 7%;
     h1 {
-      max-width: 870px;
+      max-width: 880px;
       grid-column: 2 / span 8;
       b {
         font-weight: 500;
@@ -110,6 +114,44 @@ const Land = styled(MainGrid)`
       line-height: 135%;
       max-width: 650px;
       margin-top: 0;
+    }
+  }
+  @media (max-width: 1100px) {
+    #landtext {
+      h1 {
+        font-size: 4rem;
+        max-width: 760px;
+      }
+      h2 {
+        font-size: 2.1rem;
+        max-width: 530px;
+      }
+    }
+  }
+  @media (max-width: 950px) {
+    #landtext {
+      grid-column: 1 / span 12;
+      h1 {
+        font-size: 3.5rem;
+        max-width: 660px;
+      }
+      h2 {
+        font-size: 2rem;
+        max-width: 530px;
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    #landtext {
+      padding-top: 100px;
+      h1 {
+        font-size: 3rem;
+        max-width: 660px;
+      }
+      h2 {
+        font-size: 1.8rem;
+        max-width: 530px;
+      }
     }
   }
 `;
@@ -124,13 +166,13 @@ const SecondForm = styled.section`
   color: ${(props) => props.theme.colors.background};
   background-color: ${(props) => props.theme.colors.foreground};
   width: 100%;
-  padding-bottom: 6%;
+  padding-bottom: 35px;
 `;
 
 const SecondFormGrid = styled(MainGrid)`
   div:nth-of-type(1) {
     grid-column: 2 / span 3;
-    max-width:340px;
+    max-width: 340px;
     h5 {
       font-size: 3.6rem;
       font-weight: 400;
@@ -140,34 +182,33 @@ const SecondFormGrid = styled(MainGrid)`
       }
     }
   }
-  @media(max-width:1350px){
-    & > div:nth-of-type(1){
+  @media (max-width: 1350px) {
+    & > div:nth-of-type(1) {
       grid-column: 1 / span 4;
-      max-width:330px;
-      padding-right:10px;
+      max-width: 330px;
+      padding-right: 10px;
 
-      h5{
-        font-size:3rem;
+      h5 {
+        font-size: 3rem;
       }
     }
-    div:nth-of-type(2){
+    div:nth-of-type(2) {
       grid-column: 5 / span 8;
-
     }
   }
-  @media(max-width:900px){
-    div:nth-of-type(1){
+  @media (max-width: 900px) {
+    div:nth-of-type(1) {
       grid-column: 1 / span 12;
-      max-width:unset;
-      p{
-        max-width:500px;
-        margin-bottom:30px;
+      max-width: unset;
+      p {
+        max-width: 500px;
+        margin-bottom: 30px;
       }
     }
-    div:nth-of-type(2){
+    div:nth-of-type(2) {
       grid-column: 1 / span 12;
-      p{
-        max-width:300px;
+      p {
+        max-width: 300px;
       }
     }
   }

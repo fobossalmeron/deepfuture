@@ -516,7 +516,7 @@ const TiersGrid = styled(MainGrid)`
       h3,
       p {
         position: sticky !important;
-        left: 3%;
+        left: 5%;
         width: 300px;
         padding-left: 0px;
       }

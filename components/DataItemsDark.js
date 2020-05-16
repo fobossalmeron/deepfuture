@@ -109,5 +109,6 @@ const DataSection = styled(MainGrid)`
   }
   @media(max-width:600px){
     padding-bottom:13%;
+    padding-top: 35px;
   }
 `;

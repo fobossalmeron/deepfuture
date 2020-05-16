@@ -55,13 +55,14 @@ const Form = styled.div`
   }
   @media (max-width: 950px) {
     grid-column: ${(props) => (props.centered ? "1 / span 12" : "6 / span 6")};
+    margin-bottom:20px;
   }
   @media (max-width: 700px) {
     flex-direction: column;
-    & > div{
-      max-width:100%;
-      p{
-        margin-bottom:20px;
+    & > div {
+      max-width: 100%;
+      p {
+        margin-bottom: 20px;
       }
     }
   }
@@ -79,10 +80,24 @@ const Column = styled.div`
     font-size: 3rem;
     margin-bottom: 23px;
     b {
-      font-weight: 500;
+      font-weight: 400;
     }
   }
   p {
     opacity: 1 !important;
+    b{
+      font-weight:500;
+    }
+  }
+  @media (max-width: 950px) {
+    h4 {
+      font-size: 2.7rem;
+    }
+  }
+  @media (max-width: 600px) {
+    h4 {
+      font-size: 2.5rem;
+      margin: 10px 0 15px 0;
+    }
   }
 `;

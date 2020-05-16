@@ -1394,6 +1394,9 @@ const styles = `
     cursor: pointer;
     transition: 0.3s ease all;
   }
+  b{
+    font-weight:500;
+  }
 `;
 
 function renderStyles() {
@@ -1410,7 +1413,7 @@ function renderStyles() {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 211,
+    lineNumber: 214,
     columnNumber: 22
   }
 }));

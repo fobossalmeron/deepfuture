@@ -197,6 +197,9 @@ const styles = `
     cursor: pointer;
     transition: 0.3s ease all;
   }
+  b{
+    font-weight:500;
+  }
 `;
 
 function renderStyles() {
