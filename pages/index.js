@@ -130,12 +130,44 @@ const SecondForm = styled.section`
 const SecondFormGrid = styled(MainGrid)`
   div:nth-of-type(1) {
     grid-column: 2 / span 3;
+    max-width:340px;
     h5 {
       font-size: 3.6rem;
       font-weight: 400;
       margin: 0px 0px 20px 0px;
       b {
         font-weight: 500;
+      }
+    }
+  }
+  @media(max-width:1350px){
+    & > div:nth-of-type(1){
+      grid-column: 1 / span 4;
+      max-width:330px;
+      padding-right:10px;
+
+      h5{
+        font-size:3rem;
+      }
+    }
+    div:nth-of-type(2){
+      grid-column: 5 / span 8;
+
+    }
+  }
+  @media(max-width:900px){
+    div:nth-of-type(1){
+      grid-column: 1 / span 12;
+      max-width:unset;
+      p{
+        max-width:500px;
+        margin-bottom:30px;
+      }
+    }
+    div:nth-of-type(2){
+      grid-column: 1 / span 12;
+      p{
+        max-width:300px;
       }
     }
   }

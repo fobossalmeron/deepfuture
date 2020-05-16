@@ -50,6 +50,21 @@ const Form = styled.div`
   @media (max-width: 1200px) {
     grid-column: ${(props) => (props.centered ? "2 / span 9" : "6 / span 6")};
   }
+  @media (max-width: 1000px) {
+    grid-column: ${(props) => (props.centered ? "2 / span 10" : "6 / span 6")};
+  }
+  @media (max-width: 950px) {
+    grid-column: ${(props) => (props.centered ? "1 / span 12" : "6 / span 6")};
+  }
+  @media (max-width: 700px) {
+    flex-direction: column;
+    & > div{
+      max-width:100%;
+      p{
+        margin-bottom:20px;
+      }
+    }
+  }
 `;
 
 const Column = styled.div`

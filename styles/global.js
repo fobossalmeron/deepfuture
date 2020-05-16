@@ -110,10 +110,7 @@ const styles = `
   [type="submit"]:-moz-focusring,
   button:-moz-focusring {
     outline: 1px dotted ButtonText;
-  }
-
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-  
+  }  
 
   html {
     font-size: 62.5%;

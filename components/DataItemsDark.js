@@ -103,8 +103,11 @@ const DataDarkGrid = styled.ul`
 
 const DataSection = styled(MainGrid)`
   padding-top: 6%;
-  padding-bottom: 6%;
+  padding-bottom: 10%;
   p {
     color: ${(props) => props.theme.colors.foreground_low};
+  }
+  @media(max-width:600px){
+    padding-bottom:13%;
   }
 `;

@@ -37,6 +37,15 @@ const FullContainer = styled.div`
   justify-content: center;
   width: 100%;
   padding-bottom: 8%;
+  overflow:hidden;
+  @media (max-width: 950px) {
+    padding-bottom: 14%;
+
+  }
+  @media (max-width: 700px) {
+    padding-bottom: 20%;
+
+  }
 `;
 
 const TextContainer = styled.div`
@@ -86,7 +95,7 @@ const TextContainer = styled.div`
       margin-left: 10px;
     }
   }
-  @media (max-width: 900px) {
+  @media (max-width: 950px) {
     p {
       font-size: 2rem;
     }
@@ -116,5 +125,8 @@ const QuoteContainer = styled.div`
         `-2px -4px 11px ${props.theme.colors.lightlight},
         2px 2px 4px ${props.theme.colors.lightshadow}`};
     }
+  }
+  @media (max-width: 950px) {
+    max-width: 680px;
   }
 `;

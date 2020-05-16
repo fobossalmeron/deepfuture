@@ -59,25 +59,19 @@ const DataWhiteGrid = styled.ul`
   @media (max-width: 900px) {
     justify-content: space-around;
     flex-direction: column;
-    align-items:center;
-    li{
-      flex-direction:row;
-      margin-bottom:5%;
-      & > div:nth-of-type(1){
-        width:25%;
-       
+    align-items: center;
+    li {
+      flex-direction: row;
+      margin-bottom: 5%;
+      & > div:nth-of-type(1) {
+        width: 25%;
       }
     }
   }
   @media (max-width: 600px) {
-
-    li{
-      flex-direction:column;
-      margin-bottom:5%;
-      /* & > div:nth-of-type(1){
-        width:25%;
-       
-      } */
+    li {
+      flex-direction: column;
+      margin-bottom: 5%;
     }
   }
 `;
@@ -86,7 +80,7 @@ const DataSection = styled(MainGrid)`
   background-color: ${(props) => props.theme.colors.foreground};
   color: ${(props) => props.theme.colors.background};
   padding-top: 6%;
-  padding-bottom:3%;
+  padding-bottom: 3%;
   p {
     color: ${(props) => props.theme.colors.foreground_lowest};
   }

@@ -1163,22 +1163,13 @@ class MyDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
         lineNumber: 90,
         columnNumber: 11
       }
-    })), __jsx("script", {
-      type: "text/javascript",
-      src: "https://js.openpay.mx/openpay.v1.min.js",
+    })), __jsx("link", {
+      href: "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap",
+      rel: "stylesheet",
       __self: this,
       __source: {
         fileName: _jsxFileName,
         lineNumber: 92,
-        columnNumber: 9
-      }
-    }), __jsx("script", {
-      type: "text/javascript",
-      src: "https://js.openpay.mx/openpay-data.v1.min.js",
-      __self: this,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 96,
         columnNumber: 9
       }
     }));
@@ -1316,10 +1307,7 @@ const styles = `
   [type="submit"]:-moz-focusring,
   button:-moz-focusring {
     outline: 1px dotted ButtonText;
-  }
-
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
-  
+  }  
 
   html {
     font-size: 62.5%;
@@ -1422,7 +1410,7 @@ function renderStyles() {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
-    lineNumber: 214,
+    lineNumber: 211,
     columnNumber: 22
   }
 }));

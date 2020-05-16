@@ -11,27 +11,39 @@ import currency from "currency.js";
 const includes = [
   {
     title: "<b>Variables</b> de riesgo",
+    id: 1,
     subtitle: "Riesgo, oportunidades y COVID-19",
+    perks: ["18", "26", "26 +"],
   },
   {
     title: "Proceso de <b>prospectiva</b>",
+    id: 2,
     subtitle: "Aprende a reducir la incertidumbre",
+    perks: [true, true, true],
   },
   {
     title: "<b>Worksheets</b> de trabajo",
+    id: 3,
     subtitle: "Te brindamos los materiales necesarios",
+    perks: [true, true, true],
   },
   {
     title: "Taller con <b>expertos</b>",
+    id: 4,
     subtitle: "Con más de 20 años de experiencia",
+    perks: [false, true, true],
   },
   {
     title: "Plan de <b>acciones</b> con expertos",
+    id: 5,
     subtitle: "Prepárate para los escenarios futuros",
+    perks: [false, false, true],
   },
   {
     title: "<b>Personalización</b> para tu empresa",
+    id: 6,
     subtitle: "Ten a tu equipo en la misma página",
+    perks: [false, false, true],
   },
 ];
 
@@ -91,15 +103,22 @@ const tiers = [
   },
 ];
 
+const Perk = ({ perk }) => (
+  <Stat>
+    {typeof perk == "string" && perk}
+    {perk === true && <Check />}
+    {perk === false && <Uncheck />}
+  </Stat>
+);
+
 const Tier = ({ tier, setShowPopup, setShowPay, setProduct }) => {
   const buyOption = () => (setProduct(tier), setShowPay(true));
-
   return (
     <TierContainer color={tier.color}>
-      <Padded>
+      <div>
         <Fade>
           <h2>
-            Taller <b>{tier.title}</b>
+            <span>Taller</span> <b>{tier.title}</b>
           </h2>
           <H3>{tier.subtitle}</H3>
         </Fade>
@@ -111,7 +130,7 @@ const Tier = ({ tier, setShowPopup, setShowPay, setProduct }) => {
                 precision: 0,
                 symbol: "$",
                 formatWithSymbol: true,
-              }).format()}{" "}
+              }).format()}
               <span>MXN</span>
             </span>
             <span>
@@ -130,7 +149,7 @@ const Tier = ({ tier, setShowPopup, setShowPay, setProduct }) => {
             <Button onClick={setShowPopup}>Contacta a un asesor</Button>
           )}
         </Fade>
-      </Padded>
+      </div>
     </TierContainer>
   );
 };
@@ -146,84 +165,75 @@ function Tiers({ setShowPopup, setShowPay, setProduct }) {
           Conoce nuestros <b>talleres</b>
         </h3>
       </Title>
-      <TiersGrid>
-        <TierBackground />
-        <TierBackground />
-        <TierBackground />
-        <PlaceHolder />
-        {tiers.map((tier, i) => (
-          <Tier
-            setShowPopup={setShowPopup}
-            setShowPay={setShowPay}
-            key={"tier" + i}
-            tier={tier}
-            setProduct={setProduct}
-          />
-        ))}
-        <StatsGrid>
-        <Includes>
-          {/* <span>Incluye</span> */}
-          <StatsInclude>
+      <Scrollable>
+        <TiersGrid>
+          <TierBackground />
+          <TierBackground />
+          <TierBackground />
+          <PlaceHolder />
+          {tiers.map((tier, i) => (
+            <Tier
+              setShowPopup={setShowPopup}
+              setShowPay={setShowPay}
+              key={"tier" + i}
+              tier={tier}
+              setProduct={setProduct}
+            />
+          ))}
+          <StatsGrid>
+            <StatsTitle>Incluye</StatsTitle>
             {includes.map((include, i) => (
-              <li key={"include" + (i + 100)}>
-                <H3>{include.title}</H3>
-                <p>{include.subtitle}</p>
-              </li>
+              <React.Fragment key={"include" + i}>
+                <Includes>
+                  <H3>{include.title}</H3>
+                  <p>{include.subtitle}</p>
+                </Includes>
+                {include.perks.map((perk, i) => (
+                  <Perk key={"tierperks" + i + include.id} perk={perk} />
+                ))}
+              </React.Fragment>
             ))}
-          </StatsInclude>
-        </Includes>
-        {tiers.map((tier, i) => (
-          <Stats key={"tierstats" + i}>
-            <li className="insight">{tier.insights}</li>
-            {Object.entries(tier.perks).map((perk, i) => (
-              <li key={`tp-${i}-${tier.price}`}>
-                {perk[1] ? <Check /> : <Uncheck />}
-              </li>
-            ))}
-          </Stats>
-        ))}
-        </StatsGrid>
-      </TiersGrid>
+          </StatsGrid>
+        </TiersGrid>
+      </Scrollable>
     </TiersSection>
   );
 }
 
 export default Tiers;
 
+const StatsTitle = styled.span`
+  position: absolute;
+  left: 0;
+  top: -50px;
+  font-size: 3rem;
+  @media (max-width: 1300px) {
+    font-size: 2.3rem;
+  }
+  @media (max-width: 950px) {
+    display: none;
+  }
+`;
+
 const StatsGrid = styled.div`
-grid-template-columns: repeat(4, 1fr);
-grid-column: 1 / span 12;
-z-index:1;
-display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column: 1 / span 12;
+  z-index: 1;
+  grid-gap: 25px;
+  display: grid;
+  align-items: center;
+  padding-bottom: 40px;
+  position: relative;
+  li {
+    list-style: none;
+  }
 `;
 
-const Stats = styled.ul`
+const Stat = styled.div`
   text-align: center;
-  grid-column-end: span 1;
-  padding-bottom: 25px;
-  li {
-    padding: 17px 0;
-    &.insight {
-      font-weight: 500;
-      font-size: 2rem;
-      color: ${(props) => props.theme.colors.accent};
-    }
-  }
-`;
-
-const StatsInclude = styled(Stats)`
-  li {
-    text-align: left;
-    padding: 10px 0;
-    h3 {
-      font-size: 2rem;
-      color: ${(props) => props.theme.colors.accent};
-    }
-    p {
-      font-size: 1.7rem;
-      color: ${(props) => props.theme.colors.foreground_low};
-    }
-  }
+  font-weight: 500;
+  font-size: 2rem;
+  color: ${(props) => props.theme.colors.accent};
 `;
 
 const PlaceHolder = styled.div`
@@ -234,39 +244,38 @@ const PlaceHolder = styled.div`
   }
 `;
 
-const Includes = styled.div`
+const Includes = styled.li`
   grid-column-end: span 1;
   position: relative;
-  span {
-    font-size: 3rem;
-    position: absolute;
-    top: -50px;
+  text-align: left;
+  list-style: none;
+  padding: 10px 0;
+  padding-right: 10px;
+  h3 {
+    font-size: 2rem;
+    color: ${(props) => props.theme.colors.accent};
   }
-`;
-
-const Padded = styled.div`
-  padding: 8%;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  height: calc(100% - 80px);
-  div:nth-of-type(3) {
-    ::after {
-      content: " ";
-      height: 2px;
-      display: flex;
-      margin-top: 40px;
-      width: 100%;
-      opacity: 0.8;
-      background-color: ${(props) => props.theme.colors.foreground_lower};
+  p {
+    font-size: 1.7rem;
+    color: ${(props) => props.theme.colors.foreground_low};
+  }
+  /* @media (max-width: 950px) {
+    h3,
+    p {
+      position: sticky !important;
+      left: 10px;
+      width: 300px;
     }
-  }
+  } */
 `;
 
 const PreSpan = styled.div`
   font-size: 2rem;
   display: inline-flex;
   margin-right: 5px;
+  @media (max-width: 1100px) {
+    font-size: 1.7rem;
+  }
 `;
 
 const Price = styled.div`
@@ -275,6 +284,7 @@ const Price = styled.div`
   font-size: 2.7rem;
   margin: 10% 0;
   align-items: flex-end;
+  line-height: 100%;
   span {
     span {
       font-size: 2rem;
@@ -288,10 +298,23 @@ const Price = styled.div`
       font-size: 1.7rem;
     }
   }
+  @media (max-width: 1300px) {
+    font-size: 2.5rem;
+    span {
+      span {
+        font-size: 1.5rem;
+      }
+      :nth-of-type(2) {
+        font-size: 1.3rem;
+      }
+    }
+  }
 `;
 
 const Button = styled.button`
   width: 100%;
+  padding-right: 6px;
+  padding-left: 6px;
   background-color: ${(props) => props.theme.colors.accent};
   color: ${(props) => props.theme.colors.foreground};
   @media (hover: hover) and (pointer: fine) {
@@ -302,14 +325,31 @@ const Button = styled.button`
           : props.theme.colors.foreground_low};
     }
   }
+  @media (max-width: 1100px) {
+    font-size: 1.5rem;
+  }
 `;
 
 const TierContainer = styled.div`
   grid-column-end: span 3;
-  /* box-shadow: ${(props) =>
-    `-4px -6px 11px ${props.theme.colors.lightlight}, 
-    4px 4px 12px ${props.theme.colors.lightshadow}`}; */
-  /* border-radius: 3px; */
+  & > div {
+    padding: 8%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: calc(100% - 80px);
+    div:nth-of-type(3) {
+      ::after {
+        content: " ";
+        height: 2px;
+        display: flex;
+        margin-top: 40px;
+        width: 100%;
+        opacity: 0.8;
+        background-color: ${(props) => props.theme.colors.foreground_lower};
+      }
+    }
+  }
   ::before {
     content: " ";
     display: flex;
@@ -333,6 +373,49 @@ const TierContainer = styled.div`
     color: ${(props) => props.theme.colors.foreground_lowest};
     opacity: 0.6;
   }
+  @media (max-width: 1300px) {
+    h2 {
+      font-size: 2.3rem;
+    }
+
+    h3 {
+      font-size: 1.7rem;
+    }
+  }
+  @media (max-width: 1100px) {
+    h2 {
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+    }
+  }
+  @media (max-width: 950px) {
+    grid-column-end: span 1;
+    grid-row: 1;
+    h2 {
+      font-size: 2.2rem;
+      margin-top: 15px;
+    }
+
+    h3 {
+      font-size: 1.7rem;
+    }
+    & > div {
+      height: calc(100% - 60px);
+      padding: 6%;
+      div:nth-of-type(3) {
+        ::after {
+          display: none;
+        }
+      }
+    }
+    &::before {
+      height: 60px;
+      /* border-radius: 0; */
+    }
+  }
 `;
 
 const TierBackground = styled.div`
@@ -351,6 +434,13 @@ const TierBackground = styled.div`
 const TiersGrid = styled(MainGrid)`
   background-color: ${(props) => props.theme.colors.foreground};
   color: ${(props) => props.theme.colors.background};
+  li {
+    flex-direction: row;
+    margin-bottom: 5%;
+    & > div:nth-of-type(1) {
+      width: 25%;
+    }
+  }
   ${TierBackground} {
     :nth-of-type(1) {
       grid-column-start: 4;
@@ -362,24 +452,91 @@ const TiersGrid = styled(MainGrid)`
       grid-column-start: 10;
     }
   }
+  @media (max-width: 1300px) {
+    grid-column-gap: 18px;
+  }
   @media (max-width: 950px) {
-    grid-template-columns: repeat(9, 1fr);
+    width: 120%;
+    grid-template-columns: repeat(3, 1fr);
     ${TierBackground} {
+      grid-column-end: span 1;
+      grid-row: 1 / span 1;
       :nth-of-type(1) {
-        grid-column: 1 / span 9;
+        grid-column-start: 1;
       }
-      :nth-of-type(2),
+      :nth-of-type(2) {
+        grid-column-start: 2;
+      }
       :nth-of-type(3) {
-        display: none;
+        grid-column-start: 3;
       }
     }
-    li {
-      flex-direction: row;
-      margin-bottom: 5%;
-      & > div:nth-of-type(1) {
-        width: 25%;
+    ${StatsGrid} {
+      grid-column: 1 / span 3;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 0;
+    }
+    ${Stat} {
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      &::before {
+        width: 15px;
+        content: " ";
+        height: 15px;
+        position: relative;
+        display: block;
+        border-radius: 50%;
+        align-self: center;
+        margin-right: 20px;
+      }
+      &:nth-of-type(3n - 1) {
+        &:before {
+          background-color: #1c4794;
+        }
+        border: 2px solid ${(props) => props.theme.colors.foreground_lower};
+        border-top: 0;
+        border-bottom: 0;
+      }
+      &:nth-of-type(3n - 2) {
+        &:before {
+          background-color: #62af9a;
+        }
+      }
+      &:nth-of-type(3n - 3) {
+        &:before {
+          background-color: ${(props) => props.theme.colors.background};
+        }
       }
     }
+    ${Includes} {
+      grid-column: 1 / span 3;
+      margin-bottom: 5px;
+      h3,
+      p {
+        position: sticky !important;
+        left: 3%;
+        width: 300px;
+        padding-left: 0px;
+      }
+      &:not(:first-of-type) {
+        margin-top: 5px;
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    width: 220%;
+  }
+`;
+
+const Scrollable = styled.div`
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom:40px;
+  @media(max-width:950px){
+    padding-bottom:10px;
   }
 `;
 
@@ -388,4 +545,5 @@ const TiersSection = styled.section`
   background-color: ${(props) => props.theme.colors.foreground};
   width: 100%;
   padding-bottom: 10%;
+  overflow-x: hidden;
 `;

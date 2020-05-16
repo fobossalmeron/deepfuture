@@ -89,14 +89,7 @@ export default class MyDocument extends Document {
           <Main />
           <NextScript />
         </body>
-        <script
-          type="text/javascript"
-          src="https://js.openpay.mx/openpay.v1.min.js"
-        ></script>
-        <script
-          type="text/javascript"
-          src="https://js.openpay.mx/openpay-data.v1.min.js"
-        ></script>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet"/>
       </Html>
     );
   }
