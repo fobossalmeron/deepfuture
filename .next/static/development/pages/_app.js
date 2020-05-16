@@ -108,7 +108,7 @@ var CookieMessage = function CookieMessage(props) {
 var Border = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].div.withConfig({
   displayName: "CookieMessage__Border",
   componentId: "krtr03-0"
-})(["background-color:", ";padding:15px 25px 20px;border-radius:3px;"], function (props) {
+})(["background-color:", ";padding:15px 25px 20px;border-radius:5px;"], function (props) {
   return props.theme.colors.background;
 });
 var Button = styled_components__WEBPACK_IMPORTED_MODULE_1__["default"].button.withConfig({
@@ -23251,7 +23251,7 @@ __webpack_require__.r(__webpack_exports__);
     accent: "#4F478B",
     error: "#CC2E44",
     success: "#27AE60",
-    tier1: "#866CF0",
+    tier1: "#7C61CA",
     tier2: "#5E4ED9",
     darklight: "rgba(90,78,238, 0.13)",
     darkshadow: "rgba(0,0,0,0.19)",

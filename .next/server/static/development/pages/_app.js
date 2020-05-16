@@ -222,7 +222,7 @@ const CookieMessage = props => {
 const Border = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.div.withConfig({
   displayName: "CookieMessage__Border",
   componentId: "krtr03-0"
-})(["background-color:", ";padding:15px 25px 20px;border-radius:3px;"], props => props.theme.colors.background);
+})(["background-color:", ";padding:15px 25px 20px;border-radius:5px;"], props => props.theme.colors.background);
 const Button = styled_components__WEBPACK_IMPORTED_MODULE_1___default.a.button.withConfig({
   displayName: "CookieMessage__Button",
   componentId: "krtr03-1"
@@ -3683,7 +3683,7 @@ __webpack_require__.r(__webpack_exports__);
     accent: "#4F478B",
     error: "#CC2E44",
     success: "#27AE60",
-    tier1: "#866CF0",
+    tier1: "#7C61CA",
     tier2: "#5E4ED9",
     darklight: "rgba(90,78,238, 0.13)",
     darkshadow: "rgba(0,0,0,0.19)",

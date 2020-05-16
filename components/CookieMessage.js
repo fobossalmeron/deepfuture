@@ -32,7 +32,7 @@ export default CookieMessage;
 const Border = styled.div`
   background-color: ${(props) => props.theme.colors.background};
   padding: 15px 25px 20px;
-  border-radius: 3px;
+  border-radius: 5px;
 `;
 
 const Button = styled.button`
