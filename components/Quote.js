@@ -11,12 +11,13 @@ function Quote() {
           <QuoteOpen />
           <TextContainer>
             <p>
-              Aquí va a una quote de alguien que ya tomó el taller y que dijo
-              que está bárbaro y que le cambió la vida
+              De verdad recomiendo este taller a mis colegas, la información es
+              basta y reveladora. Fue muy útil en la planeación estratégica a
+              largo plazo de nuestra empresa
             </p>
             <div>
-              <h6>Juan José de Régules</h6>
-              <label>CEO Sherpa-X</label>
+              <h6>Jorge Milke</h6>
+              <label>Senior Manager, Deloitte</label>
               <img
                 src="/assets/img/layout/profile.jpg"
                 alt="Juan José de Régules"
@@ -37,14 +38,12 @@ const FullContainer = styled.div`
   justify-content: center;
   width: 100%;
   padding-bottom: 8%;
-  overflow:hidden;
+  overflow: hidden;
   @media (max-width: 950px) {
     padding-bottom: 14%;
-
   }
   @media (max-width: 700px) {
     padding-bottom: 20%;
-
   }
 `;
 
@@ -55,7 +54,7 @@ const TextContainer = styled.div`
   p {
     color: ${(props) => props.theme.colors.accent};
     font-size: 2.5rem;
-    font-weight: 400;
+    font-weight: 300;
     max-width: 660px;
     text-align: center;
     padding: 17% 2% 4%;
@@ -88,19 +87,19 @@ const TextContainer = styled.div`
       grid-row: 2 / span 1;
     }
     img {
-      width: 43px;
-      height: 43px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       grid-row: 1 / span 2;
-      margin-left: 10px;
+      margin-left: 13px;
     }
   }
   @media (max-width: 950px) {
     p {
       font-size: 2rem;
     }
-    div::before{
-      width:100%;
+    div::before {
+      width: 100%;
     }
   }
 `;
