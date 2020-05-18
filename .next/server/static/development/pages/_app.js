@@ -3683,7 +3683,7 @@ __webpack_require__.r(__webpack_exports__);
     accent: "#4F478B",
     error: "#CC2E44",
     success: "#27AE60",
-    tier1: "#7C61CA",
+    tier1: "#62AF9A",
     tier2: "#5E4ED9",
     darklight: "rgba(90,78,238, 0.13)",
     darkshadow: "rgba(0,0,0,0.19)",
