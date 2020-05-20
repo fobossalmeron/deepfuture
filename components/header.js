@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Logo from "public/assets/img/layout/logos/dfilogo.svg";
 import LeadCollector from "components/shared/LeadCollector";
 
-function Header({ hasLoaded, isOpen, closeNav, locale, route }) {
+function Header({ hasLoaded, route, production }) {
   const backUp = (e) => {
     // closeNav();
     route === "/" &&
@@ -21,7 +21,7 @@ function Header({ hasLoaded, isOpen, closeNav, locale, route }) {
           </LogoLink>
         </Link>
         <HeaderCovidCollector>
-          <LeadCollector short collectorId="smallCollector" />
+          <LeadCollector production={production} short collectorId="smallCollector" />
         </HeaderCovidCollector>
       </HeaderContainer>
     </TopHeader>

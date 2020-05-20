@@ -13,7 +13,7 @@ import LinkedInTag from "react-linkedin-insight";
 import ReactPixel from "react-facebook-pixel";
 import Cookies from "js-cookie/dist/js.cookie.mjs";
 
-const LeadCollector = ({ complete, short, collectorId }) => {
+const LeadCollector = ({ complete, short, collectorId, production }) => {
   const [displayMessage, setMessage] = useState("");
   const [showMessage, setShowMessage] = useState(false);
   const [industryOption, setIndustryOption] = useState(null);
@@ -55,15 +55,19 @@ const LeadCollector = ({ complete, short, collectorId }) => {
 
     const data = await response.json();
 
-    setMessage(
-      data.id
-        ? `Gracias por descargar, enviaremos el PDF a tu correo.`
-        : "El correo que ingresaste ya descargó el PDF"
-    );
-    setStatus(data.id ? "success" : "error");
-    data.id && Cookies.set("userEmail", emailAddress);
-    data.id && LinkedInTag.track(2186426); //descarga PDF
-    ReactPixel.track("Lead", "Descargo PDF"); // descarga PDF
+    if (data.id) {
+      setMessage("Gracias por descargar, enviaremos el PDF a tu correo.");
+      setStatus("success");
+      Cookies.set("userEmail", emailAddress);
+      if (production) {
+        LinkedInTag.track(2186426); //descarga PDF
+        ReactPixel.init("266265964568832", { em: emailAddress });
+        ReactPixel.track("Lead", { email: emailAddress }); // descarga PDF
+      }
+    } else {
+      setMessage("El correo que ingresaste ya descargó el PDF");
+      setStatus("error");
+    }
   };
 
   const submitComplete = () => {

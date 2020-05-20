@@ -38,7 +38,7 @@ function Index(props) {
             autogestivo o guiado por expertos
           </h2>
         </div>
-        <FormComplete centered collectorId="LandingCollector" />
+        <FormComplete production={props.production} centered collectorId="LandingCollector" />
       </Land>
       <Intro>
         <DataItemsWhite />
@@ -63,7 +63,7 @@ function Index(props) {
               </p>
             </div>
           </Fade>
-          <FormComplete collectorId="TiersCollector" />
+          <FormComplete production={props.production} collectorId="TiersCollector" />
         </SecondFormGrid>
       </SecondForm>
       <DataItemsDark />
@@ -76,7 +76,7 @@ function Index(props) {
         </h3>
       </Title>
       <LastForm>
-        <FormComplete centered collectorId="FooterCollector" />
+        <FormComplete production={props.production} centered collectorId="FooterCollector" />
       </LastForm>
       <PayPopup showPay={showPay} setShowPay={setShowPay} product={product} />
       <SalesPopup showSales={showSales} setShowSales={setShowSales} />

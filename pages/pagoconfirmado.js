@@ -7,10 +7,8 @@ import { Button } from "components/shared/Forms";
 import downloadWorkshop from "utils/downloadWorkshop";
 import Tag from "components/shared/Tag";
 import SingleAction from "components/shared/SingleAction";
-import LinkedInTag from 'react-linkedin-insight';
+import LinkedInTag from "react-linkedin-insight";
 import ReactPixel from "react-facebook-pixel";
-
-const production = false;
 
 function PagoConfirmado(props) {
   const [userDidPay, setUserDidPay] = useState(false);
@@ -22,34 +20,8 @@ function PagoConfirmado(props) {
     var ref = document.referrer;
     console.log(ref);
     if (!ref.includes("mercadopago")) {
-      if (production) {
+      if (props.production) {
         window.location.replace("/");
-      }
-    }
-    var _tier1 = Cookies.get("comprarTier1");
-    var _tier2 = Cookies.get("adquirirTier2");
-    if (_tier1 === undefined && _tier2 === undefined) {
-      if (production) {
-        window.location.replace("/");
-      }
-    }
-    if (_tier1 === "true") {
-      // console.log("Cookie dice compro tier 1", _tier1);
-      setUserDidPay(true);
-      setProductBought(1);
-      LinkedInTag.track(2186434); //compra tier 1
-      ReactPixel.track('Purchase', {value: 1400.00, currency: 'MXN'} ) 		// compra tier 1
-      if (production) {
-        Cookies.remove("comprarTier1");
-      }
-    }
-    if (_tier2 === "true") {
-      // console.log("Cookie dice compro tier 2", _tier2);
-      setUserDidPay(true);
-      setProductBought(2);
-      ReactPixel.track('Purchase', {value: 10000.00, currency: 'MXN'} ) 		// compra tier 2
-      if (production) {
-        Cookies.remove("adquirirTier2");
       }
     }
     var _email = Cookies.get("userEmail");
@@ -58,14 +30,63 @@ function PagoConfirmado(props) {
     } else {
       getUserEmail(_email);
     }
+    var _tier1 = Cookies.get("comprarTier1");
+    var _tier2 = Cookies.get("adquirirTier2");
+    if (_tier1 === undefined && _tier2 === undefined) {
+      if (props.production) {
+        window.location.replace("/");
+      }
+    }
+    if (_tier1 === "true") {
+      // console.log("Cookie dice compro tier 1", _tier1);
+      setUserDidPay(true);
+      setProductBought(1);
+      if (props.production) {
+        Cookies.remove("comprarTier1");
+        LinkedInTag.track(2186434); //compra tier 1
+      }
+    }
+    if (_tier2 === "true") {
+      // console.log("Cookie dice compro tier 2", _tier2);
+      setUserDidPay(true);
+      setProductBought(2);
+      if (props.production) {
+        Cookies.remove("adquirirTier2");
+      }
+    }
   }, []);
 
   useEffect(() => {
     if (userDidPay) {
       setUserPayAttributesAndLists();
+      if (props.production) {
+        ReactPixel.init("266265964568832", { em: userEmail });
+        if (productBought === 1) {
+          ReactPixel.track("Purchase", {
+            value: 1500.0,
+            currency: "MXN",
+            contents: [
+              {
+                id: "tier1",
+                quantity: 1,
+              },
+            ],
+          }); // compra tier 1
+        } else if (productBought === 2) {
+          ReactPixel.track("Purchase", {
+            value: 10000.0,
+            currency: "MXN",
+            contents: [
+              {
+                id: "tier2",
+                quantity: 1,
+              },
+            ],
+          }); // compra tier 1
+        }
+      }
     }
   }, [userDidPay]);
-
 
   const setUserPayAttributesAndLists = async () => {
     var attributes =
@@ -104,40 +125,40 @@ function PagoConfirmado(props) {
       />
       <LandBg />
       <SingleAction>
-          {userDidPay && productBought === 1 && (
-            <>
-              <Tag color={theme.colors.tier1}>
-                Taller <b>autogestivo</b>
-              </Tag>
-              <h3>¡Gracias por tu pago!</h3>
-              <p>
-                Haz click en el botón para descargar tu taller. De igual forma
-                te será enviado a {userEmail}.
-              </p>
-              <Button onClick={downloadWorkshop}>Descargar taller</Button>
-            </>
-          )}
-          {userDidPay && productBought === 2 && (
-            <>
-              <Tag color={theme.colors.tier2}>
-                Taller <b>personal</b>
-              </Tag>
-              <h3>¡Gracias por tu pago!</h3>
-              <p>
-                Nos pondremos en contacto contigo en {userEmail} para agendar el
-                día y la hora del taller.
-              </p>
-            </>
-          )}
-          {!userDidPay && (
-            <>
-              <h3>Hay un error</h3>
-              <p>
-                Si tienes problemas con tu pago por favor escríbenos a
-                support@deepfuture.institute
-              </p>
-            </>
-          )}
+        {userDidPay && productBought === 1 && (
+          <>
+            <Tag color={theme.colors.tier1}>
+              Taller <b>autogestivo</b>
+            </Tag>
+            <h3>¡Gracias por tu pago!</h3>
+            <p>
+              Haz click en el botón para descargar tu taller. De igual forma te
+              será enviado a {userEmail}.
+            </p>
+            <Button onClick={downloadWorkshop}>Descargar taller</Button>
+          </>
+        )}
+        {userDidPay && productBought === 2 && (
+          <>
+            <Tag color={theme.colors.tier2}>
+              Taller <b>personal</b>
+            </Tag>
+            <h3>¡Gracias por tu pago!</h3>
+            <p>
+              Nos pondremos en contacto contigo en {userEmail} para agendar el
+              día y la hora del taller.
+            </p>
+          </>
+        )}
+        {!userDidPay && (
+          <>
+            <h3>Hay un error</h3>
+            <p>
+              Si tienes problemas con tu pago por favor escríbenos a
+              support@deepfuture.institute
+            </p>
+          </>
+        )}
       </SingleAction>
     </>
   );

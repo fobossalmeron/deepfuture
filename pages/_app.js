@@ -11,6 +11,8 @@ import { LangProvider } from "utils/LangContext";
 import { withRouter } from "next/router";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
+const production = true;
+
 class MyApp extends App {
   constructor(props) {
     super(props);
@@ -136,11 +138,13 @@ class MyApp extends App {
             hasToConsent={this.state.hasToConsent}
             hasLoaded={this.state.hasLoaded}
             toggleLang={this.toggleLang}
+            production={production}
           >
             <Component
               locale={this.state.locale}
               {...pageProps}
               lang={this.state.locale.lang}
+              production={production}
             />
           </Layout>
         </LangProvider>

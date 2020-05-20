@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { H1, H2 } from "components/shared/Dangerously";
 import LeadCollector from "components/shared/LeadCollector";
 
-function FormComplete({ centered, collectorId }) {
+function FormComplete({ centered, collectorId, production }) {
   return (
     <Form centered={centered}>
       <Column>
@@ -29,7 +29,11 @@ function FormComplete({ centered, collectorId }) {
         )}
       </Column>
       <Column>
-        <LeadCollector complete collectorId={collectorId} />
+        <LeadCollector
+          production={production}
+          complete
+          collectorId={collectorId}
+        />
       </Column>
     </Form>
   );
@@ -55,7 +59,7 @@ const Form = styled.div`
   }
   @media (max-width: 950px) {
     grid-column: ${(props) => (props.centered ? "1 / span 12" : "6 / span 6")};
-    margin-bottom:20px;
+    margin-bottom: 20px;
   }
   @media (max-width: 700px) {
     flex-direction: column;
@@ -85,8 +89,8 @@ const Column = styled.div`
   }
   p {
     opacity: 1 !important;
-    b{
-      font-weight:500;
+    b {
+      font-weight: 500;
     }
   }
   @media (max-width: 950px) {

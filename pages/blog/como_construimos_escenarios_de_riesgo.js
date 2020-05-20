@@ -172,7 +172,7 @@ function BlogPost(props) {
         </h3>
       </Title>
       <LastForm>
-        <FormComplete centered collectorId="BlogCollector" />
+        <FormComplete production={props.production} centered collectorId="BlogCollector" />
       </LastForm>
     </>
   );

@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import CookieMessage from "./CookieMessage";
 import { initGA, logPageView } from "utils/analytics";
 import ReactPixel from "react-facebook-pixel";
-import LinkedInTag from 'react-linkedin-insight';
+import LinkedInTag from "react-linkedin-insight";
 import Footer from "components/shared/Footer";
 
 export default ({
@@ -15,31 +15,36 @@ export default ({
   hasToConsent,
   hasLoaded,
   locale,
+  production,
 }) => {
   const [showConsentMessage, setShowConsentMessage] = useState(true);
   const router = useRouter();
 
   useEffect(() => {
     // ReactPixel Config
-    ReactPixel;
-    const options = {
-      autoConfig: true,
-      debug: false,
-    };
-    ReactPixel.init("266265964568832", null, options);
-    LinkedInTag.init(2035866);
+    if (production) {
+      ReactPixel;
+      const options = {
+        autoConfig: true,
+        debug: false,
+      };
+      ReactPixel.init("266265964568832", null, options);
+      LinkedInTag.init(2035866);
+    }
   }, []);
 
   useEffect(() => {
-    //Google Analytics
-    if (!window.GA_INITIALIZED) {
-      initGA();
-      window.GA_INITIALIZED = true;
-    }
-    logPageView();
+    if (production) {
+      //Google Analytics
+      if (!window.GA_INITIALIZED) {
+        initGA();
+        window.GA_INITIALIZED = true;
+      }
+      logPageView();
 
-    // ReactPixel
-    ReactPixel.pageView();
+      // ReactPixel
+      ReactPixel.pageView();
+    }
   }, [router.route]);
 
   useEffect(() => {
@@ -65,7 +70,12 @@ export default ({
   return (
     <>
       <PageWrapper id="Wrapper">
-        <Header hasLoaded={hasLoaded} locale={locale} route={router.route} />
+        <Header
+          production={production}
+          hasLoaded={hasLoaded}
+          locale={locale}
+          route={router.route}
+        />
         {React.cloneElement(children, {
           hasLoaded: hasLoaded,
         })}

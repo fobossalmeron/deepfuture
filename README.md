@@ -10,6 +10,7 @@ Meter tiers correctos
 Cambiar los pagos a modo producción
 Borrar los servidores de sendinblue
 Google action on download
+Header en encuesta
 
 correos:
 - soporte@deepfuture.institute
