@@ -9,6 +9,7 @@ import Tag from "components/shared/Tag";
 import SingleAction from "components/shared/SingleAction";
 import LinkedInTag from "react-linkedin-insight";
 import ReactPixel from "react-facebook-pixel";
+import { logEvent } from "utils/analytics";
 
 function PagoConfirmado(props) {
   const [userDidPay, setUserDidPay] = useState(false);
@@ -63,6 +64,8 @@ function PagoConfirmado(props) {
       if (props.production) {
         ReactPixel.init("266265964568832", { em: userEmail });
         if (productBought === 1) {
+          //compra tier 1 GA
+          logEvent("Purchase", "Tier1");
           //compra tier 1 LN
           LinkedInTag.track(2186434);
           // compra tier 1 FB
@@ -77,6 +80,8 @@ function PagoConfirmado(props) {
             ],
           }); 
         } else if (productBought === 2) {
+          //compra tier 1 GA
+          logEvent("Purchase", "Tier2");
           // compra tier 2 FB
           ReactPixel.track("Purchase", {
             value: 10000.0,

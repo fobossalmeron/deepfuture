@@ -7,8 +7,9 @@ Development:
 Meta tags
 Terminos y condiciones mobile
 Meter tiers correctos
-Google action on download
 Cambiar precio 1400
+Worksheet
+Nuevo pixel de Fb + Pixel de Ln tier 2
 
 correos:
 - soporte@deepfuture.institute
