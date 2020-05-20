@@ -15,6 +15,8 @@ const SingleColumnContainer = styled(MainGrid)`
   text-align: left;
   padding-top: 6%;
   font-weight: 300;
+  font-size: 2rem;
+  line-height:135%;
   & > div {
     color: ${(props) => props.theme.colors.foreground};
     padding-bottom: 7%;
@@ -33,12 +35,23 @@ const SingleColumnContainer = styled(MainGrid)`
       font-size: 3rem;
       margin-bottom: 20px;
       max-width: 600px;
+      line-height: 125%;
       margin: 37px 0px 20px;
+      b{
+      }
+    }
+    h4{
+      font-size:inherit;
+      line-height: 100%;
+      margin-bottom:0;
+      margin-top:10px;
+    }
+    a{
+      color: ${(props) => props.theme.colors.foreground};
     }
     p {
       margin: 20px 0;
       max-width: 600px;
-      font-size: 2rem;
       opacity: 1;
       color: ${(props) => props.theme.colors.foreground_low};
       b {
@@ -49,8 +62,11 @@ const SingleColumnContainer = styled(MainGrid)`
       width: 100%;
       max-width: 600px;
     }
-    ul li {
-      display: flex;
+    ul{
+      font-size:inherit;
+      line-height: inherit;
+      li {
+      display: block;
       margin-bottom: 5px;
       &:before {
         content: " ";
@@ -58,11 +74,12 @@ const SingleColumnContainer = styled(MainGrid)`
         height: 10px;
         margin-top: 5px;
         border-radius: 100%;
-        display: block;
+        display: inline-block;
         margin-right: 10px;
         background-color: ${(props) => props.theme.colors.accent};
       }
     }
+    } 
     ol {
       margin-top: 5px;
       counter-reset: item;

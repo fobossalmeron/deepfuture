@@ -21,7 +21,7 @@ function BlogPost(props) {
           "¿Cómo construímos escenarios de riesgo? | Deep Future Institute"
         }
         canonical={
-          "https://deepfuture.institute/como_construimos_escenarios_de_riesgo"
+          "https://deepfuture.institute/blog/como_construimos_escenarios_de_riesgo"
         }
         lang={props.lang}
       />

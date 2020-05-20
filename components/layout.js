@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import CookieMessage from "./CookieMessage";
 import { initGA, logPageView } from "utils/analytics";
 import ReactPixel from "react-facebook-pixel";
+import LinkedInTag from 'react-linkedin-insight';
 import Footer from "components/shared/Footer";
 
 export default ({
@@ -26,6 +27,7 @@ export default ({
       debug: false,
     };
     ReactPixel.init("742484219622623", null, options);
+    LinkedInTag.init(2035866);
   }, []);
 
   useEffect(() => {

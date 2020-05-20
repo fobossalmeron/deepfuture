@@ -7,6 +7,7 @@ import { Button } from "components/shared/Forms";
 import downloadWorkshop from "utils/downloadWorkshop";
 import Tag from "components/shared/Tag";
 import SingleAction from "components/shared/SingleAction";
+import LinkedInTag from 'react-linkedin-insight';
 
 const production = true;
 
@@ -35,6 +36,7 @@ function PagoConfirmado(props) {
       // console.log("Cookie dice compro tier 1", _tier1);
       setUserDidPay(true);
       setProductBought(1);
+      LinkedInTag.track(2186434); //compra tier 1
       if (production) {
         Cookies.remove("comprarTier1");
       }
@@ -43,7 +45,9 @@ function PagoConfirmado(props) {
       // console.log("Cookie dice compro tier 2", _tier2);
       setUserDidPay(true);
       setProductBought(2);
-      Cookies.remove("adquirirTier2");
+      if (production) {
+        Cookies.remove("adquirirTier2");
+      }
     }
     var _email = Cookies.get("userEmail");
     if (_email === undefined) {
@@ -58,6 +62,7 @@ function PagoConfirmado(props) {
       setUserPayAttributesAndLists();
     }
   }, [userDidPay]);
+
 
   const setUserPayAttributesAndLists = async () => {
     var attributes =

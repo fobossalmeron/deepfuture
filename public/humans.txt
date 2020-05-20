@@ -9,22 +9,16 @@ ___________________________________________________________________/\\\_________
         __\////////\//_____\////////___\/////////_____\//////////___\///////\//___\/////////______\////////______\/////_______\/////_____
 
 Acueducto
+https://acueducto.studio/
 --------
 
-made in Barcelona <-> CDMX
+made in CDMX
 
 Rodrigo Salmerón
 @fobossalmeron
 
 Artemio Pedraza
 @artepedraza
-
-
-special thanks
---------------
-
-Anton & Irene
-Josua Tuscan
 
 
 tech
