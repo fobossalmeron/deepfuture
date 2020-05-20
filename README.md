@@ -5,9 +5,10 @@ See here for info: https://err.sh/next.js/custom-error-no-custom-404
 
 Development:
 Meta tags
-One coumn mobile
+Terminos y condiciones mobile
 Meter tiers correctos
-Salir en producción
+Cambiar los pagos a modo producción
+Borrar los servidores de sendinblue
 Google action on download
 
 correos:
