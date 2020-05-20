@@ -5,8 +5,12 @@ See here for info: https://err.sh/next.js/custom-error-no-custom-404
 
 Development:
 Meta tags
-Pixel action y Google action on download
+One coumn mobile
+Meter tiers correctos
+Salir en producción
+Google action on download
 
 correos:
 - soporte@deepfuture.institute
 - privacidad@deepfuture.institute
+

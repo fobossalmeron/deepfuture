@@ -26,7 +26,7 @@ export default ({
       autoConfig: true,
       debug: false,
     };
-    ReactPixel.init("742484219622623", null, options);
+    ReactPixel.init("266265964568832", null, options);
     LinkedInTag.init(2035866);
   }, []);
 
