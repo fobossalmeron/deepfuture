@@ -22,15 +22,11 @@
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
     ],
-    "/cookies": [
+    "/pagoconfirmado": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
     "/privacidad": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/terminosycondiciones": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

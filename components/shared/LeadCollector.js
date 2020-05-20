@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useState } from "react";
 import {
   Message,
   Input,
@@ -7,9 +7,10 @@ import {
   selectStyles,
   isEmail,
 } from "components/shared/Forms";
-import SuccessConfirmation from "components/shared/SuccessConfirmation"
+import SuccessConfirmation from "components/shared/SuccessConfirmation";
 import Select from "react-select/";
-import LinkedInTag from 'react-linkedin-insight';
+import LinkedInTag from "react-linkedin-insight";
+import ReactPixel from "react-facebook-pixel";
 import Cookies from "js-cookie/dist/js.cookie.mjs";
 
 const LeadCollector = ({ complete, short, collectorId }) => {
@@ -62,7 +63,7 @@ const LeadCollector = ({ complete, short, collectorId }) => {
     setStatus(data.id ? "success" : "error");
     data.id && Cookies.set("userEmail", emailAddress);
     data.id && LinkedInTag.track(2186426); //descarga PDF
-
+    ReactPixel.track("track", "CompleteRegistration"); // descarga PDF
   };
 
   const submitComplete = () => {

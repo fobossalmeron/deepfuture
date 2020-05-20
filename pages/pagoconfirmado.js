@@ -8,8 +8,9 @@ import downloadWorkshop from "utils/downloadWorkshop";
 import Tag from "components/shared/Tag";
 import SingleAction from "components/shared/SingleAction";
 import LinkedInTag from 'react-linkedin-insight';
+import ReactPixel from "react-facebook-pixel";
 
-const production = true;
+const production = false;
 
 function PagoConfirmado(props) {
   const [userDidPay, setUserDidPay] = useState(false);
@@ -37,6 +38,7 @@ function PagoConfirmado(props) {
       setUserDidPay(true);
       setProductBought(1);
       LinkedInTag.track(2186434); //compra tier 1
+      ReactPixel.track( 'track', 'Purchase', {value: 1400.00, currency: 'MXN'} ) 		// compra tier 1
       if (production) {
         Cookies.remove("comprarTier1");
       }
@@ -45,6 +47,7 @@ function PagoConfirmado(props) {
       // console.log("Cookie dice compro tier 2", _tier2);
       setUserDidPay(true);
       setProductBought(2);
+      ReactPixel.track( 'track', 'Purchase', {value: 10000.00, currency: 'MXN'} ) 		// compra tier 2
       if (production) {
         Cookies.remove("adquirirTier2");
       }

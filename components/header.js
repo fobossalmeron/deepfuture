@@ -5,7 +5,7 @@ import LeadCollector from "components/shared/LeadCollector";
 
 function Header({ hasLoaded, isOpen, closeNav, locale, route }) {
   const backUp = (e) => {
-    closeNav();
+    // closeNav();
     route === "/" &&
       (e.preventDefault(),
       document.getElementById("land").scrollIntoView({ behavior: "smooth" }));
