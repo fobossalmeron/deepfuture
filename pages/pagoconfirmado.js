@@ -21,6 +21,7 @@ function PagoConfirmado(props) {
     console.log(ref);
     if (!ref.includes("mercadopago")) {
       if (props.production) {
+        console.log(`Fuiste redireccionado puesto que estabas en production:${props.production} y no venías de mercadopago`);
         window.location.replace("/");
       }
     }
@@ -34,6 +35,7 @@ function PagoConfirmado(props) {
     var _tier2 = Cookies.get("adquirirTier2");
     if (_tier1 === undefined && _tier2 === undefined) {
       if (props.production) {
+        console.log(`Fuiste redireccionado puesto que estabas en production:${props.production} y no tenías ninguna cookie`);
         window.location.replace("/");
       }
     }
