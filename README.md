@@ -7,10 +7,8 @@ Development:
 Meta tags
 Terminos y condiciones mobile
 Meter tiers correctos
-Cambiar los pagos a modo producción
-Borrar los servidores de sendinblue
 Google action on download
-Header en encuesta
+Cambiar precio 1400
 
 correos:
 - soporte@deepfuture.institute

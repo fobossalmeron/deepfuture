@@ -45,7 +45,6 @@ function PagoConfirmado(props) {
       setProductBought(1);
       if (props.production) {
         Cookies.remove("comprarTier1");
-        LinkedInTag.track(2186434); //compra tier 1
       }
     }
     if (_tier2 === "true") {
@@ -64,6 +63,9 @@ function PagoConfirmado(props) {
       if (props.production) {
         ReactPixel.init("266265964568832", { em: userEmail });
         if (productBought === 1) {
+          //compra tier 1 LN
+          LinkedInTag.track(2186434);
+          // compra tier 1 FB
           ReactPixel.track("Purchase", {
             value: 1500.0,
             currency: "MXN",
@@ -73,8 +75,9 @@ function PagoConfirmado(props) {
                 quantity: 1,
               },
             ],
-          }); // compra tier 1
+          }); 
         } else if (productBought === 2) {
+          // compra tier 2 FB
           ReactPixel.track("Purchase", {
             value: 10000.0,
             currency: "MXN",
@@ -84,7 +87,7 @@ function PagoConfirmado(props) {
                 quantity: 1,
               },
             ],
-          }); // compra tier 1
+          }); 
         }
       }
     }

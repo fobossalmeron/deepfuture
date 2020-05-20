@@ -165,7 +165,7 @@ function BlogPost(props) {
       </SingleColumn>
       <Title notoppadding>
         <p>
-          La estrategia de hoy es <b>sobrevivir</b>
+          La estrategia de hoy es mucho más que <b>sobrevivir</b>
         </p>
         <h3>
           Encuentra <b>certidumbre</b> con Deep Future Institute

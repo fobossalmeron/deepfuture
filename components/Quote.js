@@ -11,9 +11,7 @@ function Quote() {
           <QuoteOpen />
           <TextContainer>
             <p>
-              De verdad recomiendo este taller a mis colegas, la información es
-              basta y reveladora. Fue muy útil en la planeación estratégica a
-              largo plazo de nuestra empresa
+            Todo empresario debe ampliar su visión y este taller fue revelador. Muy útil para ayudar a clientes como los nuestros a orientar sus cursos de acción estratégicos.
             </p>
             <div>
               <h6>Jorge Milke</h6>

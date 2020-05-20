@@ -12,6 +12,8 @@ import Select from "react-select/";
 import LinkedInTag from "react-linkedin-insight";
 import ReactPixel from "react-facebook-pixel";
 import Cookies from "js-cookie/dist/js.cookie.mjs";
+import { logEvent } from "utils/analytics";
+
 
 const LeadCollector = ({ complete, short, collectorId, production }) => {
   const [displayMessage, setMessage] = useState("");
@@ -63,6 +65,7 @@ const LeadCollector = ({ complete, short, collectorId, production }) => {
         LinkedInTag.track(2186426); //descarga PDF
         ReactPixel.init("266265964568832", { em: emailAddress });
         ReactPixel.track("Lead", { email: emailAddress }); // descarga PDF
+        logEvent("Lead", "Descargó PDF");
       }
     } else {
       setMessage("El correo que ingresaste ya descargó el PDF");

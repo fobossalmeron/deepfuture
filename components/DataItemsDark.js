@@ -28,7 +28,7 @@ const items = [
     icon: <Home />,
   },
   {
-    title: "Con expertos con más de una década de experiencia",
+    title: "Con expertos con más de tres década de experiencia",
     description:
       "Nuestras investigaciones son sustentadas por rospectivistas, investigadores, ácadémicos y analistas con más de 12 años de experiencia.",
     icon: <Expert />,
@@ -36,7 +36,7 @@ const items = [
   {
     title: "Para dimensionar los problemas del mundo",
     description:
-      "Un error común es no dimensionar los escenarios de riesgo. Tener un acercamiento estratégico y sistémico hacia el futuro te ayudará a alcanzar tus metas de negocio.",
+      "Un error común es no dimensionar los escenarios de riesgo ampliados. El mundo presenta retos inéditos y sólo un acercamiento sistémico hacia el futuro te ayudará a trazar tus metas de negocio.",
     icon: <World />,
   },
 ];
