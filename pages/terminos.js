@@ -5,8 +5,9 @@ function Terms(props) {
   return (
     <>
       <Head
-        title={"Política de Cookies | Deep Future Institute"}
-        canonical={"https://deepfuture.institute/cookies"}
+        title={"Términos y Condiciones | Deep Future Institute"}
+        canonical={"https://deepfuture.institute/terminos"}
+        description={"Al comprar cualquier asset digital aceptas estos términos y condiciones."}
         lang={props.lang}
       />
       <SingleColumn>

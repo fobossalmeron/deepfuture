@@ -42,6 +42,6 @@ const AuthorContainer = styled.div`
     height: 38px;
     border-radius: 50%;
     grid-row: 1 / span 2;
-    margin-top: -3px;
+    margin-top: 3px;
   }
 `;

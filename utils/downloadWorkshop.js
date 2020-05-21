@@ -3,8 +3,8 @@
  const downloadWorkshop = () => {
     var tempLink = document.createElement("a");
     tempLink.style.display = "none";
-    tempLink.href = "assets/pdf/Tier1.pdf";
-    tempLink.setAttribute("download", "TallerAutogestivo.pdf");
+    tempLink.href = "assets/pdf/TallerAutogestivo.zip";
+    tempLink.setAttribute("download", "TallerAutogestivo.zip");
 
     // Safari thinks _blank anchor are pop ups. We only want to set _blank
     // target if the browser does not support the HTML5 download attribute.

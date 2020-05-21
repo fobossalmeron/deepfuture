@@ -116,7 +116,7 @@ function PagoConfirmado(props) {
   return (
     <>
       <Head
-        title={"Deep Future Institute | Pago confirmado"}
+        title={"Deep Future Institute | Descarga tu taller"}
         canonical={"https://deepfuture.institute/descargartaller"}
         lang={props.lang}
       />

@@ -4,6 +4,7 @@ import { darken, lighten, readableColor } from "polished";
 import Cross from "public/assets/img/layout/cross.svg";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import { H3 } from "components/shared/Dangerously";
+import Link from "next/link";
 import MercadoPago from "components/MercadoPago";
 import MercadoLogo from "public/assets/img/layout/logos/mercadopago.svg";
 import currency from "currency.js";
@@ -89,7 +90,11 @@ const PayPopup = ({ setShowPay, showPay, product }) => {
             </Transacciones>
             <p>
               Aceptamos todas las tarjetas y pagos en tiendas de autoservicio.
-              Consulta nuestros Términos y Condiciones.
+              Consulta nuestros{" "}
+              <Link href="/terminos" passHref>
+                <a>Términos y Condiciones</a>
+              </Link>
+              .
             </p>
           </SmallPrint>
           <FooterStyledMobile>

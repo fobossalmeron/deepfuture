@@ -22,7 +22,9 @@ function PagoConfirmado(props) {
     console.log(ref);
     if (!ref.includes("mercadopago")) {
       if (props.production) {
-        console.log(`Fuiste redireccionado puesto que estabas en production:${props.production} y no venías de mercadopago`);
+        console.log(
+          `Fuiste redireccionado puesto que estabas en production:${props.production} y no venías de mercadopago`
+        );
         window.location.replace("/");
       }
     }
@@ -36,7 +38,9 @@ function PagoConfirmado(props) {
     var _tier2 = Cookies.get("adquirirTier2");
     if (_tier1 === undefined && _tier2 === undefined) {
       if (props.production) {
-        console.log(`Fuiste redireccionado puesto que estabas en production:${props.production} y no tenías ninguna cookie`);
+        console.log(
+          `Fuiste redireccionado puesto que estabas en production:${props.production} y no tenías ninguna cookie`
+        );
         window.location.replace("/");
       }
     }
@@ -62,12 +66,12 @@ function PagoConfirmado(props) {
     if (userDidPay) {
       setUserPayAttributesAndLists();
       if (props.production) {
-        ReactPixel.init("266265964568832", { em: userEmail });
+        ReactPixel.init("3267371289963128", { em: userEmail });
         if (productBought === 1) {
           //compra tier 1 GA
           logEvent("Purchase", "Tier1");
           //compra tier 1 LN
-          LinkedInTag.track(2186434);
+          LinkedInTag.track(2183018);
           // compra tier 1 FB
           ReactPixel.track("Purchase", {
             value: 1500.0,
@@ -78,10 +82,12 @@ function PagoConfirmado(props) {
                 quantity: 1,
               },
             ],
-          }); 
+          });
         } else if (productBought === 2) {
-          //compra tier 1 GA
+          //compra tier 2 GA
           logEvent("Purchase", "Tier2");
+          //compra tier 2 LN
+          LinkedInTag.track(2183026);
           // compra tier 2 FB
           ReactPixel.track("Purchase", {
             value: 10000.0,
@@ -92,7 +98,7 @@ function PagoConfirmado(props) {
                 quantity: 1,
               },
             ],
-          }); 
+          });
         }
       }
     }

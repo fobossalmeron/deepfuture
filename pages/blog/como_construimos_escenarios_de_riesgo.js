@@ -5,24 +5,19 @@ import Author from "components/Blog/Author";
 import Title from "components/shared/Title";
 import FormComplete from "components/FormComplete";
 import MainGrid from "components/shared/MainGrid";
-
-const Header = styled.img`
-  max-width: 950px;
-  width: 100%;
-  margin: 5% auto 0 auto;
-  padding: 15px 15px 0 15px;
-`;
+import Header from "components/Blog/Header";
 
 function BlogPost(props) {
   return (
     <>
       <Head
         title={
-          "¿Cómo construímos escenarios de riesgo? | Deep Future Institute"
+          "¿Cómo generamos escenarios de riesgo con prospectiva?"
         }
         canonical={
           "https://deepfuture.institute/blog/como_construimos_escenarios_de_riesgo"
         }
+        description={"Conoce el proceso de investigación para construir los escenarios de riesgo que debes considerar tu negocio en el futuro."}
         lang={props.lang}
       />
       <Header
@@ -118,7 +113,7 @@ function BlogPost(props) {
         </h3>
         <img
           src="/assets/img/blog/posts/futuro.svg"
-          alt="Un análisis del pasado"
+          alt="Un acercamiento estratégico al futuro"
         />
         <p>
           La segunda fase parte de los resultados de la clasificación hecha por

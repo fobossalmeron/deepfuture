@@ -21,7 +21,8 @@ function Index(props) {
   return (
     <>
       <Head
-        title={"Deep Future Institute"}
+        title={"COVID-19 en tiempos de la 4T. Información para tu negocio"}
+        description={"Prepárate para el futuro: Facilita la toma de decisiones y minimiza el riesgo de tu negocio u organización para la crisis del COVID-19 en tiempos de la 4T."}
         canonical={"https://deepfuture.institute"}
         lang={props.lang}
       />
@@ -29,7 +30,7 @@ function Index(props) {
       <Land id="land">
         <div id="landtext">
           <h1>
-            Genera <b>certidumbre</b> en la crisis económica del COVID-19 y la
+            Genera <b>certidumbre</b> en la crisis económica del COVID-19 en tiempos de la
             4T en México
           </h1>
           <h2>

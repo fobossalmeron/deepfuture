@@ -7,6 +7,7 @@ function Cookies(props) {
       <Head
         title={"Política de Cookies | Deep Future Institute"}
         canonical={"https://deepfuture.institute/cookies"}
+        description={"Utilizamos cookies para brindarte el mejor servicio. Lee nuestra política para conocer a detalle nuestras prácticas."}
         lang={props.lang}
       />
       <SingleColumn>

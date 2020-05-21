@@ -62,8 +62,8 @@ const LeadCollector = ({ complete, short, collectorId, production }) => {
       setStatus("success");
       Cookies.set("userEmail", emailAddress);
       if (production) {
-        LinkedInTag.track(2186426); //descarga PDF
-        ReactPixel.init("266265964568832", { em: emailAddress });
+        LinkedInTag.track(2183010); //descarga PDF
+        ReactPixel.init("3267371289963128", { em: emailAddress });
         ReactPixel.track("Lead", { email: emailAddress }); // descarga PDF
         logEvent("Lead", "Descargó PDF");
       }

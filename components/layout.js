@@ -28,8 +28,8 @@ export default ({
         autoConfig: true,
         debug: false,
       };
-      ReactPixel.init("266265964568832", null, options);
-      LinkedInTag.init(2035866);
+      ReactPixel.init("3267371289963128", null, options);
+      LinkedInTag.init(2026962);
     }
   }, []);
 
@@ -112,4 +112,5 @@ const PageWrapper = styled.div`
   justify-content: flex-start;
   color: ${(props) => props.theme.colors.foreground};
   background-color: ${(props) => props.theme.colors.background};
+  padding-top: 78px;
 `;

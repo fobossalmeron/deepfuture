@@ -16,10 +16,10 @@ const SingleColumnContainer = styled(MainGrid)`
   padding-top: 6%;
   font-weight: 300;
   font-size: 2rem;
-  line-height:135%;
+  line-height: 135%;
   & > div {
     color: ${(props) => props.theme.colors.foreground};
-    padding-bottom: 7%;
+    padding-bottom: 13%;
     max-width: 660px;
     h1 {
       font-size: 5rem;
@@ -37,16 +37,16 @@ const SingleColumnContainer = styled(MainGrid)`
       max-width: 600px;
       line-height: 125%;
       margin: 37px 0px 20px;
-      b{
+      b {
       }
     }
-    h4{
-      font-size:inherit;
-      line-height: 100%;
-      margin-bottom:0;
-      margin-top:10px;
+    h4 {
+      font-size: inherit;
+      margin-bottom: 0;
+      margin-top: 10px;
+      margin-bottom:-10px;
     }
-    a{
+    a {
       color: ${(props) => props.theme.colors.foreground};
     }
     p {
@@ -62,24 +62,24 @@ const SingleColumnContainer = styled(MainGrid)`
       width: 100%;
       max-width: 600px;
     }
-    ul{
-      font-size:inherit;
+    ul {
+      font-size: inherit;
       line-height: inherit;
       li {
-      display: block;
-      margin-bottom: 5px;
-      &:before {
-        content: " ";
-        width: 10px;
-        height: 10px;
-        margin-top: 5px;
-        border-radius: 100%;
-        display: inline-block;
-        margin-right: 10px;
-        background-color: ${(props) => props.theme.colors.accent};
+        display: block;
+        margin-bottom: 5px;
+        &:before {
+          content: " ";
+          width: 10px;
+          height: 10px;
+          margin-top: 5px;
+          border-radius: 100%;
+          display: inline-block;
+          margin-right: 10px;
+          background-color: ${(props) => props.theme.colors.accent};
+        }
       }
     }
-    } 
     ol {
       margin-top: 5px;
       counter-reset: item;
@@ -102,12 +102,44 @@ const SingleColumnContainer = styled(MainGrid)`
         }
       }
     }
-  }
-  @media (max-width: 600px) {
-    & > div {
-      grid-column: 1 / span 12;
-      h3 {
+    @media (max-width: 1000px) {
+      max-width: 550px;
+      h1 {
+        font-size: 4rem;
+      }
+      h2{
+        font-size:2.4rem;
+      }
+      h3{
+        font-size:2.6rem;
+      }
+      p, ul, ol{
+        font-size: 1.9rem;
+      }
+    }
+    @media (max-width: 900px) {
+      padding-bottom:90px;
+    }
+    @media (max-width: 550px) {
+      h1 {
+        font-size: 3.2rem;
+      }
+      h2{
+        font-size:2rem;
+      }
+      h3{
+        font-size:2.2rem;
+      }
+      p, ul, ol{
+        font-size: 1.8rem;
+      }
+    }
+    @media (max-width: 550px) {
+      h1 {
         font-size: 3rem;
+      }
+      h2{
+        font-size:1.8rem;
       }
     }
   }
