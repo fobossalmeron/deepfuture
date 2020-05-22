@@ -45,6 +45,7 @@ export const Input = styled.input`
   width: 100%;
   padding: 13px 18px 13px 26px;
   line-height: 100%;
+  font-weight: inherit;
   background-color: ${(props) => props.theme.colors.foreground};
   border-radius: ${(props) => (props.short ? "4px 0px 0px 4px" : "4px")};
   border: none;
@@ -164,9 +165,9 @@ export const Gracias = styled.div`
   p {
     color: ${(props) => props.theme.colors.foreground_low};
   }
-  @media(max-width:700px){
-    margin-top:20px;
-    align-items:center;
-    justify-content:center;
+  @media (max-width: 700px) {
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
   }
 `;

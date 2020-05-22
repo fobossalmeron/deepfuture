@@ -117,7 +117,7 @@ const styles = `
     height: 100vh;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
-    font-weight: 400;
+    font-weight: 300;
     font-style: normal;
   }
 
@@ -206,7 +206,7 @@ function renderStyles() {
   return {
     __html: styles
       .replace(/(\r\n|\n|\r)/gm, "") // removes all new lines
-      .replace(/ +(?= )/g, "") // removes all multiple spaces (indenting)
+      .replace(/ +(?= )/g, ""), // removes all multiple spaces (indenting)
     // .replace(/.}/g, "}\n") // adds new line after every } charracter
   };
 }

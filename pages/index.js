@@ -22,7 +22,9 @@ function Index(props) {
     <>
       <Head
         title={"COVID-19 en tiempos de la 4T. Información para tu negocio"}
-        description={"Prepárate para el futuro: Facilita la toma de decisiones y minimiza el riesgo de tu negocio u organización para la crisis del COVID-19 en tiempos de la 4T."}
+        description={
+          "Prepárate para el futuro: Facilita la toma de decisiones y minimiza el riesgo de tu negocio u organización para la crisis del COVID-19 en tiempos de la 4T."
+        }
         canonical={"https://deepfuture.institute"}
         lang={props.lang}
       />
@@ -30,8 +32,8 @@ function Index(props) {
       <Land id="land">
         <div id="landtext">
           <h1>
-            Genera <b>certidumbre</b> en la crisis económica del COVID-19 en tiempos de la
-            4T en México
+            Genera <b>certidumbre</b> en la crisis económica del COVID-19 en
+            tiempos de la 4T en México
           </h1>
           <h2>
             Facilita la toma de <b>decisiones</b> y minimiza el <b>riesgo</b> de
@@ -39,7 +41,11 @@ function Index(props) {
             autogestivo o guiado por expertos
           </h2>
         </div>
-        <FormComplete production={props.production} centered collectorId="LandingCollector" />
+        <FormComplete
+          production={props.production}
+          centered
+          collectorId="LandingCollector"
+        />
       </Land>
       <Intro>
         <DataItemsWhite />
@@ -64,7 +70,10 @@ function Index(props) {
               </p>
             </div>
           </Fade>
-          <FormComplete production={props.production} collectorId="TiersCollector" />
+          <FormComplete
+            production={props.production}
+            collectorId="TiersCollector"
+          />
         </SecondFormGrid>
       </SecondForm>
       <DataItemsDark />
@@ -77,7 +86,11 @@ function Index(props) {
         </h3>
       </Title>
       <LastForm>
-        <FormComplete production={props.production} centered collectorId="FooterCollector" />
+        <FormComplete
+          production={props.production}
+          centered
+          collectorId="FooterCollector"
+        />
       </LastForm>
       <PayPopup showPay={showPay} setShowPay={setShowPay} product={product} />
       <SalesPopup showSales={showSales} setShowSales={setShowSales} />
@@ -116,6 +129,7 @@ const Land = styled(MainGrid)`
       line-height: 135%;
       max-width: 650px;
       margin-top: 0;
+      font-weight: 300;
     }
   }
   @media (max-width: 1100px) {
@@ -169,8 +183,8 @@ const SecondForm = styled.section`
   background-color: ${(props) => props.theme.colors.foreground};
   width: 100%;
   padding-bottom: 6%;
-  @media(max-width:900px){
-    padding-bottom:35px;
+  @media (max-width: 900px) {
+    padding-bottom: 35px;
   }
 `;
 
