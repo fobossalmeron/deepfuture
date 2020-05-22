@@ -29,7 +29,7 @@ const includes = [
   {
     title: "Taller con <b>expertos</b>",
     id: 4,
-    subtitle: "Con más de 20 años de experiencia",
+    subtitle: "Con más de 30 años de experiencia",
     perks: [false, true, true],
   },
   {
@@ -178,7 +178,7 @@ const Includes = styled.div`
   p {
     font-size: 1.7rem;
     color: ${(props) => props.theme.colors.foreground_lowest};
-    opacity:0.9;
+    opacity: 0.9;
   }
 `;
 
@@ -277,7 +277,7 @@ const TiersSection = styled.section`
   width: 100%;
   padding-bottom: 6%;
   overflow-x: hidden;
-  @media(max-width:1100px){
+  @media (max-width: 1100px) {
     padding-bottom: 10%;
   }
 `;

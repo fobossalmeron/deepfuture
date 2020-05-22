@@ -30,7 +30,7 @@ const items = [
   {
     title: "Con expertos con más de tres década de experiencia",
     description:
-      "Nuestras investigaciones son sustentadas por rospectivistas, investigadores, ácadémicos y analistas con más de 12 años de experiencia.",
+      "Nuestras investigaciones son sustentadas por rospectivistas, investigadores, ácadémicos y analistas con más de 30 años de experiencia.",
     icon: <Expert />,
   },
   {
@@ -90,13 +90,13 @@ const DataDarkGrid = styled.ul`
   }
   @media (max-width: 600px) {
     flex-direction: column;
-    align-items:center;
+    align-items: center;
     grid-column: 1 / span 12;
 
     li {
       flex-direction: column;
       margin-bottom: 5%;
-      width:100%;
+      width: 100%;
     }
   }
 `;
@@ -107,8 +107,8 @@ const DataSection = styled(MainGrid)`
   p {
     color: ${(props) => props.theme.colors.foreground_low};
   }
-  @media(max-width:600px){
-    padding-bottom:13%;
+  @media (max-width: 600px) {
+    padding-bottom: 13%;
     padding-top: 35px;
   }
 `;
