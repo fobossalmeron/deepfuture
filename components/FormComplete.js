@@ -20,7 +20,7 @@ function FormComplete({ centered, collectorId, production }) {
           </>
         ) : (
           <>
-            <h4>PDF descargable</h4>
+            <h4>PDF Descargable</h4>
             <p>
               <b>Escenarios clave</b> para generar certidumbre ante el impacto
               del <b>COVID-19</b> en tiempos de la <b>4T</b>.

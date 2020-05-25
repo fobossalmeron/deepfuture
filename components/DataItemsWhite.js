@@ -21,7 +21,7 @@ const items = [
   {
     title: "Y el equipo<br/>mejor preparado",
     description:
-      "Nuestro equipo de expertos, prospectistas, investigadores, académicos y analistas tienen más de 12 años de experiencia ampliando y completando la percepción de la gravedad de la incertidumbre.",
+      "Nuestro equipo de expertos, prospectistas, investigadores, académicos y analistas tienen más de 30 años de experiencia ampliando y completando la percepción de la gravedad de la incertidumbre.",
     icon: <Team />,
   },
 ];

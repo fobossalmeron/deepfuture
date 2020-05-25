@@ -7,7 +7,9 @@ function Terms(props) {
       <Head
         title={"Términos y Condiciones | Deep Future Institute"}
         canonical={"https://deepfuture.institute/terminos"}
-        description={"Al comprar cualquier asset digital aceptas estos términos y condiciones."}
+        description={
+          "Al comprar cualquier asset digital aceptas estos términos y condiciones."
+        }
         lang={props.lang}
       />
       <SingleColumn>
@@ -50,13 +52,17 @@ function Terms(props) {
           en caso de mal uso. El cliente es responsable de cualquier mal uso del
           que sea responsable.
         </p>
-        <h3>2. Condiciones de <b>pago</b></h3>
+        <h3>
+          2. Condiciones de <b>pago</b>
+        </h3>
         <p>
           2.1 Los productos digitales solo se pueden pagar a través del sistema
           de pago Mercado Pago®. Las disposiciones de la sección 4 de estos TCG
           se aplican a los consumidores.
         </p>
-        <h3>3. Derecho de <b>revocación</b></h3>
+        <h3>
+          3. Derecho de <b>revocación</b>
+        </h3>
         <p>
           3.1. Los clientes que son consumidores, a menos que se aplique una
           excepción relacionada a la ley, tienen derecho a cancelar un contrato
@@ -105,7 +111,9 @@ function Terms(props) {
           derecho de revocación para la entrega de contenidos digitales no
           almacenados en un soporte de datos físicos, como libros electrónicos.
         </p>
-        <h3>4. Derechos de <b>autor</b> / derechos de <b>uso</b></h3>
+        <h3>
+          4. Derechos de <b>autor</b> / derechos de <b>uso</b>
+        </h3>
         <p>
           5.1 El cliente no adquiere ninguna propiedad. Todos los derechos de
           autor, derechos de uso y otros derechos de propiedad de productos

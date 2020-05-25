@@ -6,11 +6,9 @@ import CircleIcon from "components/shared/CircleIcon";
 function DataItem({ item, columns, light, dark }) {
   function IconFaded() {
     return (
-      <Fade>
-        <Icon light={light} dark={dark}>
-          {item.icon}
-        </Icon>
-      </Fade>
+      <Icon light={light} dark={dark}>
+        {item.icon}
+      </Icon>
     );
   }
 
@@ -68,6 +66,7 @@ const ColumnSecond = styled.div`
   h3 {
     font-size: 2.3rem;
     margin-bottom: 17px;
+    font-weight: 400;
   }
   p {
     max-width: 340px;
@@ -81,7 +80,7 @@ const ColumnSecond = styled.div`
       font-size: 2rem;
     }
     p {
-    max-width: 420px;
-  }
+      max-width: 420px;
+    }
   }
 `;

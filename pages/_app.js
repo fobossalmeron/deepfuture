@@ -20,36 +20,36 @@ class MyApp extends App {
       locale: es,
       hasToConsent: false,
       hasLoaded: true,
-      readyToScroll: false
+      readyToScroll: false,
     };
   }
 
   authenticate() {
-    return new Promise(resolve => setTimeout(resolve, 1500)); //1500
+    return new Promise((resolve) => setTimeout(resolve, 1500)); //1500
   }
 
-  toggleLang = lang => {
+  toggleLang = (lang) => {
     let language = lang === "en" ? en : es;
     Cookies.set("chosenLang", lang);
     this.setState({
-      locale: language
+      locale: language,
     });
   };
 
-  handleRouteComplete = url => {
+  handleRouteComplete = (url) => {
     var _myself = this;
-    setTimeout(function() {
+    setTimeout(function () {
       _myself.LoadingBar.complete();
     }, 300);
   };
 
-  handleRouteStart = url => {
+  handleRouteStart = (url) => {
     this.LoadingBar.continuousStart();
   };
 
   handleRouteError = (err, url) => {
     var _myself = this;
-    setTimeout(function() {
+    setTimeout(function () {
       if (err.cancelled) {
         console.log(`${err} on route to ${url}`);
       }
@@ -126,7 +126,7 @@ class MyApp extends App {
       <ThemeProvider theme={theme}>
         <LangProvider value={this.state.locale}>
           <LoadingBar
-            onRef={ref => (this.LoadingBar = ref)}
+            onRef={(ref) => (this.LoadingBar = ref)}
             height={3}
             color={theme.colors.accent}
             className="TopBar"

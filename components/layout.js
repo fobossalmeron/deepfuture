@@ -6,7 +6,7 @@ import CookieMessage from "./CookieMessage";
 import { initGA, logPageView } from "utils/analytics";
 import ReactPixel from "react-facebook-pixel";
 import LinkedInTag from "react-linkedin-insight";
-import Footer from "components/shared/Footer";
+import Footer from "components/shared/FooterNav";
 
 export default ({
   children,
@@ -104,7 +104,6 @@ const BodyOverflow = createGlobalStyle`
 `;
 
 const PageWrapper = styled.div`
-  top: -3px;
   position: relative;
   width: 100%;
   flex-direction: column;
