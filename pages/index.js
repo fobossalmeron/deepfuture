@@ -33,7 +33,7 @@ function Index(props) {
         <div id="landtext">
           <h1>
             Genera <b>certidumbre</b> en la crisis económica del COVID-19 en
-            tiempos de la 4T en México
+            tiempos de la 4T
           </h1>
           <h2>
             Facilita la toma de <b>decisiones</b> y minimiza el <b>riesgo</b> de
@@ -194,10 +194,9 @@ const SecondFormGrid = styled(MainGrid)`
     max-width: 340px;
     h5 {
       font-size: 3.6rem;
-      font-weight: 400;
       margin: 0px 0px 20px 0px;
       b {
-        font-weight: 500;
+        font-weight: 400;
       }
     }
   }
