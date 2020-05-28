@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import { ThemeContext } from "styled-components";
 import Head from "components/Head";
-import LandBg from "components/LandBg";
+import BackgroundCovid from "components/BackgroundCovid";
 import Cookies from "js-cookie/dist/js.cookie";
 import { Button } from "components/shared/Forms";
 import downloadWorkshop from "utils/downloadWorkshop";
@@ -139,7 +139,7 @@ function PagoConfirmado(props) {
         canonical={"https://deepfuture.institute/pagoconfirmado"}
         lang={props.lang}
       />
-      <LandBg />
+      <BackgroundCovid />
       <SingleAction>
         {userDidPay && productBought === 1 && (
           <>

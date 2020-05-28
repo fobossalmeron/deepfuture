@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { ThemeContext } from "styled-components";
 import Head from "components/Head";
-import LandBg from "components/LandBg";
+import BackgroundCovid from "components/BackgroundCovid";
 import {
   Message,
   Input,
@@ -120,7 +120,7 @@ function PagoConfirmado(props) {
         canonical={"https://deepfuture.institute/descargartaller"}
         lang={props.lang}
       />
-      <LandBg />
+      <BackgroundCovid />
       <SingleAction>
         <Tag color={theme.colors.tier1}>
           Taller <b>autogestivo</b>

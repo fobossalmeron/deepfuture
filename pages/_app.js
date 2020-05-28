@@ -11,7 +11,7 @@ import { LangProvider } from "utils/LangContext";
 import { withRouter } from "next/router";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
-const production = true;
+const production = false;
 
 class MyApp extends App {
   constructor(props) {

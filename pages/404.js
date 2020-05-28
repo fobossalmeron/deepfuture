@@ -1,6 +1,6 @@
 import { withTheme } from "styled-components";
 import Head from "components/Head";
-import LandBg from "components/LandBg";
+import BackgroundCovid from "components/BackgroundCovid";
 import Tag from "components/shared/Tag";
 import SingleAction from "components/shared/SingleAction";
 
@@ -12,7 +12,7 @@ function Error404(props) {
         canonical={"https://deepfuture.institute/404"}
         lang={props.lang}
       />
-      <LandBg />
+      <BackgroundCovid />
       <SingleAction>
         <Tag color={props.theme.colors.error}>
           Error <b>404</b>

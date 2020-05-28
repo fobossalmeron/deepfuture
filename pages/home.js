@@ -8,54 +8,54 @@ import DataItemsWhite from "components/DataItemsWhite";
 import DataItemsDark from "components/DataItemsDark";
 import SalesPopup from "components/SalesPopup";
 import Title from "components/shared/Title";
-import BackgroundCovid from "components/BackgroundCovid";
+import BackgroundHome from "components/BackgroundHome";
 import Quote from "components/Quote";
 import PayPopup from "components/PayPopup";
 import Tiers from "components/Tiers/Tiers";
+import LinkToCovid from "components/LinkToCovid";
+import DFIFull from "public/assets/img/layout/logos/dfifull.svg";
 
-function Index(props) {
-  const [showPay, setShowPay] = useState(false);
+function Home(props) {
   const [showSales, setShowSales] = useState(false);
   const [product, setProduct] = useState(null);
 
   return (
     <>
       <Head
-        title={"COVID-19 en tiempos de la 4T. Información para tu negocio"}
+        title={"Deep Future Institute: Investigación y talleres de prospectiva"}
         description={
-          "Prepárate para el futuro: Facilita la toma de decisiones y minimiza el riesgo de tu negocio u organización para la crisis del COVID-19 en tiempos de la 4T."
+          "Prepárate para el futuro: Facilita la toma de decisiones y minimiza el riesgo de tu negocio u organización."
         }
         canonical={"https://deepfuture.institute"}
         lang={props.lang}
       />
-      <BackgroundCovid />
+      <BackgroundHome />
       <Land id="land">
         <div id="landtext">
           <h1>
-            Genera <b>certidumbre</b> en la crisis económica del COVID-19 en
-            tiempos de la 4T
+            Prepárate ante escenarios <b>futuros </b>
+            de <b>incertidumbre</b>
           </h1>
           <h2>
-            Facilita la toma de <b>decisiones</b> y minimiza el <b>riesgo</b> de
-            tu negocio u organización en el <b>futuro</b> con este taller
-            autogestivo o guiado por expertos
+            Anticipa los hechos que <b>afectan</b> a tu organización para
+            aprovechar mejor las <b>oportunidades</b> y minimizar la exposición
+            al <b>riesgo</b>
           </h2>
         </div>
-        <FormComplete
-          production={props.production}
-          centered
-          collectorId="LandingCollector"
-        />
+        <LinkToCovid />
+        <DFIFull/>
       </Land>
       <Intro>
-        <DataItemsWhite />
-        <Quote />
+        <h2>Asesorado por expertos con +30 años de experiencia haciendo prospectiva</h2>
+        <p>Evaluamos los hechos del mundo en busca de indicios que puedan tener un impacto en el curso de tu trabajo. Trabajamos de la mano con:</p>
+        <ul>
+          <li>Emprendedores de negocios</li>
+          <li>Inversionistas de capital</li>
+          <li>Empresas medianas</li>
+          <li>Corporativos</li>
+        </ul>
       </Intro>
-      <Tiers
-        setShowSales={setShowSales}
-        setShowPay={setShowPay}
-        setProduct={setProduct}
-      />
+      <Tiers setShowSales={setShowSales} setProduct={setProduct} />
       <SecondForm>
         <SecondFormGrid>
           <Fade>
@@ -92,13 +92,12 @@ function Index(props) {
           collectorId="FooterCollector"
         />
       </LastForm>
-      <PayPopup showPay={showPay} setShowPay={setShowPay} product={product} />
       <SalesPopup showSales={showSales} setShowSales={setShowSales} />
     </>
   );
 }
 
-export default React.memo(Index);
+export default React.memo(Home);
 
 const LastForm = styled(MainGrid)`
   padding-bottom: 6%;
@@ -111,8 +110,16 @@ const Land = styled(MainGrid)`
   min-height: 100vh;
   padding-bottom: 6%;
   align-items: center;
-  padding-top: 13%;
+  padding-top: 8%;
   pointer-events: none;
+  align-items: flex-start;
+  svg{
+    max-width: 320px;
+    width: 100%;
+    grid-column: 1 / span 12;
+    justify-self: flex-end;
+    padding-top:5%;
+  }
   #landtext {
     color: ${(props) => props.theme.colors.foreground};
     grid-column: 2 / span 10;
@@ -131,7 +138,6 @@ const Land = styled(MainGrid)`
       margin-top: 0;
       font-weight: 300;
     }
-  }
   @media (max-width: 1100px) {
     #landtext {
       h1 {

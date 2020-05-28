@@ -1,3 +1,5 @@
+import home from "../pages/home";
+
 export default {
   colors: {
     background: "#1D1D1B",
@@ -14,6 +16,9 @@ export default {
     darklight: "rgba(90,78,238, 0.13)",
     darkshadow: "rgba(0,0,0,0.19)",
     lightlight: "rgba(255, 255, 255, 0.9)",
-    lightshadow: "rgba(77, 76, 90, 0.19)"
-  }
+    lightshadow: "rgba(77, 76, 90, 0.19)",
+    home: {
+      accent: "#44639E",
+    },
+  },
 };
