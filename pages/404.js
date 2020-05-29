@@ -1,6 +1,6 @@
 import { withTheme } from "styled-components";
 import Head from "components/Head";
-import BackgroundCovid from "components/BackgroundCovid";
+import BackgroundCovid from "components/Backgrounds/BackgroundCovid";
 import Tag from "components/shared/Tag";
 import SingleAction from "components/shared/SingleAction";
 

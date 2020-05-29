@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 import { ThemeContext } from "styled-components";
 import Head from "components/Head";
-import BackgroundCovid from "components/BackgroundCovid";
+import BackgroundCovid from "components/Backgrounds/BackgroundCovid";
 import {
   Message,
   Input,

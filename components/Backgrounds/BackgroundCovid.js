@@ -30,6 +30,7 @@ const Bg = styled.div`
   width: 100%;
   height: 100vh;
   position: absolute;
+  top: 0;
   div {
     box-shadow: ${(props) =>
       `-10px -10px 20px ${props.theme.colors.darklight}, 

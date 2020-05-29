@@ -7,7 +7,7 @@ import MainGrid from "components/shared/MainGrid";
 import HomeItemsDark from "components/IconItems/HomeItemsDark";
 import SalesPopup from "components/SalesPopup";
 import Title from "components/shared/Title";
-import BackgroundHome from "components/BackgroundHome";
+import BackgroundHome from "components/Backgrounds/BackgroundHome";
 import { useContext } from "react";
 import { ThemeContext } from "styled-components";
 import Products from "components/Products";
@@ -29,7 +29,7 @@ function Home(props) {
         canonical={"https://deepfuture.institute"}
         lang={props.lang}
       />
-      {/* <BackgroundHome /> */}
+      <BackgroundHome />
       <Land id="land">
         <div id="landtext">
           <h1>

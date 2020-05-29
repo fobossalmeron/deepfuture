@@ -106,10 +106,12 @@ const BodyOverflow = createGlobalStyle`
 const PageWrapper = styled.div`
   position: relative;
   width: 100%;
+  min-height: 100vh;
   flex-direction: column;
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-end;
   color: ${(props) => props.theme.colors.foreground};
   background-color: ${(props) => props.theme.colors.background};
   padding-top: 78px;
+  overflow-x: hidden;
 `;

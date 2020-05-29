@@ -8,7 +8,7 @@ import CovidItemsWhite from "components/IconItems/CovidItemsWhite";
 import CovidItemsDark from "components/IconItems/CovidItemsDark";
 import SalesPopup from "components/SalesPopup";
 import Title from "components/shared/Title";
-import BackgroundCovid from "components/BackgroundCovid";
+import BackgroundCovid from "components/Backgrounds/BackgroundCovid";
 import Quote from "components/Quote";
 import PayPopup from "components/PayPopup";
 import Tiers from "components/Tiers/Tiers";

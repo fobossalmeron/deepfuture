@@ -31,6 +31,7 @@ export default BackgroundCovid;
 const Bg = styled.div`
   width: 100%;
   height: 100vh;
+  top: 0;
   position: absolute;
   div {
     :nth-of-type(1) {

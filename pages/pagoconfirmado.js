@@ -1,7 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import { ThemeContext } from "styled-components";
 import Head from "components/Head";
-import BackgroundCovid from "components/BackgroundCovid";
+import BackgroundCovid from "components/Backgrounds/BackgroundCovid";
 import Cookies from "js-cookie/dist/js.cookie";
 import { Button } from "components/shared/Forms";
 import downloadWorkshop from "utils/downloadWorkshop";

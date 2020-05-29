@@ -38,6 +38,7 @@ const FooterContainer = styled.footer`
   width: 100%;
   background-color: #353739;
   margin-top: 25px;
+  z-index: 1;
 `;
 
 const FooterNavigation = styled.div`

@@ -7,7 +7,9 @@ function Privacy(props) {
       <Head
         title={"Política de Privacidad | Deep Future Institute"}
         canonical={"https://deepfuture.institute/privacidad"}
-        description={"Protegemos tus datos. Lee nuestra política de privacidad para conocer cómo usamos los datos que compartes con nosotros."}
+        description={
+          "Protegemos tus datos. Lee nuestra política de privacidad para conocer cómo usamos los datos que compartes con nosotros."
+        }
         lang={props.lang}
       />
       <SingleColumn>
