@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { H1, H2 } from "components/shared/Dangerously";
 import LeadCollector from "components/shared/LeadCollector";
 
-function FormComplete({ centered, collectorId, production }) {
+function FormComplete({ centered, collectorId, production, color }) {
   return (
-    <Form centered={centered}>
+    <Form centered={centered} color={color}>
       <Column>
         {centered ? (
           <>
@@ -42,7 +42,8 @@ function FormComplete({ centered, collectorId, production }) {
 export default FormComplete;
 
 const Form = styled.div`
-  background-color: ${(props) => props.theme.colors.accent};
+  background-color: ${(props) =>
+    props.color ? props.color : props.theme.colors.accent};
   grid-column: ${(props) => (props.centered ? "3 / span 8" : "6 / span 6")};
   border-radius: 5px;
   padding: 5% 6.5%;

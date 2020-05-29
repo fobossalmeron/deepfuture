@@ -1,23 +1,23 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 import Head from "components/Head";
 import FormComplete from "components/FormComplete";
 import MainGrid from "components/shared/MainGrid";
-import DataItemsWhite from "components/DataItemsWhite";
-import DataItemsDark from "components/DataItemsDark";
+import HomeItemsDark from "components/IconItems/HomeItemsDark";
 import SalesPopup from "components/SalesPopup";
 import Title from "components/shared/Title";
 import BackgroundHome from "components/BackgroundHome";
-import Quote from "components/Quote";
-import PayPopup from "components/PayPopup";
-import Tiers from "components/Tiers/Tiers";
+import { useContext } from "react";
+import { ThemeContext } from "styled-components";
+import Products from "components/Products";
 import LinkToCovid from "components/LinkToCovid";
 import DFIFull from "public/assets/img/layout/logos/dfifull.svg";
 
 function Home(props) {
   const [showSales, setShowSales] = useState(false);
   const [product, setProduct] = useState(null);
+  const theme = useContext(ThemeContext);
 
   return (
     <>
@@ -29,11 +29,12 @@ function Home(props) {
         canonical={"https://deepfuture.institute"}
         lang={props.lang}
       />
-      <BackgroundHome />
+      {/* <BackgroundHome /> */}
       <Land id="land">
         <div id="landtext">
           <h1>
             Prepárate ante escenarios <b>futuros </b>
+            <br />
             de <b>incertidumbre</b>
           </h1>
           <h2>
@@ -43,43 +44,44 @@ function Home(props) {
           </h2>
         </div>
         <LinkToCovid />
-        <DFIFull/>
+        <DFIFull />
       </Land>
       <Intro>
-        <h2>Asesorado por expertos con +30 años de experiencia haciendo prospectiva</h2>
-        <p>Evaluamos los hechos del mundo en busca de indicios que puedan tener un impacto en el curso de tu trabajo. Trabajamos de la mano con:</p>
-        <ul>
-          <li>Emprendedores de negocios</li>
-          <li>Inversionistas de capital</li>
-          <li>Empresas medianas</li>
-          <li>Corporativos</li>
-        </ul>
+        <IntroGrid>
+          <h2>
+            Asesorado por <b>expertos</b> con +30 años de experiencia haciendo
+            <b> prospectiva</b>
+          </h2>
+          <p>
+            Evaluamos los hechos del mundo en busca de indicios que puedan tener
+            un impacto en el curso de tu trabajo. Trabajamos de la mano con:
+          </p>
+          <ul>
+            <li>Emprendedores de negocios</li>
+            <li>Inversionistas de capital</li>
+            <li>Empresas medianas</li>
+            <li>Corporativos</li>
+          </ul>
+          <img src="assets/img/layout/faces.jpg" />
+        </IntroGrid>
       </Intro>
-      <Tiers setShowSales={setShowSales} setProduct={setProduct} />
-      <SecondForm>
-        <SecondFormGrid>
-          <Fade>
-            <div>
-              <h5>
-                Prueba un poco de lo que <b>ofrecemos</b>
-              </h5>
-              <p>
-                Analizar los escenarios que podrían ocurrir a corto y largo
-                plazo te ayudará a organizar la información que necesitas para
-                enfrentar nuevas problemáticas y reducir riesgos.
-              </p>
-            </div>
-          </Fade>
-          <FormComplete
-            production={props.production}
-            collectorId="TiersCollector"
-          />
-        </SecondFormGrid>
-      </SecondForm>
-      <DataItemsDark />
+      <Products />
+      <LastInfoGrid>
+        <h2>
+          Con la información más <b>relevante</b>
+          <br /> para tu <b>negocio</b>
+        </h2>
+        <p>
+          Ofrecemos a nuestros clientes modelos de pensamiento para enfrentar
+          nuevas problemáticas haciendo sentido de los hechos del mundo que
+          pueden afectar tu negocio. Facilita la toma de decisiones en tu
+          organización y genera certidumbre para ti y tu equipo de trabajo.
+        </p>
+      </LastInfoGrid>
+      <HomeItemsDark />
       <Title notoppadding>
         <p>
-          La estrategia de hoy es mucho más que <b>sobrevivir</b>
+          Prueba un poco de lo que <b>sobrevivir</b>
         </p>
         <h3>
           Encuentra <b>certidumbre</b> con Deep Future Institute
@@ -89,7 +91,8 @@ function Home(props) {
         <FormComplete
           production={props.production}
           centered
-          collectorId="FooterCollector"
+          collectorId="HomeCollector"
+          color={theme.colors.home.accent}
         />
       </LastForm>
       <SalesPopup showSales={showSales} setShowSales={setShowSales} />
@@ -98,6 +101,20 @@ function Home(props) {
 }
 
 export default React.memo(Home);
+
+const LastInfoGrid = styled(MainGrid)`
+  padding-top: 8%;
+  h2 {
+    grid-column: 2 / span 10;
+    font-size: 4rem;
+    max-width: 700px;
+    font-weight: 300;
+  }
+  p {
+    grid-column: 2 / span 10;
+    max-width: 600px;
+  }
+`;
 
 const LastForm = styled(MainGrid)`
   padding-bottom: 6%;
@@ -113,12 +130,12 @@ const Land = styled(MainGrid)`
   padding-top: 8%;
   pointer-events: none;
   align-items: flex-start;
-  svg{
+  svg {
     max-width: 320px;
     width: 100%;
     grid-column: 1 / span 12;
     justify-self: flex-end;
-    padding-top:5%;
+    padding-top: 5%;
   }
   #landtext {
     color: ${(props) => props.theme.colors.foreground};
@@ -127,6 +144,7 @@ const Land = styled(MainGrid)`
     h1 {
       max-width: 880px;
       grid-column: 2 / span 8;
+      line-height: 120%;
       b {
         font-weight: 500;
       }
@@ -137,7 +155,9 @@ const Land = styled(MainGrid)`
       max-width: 650px;
       margin-top: 0;
       font-weight: 300;
+      opacity: 0.85;
     }
+  }
   @media (max-width: 1100px) {
     #landtext {
       h1 {
@@ -182,58 +202,45 @@ const Intro = styled.section`
   color: ${(props) => props.theme.colors.background};
   background-color: ${(props) => props.theme.colors.foreground};
   width: 100%;
+  padding-top: 6%;
 `;
 
-const SecondForm = styled.section`
-  color: ${(props) => props.theme.colors.background};
-  background-color: ${(props) => props.theme.colors.foreground};
-  width: 100%;
-  padding-bottom: 6%;
-  @media (max-width: 900px) {
-    padding-bottom: 35px;
+const IntroGrid = styled(MainGrid)`
+  h2 {
+    grid-column: 2 / span 10;
+    font-size: 4rem;
+    max-width: 700px;
+    font-weight: 300;
   }
-`;
-
-const SecondFormGrid = styled(MainGrid)`
-  & > div:nth-of-type(1) {
-    grid-column: 2 / span 3;
-    max-width: 340px;
-    h5 {
-      font-size: 3.6rem;
-      margin: 0px 0px 20px 0px;
-      b {
-        font-weight: 400;
-      }
-    }
+  p {
+    grid-column: 2 / span 10;
+    max-width: 600px;
   }
-  @media (max-width: 1350px) {
-    & > div:nth-of-type(1) {
-      grid-column: 1 / span 4;
-      max-width: 330px;
-      padding-right: 10px;
-
-      h5 {
-        font-size: 3rem;
+  ul {
+    grid-column: 2 / span 5;
+    grid-row: 3;
+    font-size: inherit;
+    line-height: inherit;
+    li {
+      display: block;
+      margin-bottom: 5px;
+      padding-bottom: 10px;
+      &:before {
+        content: " ";
+        width: 10px;
+        height: 10px;
+        margin-top: 5px;
+        border-radius: 100%;
+        display: inline-block;
+        margin-right: 10px;
+        background-color: ${(props) => props.theme.colors.home.accent};
       }
-    }
-    div:nth-of-type(2) {
-      grid-column: 5 / span 8;
     }
   }
-  @media (max-width: 900px) {
-    div:nth-of-type(1) {
-      grid-column: 1 / span 12;
-      max-width: unset;
-      p {
-        max-width: 500px;
-        margin-bottom: 30px;
-      }
-    }
-    div:nth-of-type(2) {
-      grid-column: 1 / span 12;
-      p {
-        max-width: 300px;
-      }
-    }
+  img {
+    grid-column: 6 / span 7;
+    grid-row: 3;
+    padding-top: 8%;
+    max-width: 100%;
   }
 `;

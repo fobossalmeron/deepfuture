@@ -3,7 +3,7 @@ import { H3, P } from "components/shared/Dangerously";
 import Fade from "react-reveal/Fade";
 import CircleIcon from "components/shared/CircleIcon";
 
-function DataItem({ item, columns, light, dark }) {
+function IconItem({ item, columned, light, dark }) {
   function IconFaded() {
     return (
       <Icon light={light} dark={dark}>
@@ -14,13 +14,13 @@ function DataItem({ item, columns, light, dark }) {
 
   return (
     <Item>
-      {!dark && (
+      {!columned && (
         <Column>
           <IconFaded />
         </Column>
       )}
-      <ColumnSecond columns={columns}>
-        {dark && (
+      <ColumnSecond>
+        {columned && (
           <Column>
             <IconFaded />
           </Column>
@@ -32,7 +32,7 @@ function DataItem({ item, columns, light, dark }) {
   );
 }
 
-export default DataItem;
+export default IconItem;
 
 const Item = styled.li`
   display: flex;

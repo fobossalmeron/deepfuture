@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import DataItem from "components/shared/DataItem";
+import IconItem from "./IconItem";
 import Time from "public/assets/img/layout/icons/time.svg";
 import World from "public/assets/img/layout/icons/world.svg";
 import Risk from "public/assets/img/layout/icons/risk.svg";
@@ -41,19 +41,19 @@ const items = [
   },
 ];
 
-function DataItemsDark() {
+function CovidItemsDark() {
   return (
     <DataSection>
       <DataDarkGrid>
         {items.map((item, i) => (
-          <DataItem dark key={"dataItemWhite" + i} item={item} columns={3} />
+          <IconItem dark key={"covidItemDark" + i} item={item} columned />
         ))}
       </DataDarkGrid>
     </DataSection>
   );
 }
 
-export default DataItemsDark;
+export default CovidItemsDark;
 
 const DataDarkGrid = styled.ul`
   display: flex;

@@ -4,8 +4,8 @@ import Fade from "react-reveal/Fade";
 import Head from "components/Head";
 import FormComplete from "components/FormComplete";
 import MainGrid from "components/shared/MainGrid";
-import DataItemsWhite from "components/DataItemsWhite";
-import DataItemsDark from "components/DataItemsDark";
+import CovidItemsWhite from "components/IconItems/CovidItemsWhite";
+import CovidItemsDark from "components/IconItems/CovidItemsDark";
 import SalesPopup from "components/SalesPopup";
 import Title from "components/shared/Title";
 import BackgroundCovid from "components/BackgroundCovid";
@@ -48,7 +48,7 @@ function Index(props) {
         />
       </Land>
       <Intro>
-        <DataItemsWhite />
+        <CovidItemsWhite />
         <Quote />
       </Intro>
       <Tiers
@@ -76,7 +76,7 @@ function Index(props) {
           />
         </SecondFormGrid>
       </SecondForm>
-      <DataItemsDark />
+      <CovidItemsDark />
       <Title notoppadding>
         <p>
           La estrategia de hoy es mucho más que <b>sobrevivir</b>
@@ -195,6 +195,7 @@ const SecondFormGrid = styled(MainGrid)`
     h5 {
       font-size: 3.6rem;
       margin: 0px 0px 20px 0px;
+      font-weight: 300;
       b {
         font-weight: 400;
       }

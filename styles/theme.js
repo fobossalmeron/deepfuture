@@ -1,5 +1,3 @@
-import home from "../pages/home";
-
 export default {
   colors: {
     background: "#1D1D1B",
@@ -19,6 +17,8 @@ export default {
     lightshadow: "rgba(77, 76, 90, 0.19)",
     home: {
       accent: "#44639E",
+      tier1: "#7BA2B8",
+      tier2: "#D7AF73",
     },
   },
 };

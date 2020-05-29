@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import DataItem from "components/shared/DataItem";
+import IconItem from "./IconItem";
 import Time from "public/assets/img/layout/icons/time.svg";
 import Team from "public/assets/img/layout/icons/team.svg";
 import Info from "public/assets/img/layout/icons/info.svg";
@@ -26,19 +26,19 @@ const items = [
   },
 ];
 
-function DataItemsWhite() {
+function CovidItemsWhite() {
   return (
     <DataSection>
       <DataWhiteGrid>
         {items.map((item, i) => (
-          <DataItem light key={"dataItemWhite" + i} item={item} columns={3} />
+          <IconItem light key={"covidItemWhite" + i} item={item} columns={3} />
         ))}
       </DataWhiteGrid>
     </DataSection>
   );
 }
 
-export default DataItemsWhite;
+export default CovidItemsWhite;
 
 const DataWhiteGrid = styled.ul`
   display: flex;
