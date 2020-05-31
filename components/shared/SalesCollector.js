@@ -7,14 +7,13 @@ import {
   Button,
   selectStyles,
   isEmail,
-  Gracias
+  Gracias,
 } from "components/shared/Forms";
 import Cookies from "js-cookie/dist/js.cookie";
 import Select from "react-select/";
-import SuccessConfirmation from "components/shared/SuccessConfirmation"
+import SuccessConfirmation from "components/shared/SuccessConfirmation";
 
-
-const SalesCollector = () => {
+const SalesCollector = (product) => {
   const [displayMessage, setMessage] = useState(false);
   const [employeeOption, setEmployeeOption] = useState(null);
   const [status, setStatus] = useState("");
@@ -42,6 +41,7 @@ const SalesCollector = () => {
           FIRSTNAME: name.value,
           COMPANY: company.value,
           EMPLOYEES: employeeOption.value,
+          ASKEDFOR: product ? product : "CovidTier3",
         },
       }),
     };

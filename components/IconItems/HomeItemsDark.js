@@ -52,6 +52,9 @@ const DataDarkGrid = styled.ul`
   li {
     width: 50%;
     max-width: 460px;
+    div p {
+      padding-right: 10px;
+    }
     p {
       width: 100%;
       max-width: unset;
@@ -68,22 +71,31 @@ const DataDarkGrid = styled.ul`
       width: 100%;
     }
   }
-  @media (max-width: 900px) {
+  @media (max-width: 950px) {
+    grid-column: 1 / span 12;
     li {
       width: 50%;
       flex-direction: row;
       margin-bottom: 5%;
     }
   }
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     grid-column: 1 / span 12;
 
     li {
       flex-direction: column;
       margin-bottom: 5%;
       width: 100%;
+      div {
+        p {
+          max-width: 300px;
+        }
+        div {
+          margin-bottom: 0;
+        }
+      }
     }
   }
 `;
@@ -93,6 +105,8 @@ const DataSection = styled(MainGrid)`
   padding-bottom: 10%;
   p {
     color: ${(props) => props.theme.colors.foreground_low};
+  }
+  @media (max-width: 950px) {
   }
   @media (max-width: 600px) {
     padding-bottom: 13%;

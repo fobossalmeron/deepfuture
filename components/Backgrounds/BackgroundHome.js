@@ -1,13 +1,9 @@
-import { useEffect } from "react";
 import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
 import Eye from "public/assets/img/layout/eye.svg";
 
 const calc = (x, y) => [x - window.innerWidth / 2, y - window.innerHeight / 2];
 const trans1 = (x, y) => `translate3d(${x / 11}px,${y / 10}px,0)`;
-const trans2 = (x, y) => `translate3d(${x / 10 + 30}px,${y / 8 - 230}px,0)`;
-const trans3 = (x, y) => `translate3d(${x / 9 - 350}px,${y / 8 - 200}px,0)`;
-const trans4 = (x, y) => `translate3d(${x / 8}px,${y / 6.5}px,0)`;
 
 function BackgroundCovid() {
   const [props, set] = useSpring(() => ({
@@ -21,7 +17,6 @@ function BackgroundCovid() {
         <Eye />
       </div>
       <animated.div style={{ transform: props.xy.interpolate(trans1) }} />
-      <animated.div style={{ transform: props.xy.interpolate(trans2) }} />
     </Bg>
   );
 }
@@ -31,7 +26,7 @@ export default BackgroundCovid;
 const Bg = styled.div`
   width: 100%;
   height: 100vh;
-  top: 0;
+  top: 70px;
   position: absolute;
   div {
     :nth-of-type(1) {
@@ -43,7 +38,8 @@ const Bg = styled.div`
       align-items: center;
       justify-items: center;
       svg {
-        width: 100%;
+        /* width: 100%; */
+        height: 100%;
         max-width: 1500px;
         margin: 0 auto;
       }
@@ -56,10 +52,11 @@ const Bg = styled.div`
       background-color: ${(props) => props.theme.colors.background};
       position: absolute;
       height: 0;
-      width: 20%;
-      padding-bottom: 20%;
-      top: 30%;
-      right: 40%;
+      width: 25%;
+      padding-bottom: 25%;
+      top: 0;
+      margin-top: 10%;
+      right: 38%;
     }
   }
 `;

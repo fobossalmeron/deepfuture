@@ -14,7 +14,6 @@ import ReactPixel from "react-facebook-pixel";
 import Cookies from "js-cookie/dist/js.cookie.mjs";
 import { logEvent } from "utils/analytics";
 
-
 const LeadCollector = ({ complete, short, collectorId, production }) => {
   const [displayMessage, setMessage] = useState("");
   const [showMessage, setShowMessage] = useState(false);

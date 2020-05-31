@@ -25,7 +25,7 @@ function PagoConfirmado(props) {
         console.log(
           `Fuiste redireccionado puesto que estabas en production:${props.production} y no venías de mercadopago`
         );
-        window.location.replace("/");
+        window.location.replace("/tallerescovid");
       }
     }
     var _email = Cookies.get("userEmail");
@@ -41,7 +41,7 @@ function PagoConfirmado(props) {
         console.log(
           `Fuiste redireccionado puesto que estabas en production:${props.production} y no tenías ninguna cookie`
         );
-        window.location.replace("/");
+        window.location.replace("/tallerescovid");
       }
     }
     if (_tier1 === "true") {

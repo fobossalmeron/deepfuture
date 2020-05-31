@@ -15,7 +15,6 @@ import downloadWorkshop from "utils/downloadWorkshop";
 
 function PagoConfirmado(props) {
   const [displayMessage, setMessage] = useState("");
-  const [showMessage, setShowMessage] = useState(false);
   const [status, setStatus] = useState("");
   const [userEmail, setUserEmail] = useState(null);
   const theme = useContext(ThemeContext);

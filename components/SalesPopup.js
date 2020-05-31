@@ -4,7 +4,7 @@ import Cross from "public/assets/img/layout/cross.svg";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import SalesCollector from "components/shared/SalesCollector";
 
-const SalesPopup = ({ setShowSales, showSales }) => {
+const SalesPopup = ({ setShowSales, showSales, product }) => {
   useEffect(() => {
     showSales && popupShow();
     !showSales && unlockScreen();
@@ -34,7 +34,7 @@ const SalesPopup = ({ setShowSales, showSales }) => {
             </p>
           </Column>
           <Column>
-            <SalesCollector />
+            <SalesCollector product={product} />
           </Column>
         </Form>
         <CrossContainer>
@@ -48,9 +48,8 @@ const SalesPopup = ({ setShowSales, showSales }) => {
 
 export default SalesPopup;
 
-
 const CrossContainer = styled.div`
-  pointer-events:inherit;
+  pointer-events: inherit;
   width: 50px;
   height: 50px;
   padding: 12px;
@@ -62,14 +61,14 @@ const CrossContainer = styled.div`
     cursor: pointer;
   }
   @media (max-width: 1100px) {
-      top:2px;
-      right:2px;
+    top: 2px;
+    right: 2px;
   }
 `;
 
 const Form = styled.div`
   background-color: ${(props) => props.theme.colors.accent};
-  pointer-events:inherit;
+  pointer-events: inherit;
   grid-column: 3 / span 8;
   border-radius: 5px;
   padding: 5% 6.5%;
@@ -81,7 +80,7 @@ const Form = styled.div`
     grid-column: 2 / span 9;
   }
   @media (max-width: 1100px) {
-    padding-right:55px;
+    padding-right: 55px;
   }
   @media (max-width: 1000px) {
     grid-column: 2 / span 10;
@@ -102,7 +101,7 @@ const Form = styled.div`
 `;
 
 const Column = styled.div`
-  pointer-events:inherit;
+  pointer-events: inherit;
   max-width: 330px;
   width: 100%;
   color: ${(props) => props.theme.colors.foreground};

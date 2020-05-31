@@ -7,7 +7,13 @@ const Footer = () => (
     <FooterNavigation>
       <div>
         <Link href="/" passHref>
+          <a>Home</a>
+        </Link>
+        <Link href="/tallerescovid" passHref>
           <a>Talleres COVID + 4T</a>
+        </Link>
+        <Link href="/nosotros" passHref>
+          <a>Nosotros</a>
         </Link>
         <Link href="/blog" passHref>
           <a>Blog</a>
@@ -42,11 +48,12 @@ const FooterContainer = styled.footer`
 `;
 
 const FooterNavigation = styled.div`
-  padding-top: 5%;
-  padding-bottom: 13px;
+  padding-top: 50px;
+  padding-bottom: 15px;
   display: flex;
   width: 100%;
   justify-content: center;
+  align-items: center;
   div {
     display: flex;
     flex-direction: column;
@@ -55,13 +62,6 @@ const FooterNavigation = styled.div`
     font-weight: 300;
     a {
       text-decoration: none;
-      /* &:after {
-        width: 100%;
-        height: 2px;
-        background-color: transparent;
-        display: block;
-        content: " ";
-      } */
     }
     &:nth-of-type(1) {
       text-align: right;

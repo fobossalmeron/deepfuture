@@ -1,85 +1,87 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 import Head from "components/Head";
 import FormComplete from "components/FormComplete";
 import MainGrid from "components/shared/MainGrid";
-import CovidItemsWhite from "components/IconItems/CovidItemsWhite";
-import CovidItemsDark from "components/IconItems/CovidItemsDark";
+import HomeItemsDark from "components/IconItems/HomeItemsDark";
 import SalesPopup from "components/SalesPopup";
 import Title from "components/shared/Title";
-import BackgroundCovid from "components/Backgrounds/BackgroundCovid";
-import Quote from "components/Quote";
-import PayPopup from "components/PayPopup";
-import Tiers from "components/Tiers/Tiers";
+import BackgroundHome from "components/Backgrounds/BackgroundHome";
+import { useContext } from "react";
+import { ThemeContext } from "styled-components";
+import Products from "components/Products";
+import LinkToCovid from "components/LinkToCovid";
+import DFIFull from "public/assets/img/layout/logos/dfifull.svg";
 
-function Index(props) {
-  const [showPay, setShowPay] = useState(false);
+function Home(props) {
   const [showSales, setShowSales] = useState(false);
   const [product, setProduct] = useState(null);
+  const theme = useContext(ThemeContext);
 
   return (
     <>
       <Head
-        title={"COVID-19 en tiempos de la 4T. Información para tu negocio"}
+        title={"Deep Future Institute: Investigación y talleres de prospectiva"}
         description={
-          "Prepárate para el futuro: Facilita la toma de decisiones y minimiza el riesgo de tu negocio u organización para la crisis del COVID-19 en tiempos de la 4T."
+          "Prepárate para el futuro: Facilita la toma de decisiones y minimiza el riesgo de tu negocio u organización."
         }
         canonical={"https://deepfuture.institute"}
         lang={props.lang}
       />
-      <BackgroundCovid />
+      <BackgroundHome />
       <Land id="land">
         <div id="landtext">
           <h1>
-            Genera <b>certidumbre</b> en la crisis económica del COVID-19 en
-            tiempos de la 4T
+            Prepárate ante escenarios <b>futuros </b>
+            <br />
+            de <b>incertidumbre</b>
           </h1>
           <h2>
-            Facilita la toma de <b>decisiones</b> y minimiza el <b>riesgo</b> de
-            tu negocio u organización en el <b>futuro</b> con este taller
-            autogestivo o guiado por expertos
+            Anticipa los hechos que <b>afectan</b> a tu organización para
+            aprovechar mejor las <b>oportunidades</b> y minimizar la exposición
+            al <b>riesgo</b>
           </h2>
         </div>
-        <FormComplete
-          production={props.production}
-          centered
-          collectorId="LandingCollector"
-        />
+        <LinkToCovid />
+        <DFIFull />
       </Land>
       <Intro>
-        <CovidItemsWhite />
-        <Quote />
+        <IntroGrid>
+          <h2>
+            Asesorado por <b>expertos</b> con +30 años de experiencia haciendo
+            <b> prospectiva</b>
+          </h2>
+          <p>
+            Evaluamos los hechos del mundo en busca de indicios que puedan tener
+            un impacto en el curso de tu trabajo. Trabajamos de la mano con:
+          </p>
+          <ul>
+            <li>Emprendedores de negocios</li>
+            <li>Inversionistas de capital</li>
+            <li>Empresas medianas</li>
+            <li>Corporativos</li>
+          </ul>
+          <img src="assets/img/layout/faces.jpg" />
+        </IntroGrid>
       </Intro>
-      <Tiers
-        setShowSales={setShowSales}
-        setShowPay={setShowPay}
-        setProduct={setProduct}
-      />
-      <SecondForm>
-        <SecondFormGrid>
-          <Fade>
-            <div>
-              <h5>
-                Prueba un poco de lo que <b>ofrecemos</b>
-              </h5>
-              <p>
-                Analizar los escenarios que podrían ocurrir a corto y largo
-                plazo te ayudará a organizar la información que necesitas para
-                enfrentar nuevas problemáticas y reducir riesgos.
-              </p>
-            </div>
-          </Fade>
-          <FormComplete
-            production={props.production}
-            collectorId="TiersCollector"
-          />
-        </SecondFormGrid>
-      </SecondForm>
-      <CovidItemsDark />
+      <Products setShowSales={setShowSales} setProduct={setProduct} />
+      <LastInfoGrid>
+        <h2>
+          Con la información más <b>relevante</b>
+          <br /> para tu <b>negocio</b>
+        </h2>
+        <p>
+          Ofrecemos a nuestros clientes modelos de pensamiento para enfrentar
+          nuevas problemáticas haciendo sentido de los hechos del mundo que
+          pueden afectar tu negocio. Facilita la toma de decisiones en tu
+          organización y genera certidumbre para ti y tu equipo de trabajo.
+        </p>
+      </LastInfoGrid>
+      <HomeItemsDark />
       <Title notoppadding>
         <p>
-          La estrategia de hoy es mucho más que <b>sobrevivir</b>
+          Prueba un poco de lo que <b>sobrevivir</b>
         </p>
         <h3>
           Encuentra <b>certidumbre</b> con Deep Future Institute
@@ -89,16 +91,60 @@ function Index(props) {
         <FormComplete
           production={props.production}
           centered
-          collectorId="FooterCollector"
+          collectorId="HomeCollector"
+          color={theme.colors.home.accent}
         />
       </LastForm>
-      <PayPopup showPay={showPay} setShowPay={setShowPay} product={product} />
-      <SalesPopup showSales={showSales} setShowSales={setShowSales} />
+      <SalesPopup
+        showSales={showSales}
+        product={product}
+        setShowSales={setShowSales}
+      />
     </>
   );
 }
 
-export default React.memo(Index);
+export default React.memo(Home);
+
+const LastInfoGrid = styled(MainGrid)`
+  padding-top: 8%;
+  h2 {
+    grid-column: 2 / span 10;
+    font-size: 4rem;
+    max-width: 700px;
+    font-weight: 300;
+  }
+  p {
+    grid-column: 2 / span 10;
+    max-width: 600px;
+  }
+  @media (max-width: 1100px) {
+    h2 {
+      font-size: 3.4rem;
+    }
+  }
+  @media (max-width: 1000px) {
+    grid-row-gap: 2rem;
+  }
+  @media (max-width: 950px) {
+    h2 {
+      font-size: 3rem;
+      grid-column: 1 / span 12;
+    }
+    p {
+      grid-column: 1 / span 12;
+      max-width: 500px;
+    }
+    ul {
+      grid-column: 1 / span 12;
+    }
+  }
+  @media (max-width: 600px) {
+    h2 {
+      font-size: 2.7rem;
+    }
+  }
+`;
 
 const LastForm = styled(MainGrid)`
   padding-bottom: 6%;
@@ -111,8 +157,17 @@ const Land = styled(MainGrid)`
   min-height: 100vh;
   padding-bottom: 6%;
   align-items: center;
-  padding-top: 13%;
+  padding-top: 8%;
   pointer-events: none;
+  align-items: flex-start;
+  svg {
+    max-width: 340px;
+    width: 100%;
+    grid-column: 1 / span 12;
+    justify-self: flex-end;
+    padding-top: 5%;
+    padding-right: 30px;
+  }
   #landtext {
     color: ${(props) => props.theme.colors.foreground};
     grid-column: 2 / span 10;
@@ -120,6 +175,7 @@ const Land = styled(MainGrid)`
     h1 {
       max-width: 880px;
       grid-column: 2 / span 8;
+      line-height: 120%;
       b {
         font-weight: 500;
       }
@@ -130,6 +186,7 @@ const Land = styled(MainGrid)`
       max-width: 650px;
       margin-top: 0;
       font-weight: 300;
+      opacity: 0.85;
     }
   }
   @media (max-width: 1100px) {
@@ -169,6 +226,10 @@ const Land = styled(MainGrid)`
         max-width: 530px;
       }
     }
+    svg {
+      padding-right: 0;
+      padding-bottom: 10%;
+    }
   }
 `;
 
@@ -176,59 +237,80 @@ const Intro = styled.section`
   color: ${(props) => props.theme.colors.background};
   background-color: ${(props) => props.theme.colors.foreground};
   width: 100%;
+  padding-top: 6%;
 `;
 
-const SecondForm = styled.section`
-  color: ${(props) => props.theme.colors.background};
-  background-color: ${(props) => props.theme.colors.foreground};
-  width: 100%;
-  padding-bottom: 6%;
-  @media (max-width: 900px) {
-    padding-bottom: 35px;
+const IntroGrid = styled(MainGrid)`
+  h2 {
+    grid-column: 2 / span 10;
+    font-size: 4rem;
+    max-width: 700px;
+    font-weight: 300;
   }
-`;
-
-const SecondFormGrid = styled(MainGrid)`
-  & > div:nth-of-type(1) {
-    grid-column: 2 / span 3;
-    max-width: 340px;
-    h5 {
-      font-size: 3.6rem;
-      margin: 0px 0px 20px 0px;
-      font-weight: 300;
-      b {
-        font-weight: 400;
+  p {
+    grid-column: 2 / span 10;
+    max-width: 600px;
+  }
+  ul {
+    grid-column: 2 / span 5;
+    grid-row: 3;
+    font-size: inherit;
+    line-height: inherit;
+    li {
+      display: block;
+      margin-bottom: 5px;
+      padding-bottom: 10px;
+      &:before {
+        content: " ";
+        width: 10px;
+        height: 10px;
+        margin-top: 5px;
+        border-radius: 100%;
+        display: inline-block;
+        margin-right: 10px;
+        background-color: ${(props) => props.theme.colors.home.accent};
       }
     }
   }
-  @media (max-width: 1350px) {
-    & > div:nth-of-type(1) {
-      grid-column: 1 / span 4;
-      max-width: 330px;
-      padding-right: 10px;
-
-      h5 {
-        font-size: 3rem;
-      }
-    }
-    div:nth-of-type(2) {
-      grid-column: 5 / span 8;
+  img {
+    grid-column: 6 / span 7;
+    grid-row: 3;
+    padding-top: 8%;
+    max-width: 100%;
+  }
+  @media (max-width: 1100px) {
+    h2 {
+      font-size: 3.4rem;
     }
   }
-  @media (max-width: 900px) {
-    div:nth-of-type(1) {
+  @media (max-width: 1000px) {
+    grid-row-gap: 2rem;
+  }
+  @media (max-width: 950px) {
+    h2 {
+      font-size: 3rem;
       grid-column: 1 / span 12;
-      max-width: unset;
-      p {
-        max-width: 500px;
-        margin-bottom: 30px;
-      }
+      max-width: 530px;
     }
-    div:nth-of-type(2) {
+    p {
       grid-column: 1 / span 12;
-      p {
-        max-width: 300px;
-      }
+      max-width: 500px;
+    }
+    ul {
+      grid-column: 1 / span 12;
+    }
+  }
+  @media (max-width: 750px) {
+    img {
+      grid-column: 1 / span 12;
+      position: relative;
+      grid-row: 4 / span 1;
+      padding-top: 10px;
+    }
+  }
+  @media (max-width: 600px) {
+    h2 {
+      font-size: 2.7rem;
     }
   }
 `;

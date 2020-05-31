@@ -14,7 +14,7 @@ function LinkToCovid() {
           organización ante los riesgos de la crísis económica provocada por el
           COVID.
         </p>
-        <Link href="/" passHref>
+        <Link href="/tallerescovid" passHref>
           <StyledButton>Visita los talleres</StyledButton>
         </Link>
       </Column>
@@ -29,8 +29,8 @@ const StyledButton = styled.a`
   text-decoration: none;
   padding: 14px;
   margin: 4px 0;
-  font-weight:400;
-  display:block;
+  font-weight: 400;
+  display: block;
   text-align: center;
   width: 100%;
   background-color: ${(props) => props.theme.colors.cta};
@@ -61,14 +61,16 @@ const Form = styled.div`
   transition: all 0.3s ease-in;
   pointer-events: auto;
   @media (max-width: 1200px) {
-    grid-column: ${(props) => (props.centered ? "2 / span 9" : "6 / span 6")};
+    grid-column: 3 / span 7;
   }
-  @media (max-width: 1000px) {
-    grid-column: ${(props) => (props.centered ? "2 / span 10" : "6 / span 6")};
+  @media (max-width: 1050px) {
+    grid-column: 3 / span 8;
   }
   @media (max-width: 950px) {
-    grid-column: ${(props) => (props.centered ? "1 / span 12" : "6 / span 6")};
+    grid-column: 1 / span 12;
     margin-bottom: 20px;
+    max-width: 440px;
+    padding: 30px;
   }
   @media (max-width: 700px) {
     flex-direction: column;
@@ -84,7 +86,7 @@ const Form = styled.div`
 const Column = styled.div`
   width: 100%;
   color: ${(props) => props.theme.colors.foreground};
-    padding-right: 5%;
+  padding-right: 5%;
   h4 {
     font-weight: 300;
     font-size: 3rem;
