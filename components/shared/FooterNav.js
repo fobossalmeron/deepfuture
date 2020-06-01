@@ -93,6 +93,29 @@ const FooterNavigation = styled.div`
       text-decoration-thickness: 0.2rem;
     }
   }
+  @media (max-width: 500px) {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 6%;
+    div {
+      &:nth-of-type(1) {
+        text-align: left;
+        padding-right: 5%;
+        margin-bottom: 10px;
+        &::after {
+          width: 100%;
+          height: 2px;
+          bottom: 0px;
+          margin-top: 10px;
+          position: relative;
+        }
+      }
+      &:nth-of-type(2) {
+        padding-left: 0;
+      }
+      text-align: left;
+    }
+  }
 `;
 
 const FooterBottom = styled.div`

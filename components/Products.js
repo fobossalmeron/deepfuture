@@ -19,7 +19,7 @@ function SingleProduct({
   const assignSales = (id) => {
     setShowSales(true);
     setProduct(id);
-    console.log("assiggnSales called");
+    console.log("assignSales called with product: " + id);
   };
 
   return (
@@ -77,7 +77,7 @@ function Products({ setShowSales, setProduct }) {
     {
       title: "Estrategia para corporativos y grandes empresas",
       type: "Talleres",
-      id: "Taller corporativos",
+      id: "Taller Corporativos",
       description:
         "Recibe atención personalizada de nuestro equipo de expertos exclusivamente para tu organización. Analiza la información indicada junto a todo tu equipo de trabajo para desarrollar un plan de acción a largo plazo dentro de tu organización. <br/>Comunica efectivamente las prioridades de tu negocio brindando herramientas que empoderen a tus trabajadores.",
       color: theme.colors.home.tier2,
@@ -203,7 +203,7 @@ const ProductContainer = styled.div`
     grid-row: 1;
     h2 {
       font-size: 2.2rem;
-      margin-top: 15px;
+      margin-top: 0px;
     }
     h3 {
       font-size: 1.7rem;

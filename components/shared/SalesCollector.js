@@ -1,5 +1,4 @@
 import { useState } from "react";
-import styled from "styled-components";
 import {
   Message,
   Input,
@@ -7,7 +6,6 @@ import {
   Button,
   selectStyles,
   isEmail,
-  Gracias,
 } from "components/shared/Forms";
 import Cookies from "js-cookie/dist/js.cookie";
 import Select from "react-select/";
@@ -19,12 +17,32 @@ const SalesCollector = (product) => {
   const [status, setStatus] = useState("");
   let email, name, company;
 
+  const correctList = () => {
+    console.log(product);
+    switch (Object.values(product)[0]) {
+      case "Estudio":
+        console.log("Estudio");
+        return [12];
+      case "Taller Empresarios":
+        console.log("Taller Empresarios");
+        return [13];
+      case "Taller Corporativos":
+        console.log("Taller Corporativos");
+        return [14];
+      default:
+        console.log("Default, Covid tier 3");
+        return [9];
+    }
+  };
+
   const handleEmployeeChange = (selectedEmployee) => {
     setEmployeeOption(selectedEmployee);
   };
 
   const call = async () => {
     setStatus("sending");
+    let list = correctList();
+    console.log(list);
 
     let requestOptions = {
       method: "POST",
@@ -36,12 +54,11 @@ const SalesCollector = (product) => {
       body: JSON.stringify({
         updateEnabled: true,
         email: email.value,
-        listIds: [9],
+        listIds: list,
         attributes: {
           FIRSTNAME: name.value,
           COMPANY: company.value,
           EMPLOYEES: employeeOption.value,
-          ASKEDFOR: product ? product : "CovidTier3",
         },
       }),
     };

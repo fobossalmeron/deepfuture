@@ -213,6 +213,29 @@ const LastInfoGrid = styled(MainGrid)`
     color: ${(props) => props.theme.colors.foreground};
     font-weight: 500;
   }
+  @media (max-width: 1100px) {
+    h2 {
+      font-size: 3.4rem;
+    }
+  }
+  @media (max-width: 950px) {
+    padding-top: 15%;
+    padding-bottom: 15%;
+    h2 {
+      grid-column: 1 / span 12;
+      font-size: 3rem;
+      padding-bottom: 15px;
+    }
+    p {
+      grid-column: 1 / span 12;
+    }
+  }
+  @media (max-width: 600px) {
+    h2 {
+      font-size: 2.7rem;
+      padding-bottom: 10px;
+    }
+  }
 `;
 
 const Land = styled(MainGrid)`
@@ -263,11 +286,11 @@ const Land = styled(MainGrid)`
       grid-column-end: span 5;
       border-radius: 8px;
       text-align: center;
-      padding: 9%;
+      padding: 50px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: space-around;
+      justify-content: center;
       max-width: 380px;
       width: auto;
       position: relative;
@@ -322,6 +345,26 @@ const Land = styled(MainGrid)`
         max-width: 530px;
       }
     }
+    #process {
+      li {
+        &:nth-of-type(1) {
+          grid-column-start: 8;
+        }
+        &:nth-of-type(2) {
+          grid-row: 2;
+          grid-column-start: 5;
+          grid-column-end: span 6;
+        }
+        &:nth-of-type(3) {
+          grid-row: 3;
+          grid-column-start: 2;
+        }
+        &:nth-of-type(4) {
+          grid-row: 4;
+          grid-column-start: 5;
+        }
+      }
+    }
   }
   @media (max-width: 950px) {
     #landtext {
@@ -335,10 +378,40 @@ const Land = styled(MainGrid)`
         max-width: 530px;
       }
     }
+    #process li {
+      margin-bottom: 30px;
+    }
+  }
+  @media (max-width: 900px) {
+    #process {
+      margin-top: -20px;
+      li {
+        margin-bottom: 100px;
+        padding: 15% 30px;
+        grid-column-end: span 10;
+        &:nth-of-type(1) {
+          grid-column-start: 2;
+        }
+        &:nth-of-type(2) {
+          grid-row: 2;
+          grid-column-start: 2;
+          grid-column-end: span 11;
+        }
+        &:nth-of-type(3) {
+          grid-row: 3;
+          grid-column-start: 2;
+        }
+        &:nth-of-type(4) {
+          grid-row: 4;
+          grid-column-start: 2;
+        }
+      }
+    }
   }
   @media (max-width: 600px) {
     #landtext {
-      padding-top: 100px;
+      padding-top: 30px;
+      padding-bottom: 30px;
       h1 {
         font-size: 3rem;
         max-width: 660px;
@@ -346,6 +419,14 @@ const Land = styled(MainGrid)`
       h2 {
         font-size: 1.8rem;
         max-width: 530px;
+      }
+    }
+  }
+  @media (max-width: 400px) {
+    #process {
+      margin-top: 0;
+      li {
+        padding: 20px;
       }
     }
   }
@@ -377,7 +458,7 @@ const IntroGrid = styled(MainGrid)`
     max-width: 600px;
   }
   ul {
-    grid-column: 3 / span 5;
+    grid-column: 3 / span 9;
     grid-row: 3;
     font-size: inherit;
     line-height: inherit;
@@ -394,5 +475,44 @@ const IntroGrid = styled(MainGrid)`
     max-width: 50px;
     max-height: 50px;
     border-radius: 50%;
+  }
+  @media (max-width: 1100px) {
+    h2 {
+      font-size: 3.4rem;
+    }
+    h3 {
+      font-size: 2.6rem;
+    }
+  }
+  @media (max-width: 950px) {
+    padding-bottom: 10%;
+    p {
+      grid-column: 1 / span 12;
+    }
+    h2 {
+      grid-column: 1 / span 12;
+      font-size: 3rem;
+    }
+    h3 {
+      font-size: 2.4rem;
+    }
+    ul {
+      grid-column: 2 / span 11;
+    }
+  }
+  @media (max-width: 800px) {
+    ul {
+      grid-column: 1 / span 12;
+    }
+  }
+  @media (max-width: 600px) {
+    grid-gap: 10px;
+    h2 {
+      font-size: 2.7rem;
+      padding-bottom: 10px;
+    }
+    h3 {
+      font-size: 2.2rem;
+    }
   }
 `;
