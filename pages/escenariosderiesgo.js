@@ -8,12 +8,12 @@ import CovidItemsWhite from "components/IconItems/CovidItemsWhite";
 import CovidItemsDark from "components/IconItems/CovidItemsDark";
 import SalesPopup from "components/SalesPopup";
 import Title from "components/shared/Title";
-import BackgroundCovid from "components/Backgrounds/BackgroundCovid";
+import BackgroundEscenarios from "components/Backgrounds/BackgroundEscenarios";
 import Quote from "components/Quote";
 import PayPopup from "components/PayPopup";
 import Tiers from "components/Tiers/Tiers";
 
-function Index(props) {
+function Escenarios(props) {
   const [showPay, setShowPay] = useState(false);
   const [showSales, setShowSales] = useState(false);
   const [product, setProduct] = useState(null);
@@ -21,24 +21,28 @@ function Index(props) {
   return (
     <>
       <Head
-        title={"COVID-19 en tiempos de la 4T. Información para tu negocio"}
+        title={"Escenarios de riesgo en tiempos de la 4T en México"}
         description={
-          "Prepárate para el futuro: Facilita la toma de decisiones y minimiza el riesgo de tu negocio u organización para la crisis del COVID-19 en tiempos de la 4T."
+          "Prepárate para el futuro: Facilita la toma de decisiones y minimiza el riesgo de tu negocio u organización en tiempos de la 4T."
         }
-        canonical={"https://deepfuture.institute/tallerescovid"}
+        canonical={"https://deepfuture.institute/escenariosderiesgo"}
         lang={props.lang}
       />
-      <BackgroundCovid />
+      <BackgroundEscenarios />
       <Land id="land">
         <div id="landtext">
+          <h3>
+            Prepárate para una <b>década</b> <br />
+            marcada por la <b>incertidumbre</b>
+          </h3>
           <h1>
-            Genera <b>certidumbre</b> en la crisis económica del COVID-19 en
-            tiempos de la 4T
+            Escenarios de riesgo en tiempos de la cuarta transformación de
+            México
           </h1>
           <h2>
-            Facilita la toma de <b>decisiones</b> y minimiza el <b>riesgo</b> de
-            tu negocio u organización en el <b>futuro</b> con este taller
-            autogestivo o guiado por expertos
+            Encuentra en este <b>estudio prospectivo</b> las tendencias
+            económicas, sociales, ambientales y políticas de México a
+            <b> diez años</b> (2020-2030)
           </h2>
         </div>
         <FormComplete
@@ -98,7 +102,7 @@ function Index(props) {
   );
 }
 
-export default React.memo(Index);
+export default React.memo(Escenarios);
 
 const LastForm = styled(MainGrid)`
   padding-bottom: 6%;
