@@ -20,5 +20,8 @@ export default {
       tier1: "#7BA2B8",
       tier2: "#D7AF73",
     },
+    escenarios: {
+      accent: "rgba(67,126,84,1)",
+    },
   },
 };

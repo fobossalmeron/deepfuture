@@ -11,7 +11,7 @@ import { LangProvider } from "utils/LangContext";
 import { withRouter } from "next/router";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 
-const production = true;
+const production = false;
 
 class MyApp extends App {
   constructor(props) {
@@ -128,7 +128,7 @@ class MyApp extends App {
           <LoadingBar
             onRef={(ref) => (this.LoadingBar = ref)}
             height={3}
-            color={theme.colors.accent}
+            color={theme.colors.home.accent}
             className="TopBar"
           />
           <Layout

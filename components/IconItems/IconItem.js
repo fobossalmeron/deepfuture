@@ -3,10 +3,10 @@ import { H3, P } from "components/shared/Dangerously";
 import Fade from "react-reveal/Fade";
 import CircleIcon from "components/shared/CircleIcon";
 
-function IconItem({ item, columned, light, dark }) {
+function IconItem({ item, columned, light, dark, shadowColor }) {
   function IconFaded() {
     return (
-      <Icon light={light} dark={dark}>
+      <Icon light={light} dark={dark} shadowColor={shadowColor}>
         {item.icon}
       </Icon>
     );
@@ -25,8 +25,8 @@ function IconItem({ item, columned, light, dark }) {
             <IconFaded />
           </Column>
         )}
-        <H3>{item.title}</H3>
-        <P>{item.description}</P>
+        {item.title && <H3>{item.title}</H3>}
+        {item.description && <P>{item.description}</P>}
       </ColumnSecond>
     </Item>
   );

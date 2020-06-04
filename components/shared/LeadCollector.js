@@ -14,7 +14,7 @@ import ReactPixel from "react-facebook-pixel";
 import Cookies from "js-cookie/dist/js.cookie.mjs";
 import { logEvent } from "utils/analytics";
 
-const LeadCollector = ({ complete, short, collectorId, production }) => {
+const LeadCollector = ({ complete, short, collectorId, production, color }) => {
   const [displayMessage, setMessage] = useState("");
   const [showMessage, setShowMessage] = useState(false);
   const [industryOption, setIndustryOption] = useState(null);
@@ -122,7 +122,7 @@ const LeadCollector = ({ complete, short, collectorId, production }) => {
         </>
       )}
       {status === "success" && complete && (
-        <SuccessConfirmation>
+        <SuccessConfirmation color={color}>
           <h5>¡Gracias por descargar! </h5>
           <p>Enviaremos el PDF a tu correo.</p>
         </SuccessConfirmation>

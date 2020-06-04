@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { darken, lighten } from "polished";
+import { darken, lighten, transparentize } from "polished";
 
 const CircleIcon = styled.div`
   width: 100px;
@@ -12,14 +12,17 @@ const CircleIcon = styled.div`
       ? props.theme.colors.background
       : props.color};
   box-shadow: ${(props) =>
-    props.light
+    props.shadowColor && props.dark
+      ? `-4px -4px 7px ${transparentize(0.7, props.shadowColor)},
+    2px 2px 4px ${props.theme.colors.darkshadow}`
+      : props.light
       ? `-2px -4px 11px ${props.theme.colors.lightlight},
     2px 2px 4px ${props.theme.colors.lightshadow}`
       : props.dark
       ? `-5px -5px 7px ${props.theme.colors.darklight}, 
     5px 5px 7px ${props.theme.colors.darkshadow}`
-      : `-5px -5px 7px ${lighten(0.05,props.color)}, 
-    3px 3px 7px ${darken(0.04,props.color)}`};
+      : `-5px -5px 7px ${lighten(0.05, props.color)}, 
+    3px 3px 7px ${darken(0.04, props.color)}`};
   position: relative;
   margin-bottom: 10%;
   svg {

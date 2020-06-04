@@ -33,13 +33,14 @@ const styles = `
   }
   #bordered::before {
     content: " ";
-    background-color: #4F478B;
+    background-color: #44639E;
     width: 300%;
-    height: 50%;
+    height: 50px;
     position: absolute;
     transform: translateX(-50%);
     animation: shine 2s infinite ease-in-out;
     transition: opacity 0.1s ease;
+    bottom:0;
   }
   .hidden::before {
     opacity: 0;
@@ -52,6 +53,25 @@ const styles = `
     left: calc(50% - 20px);
     transition: opacity 0.2s ease;
   }
+  #logo circle{
+    animation: look 3s infinite ease-in-out;
+  }
+
+  @keyframes look {
+    0% {
+      transform: translateX(0%);
+    }
+    30% {
+      transform: translateX(-10%);
+    }
+    80% {
+      transform: translateX(10%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+
   @keyframes shine {
     0% {
       transform: translateX(-100%);

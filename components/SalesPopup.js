@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import Cross from "public/assets/img/layout/cross.svg";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import SalesCollector from "components/shared/SalesCollector";
 
-const SalesPopup = ({ setShowSales, showSales, product }) => {
+const SalesPopup = ({ setShowSales, showSales, product, color }) => {
   useEffect(() => {
     showSales && popupShow();
     !showSales && unlockScreen();
@@ -25,7 +25,7 @@ const SalesPopup = ({ setShowSales, showSales, product }) => {
   return (
     <>
       <Wrapper clickable={showSales} id="SalesPopup">
-        <Form>
+        <Form color={color}>
           <Column>
             <h4>Nosotros te contactaremos</h4>
             <p>
@@ -67,7 +67,8 @@ const CrossContainer = styled.div`
 `;
 
 const Form = styled.div`
-  background-color: ${(props) => props.theme.colors.accent};
+  background-color: ${(props) =>
+    props.color ? props.color : props.theme.colors.accent};
   pointer-events: inherit;
   grid-column: 3 / span 8;
   border-radius: 5px;

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import Fade from "react-reveal/Fade";
 import Head from "components/Head";
@@ -22,9 +22,9 @@ function Index(props) {
     <>
       <Head
         title={"COVID-19 en tiempos de la 4T. Información para tu negocio"}
-        description={
-          "Prepárate para el futuro: Facilita la toma de decisiones y minimiza el riesgo de tu negocio u organización para la crisis del COVID-19 en tiempos de la 4T."
-        }
+        description={`Prepárate para el futuro: Facilita la toma de decisiones y minimiza 
+          el riesgo de tu negocio u organización para la crisis del COVID-19 
+          en tiempos de la 4T.`}
         canonical={"https://deepfuture.institute/tallerescovid"}
         lang={props.lang}
       />
@@ -49,7 +49,14 @@ function Index(props) {
       </Land>
       <Intro>
         <CovidItemsWhite />
-        <Quote />
+        <Quote
+          quote={`Todo empresario debe ampliar su visión y este taller fue revelador. 
+          Muy útil para ayudar a clientes como los nuestros a orientar sus cursos de 
+          acción estratégicos`}
+          name={"Jorge Milke"}
+          position={"Senior Manager, Deloitte"}
+          img={"/assets/img/layout/profile.jpg"}
+        />
       </Intro>
       <Tiers
         setShowSales={setShowSales}

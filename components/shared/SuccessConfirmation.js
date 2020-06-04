@@ -2,10 +2,10 @@ import styled, { withTheme } from "styled-components";
 import Mail from "public/assets/img/layout/icons/mail.svg";
 import CircleIcon from "components/shared/CircleIcon";
 
-function SuccessConfirmation({ children, className, theme }) {
+function SuccessConfirmation({ children, className, theme, color }) {
   return (
     <Gracias className={className}>
-      <Icon color={theme.colors.accent}>
+      <Icon color={color ? color : theme.colors.accent}>
         <Mail />
       </Icon>
       {children}

@@ -76,20 +76,22 @@ export default class MyDocument extends Document {
               id="logo"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
-              viewBox="0 0 98 63"
+              viewBox="0 0 238 153"
             >
               <path
                 fill="#F4F4F4"
-                fillRule="evenodd"
-                d="M49 62c38 0 48-32 48-32S87 1 49 1 1 30 1 30s10 32 48 32zm0-16a16 16 0 100-32 16 16 0 000 32z"
-                clipRule="evenodd"
+                d="M238 72.5S214.2 152 119 152 0 72.5 0 72.5 23.8 1.1 119 1.1s119 71.4 119 71.4z"
               />
+              <circle cx="119" cy="72.5" r="39.7" fill="#1D1D1B" />
             </svg>
           </div>
           <Main />
           <NextScript />
         </body>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet"/>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+          rel="stylesheet"
+        />
       </Html>
     );
   }

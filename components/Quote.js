@@ -3,23 +3,18 @@ import QuoteOpen from "public/assets/img/layout/quoteOpen.svg";
 import QuoteClose from "public/assets/img/layout/quoteClose.svg";
 import Fade from "react-reveal/Fade";
 
-function Quote() {
+function Quote({ color, name, position, quote, img }) {
   return (
     <FullContainer>
       <Fade>
         <QuoteContainer>
           <QuoteOpen />
-          <TextContainer>
-            <p>
-            Todo empresario debe ampliar su visión y este taller fue revelador. Muy útil para ayudar a clientes como los nuestros a orientar sus cursos de acción estratégicos.
-            </p>
+          <TextContainer color={color}>
+            <p>{quote}</p>
             <div>
-              <h6>Jorge Milke</h6>
-              <label>Senior Manager, Deloitte</label>
-              <img
-                src="/assets/img/layout/profile.jpg"
-                alt="Juan José de Régules"
-              />
+              <h6>{name}</h6>
+              <label>{position}</label>
+              <img src={img} alt={name} />
             </div>
           </TextContainer>
           <QuoteClose />
@@ -50,7 +45,8 @@ const TextContainer = styled.div`
   align-items: center;
   flex-direction: column;
   p {
-    color: ${(props) => props.theme.colors.accent};
+    color: ${(props) =>
+      props.color ? props.color : props.theme.colors.accent};
     font-size: 2.5rem;
     font-weight: 300;
     max-width: 660px;

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import styled from "styled-components";
-import Fade from "react-reveal/Fade";
 import Head from "components/Head";
 import FormComplete from "components/FormComplete";
 import MainGrid from "components/shared/MainGrid";
@@ -10,7 +9,7 @@ import Title from "components/shared/Title";
 import BackgroundHome from "components/Backgrounds/BackgroundHome";
 import { useContext } from "react";
 import { ThemeContext } from "styled-components";
-import Products from "components/Products";
+import Products from "components/Products/Products";
 import LinkToCovid from "components/LinkToCovid";
 import DFIFull from "public/assets/img/layout/logos/dfifull.svg";
 
@@ -99,6 +98,7 @@ function Home(props) {
         showSales={showSales}
         product={product}
         setShowSales={setShowSales}
+        color={theme.colors.home.accent}
       />
     </>
   );

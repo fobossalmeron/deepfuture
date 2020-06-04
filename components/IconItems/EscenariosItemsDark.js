@@ -5,27 +5,39 @@ import Eye from "public/assets/img/layout/icons/eye.svg";
 import Benefit from "public/assets/img/layout/icons/benefit.svg";
 import Expert from "public/assets/img/layout/icons/expert.svg";
 import Aleph from "public/assets/img/layout/icons/aleph.svg";
+import Team from "public/assets/img/layout/icons/team.svg";
+import World from "public/assets/img/layout/icons/world.svg";
 import MainGrid from "components/shared/MainGrid";
 
 const items = [
   {
     description:
-      "Utilizamos herramientas tecnológicas y de matemática estadística",
-    icon: <Aleph />,
-  },
-  {
-    description:
-      "Consultamos expertos: Académicos, Analistas, Empresarios y Políticos",
+      "El equipo de Deep Future Institute tiene +30 años haciendo prospectiva en México y el mundo",
     icon: <Expert />,
   },
   {
     description:
-      "Recolectamos y condensamos información de organismos públicos",
+      "+200 variables relevantes del país fueron analizadas durante este trabajo",
     icon: <Benefit />,
   },
   {
-    description: "Generamos y analizamos cientos de posibles series de tiempo",
+    description:
+      "+30 expertos fueron consultados para la realización de la investigación",
+    icon: <Team />,
+  },
+  {
+    description:
+      "Información de +11 organismos públicos (INEGI, Banxico, Coneval y más)",
     icon: <Eye />,
+  },
+  {
+    description:
+      "+100 negocios han acudido a nuestro equipo de expertos para mejorar sus organizaciones",
+    icon: <World />,
+  },
+  {
+    description: "Tecnología de investigación: ALEPH® y ESPECTRO®",
+    icon: <Aleph />,
   },
 ];
 
@@ -39,7 +51,8 @@ function HomeItemsDark() {
             dark
             key={"homeItemWhite" + i}
             item={item}
-            shadowColor={theme.colors.home.accent}
+            columned
+            shadowColor={theme.colors.escenarios.accent}
           />
         ))}
       </DataDarkGrid>
@@ -53,12 +66,12 @@ const DataDarkGrid = styled.ul`
   display: flex;
   flex-wrap: wrap;
   grid-column: 2 / span 11;
-  max-width: 1000px;
   justify-content: space-between;
   align-items: baseline;
   li {
-    width: 50%;
+    width: 33%;
     max-width: 460px;
+    margin-bottom: 6%;
     div p {
       padding-right: 10px;
     }
@@ -69,7 +82,7 @@ const DataDarkGrid = styled.ul`
   }
   svg {
     *:not(.mutant-stroke) {
-      stroke: ${(props) => props.theme.colors.home.accent};
+      stroke: ${(props) => props.theme.colors.escenarios.accent};
     }
   }
   @media (max-width: 1300px) {
@@ -109,7 +122,7 @@ const DataDarkGrid = styled.ul`
 
 const DataSection = styled(MainGrid)`
   padding-top: 6%;
-  padding-bottom: 10%;
+  padding-bottom: 6%;
   p {
     color: ${(props) => props.theme.colors.foreground_low};
   }

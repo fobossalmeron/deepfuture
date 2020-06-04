@@ -33,6 +33,7 @@ function FormComplete({ centered, collectorId, production, color }) {
           production={production}
           complete
           collectorId={collectorId}
+          color={color}
         />
       </Column>
     </Form>

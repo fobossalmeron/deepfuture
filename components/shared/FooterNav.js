@@ -12,6 +12,9 @@ const Footer = () => (
         <Link href="/tallerescovid" passHref>
           <a>Talleres COVID + 4T</a>
         </Link>
+        <Link href="/escenariosderiesgo" passHref>
+          <a>Escenarios de Riesgo</a>
+        </Link>
         <Link href="/nosotros" passHref>
           <a>Nosotros</a>
         </Link>
@@ -42,7 +45,7 @@ export default Footer;
 
 const FooterContainer = styled.footer`
   width: 100%;
-  background-color: #353739;
+  background-color: #2b2b2b;
   margin-top: 25px;
   z-index: 1;
 `;
