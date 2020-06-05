@@ -142,6 +142,12 @@ const LastPiece = styled.div`
   h3 {
     max-width: 800px;
   }
+  @media (max-width: 1100px) {
+    h3 {
+      font-size: 3.4rem;
+      max-width: 550px;
+    }
+  }
 `;
 
 const LastForm = styled(MainGrid)`
@@ -342,22 +348,40 @@ const SecondFormGrid = styled(MainGrid)`
 
   @media (max-width: 1350px) {
     & > div:nth-of-type(1) {
-      grid-column: 1 / span 4;
+      /* grid-column: 1 / span 4;
       max-width: 330px;
-      padding-right: 10px;
-
+      padding-right: 10px; */
       h5 {
         font-size: 3rem;
+        max-width: 360px;
       }
     }
     div:nth-of-type(2) {
-      grid-column: 5 / span 8;
+      /* grid-column: 5 / span 8; */
     }
   }
-  @media (max-width: 900px) {
+  @media (max-width: 950px) {
+    div:nth-of-type(1) {
+      grid-column: 1 / span 6;
+
+      /* grid-column: 1 / span 12;
+      max-width: unset; */
+      p {
+        /* max-width: 500px;
+        margin-bottom: 30px; */
+      }
+    }
+    div:nth-of-type(2) {
+      grid-column: 7 / span 6;
+      /* grid-column: 1 / span 12; */
+    }
+  }
+  @media (max-width: 750px) {
     div:nth-of-type(1) {
       grid-column: 1 / span 12;
+      grid-row-start: 1;
       max-width: unset;
+      margin-top: 0;
       p {
         max-width: 500px;
         margin-bottom: 30px;
@@ -365,6 +389,8 @@ const SecondFormGrid = styled(MainGrid)`
     }
     div:nth-of-type(2) {
       grid-column: 1 / span 12;
+      grid-row-start: 2;
+      margin-bottom: 6%;
       p {
         max-width: 300px;
       }

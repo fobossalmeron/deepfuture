@@ -51,33 +51,31 @@ const DataWhiteGrid = styled.ul`
     & > div {
       width: 100%;
     }
-    @media (max-width: 1200px) {
-      flex-direction: column;
-    }
   }
-  @media (max-width: 1300px) {
-    justify-content: space-around;
-    li:nth-of-type(3) div:nth-of-type(2) {
-      margin-right: 0 !important;
-      width: 100%;
-    }
+  @media (max-width: 850px) {
+    grid-column: 3 / span 8;
   }
-  @media (max-width: 900px) {
-    justify-content: space-around;
-    flex-direction: column;
-    align-items: center;
+  @media (max-width: 600px) {
+    grid-column: 1 / span 12;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     li {
-      flex-direction: row;
-      margin-bottom: 5%;
-      & > div:nth-of-type(1) {
-        width: 25%;
+      & > div {
+        justify-content: center;
+        align-items: center;
+        width: auto;
+        margin-right: 0;
+      }
+      & > div div {
+        width: 60px;
+        margin: 0 auto 10px auto;
       }
     }
   }
-  @media (max-width: 600px) {
-    li {
-      flex-direction: column;
-      margin-bottom: 5%;
+  @media (max-width: 400px) {
+    margin-top: 5%;
+    p {
+      font-size: 1.5rem;
     }
   }
 `;

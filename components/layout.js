@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styled, { createGlobalStyle } from "styled-components";
+import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import Header from "./header";
 import { useRouter } from "next/router";
 import CookieMessage from "./CookieMessage";
@@ -7,6 +8,7 @@ import { initGA, logPageView } from "utils/analytics";
 import ReactPixel from "react-facebook-pixel";
 import LinkedInTag from "react-linkedin-insight";
 import Footer from "components/shared/FooterNav";
+import DrawerNav from "components/DrawerNav";
 
 export default ({
   children,
@@ -18,6 +20,8 @@ export default ({
   production,
 }) => {
   const [showConsentMessage, setShowConsentMessage] = useState(true);
+  const [isOpen, setOpen] = useState(false);
+
   const router = useRouter();
 
   useEffect(() => {
@@ -55,12 +59,30 @@ export default ({
     }
   }, []);
 
+  useEffect(() => {
+    let targetElement = document.querySelector("#Nav");
+    if (isOpen) {
+      disableBodyScroll(targetElement);
+    } else {
+      enableBodyScroll(targetElement);
+    }
+  }, [isOpen]);
+
   const checkScroll = () => {
     if (document.body.scrollTop > 100 || window.scrollY > 100) {
       document.body.onscroll = null;
       checkForConsent();
       setShowConsentMessage(false);
     }
+  };
+
+  const toggleNav = () => {
+    console.log("open nav");
+    setOpen(!isOpen);
+  };
+
+  const closeNav = () => {
+    setOpen(false);
   };
 
   const doConsentToCookies = () => {
@@ -75,7 +97,11 @@ export default ({
           hasLoaded={hasLoaded}
           locale={locale}
           route={router.route}
+          isOpen={isOpen}
+          closeNav={closeNav}
+          toggleNav={toggleNav}
         />
+        <DrawerNav toggleNav={toggleNav} closeNav={closeNav} isOpen={isOpen} />
         {React.cloneElement(children, {
           hasLoaded: hasLoaded,
         })}
@@ -93,7 +119,7 @@ export default ({
 
 const BodyOverflow = createGlobalStyle`
   .TopBar{
-    box-shadow: 1px 1px 4px ${(props) => props.theme.colors.accent};
+    box-shadow: 1px 1px 4px ${(props) => props.theme.colors.home.accent};
   }
   @media (max-width: 600px), (max-height:450px) {
     .react-reveal {

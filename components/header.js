@@ -1,9 +1,11 @@
 import Link from "next/link";
-import styled from "styled-components";
+import ActiveLink from "components/shared/ActiveLink";
+import styled, { css } from "styled-components";
 import Logo from "public/assets/img/layout/logos/dfilogo.svg";
 import LeadCollector from "components/shared/LeadCollector";
+import Hamburger from "public/assets/img/layout/hamburger.svg";
 
-function Header({ hasLoaded, route, production }) {
+function Header({ hasLoaded, route, production, toggleNav, isOpen }) {
   const backUp = (e) => {
     // closeNav();
     route === "/" &&
@@ -20,14 +22,122 @@ function Header({ hasLoaded, route, production }) {
             <Logo />
           </LogoLink>
         </Link>
-        <HeaderCovidCollector>
-          <LeadCollector production={production} short collectorId="smallCollector" />
-        </HeaderCovidCollector>
+        {route === "/tallerescovid" ? (
+          <HeaderCovidCollector>
+            <LeadCollector
+              production={production}
+              short
+              collectorId="smallCollector"
+            />
+          </HeaderCovidCollector>
+        ) : (
+          <Nav>
+            <ActiveLink href="/tallerescovid" passHref>
+              <NavLink>
+                Talleres <span>COVID + 4T</span>
+              </NavLink>
+            </ActiveLink>
+            <ActiveLink href="/escenariosderiesgo" passHref>
+              <NavLink>
+                Estudio
+                <span>
+                  <i> Escenarios de Riesgo</i>
+                </span>
+              </NavLink>
+            </ActiveLink>
+            <ActiveLink href="/nosotros" passHref>
+              <NavLink>Nosotros</NavLink>
+            </ActiveLink>
+            <ActiveLink href="/blog" passHref>
+              <NavLink>Blog</NavLink>
+            </ActiveLink>
+          </Nav>
+        )}
+        <Trigger onClick={toggleNav} open={isOpen}>
+          <Hamburger />
+        </Trigger>
       </HeaderContainer>
     </TopHeader>
   );
 }
 export default Header;
+
+const Trigger = styled.div`
+  pointer-events: auto;
+  cursor: pointer;
+  width: 40px;
+  position: relative;
+  justify-self: flex-end;
+  display: none;
+  @media (max-width: 850px) {
+    display: block;
+  }
+
+  svg {
+    width: 100%;
+    height: auto;
+    max-width: 40px;
+    padding-top: 13px;
+    @media (max-width: 750px) {
+      padding-top: 7px;
+    }
+    @media (max-width: 600px) {
+      padding-top: 4px;
+    }
+    line {
+      stroke-width: 2px;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+      stroke: ${(props) => props.theme.colors.foreground};
+      transition: transform 0.3s ease;
+      &#bot {
+        transition: transform 0.3s ease;
+      }
+    }
+  }
+  ${(props) =>
+    props.open &&
+    css`
+      svg {
+        #top {
+          transform: translateX(-30px);
+        }
+        #bot {
+          transform: translateX(16px);
+        }
+      }
+    `}
+`;
+
+const NavLink = styled.a`
+  text-decoration: none;
+  font-weight: 400;
+  border-bottom: ${(props) =>
+    props.active
+      ? `2px solid ${props.theme.colors.home.accent}`
+      : "2px solid transparent"};
+  transition: 0.2s ease all;
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      border-bottom: 2px solid ${(props) => props.theme.colors.home.accent};
+    }
+  }
+  &:not(:last-of-type) {
+    margin-right: 5%;
+  }
+`;
+
+const Nav = styled.nav`
+  width: 100%;
+  max-width: 600px;
+  align-self: flex-end;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  @media (max-width: 850px) {
+    display: none;
+  }
+`;
 
 const HeaderContainer = styled.div`
   margin: 0px auto;
@@ -88,7 +198,8 @@ const HeaderCovidCollector = styled.div`
   max-width: 500px;
   align-self: flex-end;
   display: flex;
-  @media (max-width: 750px) {
+  @media (max-width: 850px) {
+    display: none;
     max-width: 400px;
     label,
     button,

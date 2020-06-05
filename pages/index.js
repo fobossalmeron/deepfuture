@@ -80,7 +80,7 @@ function Home(props) {
       <HomeItemsDark />
       <Title notoppadding>
         <p>
-          Prueba un poco de lo que <b>sobrevivir</b>
+          Prueba un poco de lo que <b>ofrecemos</b>
         </p>
         <h3>
           Encuentra <b>certidumbre</b> con Deep Future Institute

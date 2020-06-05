@@ -91,7 +91,7 @@ const FooterNavigation = styled.div`
   @media (hover: hover) and (pointer: fine) {
     a:hover {
       text-decoration: underline;
-      text-decoration-color: ${(props) => props.theme.colors.accent};
+      text-decoration-color: ${(props) => props.theme.colors.home.accent};
       text-underline-offset: 3px;
       text-decoration-thickness: 0.2rem;
     }

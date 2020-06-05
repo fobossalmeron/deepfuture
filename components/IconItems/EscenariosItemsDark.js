@@ -113,7 +113,7 @@ const DataDarkGrid = styled.ul`
           max-width: 300px;
         }
         div {
-          margin-bottom: 0;
+          /* margin-bottom: 0; */
         }
       }
     }

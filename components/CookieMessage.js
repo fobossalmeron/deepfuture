@@ -39,7 +39,7 @@ const Button = styled.button`
   padding: 14px 0%;
   text-align: center;
   width: calc(100% - 50px);
-  background-color: ${(props) => props.theme.colors.accent};
+  background-color: ${(props) => props.theme.colors.home.accent};
   color: ${(props) => props.theme.colors.foreground};
   border: 0;
   font-size: 1.8rem;
