@@ -234,6 +234,7 @@ const Intro = styled.section`
   color: ${(props) => props.theme.colors.background};
   background-color: ${(props) => props.theme.colors.foreground};
   width: 100%;
+  z-index:1;
 `;
 
 const IntroGrid = styled(MainGrid)`
@@ -309,7 +310,7 @@ const SecondForm = styled.section`
 
 const SecondFormGrid = styled(MainGrid)`
   align-items: center;
-  margin-top: 6%;
+  padding-top: 6%;
   & > div {
     &:nth-of-type(1) {
       grid-column: 2 / span 5;

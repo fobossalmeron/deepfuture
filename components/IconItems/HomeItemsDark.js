@@ -59,6 +59,11 @@ const DataDarkGrid = styled.ul`
   li {
     width: 50%;
     max-width: 460px;
+    margin-bottom:18px;
+    align-items:center;
+    div{
+      margin-bottom:0;
+    }
     div p {
       padding-right: 10px;
     }
@@ -95,7 +100,9 @@ const DataDarkGrid = styled.ul`
       flex-direction: column;
       margin-bottom: 5%;
       width: 100%;
+      align-items: flex-start;
       div {
+        margin-bottom:10px;
         p {
           max-width: 300px;
         }

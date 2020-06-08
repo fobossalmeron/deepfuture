@@ -31,6 +31,7 @@ const Bg = styled.div`
   height: 100vh;
   position: absolute;
   top: 0;
+  z-index:-1;
   div {
     box-shadow: ${(props) =>
       `-10px -10px 20px rgba(63, 148, 87, 0.29), 

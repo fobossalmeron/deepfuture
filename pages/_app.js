@@ -10,6 +10,7 @@ import es from "public/locales/es/common.json";
 import { LangProvider } from "utils/LangContext";
 import { withRouter } from "next/router";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
+import { PageTransition } from "next-page-transitions";
 
 const production = true;
 
@@ -121,7 +122,7 @@ class MyApp extends App {
   };
 
   render() {
-    const { Component, pageProps } = this.props;
+    const { Component, pageProps, router } = this.props;
     return (
       <ThemeProvider theme={theme}>
         <LangProvider value={this.state.locale}>
@@ -140,12 +141,15 @@ class MyApp extends App {
             toggleLang={this.toggleLang}
             production={production}
           >
-            <Component
-              locale={this.state.locale}
-              {...pageProps}
-              lang={this.state.locale.lang}
-              production={production}
-            />
+            <PageTransition timeout={200} classNames="page-transition" tag="main">
+              <Component
+                locale={this.state.locale}
+                {...pageProps}
+                lang={this.state.locale.lang}
+                production={production}
+                key={router.route}
+              />
+            </PageTransition>
           </Layout>
         </LangProvider>
       </ThemeProvider>

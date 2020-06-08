@@ -5,9 +5,9 @@ import Logo from "public/assets/img/layout/logos/dfilogo.svg";
 import LeadCollector from "components/shared/LeadCollector";
 import Hamburger from "public/assets/img/layout/hamburger.svg";
 
-function Header({ hasLoaded, route, production, toggleNav, isOpen }) {
+function Header({ hasLoaded, route, production, toggleNav, isOpen, closeNav }) {
   const backUp = (e) => {
-    // closeNav();
+    closeNav();
     route === "/" &&
       (e.preventDefault(),
       document.getElementById("land").scrollIntoView({ behavior: "smooth" }));
@@ -17,7 +17,9 @@ function Header({ hasLoaded, route, production, toggleNav, isOpen }) {
     <TopHeader reveal={hasLoaded}>
       <HeaderContainer>
         <Link href="/" passHref>
-          <LogoLink onClick={backUp}>
+          <LogoLink 
+          onClick={backUp}
+          >
             <h1>DFI</h1>
             <Logo />
           </LogoLink>
