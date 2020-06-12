@@ -22,11 +22,7 @@
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
     ],
-    "/nosotros": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/tallerescovid": [
+    "/blog/como_construimos_escenarios_de_riesgo": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

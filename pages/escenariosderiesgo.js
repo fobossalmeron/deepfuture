@@ -65,8 +65,9 @@ function Escenarios(props) {
         </IntroGrid>
         <EscenariosItemsWhite />
         <Quote
-          quote={`Aquí queremos poner otra cita de algún director de 
-          institución / medios / etc`}
+          quote="Todo empresario debe ampliar su visión y este estudio fue revelador. 
+          Muy útil para ayudar a clientes como los nuestros a orientar sus cursos de 
+          acción estratégicos"
           name={"Jorge Milke"}
           position={"Senior Manager, Deloitte"}
           img={"/assets/img/layout/profile.jpg"}
