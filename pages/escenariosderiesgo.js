@@ -65,8 +65,9 @@ function Escenarios(props) {
         </IntroGrid>
         <EscenariosItemsWhite />
         <Quote
-          quote={`Aquí queremos poner otra cita de algún director de 
-          institución / medios / etc`}
+          quote="Todo empresario debe ampliar su visión y este estudio fue revelador. 
+          Muy útil para ayudar a clientes como los nuestros a orientar sus cursos de 
+          acción estratégicos"
           name={"Jorge Milke"}
           position={"Senior Manager, Deloitte"}
           img={"/assets/img/layout/profile.jpg"}
@@ -234,6 +235,7 @@ const Intro = styled.section`
   color: ${(props) => props.theme.colors.background};
   background-color: ${(props) => props.theme.colors.foreground};
   width: 100%;
+  z-index:1;
 `;
 
 const IntroGrid = styled(MainGrid)`
@@ -309,7 +311,7 @@ const SecondForm = styled.section`
 
 const SecondFormGrid = styled(MainGrid)`
   align-items: center;
-  margin-top: 6%;
+  padding-top: 6%;
   & > div {
     &:nth-of-type(1) {
       grid-column: 2 / span 5;
