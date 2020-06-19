@@ -7,6 +7,7 @@ import Layout from "components/layout";
 import theme from "styles/theme";
 import Cookies from "js-cookie/dist/js.cookie";
 import es from "public/locales/es/common.json";
+import { hotjar } from "react-hotjar";
 import { LangProvider } from "utils/LangContext";
 import { withRouter } from "next/router";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
@@ -97,6 +98,8 @@ class MyApp extends App {
     Router.events.on("routeChangeStart", this.handleRouteStart);
     Router.events.on("routeChangeComplete", this.handleRouteComplete);
     Router.events.on("routeChangeError", this.handleRouteError);
+    // init HotJar
+    hotjar.initialize(1865672, 6);
   }
 
   componentWillUnmount() {
