@@ -14,10 +14,6 @@
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/404": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
     "/_app": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
@@ -30,19 +26,7 @@
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
     ],
-    "/escenariosderiesgo": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
     "/index": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/nosotros": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/tallerescovid": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

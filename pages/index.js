@@ -275,8 +275,9 @@ const IntroGrid = styled(MainGrid)`
   img {
     grid-column: 6 / span 7;
     grid-row: 3;
-    padding-top: 8%;
+    margin-top: 8%;
     max-width: 100%;
+    border-radius:5px;
   }
   @media (max-width: 1100px) {
     h2 {
@@ -305,7 +306,7 @@ const IntroGrid = styled(MainGrid)`
       grid-column: 1 / span 12;
       position: relative;
       grid-row: 4 / span 1;
-      padding-top: 10px;
+      margin-top: 10px;
     }
   }
   @media (max-width: 600px) {
