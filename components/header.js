@@ -24,15 +24,6 @@ function Header({ hasLoaded, route, production, toggleNav, isOpen, closeNav }) {
             <Logo />
           </LogoLink>
         </Link>
-        {route === "/tallerescovid" ? (
-          <HeaderCovidCollector>
-            <LeadCollector
-              production={production}
-              short
-              collectorId="smallCollector"
-            />
-          </HeaderCovidCollector>
-        ) : (
           <Nav>
             <ActiveLink href="/tallerescovid" passHref>
               <NavLink>
@@ -54,7 +45,6 @@ function Header({ hasLoaded, route, production, toggleNav, isOpen, closeNav }) {
               <NavLink>Blog</NavLink>
             </ActiveLink>
           </Nav>
-        )}
         <Trigger onClick={toggleNav} open={isOpen}>
           <Hamburger />
         </Trigger>
