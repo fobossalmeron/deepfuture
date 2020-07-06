@@ -18,6 +18,7 @@ function BlogPost(props) {
         description={
           "¿Cuándo terminará la crisis económica en México? La economía tiene vida propia y la recesión no necesariamente desaparecerá cuando el COVID-19 sea superado."
         }
+        image={"og_blog2.png"}
         lang={props.lang}
       />
       <Header
