@@ -44,7 +44,7 @@ const SingleColumnContainer = styled(MainGrid)`
       font-size: inherit;
       margin-bottom: 0;
       margin-top: 10px;
-      margin-bottom:-10px;
+      margin-bottom: -10px;
     }
     a {
       color: ${(props) => props.theme.colors.foreground};
@@ -76,23 +76,27 @@ const SingleColumnContainer = styled(MainGrid)`
           border-radius: 100%;
           display: inline-block;
           margin-right: 10px;
-          background-color: ${(props) => props.theme.colors.accent};
+          background-color: ${(props) => props.theme.colors.home.accent};
         }
       }
     }
     ol {
       margin-top: 5px;
       counter-reset: item;
-      margin-bottom: 5px;
+      margin-bottom: 20px;
       font-size: 2rem;
       color: ${(props) => props.theme.colors.foreground_low};
       li {
         display: block;
         margin-bottom: 3px;
+        margin-right: 60px;
+        b {
+          color: ${(props) => props.theme.colors.foreground};
+        }
         &:before {
           content: counters(item, ".") ". ";
           counter-increment: item;
-          color: ${(props) => props.theme.colors.accent};
+          color: ${(props) => props.theme.colors.home.accent};
           font-weight: 400;
         }
         ol {
@@ -107,30 +111,34 @@ const SingleColumnContainer = styled(MainGrid)`
       h1 {
         font-size: 4rem;
       }
-      h2{
-        font-size:2.4rem;
+      h2 {
+        font-size: 2.4rem;
       }
-      h3{
-        font-size:2.6rem;
+      h3 {
+        font-size: 2.6rem;
       }
-      p, ul, ol{
+      p,
+      ul,
+      ol {
         font-size: 1.9rem;
       }
     }
     @media (max-width: 900px) {
-      padding-bottom:90px;
+      padding-bottom: 90px;
     }
     @media (max-width: 550px) {
       h1 {
         font-size: 3.2rem;
       }
-      h2{
-        font-size:2rem;
+      h2 {
+        font-size: 2rem;
       }
-      h3{
-        font-size:2.2rem;
+      h3 {
+        font-size: 2.2rem;
       }
-      p, ul, ol{
+      p,
+      ul,
+      ol {
         font-size: 1.8rem;
       }
     }
@@ -138,8 +146,8 @@ const SingleColumnContainer = styled(MainGrid)`
       h1 {
         font-size: 3rem;
       }
-      h2{
-        font-size:1.8rem;
+      h2 {
+        font-size: 1.8rem;
       }
     }
   }

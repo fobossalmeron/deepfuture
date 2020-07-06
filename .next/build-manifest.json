@@ -10,10 +10,6 @@
     "static/development/_ssgManifest.js"
   ],
   "pages": {
-    "/": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
     "/_app": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
@@ -26,7 +22,11 @@
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
     ],
-    "/index": [
+    "/blog/como_construimos_escenarios_de_riesgo": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/blog/cuanto_durara_la_crisis_economica_en_mexico": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

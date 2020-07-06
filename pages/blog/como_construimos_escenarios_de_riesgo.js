@@ -11,13 +11,13 @@ function BlogPost(props) {
   return (
     <>
       <Head
-        title={
-          "¿Cómo generamos escenarios de riesgo con prospectiva?"
-        }
+        title={"¿Cómo generamos escenarios de riesgo con prospectiva?"}
         canonical={
           "https://deepfuture.institute/blog/como_construimos_escenarios_de_riesgo"
         }
-        description={"Conoce el proceso de investigación para construir los escenarios de riesgo que debes considerar tu negocio en el futuro."}
+        description={
+          "Conoce el proceso de investigación para construir los escenarios de riesgo que debes considerar tu negocio en el futuro."
+        }
         lang={props.lang}
       />
       <Header
@@ -167,7 +167,11 @@ function BlogPost(props) {
         </h3>
       </Title>
       <LastForm>
-        <FormComplete production={props.production} centered collectorId="BlogCollector" />
+        <FormComplete
+          production={props.production}
+          centered
+          collectorId="BlogCollector"
+        />
       </LastForm>
     </>
   );
@@ -177,6 +181,9 @@ export default withTheme(BlogPost);
 
 const LastForm = styled(MainGrid)`
   padding-bottom: 6%;
+  > div {
+    background-color: ${(props) => props.theme.colors.home.accent};
+  }
   @media (max-width: 950px) {
     padding-bottom: 0;
   }

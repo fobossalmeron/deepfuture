@@ -44,4 +44,7 @@ const AuthorContainer = styled.div`
     grid-row: 1 / span 2;
     margin-top: 3px;
   }
+  h4 {
+    margin-top: 0px !important;
+  }
 `;
