@@ -18,7 +18,6 @@
     { "src": "/robots.txt", "dest": "/robots.txt" },
     { "src": "/humans.txt", "dest": "/humans.txt" },
     { "src": "/sitemap.xml", "dest": "/sitemap.xml" },
-    { "src": "/blog", "status": 404, "dest": "/blog/como_construimos_escenarios_de_riesgo" },
     { "handle": "filesystem" }
   ],
   "env": {

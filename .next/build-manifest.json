@@ -22,19 +22,7 @@
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
     ],
-    "/blog": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/blog/como_construimos_escenarios_de_riesgo": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
     "/blog/cuanto_durara_la_crisis_economica_en_mexico": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
-    "/tallerescovid": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
