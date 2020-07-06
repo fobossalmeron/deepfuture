@@ -17,7 +17,15 @@ const routes = [
     priority: 0.9,
   },
   {
+    es: "/blog/cuanto_durara_la_crisis_economica_en_mexico",
+    priority: 0.9,
+  },
+  {
     es: "",
+    priority: 0.8,
+  },
+  {
+    es: "blog",
     priority: 0.8,
   },
   {

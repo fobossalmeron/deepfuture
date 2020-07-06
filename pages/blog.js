@@ -4,6 +4,24 @@ import MainGrid from "components/shared/MainGrid";
 import DFIFull from "public/assets/img/layout/logos/dfifull.svg";
 import Link from "next/link";
 import BackCircle from "public/assets/img/layout/backCircle.svg";
+import { H2 } from "components/shared/Dangerously";
+
+function EntryBlock(props) {
+  let { href, img, title, author, imgAlt } = props;
+  return (
+    <Entry>
+      <Link href={href} passHref>
+        <a>
+          <img src={img} alt={imgAlt} />
+          <div>
+            <H2>{title}</H2>
+            <span>{author}</span>
+          </div>
+        </a>
+      </Link>
+    </Entry>
+  );
+}
 
 function Blog(props) {
   return (
@@ -19,23 +37,22 @@ function Blog(props) {
       <Land id="land">
         <div id="landtext">
           <h1>Blog</h1>
-          <Link href="/blog/como_construimos_escenarios_de_riesgo" passHref>
-            <Entry>
-              <h2>
-                ¿Cómo construimos <b>escenarios de riesgo?</b>
-              </h2>
-            </Entry>
-          </Link>
-          <Link
-            href="/blog/cuanto_durara_la_crisis_economica_en_mexico"
-            passHref
-          >
-            <Entry>
-              <h2>
-                ¿Cuánto durará la <b>crisis económica</b> en México?
-              </h2>
-            </Entry>
-          </Link>
+          <EntryGrid>
+            <EntryBlock
+              href="/blog/cuanto_durara_la_crisis_economica_en_mexico"
+              img="/assets/img/blog/posts/header_mexico.svg"
+              imgAlt="Cuánto durará la crisis económica?"
+              title="¿Cuánto durará la <b>crisis económica</b> en México?"
+              author="Alberto Carral | 6 de Julio del 2020"
+            />
+            <EntryBlock
+              href="/blog/como_construimos_escenarios_de_riesgo"
+              img="/assets/img/blog/posts/header_escenarios.svg"
+              imgAlt="Un análisis del pasado"
+              title="¿Cómo construimos <b>escenarios de riesgo?</b>"
+              author="DFI Publicaciones | 20 de Mayo del 2020"
+            />
+          </EntryGrid>
         </div>
       </Land>
     </>
@@ -44,10 +61,56 @@ function Blog(props) {
 
 export default React.memo(Blog);
 
-const Entry = styled.a`
-  background-color: pink;
+const EntryGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr);
+    span {
+      padding: 0 5% !important;
+    }
+  }
+`;
+
+const Entry = styled.div`
+  border-radius: 4px;
+  align-items: flex-end;
+  justify-content: center;
+  display: flex;
+  padding-bottom: 20px;
+  background-color: ${(props) => props.theme.colors.background};
+  box-shadow: ${(props) => `-5px -5px 7px rgba(68,99,158,.3), 
+    5px 5px 7px ${props.theme.colors.darkshadow}`};
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      img {
+        transform: scale(0.98);
+      }
+      h4 {
+        text-decoration: underline;
+      }
+    }
+  }
+  img {
+    max-width: 100%;
+    width: 100%;
+    padding: 5%;
+    height: 200px;
+    transition: 0.4s ease all;
+    margin-top: 10px;
+  }
+  span {
+    padding: 20px 5%;
+    color: ${(props) => props.theme.colors.foreground_low};
+    display: flex;
+  }
   h2 {
-    color: ${(p) => p.theme.colors.foreground};
+    padding: 20px 4% 0 4%;
+  }
+  a {
+    text-decoration: none;
+    transition: 0.4s ease all;
   }
 `;
 
