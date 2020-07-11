@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import { useEffect } from "react";
+import { createPortal } from "react-dom";
 import { darken, lighten, readableColor } from "polished";
 import Cross from "public/assets/img/layout/cross.svg";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
+import ClientOnlyPortal from "components/ClientOnlyPortal";
 import { H3 } from "components/shared/Dangerously";
 import Link from "next/link";
 import MercadoPago from "components/MercadoPago";
@@ -34,7 +36,7 @@ const PayPopup = ({ setShowPay, showPay, product }) => {
   };
 
   return (
-    <>
+    <ClientOnlyPortal selector="#modal">
       <Wrapper clickable={showPay} id="PayPopup">
         <CrossContainerMobile>
           <Cross onClick={unlockScreen} />
@@ -111,7 +113,7 @@ const PayPopup = ({ setShowPay, showPay, product }) => {
           <Footer />
         </FooterStyled>
       </Background>
-    </>
+    </ClientOnlyPortal>
   );
 };
 

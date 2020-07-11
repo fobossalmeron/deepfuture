@@ -86,6 +86,7 @@ export default class MyDocument extends Document {
             </svg>
           </div>
           <Main />
+          <div id="modal" />
           <NextScript />
         </body>
         <link
