@@ -58,8 +58,8 @@ function Tiers({ setShowSales, setShowPay, setProduct }) {
         "Cómo generar certidumbre ante el impacto del <b>COVID-19</b> y la <b>4T</b>",
       description:
         "Taller descargable con insights de la crisis del COVID-19 durante la Cuarta Transformación en México donde podrás aplicar principios de prospectiva a tu negocio u organización para generar certidumbre y responder estratégicamente.",
-      price: "$1400",
-      originalPrice: "2,500",
+      price: "$700",
+      originalPrice: "2,200",
       color: theme.colors.tier1,
     },
     {
