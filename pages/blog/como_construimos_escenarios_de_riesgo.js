@@ -1,20 +1,19 @@
-import styled, { withTheme } from "styled-components";
+import { withTheme } from "styled-components";
 import Head from "components/Head";
 import SingleColumn from "components/shared/SingleColumn";
 import Author from "components/Blog/Author";
-import Title from "components/shared/Title";
-import FormComplete from "components/FormComplete";
-import MainGrid from "components/shared/MainGrid";
 import Header from "components/Blog/Header";
+import BlogFooter from "components/Blog/Footer";
+
+const SHARE_URL =
+  "https://deepfuture.institute/blog/como_construimos_escenarios_de_riesgo";
 
 function BlogPost(props) {
   return (
     <>
       <Head
         title={"¿Cómo generamos escenarios de riesgo con prospectiva?"}
-        canonical={
-          "https://deepfuture.institute/blog/como_construimos_escenarios_de_riesgo"
-        }
+        canonical={SHARE_URL}
         description={
           "Conoce el proceso de investigación para construir los escenarios de riesgo que debes considerar tu negocio en el futuro."
         }
@@ -158,33 +157,9 @@ function BlogPost(props) {
           </li>
         </ol>
       </SingleColumn>
-      <Title notoppadding>
-        <p>
-          La estrategia de hoy es mucho más que <b>sobrevivir</b>
-        </p>
-        <h3>
-          Encuentra <b>certidumbre</b> con Deep Future Institute
-        </h3>
-      </Title>
-      <LastForm>
-        <FormComplete
-          production={props.production}
-          centered
-          collectorId="BlogCollector"
-        />
-      </LastForm>
+      <BlogFooter url={SHARE_URL} production={props.production} />
     </>
   );
 }
 
 export default withTheme(BlogPost);
-
-const LastForm = styled(MainGrid)`
-  padding-bottom: 6%;
-  > div {
-    background-color: ${(props) => props.theme.colors.home.accent};
-  }
-  @media (max-width: 950px) {
-    padding-bottom: 0;
-  }
-`;

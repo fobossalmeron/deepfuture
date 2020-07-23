@@ -74,7 +74,7 @@ function PagoConfirmado(props) {
           LinkedInTag.track(2183018);
           // compra tier 1 FB
           ReactPixel.track("Purchase", {
-            value: 1500.0,
+            value: 700.0,
             currency: "MXN",
             contents: [
               {

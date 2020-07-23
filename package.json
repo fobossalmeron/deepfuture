@@ -19,7 +19,7 @@
     "body-scroll-lock": "^3.0.1",
     "currency.js": "^1.2.2",
     "js-cookie": "^v3.0.0-beta.3",
-    "next": "^9.3.6",
+    "next": "^9.4.4",
     "next-offline": "^5.0.0",
     "next-page-transitions": "^1.0.0-beta.2",
     "polished": "^3.6.3",
@@ -32,6 +32,7 @@
     "react-linkedin-insight": "^0.0.5",
     "react-reveal": "^1.2.2",
     "react-select": "^3.1.0",
+    "react-share": "^4.2.1",
     "react-spring": "^8.0.27",
     "react-top-loading-bar": "^1.2.0",
     "styled-components": "^5.1.0"

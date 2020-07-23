@@ -1,20 +1,19 @@
-import styled, { withTheme } from "styled-components";
+import { withTheme } from "styled-components";
 import Head from "components/Head";
 import SingleColumn from "components/shared/SingleColumn";
 import Author from "components/Blog/Author";
-import Title from "components/shared/Title";
-import FormComplete from "components/FormComplete";
-import MainGrid from "components/shared/MainGrid";
 import Header from "components/Blog/Header";
+import BlogFooter from "components/Blog/Footer";
+
+const SHARE_URL =
+  "https://deepfuture.institute/blog/cuanto_durara_la_crisis_economica_en_mexico";
 
 function BlogPost(props) {
   return (
     <>
       <Head
         title={"¿Cuánto durará la crisis económica? Prospectiva México - DFI"}
-        canonical={
-          "https://deepfuture.institute/blog/cuanto_durara_la_crisis_economica_en_mexico"
-        }
+        canonical={SHARE_URL}
         description={
           "¿Cuándo terminará la crisis económica en México? La economía tiene vida propia y la recesión no necesariamente desaparecerá cuando el COVID-19 sea superado."
         }
@@ -304,33 +303,9 @@ function BlogPost(props) {
           .
         </p>
       </SingleColumn>
-      <Title notoppadding>
-        <p>
-          La estrategia de hoy es mucho más que <b>sobrevivir</b>
-        </p>
-        <h3>
-          Encuentra <b>certidumbre</b> con Deep Future Institute
-        </h3>
-      </Title>
-      <LastForm>
-        <FormComplete
-          production={props.production}
-          centered
-          collectorId="BlogCollector"
-        />
-      </LastForm>
+      <BlogFooter url={SHARE_URL} production={props.production} />
     </>
   );
 }
 
 export default withTheme(BlogPost);
-
-const LastForm = styled(MainGrid)`
-  padding-bottom: 6%;
-  > div {
-    background-color: ${(props) => props.theme.colors.home.accent};
-  }
-  @media (max-width: 950px) {
-    padding-bottom: 0;
-  }
-`;
