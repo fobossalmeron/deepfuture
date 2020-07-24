@@ -4,8 +4,9 @@ import Title from "components/shared/Title";
 import { H3 } from "components/shared/Dangerously";
 import SingleTier from "./SingleTier";
 import Perk from "./Perk";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "styled-components";
+import { useRouter } from "next/router";
 
 const includes = [
   {
@@ -46,8 +47,23 @@ const includes = [
   },
 ];
 
-function Tiers({ setShowSales, setShowPay, setProduct }) {
+function Tiers({ setShowSales, setShowPay, setProduct, setDiscount }) {
   const theme = useContext(ThemeContext);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (router.asPath === "/tallerescovid?autogestivo") {
+      setProduct(tiers[Object.keys(tiers)[0]]);
+      setShowPay(true);
+    } else if (router.asPath === "/tallerescovid?oferta-autogestivo") {
+      setProduct(tiers[Object.keys(tiers)[0]]);
+      setShowPay(true);
+      setDiscount(true);
+    } else if (router.asPath === "/tallerescovid?personal") {
+      setProduct(tiers[Object.keys(tiers)[1]]);
+      setShowPay(true);
+    }
+  }, [router]);
 
   //Tiers are inside so we can access theme from styled-components
   const tiers = [
@@ -57,7 +73,8 @@ function Tiers({ setShowSales, setShowPay, setProduct }) {
       subtitle:
         "Cómo generar certidumbre ante el impacto del <b>COVID-19</b> y la <b>4T</b>",
       description:
-        "Taller descargable con insights de la crisis del COVID-19 durante la Cuarta Transformación en México donde podrás aplicar principios de prospectiva a tu negocio u organización para generar certidumbre y responder estratégicamente.",
+        "Prepárate para tiempos de incertidumbre con el impacto del COVID-19 en la 4T de México.Encuentra en este taller:<br/><br/><ul><li>Escenarios que podrían ocurrir a corto y largo plazo ante el COVID-19</li><li>Información de nuestra investigación prospectiva México 2020-2030</li><li>Ejercicios para incorporar esta información a la planeación y estrategia de tu negocio</li></ul>",
+      discountedPrice: "$200",
       price: "$700",
       originalPrice: "2,200",
       color: theme.colors.tier1,

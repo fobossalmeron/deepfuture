@@ -17,6 +17,7 @@ function Index(props) {
   const [showPay, setShowPay] = useState(false);
   const [showSales, setShowSales] = useState(false);
   const [product, setProduct] = useState(null);
+  const [discount, setDiscount] = useState(false);
 
   return (
     <>
@@ -62,6 +63,7 @@ function Index(props) {
         setShowSales={setShowSales}
         setShowPay={setShowPay}
         setProduct={setProduct}
+        setDiscount={setDiscount}
       />
       <SecondForm>
         <SecondFormGrid>
@@ -99,7 +101,12 @@ function Index(props) {
           collectorId="FooterCollector"
         />
       </LastForm>
-      <PayPopup showPay={showPay} setShowPay={setShowPay} product={product} />
+      <PayPopup
+        showPay={showPay}
+        setShowPay={setShowPay}
+        product={product}
+        discount={discount}
+      />
       <SalesPopup showSales={showSales} setShowSales={setShowSales} />
     </>
   );

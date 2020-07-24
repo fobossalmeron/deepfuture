@@ -1,11 +1,10 @@
 import styled from "styled-components";
 import { useEffect } from "react";
-import { createPortal } from "react-dom";
 import { darken, lighten, readableColor } from "polished";
 import Cross from "public/assets/img/layout/cross.svg";
 import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
 import ClientOnlyPortal from "components/ClientOnlyPortal";
-import { H3 } from "components/shared/Dangerously";
+import { H3, P } from "components/shared/Dangerously";
 import Link from "next/link";
 import MercadoPago from "components/MercadoPago";
 import MercadoLogo from "public/assets/img/layout/logos/mercadopago.svg";
@@ -17,7 +16,7 @@ import Pdf from "public/assets/img/layout/icons/pdf.svg";
 import CircleIcon from "components/shared/CircleIcon";
 import Footer from "components/shared/Footer";
 
-const PayPopup = ({ setShowPay, showPay, product }) => {
+const PayPopup = ({ setShowPay, showPay, product, discount }) => {
   useEffect(() => {
     showPay && popupShow();
     !showPay && unlockScreen();
@@ -46,14 +45,34 @@ const PayPopup = ({ setShowPay, showPay, product }) => {
             Taller <b>{product ? product.title : null}</b>
           </h2>
           <H3>{product ? product.subtitle : null}</H3>
-          <p>{product ? product.description : null}</p>
-          <span>
-            {currency(product ? product.price : 0, {
-              symbol: "$",
-              formatWithSymbol: true,
-            }).format()}{" "}
-            <span>MXN</span>
-          </span>
+          <P>{product ? product.description : null}</P>
+          {!discount && (
+            <span>
+              {currency(product ? product.price : 0, {
+                symbol: "$",
+                formatWithSymbol: true,
+              }).format()}{" "}
+              <span>MXN</span>
+            </span>
+          )}
+          {discount && (
+            <DiscountedPriceHolder>
+              <span>
+                {currency(product ? product.price : 0, {
+                  symbol: "$",
+                  formatWithSymbol: true,
+                }).format()}{" "}
+                <span>MXN</span>
+              </span>
+              <span>
+                {currency(product ? product.discountedPrice : 0, {
+                  symbol: "$",
+                  formatWithSymbol: true,
+                }).format()}{" "}
+                <span>MXN</span>
+              </span>
+            </DiscountedPriceHolder>
+          )}
           <Icons>
             <Icon dark>
               <Sheets />
@@ -83,7 +102,10 @@ const PayPopup = ({ setShowPay, showPay, product }) => {
                 taller una vez realizada tu compra.
               </span>
             </Warning>
-            <MercadoPago product={product ? product : null} />
+            <MercadoPago
+              discounted={discount}
+              product={product ? product : null}
+            />
           </Panel>
           <SmallPrint>
             <Transacciones>
@@ -118,6 +140,23 @@ const PayPopup = ({ setShowPay, showPay, product }) => {
 };
 
 export default PayPopup;
+
+const DiscountedPriceHolder = styled.div`
+  display: flex;
+  & > span {
+    &:nth-of-type(1) {
+      margin-right: 10px;
+      font-size: 2rem;
+      text-decoration: line-through;
+      color: ${(p) => p.theme.colors.foreground_low};
+      span {
+        text-decoration: line-through;
+        font-size: 1.5rem;
+        margin-top: 20px;
+      }
+    }
+  }
+`;
 
 const FooterStyledMobile = styled.div`
   display: none;
@@ -221,6 +260,21 @@ const Left = styled.div`
     font-weight: 300;
     b {
       font-weight: 400;
+    }
+  }
+  ul {
+    list-style: none;
+    li {
+      &:before {
+        content: " ";
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        display: inline-block;
+        background-color: ${(p) => p.theme.colors.foreground_low};
+        margin-right: 5px;
+        margin-bottom: 4px;
+      }
     }
   }
   h3 {

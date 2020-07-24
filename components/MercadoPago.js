@@ -10,10 +10,12 @@ import Cookies from "js-cookie/dist/js.cookie";
 
 const tier1PayUrl =
   "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=566499606-ea18cbbb-bcfb-4dc5-9dc1-1061975d01fc";
+const tier1DiscountPayUrl =
+  "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=566499606-eb83e54b-39b2-47fb-a2c9-5e8446c472b7";
 const tier2PayUrl =
   "https://www.mercadopago.com.mx/checkout/v1/redirect?pref_id=566499606-d21f88c2-374c-4bfe-86eb-2edb5026a3db";
 
-const MercadoPago = ({ product }) => {
+const MercadoPago = ({ product, discounted }) => {
   const [displayMessage, setMessage] = useState(false);
   const [showMessage, setShowMessage] = useState(false);
   const [status, setStatus] = useState("");
@@ -69,7 +71,12 @@ const MercadoPago = ({ product }) => {
     }
     Cookies.set("userEmail", email.value);
     addUserToAbandonedCart() &&
-      (window.location.href = product.id === 1 ? tier1PayUrl : tier2PayUrl);
+      (window.location.href =
+        product.id === 1
+          ? discounted
+            ? tier1DiscountPayUrl
+            : tier1PayUrl
+          : tier2PayUrl);
   };
 
   return (
