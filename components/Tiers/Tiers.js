@@ -52,14 +52,14 @@ function Tiers({ setShowSales, setShowPay, setProduct, setDiscount }) {
   const router = useRouter();
 
   useEffect(() => {
-    if (router.asPath === "/tallerescovid?autogestivo") {
+    if (router.asPath.includes("/tallerescovid?autogestivo")) {
       setProduct(tiers[Object.keys(tiers)[0]]);
       setShowPay(true);
-    } else if (router.asPath === "/tallerescovid?oferta-autogestivo") {
+    } else if (router.asPath.includes("/tallerescovid?oferta-autogestivo")) {
       setProduct(tiers[Object.keys(tiers)[0]]);
       setShowPay(true);
       setDiscount(true);
-    } else if (router.asPath === "/tallerescovid?personal") {
+    } else if (router.asPath.includes("/tallerescovid?personal")) {
       setProduct(tiers[Object.keys(tiers)[1]]);
       setShowPay(true);
     }
