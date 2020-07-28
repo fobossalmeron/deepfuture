@@ -25,7 +25,7 @@ const routes = [
     priority: 0.8,
   },
   {
-    es: "blog",
+    es: "/blog",
     priority: 0.8,
   },
   {
