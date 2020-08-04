@@ -39,11 +39,11 @@ function Blog(props) {
           <h1>Blog</h1>
           <EntryGrid>
             <EntryBlock
-              href="/blog/cuanto_durara_la_crisis_economica_en_mexico"
-              img="/assets/img/blog/posts/header_mexico.svg"
-              imgAlt="Cuánto durará la crisis económica?"
-              title="¿Cuánto durará la <b>crisis económica</b> en México?"
-              author="Alberto Carral | 6 de Julio del 2020"
+              href="/blog/el_arma_secreta_de_los_negocios_ganadores_de_la_pandemia"
+              img="/assets/img/blog/posts/header_arma.svg"
+              imgAlt="El arma secreta"
+              title="<b>Método de escenarios</b>: el arma secreta de los negocios ganadores de la pandemia"
+              author="Alfonso Arroyo | 04 de Agosto del 2020"
             />
             <EntryBlock
               href="/blog/como_construimos_escenarios_de_riesgo"
@@ -51,6 +51,13 @@ function Blog(props) {
               imgAlt="Un análisis del pasado"
               title="¿Cómo construimos <b>escenarios de riesgo?</b>"
               author="DFI Publicaciones | 20 de Mayo del 2020"
+            />
+            <EntryBlock
+              href="/blog/cuanto_durara_la_crisis_economica_en_mexico"
+              img="/assets/img/blog/posts/header_mexico.svg"
+              imgAlt="Cuánto durará la crisis económica?"
+              title="¿Cuánto durará la <b>crisis económica</b> en México?"
+              author="Alberto Carral | 6 de Julio del 2020"
             />
           </EntryGrid>
         </div>

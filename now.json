@@ -1,24 +1,26 @@
 {
   "version": 2,
-  "routes": [
+  "trailingSlash": false,
+  "rewrites": [
     {
-      "src": "/(.*)/",
-      "status": 301,
-      "headers": { "Location": "/$1" },
-      "continue": true
-    },
+      "source": "/service-worker.js",
+      "destination": "/_next/static/service-worker.js"
+    }
+  ],
+  "headers": [
     {
-      "src": "^/service-worker.js$",
-      "dest": "/_next/static/service-worker.js",
-      "headers": {
-        "cache-control": "public, max-age=43200, immutable",
-        "Service-Worker-Allowed": "/"
-      }
-    },
-    { "src": "/robots.txt", "dest": "/robots.txt" },
-    { "src": "/humans.txt", "dest": "/humans.txt" },
-    { "src": "/sitemap.xml", "dest": "/sitemap.xml" },
-    { "handle": "filesystem" }
+      "source": "/service-worker.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=43200, immutable"
+        },
+        {
+          "key": "Service-Worker-Allowed",
+          "value": "/"
+        }
+      ]
+    }
   ],
   "env": {
     "SENDINBLUE_API": "@sendingblue-api"

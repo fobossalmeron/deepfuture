@@ -20,7 +20,11 @@
     "/_polyfills": [
       "static/runtime/polyfills.js"
     ],
-    "/tallerescovid": [
+    "/blog": [
+      "static/runtime/webpack.js",
+      "static/runtime/main.js"
+    ],
+    "/blog/el_arma_secreta_de_los_negocios_ganadores_de_la_pandemia": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]

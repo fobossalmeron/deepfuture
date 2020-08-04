@@ -21,7 +21,11 @@ const routes = [
     priority: 0.9,
   },
   {
-    es: "",
+    es: "/blog/el_arma_secreta_de_los_negocios_ganadores_de_la_pandemia",
+    priority: 0.9,
+  },
+  {
+    es: "/",
     priority: 0.8,
   },
   {
