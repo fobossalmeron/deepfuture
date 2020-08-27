@@ -13,11 +13,11 @@ function BlogPost(props) {
     <>
       <Head
         title={
-          "Método de escenarios: el arma secreta de los negocios ganadores de la pandemia"
+          "Método de escenarios, una herramienta prospectiva para negocios - DFI"
         }
         canonical={SHARE_URL}
         description={
-          "Conoce el proceso de investigación para construir los escenarios de riesgo que debes considerar tu negocio en el futuro."
+          "El método de escenarios sirve para que los negocios afronten contextos de alta incertidumbre con prospectiva. No es adivinar el futuro, sino trazar líneas de acción."
         }
         image={"og_blogthird.png"}
         lang={props.lang}

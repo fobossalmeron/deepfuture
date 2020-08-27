@@ -10,7 +10,7 @@ import LinkedInTag from "react-linkedin-insight";
 import Footer from "components/shared/FooterNav";
 import DrawerNav from "components/DrawerNav";
 
-export default ({
+const Layout = ({
   children,
   checkForConsent,
   consentToCookies,
@@ -116,6 +116,8 @@ export default ({
     </>
   );
 };
+
+export default Layout;
 
 const BodyOverflow = createGlobalStyle`
   .TopBar{

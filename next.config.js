@@ -30,7 +30,7 @@ const nextConfig = {
     ],
   },
   //nextjs config
-  exportTrailingSlash: false,
+  trailingSlash: false,
   webpack: (config, options) => {
     config.module.rules.push({
       test: /\.svg$/,
