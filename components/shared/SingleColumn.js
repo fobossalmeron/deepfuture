@@ -65,6 +65,7 @@ const SingleColumnContainer = styled(MainGrid)`
     ul {
       font-size: inherit;
       line-height: inherit;
+      max-width: 600px;
       li {
         display: block;
         margin-bottom: 5px;
@@ -85,6 +86,7 @@ const SingleColumnContainer = styled(MainGrid)`
       counter-reset: item;
       margin-bottom: 20px;
       font-size: 2rem;
+      max-width: 600px;
       color: ${(props) => props.theme.colors.foreground_low};
       li {
         display: block;

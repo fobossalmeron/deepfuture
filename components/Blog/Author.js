@@ -19,7 +19,7 @@ const AuthorContainer = styled.div`
   position: relative;
   padding-top: 20px;
   margin-top: 30px;
-  max-width: 200px;
+  max-width: 220px;
   margin-bottom: 10%;
   color: ${(props) => props.theme.colors.foreground_low};
   &::before {
