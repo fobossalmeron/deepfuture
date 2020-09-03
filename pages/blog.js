@@ -39,6 +39,13 @@ function Blog(props) {
           <h1>Blog</h1>
           <EntryGrid>
             <EntryBlock
+              href="/blog/que_tan_pronto_puedes_restablecer_la_productividad_en_tu_negocio"
+              img="/assets/img/blog/posts/header_reestablecer.svg"
+              imgAlt="Reestablecer productividad"
+              title="¿Qué tan pronto puedes <b>restablecer la productividad</b> en tu negocio?"
+              author="Juan José de Régules | 07 de Septiembre del 2020"
+            />
+            <EntryBlock
               href="/blog/el_arma_secreta_de_los_negocios_ganadores_de_la_pandemia"
               img="/assets/img/blog/posts/header_arma.svg"
               imgAlt="El arma secreta"
