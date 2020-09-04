@@ -39,7 +39,7 @@ function Blog(props) {
           <h1>Blog</h1>
           <EntryGrid>
             <EntryBlock
-              href="/blog/que_tan_pronto_puedes_restablecer_la_productividad_en_tu_negocio"
+              href="/blog/restablece_la_productividad_en_tu_negocio_durante_la_crisis"
               img="/assets/img/blog/posts/header_reestablecer.svg"
               imgAlt="Reestablecer productividad"
               title="¿Qué tan pronto puedes <b>restablecer la productividad</b> en tu negocio?"

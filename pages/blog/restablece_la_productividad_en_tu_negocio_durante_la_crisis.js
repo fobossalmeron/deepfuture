@@ -72,8 +72,7 @@ function BlogPost(props) {
           <b>restricciones en el flujo de caja</b>, están tratando de negar la
           realidad. Quizás pretenden postergar las decisiones difíciles. Sin
           embargo, las condiciones que conducen a esas decisiones ya están
-          presentes para quienes las pueden reconocer, para quienes las quieren
-          realmente conocer.
+          presentes para quienes las quieren realmente conocer.
         </p>
 
         <img
@@ -148,7 +147,7 @@ function BlogPost(props) {
           </li>
         </ul>
         <p>
-          Y deben poder entender en qué <b>posición de vulnerabilidad</b> se
+          Deben poder entender en qué <b>posición de vulnerabilidad</b> se
           encuentran los servicios y productos de la organización.
           <br />
           <br />
