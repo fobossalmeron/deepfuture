@@ -25,6 +25,10 @@ const routes = [
     priority: 0.9,
   },
   {
+    es: "/blog/restablece_la_productividad_en_tu_negocio_durante_la_crisis",
+    priority: 0.9,
+  },
+  {
     es: "/",
     priority: 0.8,
   },

@@ -6,19 +6,17 @@ import Header from "components/Blog/Header";
 import BlogFooter from "components/Blog/Footer";
 
 const SHARE_URL =
-  "https://deepfuture.institute/blog/que_tan_pronto_puedes_restablecer_la_productividad_en_tu_negocio";
+  "https://deepfuture.institute/blog/restablece_la_productividad_en_tu_negocio_durante_la_crisis";
 
 function BlogPost(props) {
   return (
     <>
       <Head
         title={
-          "¿Qué tan pronto puedes restablecer la productividad en tu negocio? - DFI"
+          "¿Cómo restablecer la productividad en tu negocio durante la crisis? - DFI"
         }
         canonical={SHARE_URL}
-        description={
-          "El método de escenarios sirve para que los negocios afronten contextos de alta incertidumbre con prospectiva. No es adivinar el futuro, sino trazar líneas de acción."
-        }
+        description={`Con esta publicación nos alejamos de lo obvio y de lo imposible para abordar cómo domesticar esta realidad y convertirla en un entorno en donde se pueda prosperar.`}
         image={"og_blogfourth.png"}
         lang={props.lang}
       />
