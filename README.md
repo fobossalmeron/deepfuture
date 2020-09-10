@@ -1,7 +1,6 @@
-DFI
 <p align="left">
   <a href="https://deepfuture.institute/" target='_blank'>
-    <img alt="Deep Future Institute" src="https://deepfuture.institute/assets/img/layout/readmelogo.svg" width="220">
+    <img alt="Deep Future Institute" src="https://deepfuture.institute/assets/img/layout/readmelogo.svg" width="140">
   </a>
 </p>
 
@@ -11,6 +10,3 @@ DFI
 
 - 🙋🏻‍♀️[Facebook](https://www.facebook.com/deepfutureinstitute/)
 - 🔌[LinkedIn](https://www.linkedin.com/company/deep-future-institute/)
-
-[comment]: <> (🦜[Twitter](https://twitter.com/acueductostudio))
-[comment]: <> (🤹🏻‍♂️[Instagram](https://www.instagram.com/acueducto.studio/))
