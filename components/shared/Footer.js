@@ -4,11 +4,27 @@ import Imago from "public/assets/img/layout/logos/dfiimago.svg";
 const Footer = () => (
   <FooterContainer>
     © Deep Future Institute, 2020
+    {/* <Credit>
+      Diseño y desarrollo por
+      <a href="https://acueducto.studio/">
+        <img
+          src="https://acueducto.studio/assets/img/layout/logo.svg"
+          alt="Acueducto, un estudio de diseño estratégico y tecnología en CDMX"
+        />
+      </a>
+    </Credit> */}
     <Imago />
   </FooterContainer>
 );
 
 export default Footer;
+
+// const Credit = styled.div`
+//   img {
+//     width: auto;
+//     height: 10px;
+//   }
+// `;
 
 const FooterContainer = styled.footer`
   display: flex;

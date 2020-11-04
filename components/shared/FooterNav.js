@@ -35,13 +35,41 @@ const Footer = () => (
       </div>
     </FooterNavigation>
     <FooterBottom>
+      <div>
       © Deep Future Institute, 2020
+
+      <Credit>
+      <span>Diseño y desarrollo por</span>
+      <a href="https://acueducto.studio/">
+        <img
+          src="https://acueducto.studio/assets/img/layout/logo.svg"
+          alt="Acueducto, un estudio de diseño estratégico y tecnología en CDMX"
+        />
+      </a>
+    </Credit>
+      </div>
       <Imago />
     </FooterBottom>
   </FooterContainer>
 );
 
 export default Footer;
+
+const Credit = styled.div`
+opacity:0.8;
+margin-top:6px;
+span{
+  font-size: 1rem;
+  margin-right:4px;
+  text-transform: uppercase;
+  font-weight:400;
+  letter-spacing:.05rem;
+}
+  img {
+    width: auto;
+    height: 10px;
+  }
+`; 
 
 const FooterContainer = styled.footer`
   width: 100%;
