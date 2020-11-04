@@ -56,7 +56,7 @@ const Footer = () => (
 export default Footer;
 
 const Credit = styled.div`
-opacity:0.8;
+opacity:0;
 margin-top:6px;
 span{
   font-size: 1rem;
