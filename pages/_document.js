@@ -64,7 +64,7 @@ export default class MyDocument extends Document {
           <meta name="geo.placename" content="Deep Future Institute" />
           <meta
             name="keywords"
-            content="design, studio, acueducto, cdmx, innovation, strategic design, experience design, product design, brand design, social impact, design strategy, technology"
+            content="prospectiva, futuro, análisis de futuro, talleres, capacitación, consultoría"
           />
           <GlobalStyles />
           {this.props.styleTags}

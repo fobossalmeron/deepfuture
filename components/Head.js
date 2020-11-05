@@ -58,7 +58,7 @@ const Meta = props => {
         </>
       )}
 
-      <meta property="og:site_name" content="Acueducto" />
+      <meta property="og:site_name" content="Deep Future Institute" />
       {props.image ? (
         <>
           <meta
